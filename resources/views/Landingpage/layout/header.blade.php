@@ -30,7 +30,14 @@
                                             </ul>
                                         </li> --}}
                                         <li><a href="{{ url('/') }}">Home</a></li>
-                                        <li><a href="{{ url('about') }}">About</a></li>
+                                        <li class="dropdown"><a href="{{ url('  ') }}">Profile</a>
+                                            <ul>
+                                                <li><a href="{{ url('service') }}">Tentang BUMDes</a></li>
+                                                <li><a href="{{ url('service-details') }}">Visi & Misi</a></li>
+                                                <li><a href="{{ url('service-details-2') }}">Struktur Organisasi</a></li>
+                                                <li><a href="{{ url('service-details-3') }}">Dasar Hukum</a></li>
+                                            </ul>
+                                        </li>
                                         <li class="dropdown"><a href="{{ url('  ') }}">Layanan Kami</a>
                                             <ul>
                                                 <li><a href="{{ url('service') }}">Toko Desa (Unit Perdagangan)</a></li>

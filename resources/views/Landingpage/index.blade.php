@@ -14,8 +14,7 @@
 
 
         <!-- preloader -->
-@include('Landingpage.layout.preloader')
-
+        @include('Landingpage.layout.preloader')
         <!-- preloader end -->
 
 
@@ -70,7 +69,7 @@
 
 
         <!-- main header -->
-@include('Landingpage.layout.header')
+        @include('Landingpage.layout.header')
 
         <!-- main-header end -->
 
@@ -88,8 +87,7 @@
                 <!-- Logo -->
                 <div class="nav-logo">
                     <a href="{{ url('/') }}">
-                        <img src="{{ asset('Landingpage/assets/images/logo-2.png') }}" alt="Logo"
-                            title="">
+                        <img src="{{ asset('Landingpage/assets/images/logo-2.png') }}" alt="Logo" title="">
                     </a>
                 </div>
 
@@ -389,7 +387,8 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-4"></i></div>
                                     <h3><a href="{{ asset('index.html') }}">Mendukung UMKM Desa</a></h3>
-                                    <p>Kami membantu pertumbuhan UMKM lokal melalui pelatihan dan dukungan akses pemasaran.</p>
+                                    <p>Kami membantu pertumbuhan UMKM lokal melalui pelatihan dan dukungan akses
+                                        pemasaran.</p>
                                     <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
                                                 class="icon-7"></i></a>
                                     </div>
@@ -401,7 +400,8 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-5"></i></div>
                                     <h3><a href="{{ asset('index.html') }}"> Legal & Terpercaya</a></h3>
-                                    <p>BUMDes beroperasi secara resmi dan sah berdasarkan landasan hukum yang kuat, serta berada di bawah pengawasan pemerintah desa.
+                                    <p>BUMDes beroperasi secara resmi dan sah berdasarkan landasan hukum yang kuat,
+                                        serta berada di bawah pengawasan pemerintah desa.
                                     </p>
                                     <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
                                                 class="icon-7"></i></a>
@@ -414,7 +414,8 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-6"></i></div>
                                     <h3><a href="{{ asset('index.html') }}">Memberdayakan Warga</a></h3>
-                                    <p>Kami menyediakan pelatihan dan lapangan kerja untuk meningkatkan taraf hidup warga.</p>
+                                    <p>Kami menyediakan pelatihan dan lapangan kerja untuk meningkatkan taraf hidup
+                                        warga.</p>
                                     <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
                                                 class="icon-7"></i></a>
                                     </div>
@@ -426,7 +427,8 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-33"></i></div>
                                     <h3><a href="{{ asset('index.html') }}">Layanan Ramah & Terjangkau</a></h3>
-                                    <p>Pelayanan kami mudah diakses dan dapat dinikmati oleh seluruh lapisan masyarakat desa.</p>
+                                    <p>Pelayanan kami mudah diakses dan dapat dinikmati oleh seluruh lapisan masyarakat
+                                        desa.</p>
                                     <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
                                                 class="icon-7"></i></a>
                                     </div>
@@ -541,7 +543,8 @@
                         <!-- Perbaikan dari "Fisnish" ke "Finish" -->
                     </div>
                     <div class="inner-container">
-                        <div class="shape" style="background-image: url('Landingpage/assets/images/shape/shape-19.png');"></div>
+                        <div class="shape"
+                            style="background-image: url('Landingpage/assets/images/shape/shape-19.png');"></div>
 
                         <div class="processing-block-two">
                             <div class="inner-box">
@@ -783,28 +786,27 @@
                                             </div>
                                             <div class="acc-content">
                                                 <div class="content">
-                                                    <p>Kami menyediakan berbagai layanan seperti:
-
-                                                        Penyewaan alat pertanian
-
-                                                        Simpan pinjam
-
-                                                        Penjualan hasil pertanian
-
-                                                        Warung BUMDes
-
-                                                        Layanan logistik desa</p>
+                                                    <p>Kami menyediakan berbagai layanan seperti:</p>
+                                                    <ul>
+                                                        <li>Penyewaan alat pertanian</li>
+                                                        <li>Simpan pinjam</li>
+                                                        <li>Penjualan hasil pertanian</li>
+                                                        <li>Warung BUMDes</li>
+                                                        <li>Layanan logistik desa</li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="accordion block">
                                             <div class="acc-btn">
                                                 <div class="icon-box"><i class="icon-21"></i></div>
-                                                <h4> Siapa saja yang bisa memanfaatkan layanan BUMDes?</h4>
+                                                <h4>Siapa saja yang bisa memanfaatkan layanan BUMDes?</h4>
                                             </div>
                                             <div class="acc-content">
                                                 <div class="content">
-                                                    <p>Seluruh warga desa dapat menggunakan layanan BUMDes, termasuk UMKM lokal, petani, dan pemuda desa yang ingin mengembangkan usaha.</p>
+                                                    <p>Seluruh warga desa dapat menggunakan layanan BUMDes, termasuk
+                                                        UMKM lokal, petani, dan pemuda desa yang ingin mengembangkan
+                                                        usaha.</p>
                                                 </div>
                                             </div>
                                         </li>
@@ -815,7 +817,9 @@
                                             </div>
                                             <div class="acc-content">
                                                 <div class="content">
-                                                    <p>ESebagian layanan kami bersifat gratis, namun untuk layanan khusus seperti penyewaan alat atau pinjaman modal, akan dikenakan biaya operasional yang transparan dan terjangkau.</p>
+                                                    <p>Sebagian layanan kami bersifat gratis, namun untuk layanan khusus
+                                                        seperti penyewaan alat atau pinjaman modal, akan dikenakan biaya
+                                                        operasional yang transparan dan terjangkau.</p>
                                                 </div>
                                             </div>
                                         </li>
@@ -823,41 +827,22 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                             <div class="testimonial-content ml_130">
-                                <div class="single-item-carousel owl-carousel owl-theme owl-nav-none dots-style-one">
-                                    <!-- Testimonial Item -->
+                                <div
+                                    class="single-item-carousel owl-carousel owl-theme owl-nav-none dots-style-one owl-loaded owl-drag">
                                     <div class="testimonial-block-three">
                                         <div class="inner-box">
                                             <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h2>“Sejak bergabung sebagai mitra BUMDes, usaha kecil saya jadi lebih dikenal dan berkembang. Saya juga terbantu dengan pinjaman modal tanpa bunga tinggi.”</h2>
+                                            <h2>“BUMDes membantu saya menyewa alat pertanian dengan harga murah. Panen
+                                                tahun ini lebih cepat dan hasilnya meningkat!”</h2>
                                             <figure class="signature mb_30">
-                                                <img src="{{ asset('Landingpage/assets/images/icons/signature-1.png') }}"
+                                                <img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/signature-1.png"
                                                     alt="">
                                             </figure>
                                             <div class="author-box">
                                                 <figure class="author-thumb">
-                                                    <img src="{{ asset('Landingpage/assets/images/resource/testimonial-4.png') }}"
-                                                        alt="">
-                                                </figure>
-                                                <h3>Ibu Sari</h3>
-                                                <span class="designation">Pemilik Usaha Keripik Singkong</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Duplicate Testimonial Items -->
-                                    <div class="testimonial-block-three">
-                                        <div class="inner-box">
-                                            <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h2>“BUMDes membantu saya menyewa alat pertanian dengan harga murah. Panen tahun ini lebih cepat dan hasilnya meningkat!”</h2>
-                                            <figure class="signature mb_30">
-                                                <img src="{{ asset('Landingpage/assets/images/icons/signature-1.png') }}"
-                                                    alt="">
-                                            </figure>
-                                            <div class="author-box">
-                                                <figure class="author-thumb">
-                                                    <img src="{{ asset('Landingpage/assets/images/resource/testimonial-4.png') }}"
+                                                    <img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-4.png"
                                                         alt="">
                                                 </figure>
                                                 <h3>Pak Darto</h3>
@@ -868,14 +853,15 @@
                                     <div class="testimonial-block-three">
                                         <div class="inner-box">
                                             <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h2>“Layanan logistik dari BUMDes sangat membantu pengiriman produk lokal ke luar desa. Saya tidak perlu bingung cari ekspedisi lagi.”</h2>
+                                            <h2>“Layanan logistik dari BUMDes sangat membantu pengiriman produk lokal ke
+                                                luar desa. Saya tidak perlu bingung cari ekspedisi lagi.”</h2>
                                             <figure class="signature mb_30">
-                                                <img src="{{ asset('Landingpage/assets/images/icons/signature-1.png') }}"
+                                                <img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/signature-1.png"
                                                     alt="">
                                             </figure>
                                             <div class="author-box">
                                                 <figure class="author-thumb">
-                                                    <img src="{{ asset('Landingpage/assets/images/resource/testimonial-4.png') }}"
+                                                    <img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-4.png"
                                                         alt="">
                                                 </figure>
                                                 <h3>Ravlindo</h3>
@@ -883,7 +869,37 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Testimonial Items -->
+                                    <div class="testimonial-block-three">
+                                        <div class="inner-box">
+                                            <div class="icon-box"><i class="icon-36"></i></div>
+                                            <h2>“Sejak bergabung sebagai mitra BUMDes, usaha kecil saya jadi lebih
+                                                dikenal dan berkembang. Saya juga terbantu dengan pinjaman modal tanpa
+                                                bunga tinggi.”</h2>
+                                            <figure class="signature mb_30">
+                                                <img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/signature-1.png"
+                                                    alt="">
+                                            </figure>
+                                            <div class="author-box">
+                                                <figure class="author-thumb">
+                                                    <img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-4.png"
+                                                        alt="">
+                                                </figure>
+                                                <h3>Ibu Sari</h3>
+                                                <span class="designation">Pemilik Usaha Keripik Singkong</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-nav">
+                                    <button type="button" role="presentation" class="owl-prev"><span
+                                            class="icon-34"></span></button>
+                                    <button type="button" role="presentation" class="owl-next"><span
+                                            class="icon-35"></span></button>
+                                </div>
+                                <div class="owl-dots">
+                                    <button role="button" class="owl-dot"><span></span></button>
+                                    <button role="button" class="owl-dot"><span></span></button>
+                                    <button role="button" class="owl-dot active"><span></span></button>
                                 </div>
                             </div>
                         </div>
@@ -891,7 +907,6 @@
                 </div>
             </div>
         </section>
-
         <!-- dueal-section end -->
 
 
@@ -909,10 +924,12 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-1.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-1.jpg') }}"
+                                            alt="">
                                     </figure>
                                     <figure class="overlay-image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-1.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-1.jpg') }}"
+                                            alt="">
                                     </figure>
                                 </div>
                                 <div class="lower-content">
@@ -928,10 +945,12 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-2.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-2.jpg') }}"
+                                            alt="">
                                     </figure>
                                     <figure class="overlay-image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-2.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-2.jpg') }}"
+                                            alt="">
                                     </figure>
                                 </div>
                                 <div class="lower-content">
@@ -947,10 +966,12 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-3.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-3.jpg') }}"
+                                            alt="">
                                     </figure>
                                     <figure class="overlay-image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-3.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-3.jpg') }}"
+                                            alt="">
                                     </figure>
                                 </div>
                                 <div class="lower-content">
@@ -966,10 +987,12 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-4.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-4.jpg') }}"
+                                            alt="">
                                     </figure>
                                     <figure class="overlay-image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-4.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-4.jpg') }}"
+                                            alt="">
                                     </figure>
                                 </div>
                                 <div class="lower-content">
@@ -991,7 +1014,8 @@
             <div class="auto-container">
                 <div class="inner-container">
                     <div class="pattern-layer"
-                        style="background-image: url('{{ asset('landingpage/assets/images/shape/shape-20.png') }}');"></div>
+                        style="background-image: url('{{ asset('landingpage/assets/images/shape/shape-20.png') }}');">
+                    </div>
                     <div class="row align-items-center">
                         <div class="col-lg-8 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
@@ -1007,7 +1031,8 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                             <div class="image-box">
                                 <figure class="image">
-                                    <img src="{{ asset('landingpage/assets/images/resource/book-2.png') }}" alt="">
+                                    <img src="{{ asset('landingpage/assets/images/resource/book-2.png') }}"
+                                        alt="">
                                 </figure>
                             </div>
                         </div>
@@ -1035,12 +1060,14 @@
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-4.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-4.jpg') }}"
+                                                alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-4.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-4.jpg') }}"
+                                                alt="">
                                         </a>
                                     </figure>
                                 </div>
@@ -1065,12 +1092,14 @@
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}"
+                                                alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}"
+                                                alt="">
                                         </a>
                                     </figure>
                                 </div>
@@ -1095,12 +1124,14 @@
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}"
+                                                alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}"
+                                                alt="">
                                         </a>
                                     </figure>
                                 </div>
