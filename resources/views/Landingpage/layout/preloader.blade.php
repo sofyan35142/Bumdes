@@ -11,7 +11,7 @@
                         <!-- Spinner default -->
                         <div class="spinner">
                             <!-- Jika kamu ingin pakai gambar spinner, bisa ganti dengan ini:
-                    <img src="{{ asset('Landingpage/assets/images/spinner.gif') }}" alt="Loading..."> -->
+                    <img src="{{ asset('LandingPage/assets/images/spinner.gif') }}" alt="Loading..."> -->
                         </div>
 
                         <!-- Teks animasi loading -->
