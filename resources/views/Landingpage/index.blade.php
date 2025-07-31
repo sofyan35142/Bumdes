@@ -14,35 +14,7 @@
 
 
         <!-- preloader -->
-        <div class="loader-wrap">
-            <div class="preloader">
-                <!-- Tombol untuk menutup loader -->
-                <div class="preloader-close">
-                    <i class="icon-27"></i> <!-- pastikan ikon ini tersedia dalam CSS -->
-                </div>
-
-                <!-- Isi animasi preloader -->
-                <div id="handle-preloader" class="handle-preloader">
-                    <div class="animation-preloader">
-                        <!-- Spinner default -->
-                        <div class="spinner">
-                            <!-- Jika kamu ingin pakai gambar spinner, bisa ganti dengan ini:
-                    <img src="{{ asset('Landingpage/assets/images/spinner.gif') }}" alt="Loading..."> -->
-                        </div>
-
-                        <!-- Teks animasi loading -->
-                        <div class="txt-loading">
-                            <span data-text-preloader="b" class="letters-loading">b</span>
-                            <span data-text-preloader="u" class="letters-loading">u</span>
-                            <span data-text-preloader="m" class="letters-loading">m</span>
-                            <span data-text-preloader="d" class="letters-loading">d</span>
-                            <span data-text-preloader="e" class="letters-loading">e</span>
-                            <span data-text-preloader="s" class="letters-loading">s</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+@include('Landingpage.layout.preloader')
 
         <!-- preloader end -->
 
@@ -98,135 +70,7 @@
 
 
         <!-- main header -->
-        <header class="main-header header-style-four">
-            <!-- header-lower -->
-            <div class="header-lower">
-                <div class="auto-container">
-                    <div class="outer-box">
-                        <figure class="logo-box">
-                            <a href="{{ url('/') }}">
-                                <img src="{{ asset('Landingpage/assets/images/logo.png') }}" alt="Logo">
-                            </a>
-                        </figure>
-
-                        <div class="menu-area">
-                            <!--Mobile Navigation Toggler-->
-                            <div class="mobile-nav-toggler">
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                            </div>
-
-                            <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        <li class="current dropdown"><a href="{{ url('/') }}">Home</a>
-                                            <ul>
-                                                <li><a href="{{ url('/') }}">Home One</a></li>
-                                                <li><a href="{{ url('index-2') }}">Home Two</a></li>
-                                                <li><a href="{{ url('index-3') }}">Home Three</a></li>
-                                                <li><a href="{{ url('index-4') }}">Home Four</a></li>
-                                                <li><a href="{{ url('index-5') }}">Home Five</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ url('about') }}">About</a></li>
-                                        <li class="dropdown"><a href="{{ url('service') }}">Solutions</a>
-                                            <ul>
-                                                <li><a href="{{ url('service') }}">Our Solutions</a></li>
-                                                <li><a href="{{ url('service-details') }}">Executive Search</a></li>
-                                                <li><a href="{{ url('service-details-2') }}">Training Session</a></li>
-                                                <li><a href="{{ url('service-details-3') }}">Career Growth</a></li>
-                                                <li><a href="{{ url('service-details-4') }}">Payroll Services</a></li>
-                                                <li><a href="{{ url('service-details-5') }}">Workforce System</a></li>
-                                                <li><a href="{{ url('service-details-6') }}">Temporary Jobs</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="#">Pages</a>
-                                            <ul>
-                                                <li class="dropdown"><a href="#">Job</a>
-                                                    <ul>
-                                                        <li><a href="{{ url('job') }}">Place Job</a></li>
-                                                        <li><a href="{{ url('job-2') }}">Job Seekers</a></li>
-                                                        <li><a href="{{ url('job-3') }}">Job Openings</a></li>
-                                                        <li><a href="{{ url('job-4') }}">Job Apply</a></li>
-                                                        <li><a href="{{ url('job-details') }}">Job Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown"><a href="#">Portfolio</a>
-                                                    <ul>
-                                                        <li><a href="{{ url('portfolio') }}">Portfolio 3 column</a>
-                                                        </li>
-                                                        <li><a href="{{ url('portfolio-2') }}">Portfolio 2 column</a>
-                                                        </li>
-                                                        <li><a href="{{ url('portfolio-3') }}">Portfolio Masonry</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="{{ url('team') }}">Our Team</a></li>
-                                                <li><a href="{{ url('faq') }}">FAQ's</a></li>
-                                                <li><a href="{{ url('testimonial') }}">Testimonials</a></li>
-                                                <li><a href="{{ url('login') }}">Login</a></li>
-                                                <li><a href="{{ url('signup') }}">Sign Up</a></li>
-                                                <li><a href="{{ url('error') }}">404</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="#">Blog</a>
-                                            <ul>
-                                                <li><a href="{{ url('blog') }}">Blog Grid</a></li>
-                                                <li><a href="{{ url('blog-2') }}">Blog Standard</a></li>
-                                                <li><a href="{{ url('blog-details') }}">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ url('contact') }}">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-
-                        <div class="menu-right-content">
-                            <div class="search-btn mr_20">
-                                <button class="search-toggler"><i class="icon-1"></i></button>
-                            </div>
-                            <div class="link-box mr_20">
-                                <a href="{{ url('login') }}">Log In</a>
-                            </div>
-                            <div class="btn-box">
-                                <a href="{{ url('/') }}" class="theme-btn btn-one">Get Started</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sticky Header -->
-            <div class="sticky-header">
-                <div class="outer-container">
-                    <div class="outer-box">
-                        <figure class="logo-box">
-                            <a href="{{ url('/') }}">
-                                <img src="{{ asset('Landingpage/assets/images/logo.png') }}" alt="Logo">
-                            </a>
-                        </figure>
-                        <div class="menu-area">
-                            <nav class="main-menu clearfix">
-                                <!-- Menu akan di-generate oleh JS -->
-                            </nav>
-                        </div>
-                        <div class="menu-right-content">
-                            <div class="search-btn mr_20">
-                                <button class="search-toggler"><i class="icon-1"></i></button>
-                            </div>
-                            <div class="link-box mr_20">
-                                <a href="{{ url('login') }}">Log In</a>
-                            </div>
-                            <div class="btn-box">
-                                <a href="{{ url('/') }}" class="theme-btn btn-one">Get Started</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+@include('Landingpage.layout.header')
 
         <!-- main-header end -->
 
@@ -369,7 +213,7 @@
         <section class="clients-section pt_110 centred">
             <div class="auto-container">
                 <div class="title-text pb_60 sec-title-animation animation-style2">
-                    <h3 class="title-animation">Trusted by the next-gen industry leaders</h3>
+                    <h3 class="title-animation">Mitra BumDes Pakukerto</h3>
                 </div>
                 <div class="inner-box">
                     <div class="clients-box">
@@ -537,16 +381,15 @@
                 <div class="auto-container">
                     <div class="sec-title light pb_60 sec-title-animation animation-style2">
                         <span class="sub-title mb_10 title-animation">Why Us</span>
-                        <h2 class="title-animation">Why Choose Us</h2>
+                        <h2 class="title-animation">Kenapa Memilih BumDes Pakukerto ?</h2>
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
                             <div class="chooseus-block-one">
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-4"></i></div>
-                                    <h3><a href="{{ asset('index.html') }}">Retain Top Talent</a></h3>
-                                    <p>Providing clear career paths and growth opportunities is key to retaining top
-                                        talent.</p>
+                                    <h3><a href="{{ asset('index.html') }}">Mendukung UMKM Desa</a></h3>
+                                    <p>Kami membantu pertumbuhan UMKM lokal melalui pelatihan dan dukungan akses pemasaran.</p>
                                     <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
                                                 class="icon-7"></i></a>
                                     </div>
@@ -557,8 +400,9 @@
                             <div class="chooseus-block-one">
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-5"></i></div>
-                                    <h3><a href="{{ asset('index.html') }}">Stay Compliant</a></h3>
-                                    <p>Educate employees about compliance requirements through regular training</p>
+                                    <h3><a href="{{ asset('index.html') }}"> Legal & Terpercaya</a></h3>
+                                    <p>BUMDes beroperasi secara resmi dan sah berdasarkan landasan hukum yang kuat, serta berada di bawah pengawasan pemerintah desa.
+                                    </p>
                                     <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
                                                 class="icon-7"></i></a>
                                     </div>
@@ -569,9 +413,8 @@
                             <div class="chooseus-block-one">
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-6"></i></div>
-                                    <h3><a href="{{ asset('index.html') }}">Improve Employee</a></h3>
-                                    <p>Invest in employee training and development programs to enhance skills and
-                                        knowledge.</p>
+                                    <h3><a href="{{ asset('index.html') }}">Memberdayakan Warga</a></h3>
+                                    <p>Kami menyediakan pelatihan dan lapangan kerja untuk meningkatkan taraf hidup warga.</p>
                                     <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
                                                 class="icon-7"></i></a>
                                     </div>
@@ -582,8 +425,8 @@
                             <div class="chooseus-block-one">
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-33"></i></div>
-                                    <h3><a href="{{ asset('index.html') }}">Great Support</a></h3>
-                                    <p>We invest in the best to support your productivity and success.</p>
+                                    <h3><a href="{{ asset('index.html') }}">Layanan Ramah & Terjangkau</a></h3>
+                                    <p>Pelayanan kami mudah diakses dan dapat dinikmati oleh seluruh lapisan masyarakat desa.</p>
                                     <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
                                                 class="icon-7"></i></a>
                                     </div>
@@ -603,14 +446,14 @@
             <div class="auto-container">
                 <div class="sec-title centred pb_60 sec-title-animation animation-style2">
                     <span class="sub-title mb_10 title-animation">Industries</span>
-                    <h2 class="title-animation">Industries Served</h2>
+                    <h2 class="title-animation">Bidang Usaha BUMDes Kami</h2>
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
                         <div class="industries-block-two">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-9"></i></div>
-                                <h3><a href="{{ url('/') }}">Hotel</a></h3>
+                                <h3><a href="{{ url('/') }}">Unit Perdagangan</a></h3>
                                 <p>2853 Staffs</p>
                             </div>
                         </div>
@@ -619,7 +462,7 @@
                         <div class="industries-block-two">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-10"></i></div>
-                                <h3><a href="{{ url('/') }}">Hospitality</a></h3>
+                                <h3><a href="{{ url('/') }}">Air Bersih / PAM Desa</a></h3>
                                 <p>2256 Staffs</p>
                             </div>
                         </div>
@@ -628,7 +471,7 @@
                         <div class="industries-block-two">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-11"></i></div>
-                                <h3><a href="{{ url('/') }}">Kitchen</a></h3>
+                                <h3><a href="{{ url('/') }}">Transportasi Desa</a></h3>
                                 <p>1408 Staffs</p>
                             </div>
                         </div>
@@ -637,7 +480,7 @@
                         <div class="industries-block-two">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-12"></i></div>
-                                <h3><a href="{{ url('/') }}">Retail</a></h3>
+                                <h3><a href="{{ url('/') }}">Pariwisata Desa</a></h3>
                                 <p>1740 Staffs</p>
                             </div>
                         </div>
@@ -646,7 +489,7 @@
                         <div class="industries-block-two">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-13"></i></div>
-                                <h3><a href="{{ url('/') }}">Events</a></h3>
+                                <h3><a href="{{ url('/') }}">Peternakan</a></h3>
                                 <p>3948 Staffs</p>
                             </div>
                         </div>
@@ -655,7 +498,7 @@
                         <div class="industries-block-two">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-14"></i></div>
-                                <h3><a href="{{ url('/') }}">Labor</a></h3>
+                                <h3><a href="{{ url('/') }}">Jasa Servis</a></h3>
                                 <p>2984 Staffs</p>
                             </div>
                         </div>
@@ -664,7 +507,7 @@
                         <div class="industries-block-two">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-15"></i></div>
-                                <h3><a href="{{ url('/') }}">Driving</a></h3>
+                                <h3><a href="{{ url('/') }}">sewa Aset</a></h3>
                                 <p>4509 Staffs</p>
                             </div>
                         </div>
@@ -673,7 +516,7 @@
                         <div class="industries-block-two">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-16"></i></div>
-                                <h3><a href="{{ url('/') }}">Caretaker</a></h3>
+                                <h3><a href="{{ url('/') }}">Pertanian</a></h3>
                                 <p>1039 Staffs</p>
                             </div>
                         </div>
@@ -694,36 +537,34 @@
                 <div class="auto-container">
                     <div class="sec-title pb_60 sec-title-animation animation-style2">
                         <span class="sub-title mb_10 title-animation">Process</span>
-                        <h2 class="title-animation">Easy Steps to Finish</h2>
+                        <h2 class="title-animation">Alur Pendaftaran Layanan / Mitra UMKM / Simpan Pinjam BUMDes</h2>
                         <!-- Perbaikan dari "Fisnish" ke "Finish" -->
                     </div>
                     <div class="inner-container">
-                        <div class="shape" style="background-image: url('assets/images/shape/shape-19.png');"></div>
+                        <div class="shape" style="background-image: url('Landingpage/assets/images/shape/shape-19.png');"></div>
 
                         <div class="processing-block-two">
                             <div class="inner-box">
                                 <h4>01 <span>Step</span></h4>
-                                <h3>Fill In The <br />Required Form</h3>
-                                <p>Filling in our application form is the gateway.</p>
+                                <h3>Isi Formulir Pengajuan</h3>
+                                <p>Lengkapi formulir pendaftaran yang tersedia secara online maupun offline.</p>
                             </div>
                         </div>
-
                         <div class="processing-block-two">
                             <div class="inner-box">
                                 <h4>02 <span>Step</span></h4>
-                                <h3>Submit All <br />Your Documents</h3>
-                                <p>Submitting all required documents promptly.</p>
+                                <h3>Lengkapi Dokumen</h3> <!-- Perbaikan dari "Desire" ke "Desired" -->
+                                <p>Kirimkan dokumen yang dibutuhkan seperti KTP, KK, dan surat pengajuan usaha.</p>
                             </div>
                         </div>
 
                         <div class="processing-block-two">
                             <div class="inner-box">
                                 <h4>03 <span>Step</span></h4>
-                                <h3>Get Your <br />Desired Account</h3> <!-- Perbaikan dari "Desire" ke "Desired" -->
-                                <p>Succeed in the competitive world with your account.</p>
+                                <h3>Verifikasi & Aktivasi</h3>
+                                <p>Tim BUMDes akan memverifikasi dan mengaktifkan layanan Anda.</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -737,7 +578,7 @@
             <div class="auto-container">
                 <div class="sec-title pb_60 sec-title-animation animation-style2">
                     <span class="sub-title mb_10 title-animation">What We Provide</span>
-                    <h2 class="title-animation">Inspiring Staffing Solutions</h2>
+                    <h2 class="title-animation">Layanan Unggulan Kami</h2>
                 </div>
                 <div class="row clearfix">
 
@@ -749,20 +590,21 @@
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="service-details-2.html">
-                                            <img src="{{ asset('assets/images/service/service-1.jpg') }}"
+                                            <img src="{{ asset('Landingpage/assets/images/service/service-1.jpg') }}"
                                                 alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-image">
                                         <a href="service-details-2.html">
-                                            <img src="{{ asset('assets/images/service/service-1.jpg') }}"
+                                            <img src="{{ asset('Landingpage/assets/images/service/service-1.jpg') }}"
                                                 alt="">
                                         </a>
                                     </figure>
                                 </div>
                                 <div class="lower-content">
-                                    <h3><a href="service-details-2.html">Training Session</a></h3>
-                                    <p>These experts guide new employees through interactive workshops.</p>
+                                    <h3><a href="service-details-2.html">Pelatihan UMKM</a></h3>
+                                    <p>Kami mengadakan pelatihan keterampilan untuk pelaku UMKM desa agar bisa naik
+                                        kelas secara digital maupun produksi.</p>
                                     <div class="btn-box">
                                         <a href="service-details-2.html" class="theme-btn btn-one">View Details</a>
                                     </div>
@@ -779,20 +621,21 @@
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="service-details.html">
-                                            <img src="{{ asset('assets/images/service/service-2.jpg') }}"
+                                            <img src="{{ asset('Landingpage/assets/images/service/service-2.jpg') }}"
                                                 alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-image">
                                         <a href="service-details.html">
-                                            <img src="{{ asset('assets/images/service/service-2.jpg') }}"
+                                            <img src="{{ asset('Landingpage/assets/images/service/service-2.jpg') }}"
                                                 alt="">
                                         </a>
                                     </figure>
                                 </div>
                                 <div class="lower-content">
-                                    <h3><a href="service-details.html">Executive Search</a></h3>
-                                    <p>Our executive search services are customized to meet your specific needs.</p>
+                                    <h3><a href="service-details.html">Pemasaran Produk Desa</a></h3>
+                                    <p>Membantu warga desa menjual produk unggulan (kerajinan, pertanian, kuliner) ke
+                                        pasar yang lebih luas.</p>
                                     <div class="btn-box">
                                         <a href="service-details.html" class="theme-btn btn-one">View Details</a>
                                     </div>
@@ -809,20 +652,21 @@
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="service-details-6.html">
-                                            <img src="{{ asset('assets/images/service/service-3.jpg') }}"
+                                            <img src="{{ asset('Landingpage/assets/images/service/service-3.jpg') }}"
                                                 alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-image">
                                         <a href="service-details-6.html">
-                                            <img src="{{ asset('assets/images/service/service-3.jpg') }}"
+                                            <img src="{{ asset('Landingpage/assets/images/service/service-3.jpg') }}"
                                                 alt="">
                                         </a>
                                     </figure>
                                 </div>
                                 <div class="lower-content">
-                                    <h3><a href="service-details-6.html">Temporary Jobs</a></h3>
-                                    <p>Apply for our temporary jobs and become part of our talent pool.</p>
+                                    <h3><a href="service-details-6.html">Layanan Simpan Pinjam</a></h3>
+                                    <p>Melayani pinjaman usaha mikro dan simpanan warga dengan proses yang cepat dan
+                                        aman.</p>
                                     <div class="btn-box">
                                         <a href="service-details-6.html" class="theme-btn btn-one">View Details</a>
                                     </div>
@@ -850,7 +694,7 @@
                                 <div class="count-outer">
                                     <span class="odometer" data-count="12">00</span><span class="symble">k</span>
                                 </div>
-                                <p>Freelance Workers</p>
+                                <p>Warga Terlibat Aktif</p>
                             </div>
                         </div>
                     </div>
@@ -862,7 +706,7 @@
                                 <div class="count-outer">
                                     <span class="odometer" data-count="95">00</span><span class="symble">%</span>
                                 </div>
-                                <p>Jobs Fulfillment Rate</p>
+                                <p>Tingkat Kepuasan Mitra</p>
                             </div>
                         </div>
                     </div>
@@ -874,7 +718,7 @@
                                 <div class="count-outer">
                                     <span class="odometer" data-count="12">00</span><span class="symble">k+</span>
                                 </div>
-                                <p>Jobs Filled</p>
+                                <p>Unit Usaha Aktif</p>
                             </div>
                         </div>
                     </div>
@@ -886,7 +730,7 @@
                                 <div class="count-outer">
                                     <span class="odometer" data-count="825">00</span><span class="symble">+</span>
                                 </div>
-                                <p>Satisfied Businesses</p>
+                                <p> Produk Desa Terjual</p>
                             </div>
                         </div>
                     </div>
@@ -921,50 +765,57 @@
                                         <li class="accordion block active-block">
                                             <div class="acc-btn active">
                                                 <div class="icon-box"><i class="icon-21"></i></div>
-                                                <h4>How Can I Prepare for an Interview?</h4>
+                                                <h4>Bagaimana cara mendaftar sebagai mitra BUMDes?</h4>
                                             </div>
                                             <div class="acc-content current">
                                                 <div class="content">
-                                                    <p>To prepare for an interview, research the company, understand the
-                                                        job role and responsibilities, and prepare questions to ask the
-                                                        interviewer.</p>
+                                                    <p>Untuk mendaftar sebagai mitra, silakan kunjungi kantor BUMDes
+                                                        atau isi formulir pendaftaran online yang tersedia di website
+                                                        kami. Tim kami akan menghubungi Anda untuk verifikasi lebih
+                                                        lanjut.</p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="accordion block">
                                             <div class="acc-btn">
                                                 <div class="icon-box"><i class="icon-21"></i></div>
-                                                <h4>Hiring Managers and Candidates?</h4>
+                                                <h4>Apa saja layanan yang ditawarkan oleh BUMDes?</h4>
                                             </div>
                                             <div class="acc-content">
                                                 <div class="content">
-                                                    <p>Hiring managers evaluate candidates based on their skills,
-                                                        experience, and cultural fit with the company.</p>
+                                                    <p>Kami menyediakan berbagai layanan seperti:
+
+                                                        Penyewaan alat pertanian
+
+                                                        Simpan pinjam
+
+                                                        Penjualan hasil pertanian
+
+                                                        Warung BUMDes
+
+                                                        Layanan logistik desa</p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="accordion block">
                                             <div class="acc-btn">
                                                 <div class="icon-box"><i class="icon-21"></i></div>
-                                                <h4>Clarifying Recruitment Concepts?</h4>
+                                                <h4> Siapa saja yang bisa memanfaatkan layanan BUMDes?</h4>
                                             </div>
                                             <div class="acc-content">
                                                 <div class="content">
-                                                    <p>Recruitment concepts include sourcing, screening, interviewing,
-                                                        and onboarding candidates to fill job vacancies efficiently.</p>
+                                                    <p>Seluruh warga desa dapat menggunakan layanan BUMDes, termasuk UMKM lokal, petani, dan pemuda desa yang ingin mengembangkan usaha.</p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="accordion block">
                                             <div class="acc-btn">
                                                 <div class="icon-box"><i class="icon-21"></i></div>
-                                                <h4>Employers Look for in Candidates?</h4>
+                                                <h4>Apakah ada biaya untuk menggunakan layanan BUMDes?</h4>
                                             </div>
                                             <div class="acc-content">
                                                 <div class="content">
-                                                    <p>Employers typically look for strong communication skills,
-                                                        problem-solving abilities, teamwork, and relevant job
-                                                        experience.</p>
+                                                    <p>ESebagian layanan kami bersifat gratis, namun untuk layanan khusus seperti penyewaan alat atau pinjaman modal, akan dikenakan biaya operasional yang transparan dan terjangkau.</p>
                                                 </div>
                                             </div>
                                         </li>
@@ -980,8 +831,7 @@
                                     <div class="testimonial-block-three">
                                         <div class="inner-box">
                                             <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h2>Company and was impressed by the personalized approach of their
-                                                recruitment team. They kept me informed at every stage</h2>
+                                            <h2>“Sejak bergabung sebagai mitra BUMDes, usaha kecil saya jadi lebih dikenal dan berkembang. Saya juga terbantu dengan pinjaman modal tanpa bunga tinggi.”</h2>
                                             <figure class="signature mb_30">
                                                 <img src="{{ asset('Landingpage/assets/images/icons/signature-1.png') }}"
                                                     alt="">
@@ -991,8 +841,8 @@
                                                     <img src="{{ asset('Landingpage/assets/images/resource/testimonial-4.png') }}"
                                                         alt="">
                                                 </figure>
-                                                <h3>Franklin Bailey</h3>
-                                                <span class="designation">CEO, JobAway</span>
+                                                <h3>Ibu Sari</h3>
+                                                <span class="designation">Pemilik Usaha Keripik Singkong</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1000,8 +850,7 @@
                                     <div class="testimonial-block-three">
                                         <div class="inner-box">
                                             <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h2>Company and was impressed by the personalized approach of their
-                                                recruitment team. They kept me informed at every stage</h2>
+                                            <h2>“BUMDes membantu saya menyewa alat pertanian dengan harga murah. Panen tahun ini lebih cepat dan hasilnya meningkat!”</h2>
                                             <figure class="signature mb_30">
                                                 <img src="{{ asset('Landingpage/assets/images/icons/signature-1.png') }}"
                                                     alt="">
@@ -1011,16 +860,15 @@
                                                     <img src="{{ asset('Landingpage/assets/images/resource/testimonial-4.png') }}"
                                                         alt="">
                                                 </figure>
-                                                <h3>Franklin Bailey</h3>
-                                                <span class="designation">CEO, JobAway</span>
+                                                <h3>Pak Darto</h3>
+                                                <span class="designation">Petani Desa</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="testimonial-block-three">
                                         <div class="inner-box">
                                             <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h2>Company and was impressed by the personalized approach of their
-                                                recruitment team. They kept me informed at every stage</h2>
+                                            <h2>“Layanan logistik dari BUMDes sangat membantu pengiriman produk lokal ke luar desa. Saya tidak perlu bingung cari ekspedisi lagi.”</h2>
                                             <figure class="signature mb_30">
                                                 <img src="{{ asset('Landingpage/assets/images/icons/signature-1.png') }}"
                                                     alt="">
@@ -1030,8 +878,8 @@
                                                     <img src="{{ asset('Landingpage/assets/images/resource/testimonial-4.png') }}"
                                                         alt="">
                                                 </figure>
-                                                <h3>Franklin Bailey</h3>
-                                                <span class="designation">CEO, JobAway</span>
+                                                <h3>Ravlindo</h3>
+                                                <span class="designation">Pelaku UMKM</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1061,10 +909,10 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        <img src="{{ asset('assets/images/team/team-1.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-1.jpg') }}" alt="">
                                     </figure>
                                     <figure class="overlay-image">
-                                        <img src="{{ asset('assets/images/team/team-1.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-1.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <div class="lower-content">
@@ -1080,10 +928,10 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        <img src="{{ asset('assets/images/team/team-2.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-2.jpg') }}" alt="">
                                     </figure>
                                     <figure class="overlay-image">
-                                        <img src="{{ asset('assets/images/team/team-2.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-2.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <div class="lower-content">
@@ -1099,10 +947,10 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        <img src="{{ asset('assets/images/team/team-3.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-3.jpg') }}" alt="">
                                     </figure>
                                     <figure class="overlay-image">
-                                        <img src="{{ asset('assets/images/team/team-3.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-3.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <div class="lower-content">
@@ -1118,10 +966,10 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <figure class="image">
-                                        <img src="{{ asset('assets/images/team/team-4.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-4.jpg') }}" alt="">
                                     </figure>
                                     <figure class="overlay-image">
-                                        <img src="{{ asset('assets/images/team/team-4.jpg') }}" alt="">
+                                        <img src="{{ asset('landingpage/assets/images/team/team-4.jpg') }}" alt="">
                                     </figure>
                                 </div>
                                 <div class="lower-content">
@@ -1143,17 +991,15 @@
             <div class="auto-container">
                 <div class="inner-container">
                     <div class="pattern-layer"
-                        style="background-image: url('{{ asset('assets/images/shape/shape-20.png') }}');"></div>
+                        style="background-image: url('{{ asset('landingpage/assets/images/shape/shape-20.png') }}');"></div>
                     <div class="row align-items-center">
                         <div class="col-lg-8 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h2>The 2024 guide for Optimal Content <span>Management</span></h2>
+                                <h2>Panduan <span>BUMDes</span> 2025 untuk Usaha Desa Berkelanjutan</h2>
                                 <ul class="list-item mb_30">
-                                    <li>Start by explaining the fundamental concepts of talent acquisition.</li>
-                                    <li>Provide guidance on crafting clear and compelling job descriptions that
-                                        accurately reflect.</li>
-                                    <li>Practical tips for conducting effective interviews, including types of interview
-                                        questions and interview formats.</li>
+                                    <li>Pelajari langkah-langkah membangun dan mengelola unit usaha desa.</li>
+                                    <li> Dapatkan tips pengelolaan keuangan dan laporan transparan.</li>
+                                    <li>Strategi pemasaran dan kolaborasi UMKM lokal.</li>
                                 </ul>
                                 <button type="button" class="theme-btn btn-one">Download E-book</button>
                             </div>
@@ -1161,7 +1007,7 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                             <div class="image-box">
                                 <figure class="image">
-                                    <img src="{{ asset('assets/images/resource/book-2.png') }}" alt="">
+                                    <img src="{{ asset('landingpage/assets/images/resource/book-2.png') }}" alt="">
                                 </figure>
                             </div>
                         </div>
@@ -1189,12 +1035,12 @@
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('assets/images/news/news-4.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-4.jpg') }}" alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('assets/images/news/news-4.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-4.jpg') }}" alt="">
                                         </a>
                                     </figure>
                                 </div>
@@ -1219,12 +1065,12 @@
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('assets/images/news/news-5.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}" alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('assets/images/news/news-5.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}" alt="">
                                         </a>
                                     </figure>
                                 </div>
@@ -1249,12 +1095,12 @@
                                 <div class="image-box">
                                     <figure class="image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('assets/images/news/news-6.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}" alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-image">
                                         <a href="blog-details.html">
-                                            <img src="{{ asset('assets/images/news/news-6.jpg') }}" alt="">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}" alt="">
                                         </a>
                                     </figure>
                                 </div>

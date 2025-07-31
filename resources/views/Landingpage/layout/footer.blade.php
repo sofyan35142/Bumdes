@@ -6,8 +6,7 @@
                     <div class="footer-widget logo-widget mr_30">
                         <figure class="footer-logo mb_20"><a href="index.html"><img src="assets/images/logo-2.png"
                                     alt=""></a></figure>
-                        <p>Since 2018, JobAway has connecting hospitality workers to thousands of business, private
-                            events and universities.</p>
+                        <p>BUMDes berperan aktif dalam membangun kemandirian desa lewat pengelolaan usaha dan pelayanan masyarakat berbasis potensi lokal.</p>
                         <ul class="social-links">
                             <li><a href="index.html"><i class="icon-22"></i></a></li>
                             <li><a href="index.html"><i class="icon-23"></i></a></li>
@@ -87,7 +86,7 @@
         <div class="auto-container">
             <div class="bottom-inner d_block">
                 <div class="copyright">
-                    <p>Copyright &copy; 2024 <a href="index.html">JobAway</a> All rights reserved.</p>
+                    <p>Copyright &copy; 2025 <a href="/">BumDes | </a> PMM-KKN 01 - Universitas Muhammadiyah Malang</p>
                 </div>
             </div>
         </div>
