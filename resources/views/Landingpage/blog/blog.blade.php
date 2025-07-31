@@ -3,7 +3,7 @@
 <html lang="en">
 
 <!-- Mirrored from jobaway.pixcelsthemes.com/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:53 GMT -->
-@include('Landingpage.layout.head')
+@include('LandingPage.layout.head')
 
 
 <!-- page wrapper -->
@@ -13,7 +13,7 @@
 
 
         <!-- preloader -->
-@include('Landingpage.layout.preloader')
+@include('LandingPage.layout.preloader')
         <!-- preloader end -->
 
 
@@ -29,7 +29,7 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img src="{{ asset('Landingpage/') }}assets/images/logo.png" alt=""></a></figure>
+                    <figure class="logo-box"><a href="index.html"><img src="{{ asset('LandingPage/') }}assets/images/logo.png" alt=""></a></figure>
                     <div class="close-search"><span class="icon-27"></span></div>
                 </div>
                 <div class="overlay-layer"></div>
@@ -50,7 +50,7 @@
 
 
         <!-- main header -->
-@include('Landingpage.layout.header')
+@include('LandingPage.layout.header')
         <!-- main-header end -->
 
 
@@ -59,7 +59,7 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="{{ asset('Landingpage/assets/images/logo-2.png') }}" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="index.html"><img src="{{ asset('LandingPage/assets/images/logo-2.png') }}" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
@@ -136,17 +136,17 @@
                                 </div>
                                 <div class="post-inner">
                                     <div class="post">
-                                        <figure class="post-thumb"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/post-1.jpg') }}" alt=""></a></figure>
+                                        <figure class="post-thumb"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/post-1.jpg') }}" alt=""></a></figure>
                                         <h6><a href="blog-details.html">Provide guidance on crafting effective</a></h6>
                                         <span class="post-date">1 May 2024</span>
                                     </div>
                                     <div class="post">
-                                        <figure class="post-thumb"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/post-2.jpg') }}" alt=""></a></figure>
+                                        <figure class="post-thumb"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/post-2.jpg') }}" alt=""></a></figure>
                                         <h6><a href="blog-details.html">Explore the concept of personal branding</a></h6>
                                         <span class="post-date">1 May 2024</span>
                                     </div>
                                     <div class="post">
-                                        <figure class="post-thumb"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/post-3.jpg') }}" alt=""></a></figure>
+                                        <figure class="post-thumb"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/post-3.jpg') }}" alt=""></a></figure>
                                         <h6><a href="blog-details.html">Use relevant keywords to improve</a></h6>
                                         <span class="post-date">1 May 2024</span>
                                     </div>
@@ -181,9 +181,9 @@
                             </div>
                         </div>
                         <div class="download-widget mr_40">
-                            <div class="shape" style="background-image: url({{ asset('Landingpage/assets/images/shape/shape-24.png') }});"></div>
+                            <div class="shape" style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-24.png') }});"></div>
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{ asset('Landingpage/assets/images/resource/book-3.png') }}" alt=""></figure>
+                                <figure class="image-box"><img src="{{ asset('LandingPage/assets/images/resource/book-3.png') }}" alt=""></figure>
                                 <h4>The 2024 guide for Optimal Content <span>Management</span></h4>
                                 <button type="button" class="theme-btn btn-one">Download E-book</button>
                             </div>
@@ -196,8 +196,8 @@
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-4.jpg') }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-4.jpg') }}" alt=""></a></figure>
+                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-4.jpg') }}" alt=""></a></figure>
+                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-4.jpg') }}" alt=""></a></figure>
                                             </div>
                                             <div class="lower-content">
                                                 <span class="category">Business</span>
@@ -214,8 +214,8 @@
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-5.jpg') }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-5.jpg') }}" alt=""></a></figure>
+                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-5.jpg') }}" alt=""></a></figure>
+                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-5.jpg') }}" alt=""></a></figure>
                                             </div>
                                             <div class="lower-content">
                                                 <span class="category">Analytics</span>
@@ -232,8 +232,8 @@
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-7.jpg') }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-7.jpg') }}" alt=""></a></figure>
+                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-7.jpg') }}" alt=""></a></figure>
+                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-7.jpg') }}" alt=""></a></figure>
                                             </div>
                                             <div class="lower-content">
                                                 <span class="category">Technology</span>
@@ -250,8 +250,8 @@
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-8.jpg') }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-8.jpg') }}" alt=""></a></figure>
+                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-8.jpg') }}" alt=""></a></figure>
+                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-8.jpg') }}" alt=""></a></figure>
                                             </div>
                                             <div class="lower-content">
                                                 <span class="category">Development</span>
@@ -268,8 +268,8 @@
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-9.jpg') }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-9.jpg') }}" alt=""></a></figure>
+                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-9.jpg') }}" alt=""></a></figure>
+                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-9.jpg') }}" alt=""></a></figure>
                                             </div>
                                             <div class="lower-content">
                                                 <span class="category">Remote</span>
@@ -286,8 +286,8 @@
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-10.jpg') }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-10.jpg') }}" alt=""></a></figure>
+                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-10.jpg') }}" alt=""></a></figure>
+                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-10.jpg') }}" alt=""></a></figure>
                                             </div>
                                             <div class="lower-content">
                                                 <span class="category">Analytics</span>
@@ -304,8 +304,8 @@
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-11.jpg') }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-11.jpg') }}" alt=""></a></figure>
+                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-11.jpg') }}" alt=""></a></figure>
+                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-11.jpg') }}" alt=""></a></figure>
                                             </div>
                                             <div class="lower-content">
                                                 <span class="category">Remote</span>
@@ -322,8 +322,8 @@
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-12.jpg') }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('Landingpage/assets/images/news/news-12.jpg') }}" alt=""></a></figure>
+                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-12.jpg') }}" alt=""></a></figure>
+                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-12.jpg') }}" alt=""></a></figure>
                                             </div>
                                             <div class="lower-content">
                                                 <span class="category">Analytics</span>
@@ -360,8 +360,8 @@
             <div class="auto-container">
                 <div class="inner-container">
                     <div class="shape-box">
-                        <div class="shape-1" style="background-image: url({{ asset('Landingpage/assets/images/shape/shape-8.png') }});"></div>
-                        <div class="shape-2" style="background-image: url({{ asset('Landingpage/assets/images/shape/shape-9.png ') }});"></div>
+                        <div class="shape-1" style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-8.png') }});"></div>
+                        <div class="shape-2" style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-9.png ') }});"></div>
                     </div>
                     <div class="text-box">
                         <h2>Subscribe for <span>latest update</span></h2>
@@ -387,16 +387,16 @@
                     <div class="row clearfix">
                         <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                             <div class="footer-widget logo-widget mr_30">
-                                <figure class="footer-logo mb_20"><a href="index.html"><img src="{{ asset('Landingpage/assets/images/logo.png') }}" alt=""></a></figure>
+                                <figure class="footer-logo mb_20"><a href="index.html"><img src="{{ asset('LandingPage/assets/images/logo.png') }}" alt=""></a></figure>
                                 <p>Since 2018, JobAway has connecting hospitality workers to thousands of business, private events and universities.</p>
                                 <div class="download-btn">
                                     <a href="about.html" class="apple-store">
-                                        <img src="{{ asset('Landingpage/assets/images/icons/icon-4.png') }}" alt="">
+                                        <img src="{{ asset('LandingPage/assets/images/icons/icon-4.png') }}" alt="">
                                         <span>Download on</span>
                                         App Store
                                     </a>
                                     <a href="about.html" class="play-store">
-                                        <img src="{{ asset('Landingpage/assets/images/icons/icon-5.png') }}" alt="">
+                                        <img src="{{ asset('LandingPage/assets/images/icons/icon-5.png') }}" alt="">
                                         <span>Get it on</span>
                                         Google Play
                                     </a>
@@ -498,7 +498,7 @@
 
     </div>
 
-@include('Landingpage.layout.scripts')
+@include('LandingPage.layout.scripts')
 
 </body><!-- End of .page_wrapper -->
 
