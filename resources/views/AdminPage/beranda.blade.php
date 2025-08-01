@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('Admin.layouts.head')
+    @include('AdminPage.layouts.head')
 </head>
 
 
@@ -13,9 +13,9 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
         {{-- header --}}
-        @include('Admin.layouts.header')
+        @include('AdminPage.layouts.header')
         <!-- ========== Left Sidebar Start ========== -->
-        @include('Admin.layouts.sidebar')
+        @include('AdminPage.layouts.sidebar')
         <!-- Left Sidebar End -->
 
 
@@ -830,7 +830,7 @@
 
 
             {{-- footer --}}
-            @include('Admin.layouts.footer')
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 
@@ -965,7 +965,7 @@
     <div class="rightbar-overlay"></div>
 
     <!-- JAVASCRIPT -->
-    @include('Admin.layouts.scripts')
+    @include('AdminPage.layouts.scripts')
 </body>
 
 </html>
