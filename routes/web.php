@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Beranda;
 use App\Http\Controllers\Landingpage\Blog;
 use App\Http\Controllers\Landingpage\home;
 use App\Http\Controllers\Landingpage\Profile;
@@ -31,3 +32,7 @@ Route::get('/lowongan', [pages::class, 'lowongan'])->name('lowongan');
 Route::get('/pages/galeri', [pages::class, 'galeri'])->name('galeri');
 Route::get('/pages/lowongan', [pages::class, 'lowongan'])->name('lowongan');
 Route::get('/pages/keuangan', [pages::class, 'keuangan'])->name('keuangan');
+
+
+Route::get('/admin', [Beranda::class, 'beranda'])->name('admin.beranda');
+
