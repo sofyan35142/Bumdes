@@ -82,7 +82,7 @@
                                                 <li><a href="{{ url('/blogdetail') }}">Blog Details</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ url('contact') }}">Contact</a></li>
+                                        <li><a href="{{ url('/contact') }}">Contact</a></li>
                                     </ul>
                                 </div>
                             </nav>

@@ -1,85 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from jobaway.pixcelsthemes.com/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:57 GMT -->
+<!-- Mirrored from jobaway.pixcelsthemes.com/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:51 GMT -->
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<title>Jobaway - HTML 5 Template Preview</title>
+    <title>Jobaway - HTML 5 Template Preview</title>
 
-<!-- Fav Icon -->
-<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- Fav Icon -->
+    <link rel="icon" href="http://127.0.0.1:8000/LandingPage/assets/images/favicon.ico" type="image/x-icon">
 
-<!-- Google Fonts -->
-<link href="../fonts.googleapis.com/css28c5c.css?family=Outfit:wght@100..900&amp;display=swap" rel="stylesheet">
-<link href="../fonts.googleapis.com/css2160f.css?family=Inter:wght@100..900&amp;family=Outfit:wght@100..900&amp;display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
 
-<!-- Stylesheets -->
-<link href="assets/css/font-awesome-all.css" rel="stylesheet">
-<link href="assets/css/flaticon.css" rel="stylesheet">
-<link href="assets/css/owl.css" rel="stylesheet">
-<link href="assets/css/bootstrap.css" rel="stylesheet">
-<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
-<link href="assets/css/animate.css" rel="stylesheet">
-<link href="assets/css/nice-select.css" rel="stylesheet">
-<link href="assets/css/odometer.css" rel="stylesheet">
-<link href="assets/css/elpath.css" rel="stylesheet">
-<link href="assets/css/color.css" id="jssDefault" rel="stylesheet">
-<link href="assets/css/rtl.css" rel="stylesheet">
-<link href="assets/css/style.css" rel="stylesheet">
-<link href="assets/css/module-css/header.css" rel="stylesheet">
-<link href="assets/css/module-css/page-title.css" rel="stylesheet">
-<link href="assets/css/module-css/contact.css" rel="stylesheet">
-<link href="assets/css/module-css/subscribe.css" rel="stylesheet">
-<link href="assets/css/module-css/footer.css" rel="stylesheet">
-<link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/font-awesome-all.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/flaticon.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/owl.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/animate.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/nice-select.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/odometer.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/elpath.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/color.css" id="jssDefault" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/rtl.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/style.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/header.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/page-title.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/faq.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/download.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/subscribe.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/footer.css" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/LandingPage/assets/css/responsive.css" rel="stylesheet">
 
 </head>
 
 
 <!-- page wrapper -->
+
 <body>
 
     <div class="boxed_wrapper ltr">
 
 
         <!-- preloader -->
-        <div class="loader-wrap">
-            <div class="preloader">
-                <div class="preloader-close"><i class="icon-27"></i></div>
-                <div id="handle-preloader" class="handle-preloader">
-                    <div class="animation-preloader">
-                        <div class="spinner"></div>
-                        <div class="txt-loading">
-                            <span data-text-preloader="j" class="letters-loading">
-                                j
-                            </span>
-                            <span data-text-preloader="o" class="letters-loading">
-                                o
-                            </span>
-                            <span data-text-preloader="b" class="letters-loading">
-                                b
-                            </span>
-                            <span data-text-preloader="a" class="letters-loading">
-                                a
-                            </span>
-                            <span data-text-preloader="w" class="letters-loading">
-                                w
-                            </span>
-                            <span data-text-preloader="a" class="letters-loading">
-                                a
-                            </span>
-                            <span data-text-preloader="y" class="letters-loading">
-                                y
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('Landingpage.layout.preloader')
         <!-- preloader end -->
 
 
@@ -95,7 +66,9 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
+                    <figure class="logo-box"><a href="index.html"><img
+                                src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png" alt=""></a>
+                    </figure>
                     <div class="close-search"><span class="icon-27"></span></div>
                 </div>
                 <div class="overlay-layer"></div>
@@ -104,7 +77,8 @@
                         <form method="post" action="https://jobaway.pixcelsthemes.com/index.html">
                             <div class="form-group">
                                 <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value="" placeholder="Type your keyword and hit" required >
+                                    <input type="search" class="form-control" name="search-input" value=""
+                                        placeholder="Type your keyword and hit" required>
                                     <button type="submit"><i class="icon-1"></i></button>
                                 </fieldset>
                             </div>
@@ -116,146 +90,7 @@
 
 
         <!-- main header -->
-        <header class="main-header header-style-three">
-            <!-- header-top -->
-            <div class="header-top">
-                <div class="auto-container">
-                    <div class="top-inner">
-                        <ul class="info">
-                            <li>
-                                <img src="assets/images/icons/icon-6.png" alt="">
-                                Call: <a href="tel:912345432">+91 (234) 5432</a>
-                            </li>
-                            <li>
-                                <img src="assets/images/icons/icon-7.png" alt="">
-                                Mail: <a href="mailto:jobinfo@example.com">jobinfo@example.com</a>
-                            </li>
-                        </ul>
-                        <div class="right-column">
-                            <div class="language-picker js-language-picker mr_30" data-trigger-class="btn btn--subtle">
-                                <form action="https://jobaway.pixcelsthemes.com/index-2.html" class="language-picker__form">
-                                    <label for="language-picker-select">Select your language</label>
-                                    <select name="language-picker-select" id="language-picker-select">
-                                        <option lang="de" value="deutsch">DE</option>
-                                        <option lang="en" value="english" selected>EN</option>
-                                        <option lang="fr" value="francais">FR</option>
-                                        <option lang="it" value="italiano">IT</option>
-                                    </select>
-                                </form>
-                            </div>
-                            <ul class="social-links">
-                                <li><span>Share:</span></li>
-                                <li><a href="index-2.html"><i class="icon-22"></i></a></li>
-                                <li><a href="index-2.html"><i class="icon-23"></i></a></li>
-                                <li><a href="index-2.html"><i class="icon-24"></i></a></li>
-                                <li><a href="index-2.html"><i class="icon-25"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- header-lower -->
-            <div class="header-lower">
-                <div class="auto-container">
-                    <div class="outer-box">
-                        <figure class="logo-box"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
-                        <div class="menu-area">
-                            <!--Mobile Navigation Toggler-->
-                            <div class="mobile-nav-toggler">
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                            </div>
-                            <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        <li class="dropdown"><a href="index.html">Home</a>
-                                            <ul>
-                                                <li><a href="index.html">Home One</a></li>
-                                                <li><a href="index-2.html">Home Two</a></li>
-                                                <li><a href="index-3.html">Home Three</a></li>
-                                                <li><a href="index-4.html">Home Four</a></li>
-                                                <li><a href="index-5.html">Home Five</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li class="dropdown"><a href="index.html">Solutions</a>
-                                            <ul>
-                                                <li><a href="service.html">Our Solutions</a></li>
-                                                <li><a href="service-details.html">Executive Search</a></li>
-                                                <li><a href="service-details-2.html">Training Session</a></li>
-                                                <li><a href="service-details-3.html">Career Growth</a></li>
-                                                <li><a href="service-details-4.html">Payroll Services</a></li>
-                                                <li><a href="service-details-5.html">Workforce System</a></li>
-                                                <li><a href="service-details-6.html">Temporary Jobs</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="index.html">Pages</a>
-                                            <ul>
-                                                <li class="dropdown"><a href="index.html">Job</a>
-                                                    <ul>
-                                                        <li><a href="job.html">Place Job</a></li>
-                                                        <li><a href="job-2.html">Job Seekers</a></li>
-                                                        <li><a href="job-3.html">Job Openings</a></li>
-                                                        <li><a href="job-4.html">Job Apply</a></li>
-                                                        <li><a href="job-details.html">Job Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown"><a href="index.html">Portfolio</a>
-                                                    <ul>
-                                                        <li><a href="portfolio.html">Portfolio 3 column</a></li>
-                                                        <li><a href="portfolio-2.html">Portfolio 2 column</a></li>
-                                                        <li><a href="portfolio-3.html">Portfolio Masonry</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="team.html">Our Team</a></li>
-                                                <li><a href="faq.html">FAQ's</a></li>
-                                                <li><a href="testimonial.html">Testimonials</a></li>
-                                                <li><a href="login.html">Login</a></li>
-                                                <li><a href="signup.html">Sing Up</a></li>
-                                                <li><a href="error.html">404</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="index.html">Blog</a>
-                                            <ul>
-                                                <li><a href="blog.html">Blog Grid</a></li>
-                                                <li><a href="blog-2.html">Blog Standard</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="current"><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="menu-right-content">
-                            <div class="search-btn mr_20"><button class="search-toggler"><i class="icon-1"></i></button></div>
-                            <div class="link-box mr_20"><a href="login.html">Log In</a></div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-one">Get Started</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--sticky Header-->
-            <div class="sticky-header">
-                <div class="outer-container">
-                    <div class="outer-box">
-                        <figure class="logo-box"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
-                        <div class="menu-area">
-                            <nav class="main-menu clearfix">
-                                <!--Keep This Empty / Menu will come through Javascript-->
-                            </nav>
-                        </div>
-                        <div class="menu-right-content">
-                            <div class="search-btn mr_20"><button class="search-toggler"><i class="icon-1"></i></button></div>
-                            <div class="link-box mr_20"><a href="login.html">Log In</a></div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-one">Get Started</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        @include('Landingpage.layout.header')
         <!-- main-header end -->
 
 
@@ -264,8 +99,12 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="assets/images/logo-2.png" alt="" title=""></a></div>
-                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                <div class="nav-logo"><a href="index.html"><img
+                            src="http://127.0.0.1:8000/LandingPage/assets/images/logo-2.png" alt=""
+                            title=""></a></div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
                     <ul>
@@ -292,11 +131,13 @@
         <section class="page-title centred pt_110">
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>Contact us</h1>
+                    <h1>Dasar Hukum BUMDes</h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Beranda</a></li>
                         <li>-</li>
-                        <li>Contact us</li>
+                        <li>Profil</li>
+                        <li>-</li>
+                        <li>Dasar Hukum</li>
                     </ul>
                 </div>
             </div>
@@ -304,216 +145,119 @@
         <!-- page-title end -->
 
 
-        <!-- contact-section -->
-        <section class="contact-section pt_110 pb_30">
+        <!-- testimonial-page-section -->
+        <section class="testimonial-page-section pt_110 pb_120">
             <div class="auto-container">
-                <div class="inner-container">
-                    <div class="row clearfix">
-                        <div class="col-lg-4 col-md-12 col-sm-12 info-column">
-                            <div class="info-box">
-                                <h3>Contact Information</h3>
-                                <div class="single-item">
-                                    <div class="icon-box"><img src="assets/images/icons/icon-27.png" alt=""></div>
-                                    <h4>Corporate Office</h4>
-                                    <p>0233 Brisbane Cir. Shiloh, Australia 81063</p>
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content_block_three">
+                            <div class="content-box">
+                                <div class="sec-title pb_30 sec-title-animation animation-style2">
+                                    <span class="sub-title mb_10 title-animation">Regulasi & Perundang-undangan</span>
+                                    <h2 class="title-animation">Dasar Hukum Pembentukan BUMDes</h2>
                                 </div>
-                                <div class="single-item">
-                                    <div class="icon-box"><img src="assets/images/icons/icon-27.png" alt=""></div>
-                                    <h4>Main Warehouse</h4>
-                                    <p>10445 Brisbane Cir. Shiloh, Australia 81063</p>
-                                </div>
-                                <div class="single-item">
-                                    <div class="icon-box"><img src="assets/images/icons/icon-28.png" alt=""></div>
-                                    <h4>Email Address</h4>
-                                    <p><a href="mailto:support@example.com">support@example.com</a><br /><a href="mailto:contact@example.com">contact@example.com</a></p>
-                                </div>
-                                <div class="single-item">
-                                    <div class="icon-box"><img src="assets/images/icons/icon-29.png" alt=""></div>
-                                    <h4>Phone Number</h4>
-                                    <p><a href="tel:2085440141">+(208) 544 -0141</a><br /><a href="tel:2085440142">+(208) 544 -0142</a></p>
-                                </div>
+                                <ul class="accordion-box">
+                                    <li class="accordion block active-block">
+                                        <div class="acc-btn active">
+                                            <div class="icon-box"><i class="icon-21"></i></div>
+                                            <h4>Undang-Undang Nomor 6 Tahun 2014 tentang Desa</h4>
+                                        </div>
+                                        <div class="acc-content current">
+                                            <div class="content">
+                                                <p>UU ini mengatur tentang pemerintahan desa dan memberikan dasar hukum
+                                                    pembentukan dan pengelolaan BUMDes sebagai lembaga ekonomi desa.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-box"><i class="icon-21"></i></div>
+                                            <h4>Peraturan Pemerintah Nomor 11 Tahun 2021</h4>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <p>PP ini merupakan turunan dari UU Desa yang memperjelas peran dan
+                                                    kewenangan BUMDes dalam pembangunan dan pemberdayaan masyarakat
+                                                    desa.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-box"><i class="icon-21"></i></div>
+                                            <h4>Permendesa PDTT Nomor 3 Tahun 2021</h4>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <p>Mengatur prosedur pendirian, pengelolaan, dan pengembangan BUMDes
+                                                    termasuk pelaporan keuangan dan pengawasan.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-box"><i class="icon-21"></i></div>
+                                            <h4>Peraturan Menteri Dalam Negeri Nomor 1 Tahun 2017</h4>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <p>Memberikan petunjuk teknis mengenai tata cara pengelolaan aset desa
+                                                    yang dapat digunakan BUMDes dalam operasionalnya.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image-box ml_70">
+                            <figure class="image image-hov-one"><img
+                                    src="http://127.0.0.1:8000/LandingPage/assets/images/resource/faq-1.jpg"
+                                    alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonial-page-section end -->
+
+
+        <!-- download-section -->
+        <section class="download-section alternat-3 pb_120">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-20.png);"></div>
+                    <div class="row align-items-center">
                         <div class="col-lg-8 col-md-12 col-sm-12 content-column">
-                            <div class="form-inner">
-                                <form method="post" action="https://jobaway.pixcelsthemes.com/sendemail.php" id="contact-form">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label>Name <span>*</span></label>
-                                            <input type="text" name="username" placeholder="" required>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label>Phone <span>*</span></label>
-                                            <input type="text" name="phone" placeholder="" required>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                            <label>Email Address <span>*</span></label>
-                                            <input type="email" name="email" placeholder="" required>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                            <label>Subject <span>*</span></label>
-                                            <input type="text" name="subject" placeholder="" required>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                            <label>Write Message <span>*</span></label>
-                                            <textarea name="message" placeholder=""></textarea>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                            <button type="submit" class="theme-btn btn-one" name="submit-form">Send Message</button>
-                                        </div>
-                                    </div>
-                                </form>
+                            <div class="content-box">
+                                <h2>Panduan Regulasi <span>Pendirian BUMDes</span></h2>
+                                <ul class="list-item mb_30">
+                                    <li>Rangkuman dasar hukum BUMDes dalam satu dokumen praktis.</li>
+                                    <li>Dilengkapi dengan contoh Perdes, AD/ART, dan struktur organisasi.</li>
+                                    <li>Cocok untuk perangkat desa, BPD, maupun masyarakat umum.</li>
+                                </ul>
+                                <button type="button" class="theme-btn btn-one">Unduh Panduan</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12 image-column">
+                            <div class="image-box">
+                                <figure class="image"><img
+                                        src="http://127.0.0.1:8000/LandingPage/assets/images/resource/book-2.png"
+                                        alt="">
+                                </figure>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- contact-section end -->
+        <!-- download-section end -->
 
-
-        <!-- google-map -->
-        <section class="google-map pb_80">
-            <div class="auto-container">
-                <div class="inner-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55945.16225505631!2d-73.90847969206546!3d40.66490264739892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1601263396347!5m2!1sen!2sbd" width="100%" height="500" frameborder="0" style="border:0; width: 100%" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-            </div>
-        </section>
-        <!-- google-map end -->
-
-
-        <!-- subscribe-style-two -->
-        <section class="subscribe-style-two">
-            <div class="bg-color"></div>
-            <div class="auto-container">
-                <div class="inner-container">
-                    <div class="shape-box">
-                        <div class="shape-1" style="background-image: url(assets/images/shape/shape-8.png);"></div>
-                        <div class="shape-2" style="background-image: url(assets/images/shape/shape-9.png);"></div>
-                    </div>
-                    <div class="text-box">
-                        <h2>Subscribe for <span>latest update</span></h2>
-                    </div>
-                    <div class="form-inner">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/contact.html">
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Email Address" required>
-                                <button type="submit" class="theme-btn btn-one">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- subscribe-style-two end -->
 
 
         <!-- main-footer -->
-        <footer class="main-footer home-2">
-            <div class="widget-section p_relative pt_80 pb_100">
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget logo-widget mr_30">
-                                <figure class="footer-logo mb_20"><a href="index.html"><img src="assets/images/logo.png" alt=""></a></figure>
-                                <p>Since 2018, JobAway has connecting hospitality workers to thousands of business, private events and universities.</p>
-                                <div class="download-btn">
-                                    <a href="about.html" class="apple-store">
-                                        <img src="assets/images/icons/icon-4.png" alt="">
-                                        <span>Download on</span>
-                                        App Store
-                                    </a>
-                                    <a href="about.html" class="play-store">
-                                        <img src="assets/images/icons/icon-5.png" alt="">
-                                        <span>Get it on</span>
-                                        Google Play
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>For Workers</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="index.html">Find Work</a></li>
-                                        <li><a href="index.html">Jobs in Dubai</a></li>
-                                        <li><a href="index.html">Jobs in Virginia</a></li>
-                                        <li><a href="index.html">Jobs in California</a></li>
-                                        <li><a href="index.html">Jobs in Alaska</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>For Business</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="index.html">Merchandising</a></li>
-                                        <li><a href="index.html">Hospitality Staff</a></li>
-                                        <li><a href="index.html">General Labour</a></li>
-                                        <li><a href="index.html">Car Drivers</a></li>
-                                        <li><a href="index.html">Bus Driver</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>Company</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="index.html">Career</a></li>
-                                        <li><a href="index.html">Partners</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="index.html">Clients</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>Help & Support</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="faq.html">General FAQ</a></li>
-                                        <li><a href="index.html">Support Center</a></li>
-                                        <li><a href="index.html">Privacy Policy</a></li>
-                                        <li><a href="index.html">Terms & Conditions</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="auto-container">
-                    <div class="bottom-inner">
-                        <div class="copyright"><p>Copyright &copy; 2024 <a href="index.html">JobAway</a> All rights reserved.</p></div>
-                        <ul class="social-links">
-                            <li><h5>Follow Us On:</h5></li>
-                            <li><a href="index.html"><i class="icon-22"></i></a></li>
-                            <li><a href="index.html"><i class="icon-23"></i></a></li>
-                            <li><a href="index.html"><i class="icon-24"></i></a></li>
-                            <li><a href="index.html"><i class="icon-25"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @include('Landingpage.layout.footer')
         <!-- main-footer end -->
 
 
@@ -529,31 +273,32 @@
 
 
     <!-- jequery plugins -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/validation.js"></script>
-    <script src="assets/js/jquery.fancybox.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/parallax-scroll.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/scrolltop.min.js"></script>
-    <script src="assets/js/gsap.js"></script>
-    <script src="assets/js/ScrollTrigger.js"></script>
-    <script src="assets/js/SplitText.js"></script>
-    <script src="assets/js/language.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/lenis.min.js"></script>
-    <script src="assets/js/odometer.js"></script>
-    <script src="assets/js/jquery.lettering.min.js"></script>
-    <script src="assets/js/jquery.circleType.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/bootstrap.min.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/owl.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/wow.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/validation.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.fancybox.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/appear.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/isotope.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/parallax-scroll.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.nice-select.min.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/scrolltop.min.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/gsap.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/ScrollTrigger.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/SplitText.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/language.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery-ui.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/lenis.min.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/odometer.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.lettering.min.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.circleType.js"></script>
 
     <!-- main-js -->
-    <script src="assets/js/script.js"></script>
+    <script src="http://127.0.0.1:8000/LandingPage/assets/js/script.js"></script>
 
 </body><!-- End of .page_wrapper -->
 
-<!-- Mirrored from jobaway.pixcelsthemes.com/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:58 GMT -->
+<!-- Mirrored from jobaway.pixcelsthemes.com/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:51 GMT -->
+
 </html>

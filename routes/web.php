@@ -26,6 +26,8 @@ Route::get('/contact', [Contact::class, 'contact'])->name('contact');
 
 
 
+Route::get('/galeri', [pages::class, 'galeri'])->name('galeri');
+Route::get('/lowongan', [pages::class, 'lowongan'])->name('lowongan');
 Route::get('/pages/galeri', [pages::class, 'galeri'])->name('galeri');
 Route::get('/pages/lowongan', [pages::class, 'lowongan'])->name('lowongan');
 Route::get('/pages/keuangan', [pages::class, 'keuangan'])->name('keuangan');

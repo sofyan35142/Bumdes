@@ -40,7 +40,7 @@
             <div class="auto-container">
                 <div class="sec-title pb_60 sec-title-animation animation-style2">
                     <span class="sub-title mb_10 title-animation">Struktur Organisasi</span>
-                    <h2 class="title-animation">BUMDes Dusun Janti</h2>
+                    <h2 class="title-animation">BUMDes Desa Pakukerto</h2>
                 </div>
                 <div class="row clearfix">
                     <!-- Anggota Struktur -->
@@ -148,7 +148,7 @@
             <div class="auto-container">
                 <div class="content-box">
                     <div class="sec-title pb_20 sec-title-animation animation-style2">
-                        <span class="sub-title mb_10 title-animation">BUMDes Dusun Janti</span>
+                        <span class="sub-title mb_10 title-animation">BUMDes Desa Pakukerto</span>
                         <h2 class="title-animation">Bersama Membangun Desa, Bersama BUMDes</h2>
                     </div>
                     <div class="text-box">
