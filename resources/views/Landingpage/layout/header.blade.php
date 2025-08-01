@@ -70,12 +70,9 @@
                                                         </li>
                                                     </ul>
                                                 </li> --}}
-                                                <li><a href="{{ url('/galeri') }}">Galeri Foto & Video</a></li>
-                                                <li><a href="{{ url('/lowongan') }}">Lowongan Pekerjaan</a></li>
-                                                {{-- <li><a href="{{ url('testimonial') }}">Testimonials</a></li> --}}
-                                                <li><a href="{{ url('login') }}">Laporan Keuangan</a></li>
-                                                {{-- <li><a href="{{ url('signup') }}">Sign Up</a></li> --}}
-                                                {{-- <li><a href="{{ url('error') }}">404</a></li> --}}
+                                                <li><a href="{{ url('/pages/galeri') }}">Galeri Foto & Video</a></li>
+                                                <li><a href="{{ url('/pages/lowongan') }}">Lowongan Pekerjaan</a></li>
+                                                <li><a href="{{ url('/pages/keuangan') }}">Laporan Keuangan</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown"><a href="#">Blog</a>

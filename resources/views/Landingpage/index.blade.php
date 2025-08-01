@@ -295,7 +295,7 @@
         <section class="about-style-four pt_120 pb_120">
             <div class="auto-container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    {{-- <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image_block_two">
                             <div class="image-inner">
                                 <div class="image-box mr_15">
@@ -325,17 +325,58 @@
                                 </div>
                             </div>
                         </div>
+                    </div> --}}
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image"><img
+                                            src="{{ asset('LandingPage/assets/images/team/team-1.jpg') }}"
+                                            alt=""></figure>
+                                    <figure class="overlay-image"><img
+                                            src="{{ asset('LandingPage/assets/images/team/team-1.jpg') }}"
+                                            alt=""></figure>
+                                </div>
+                                <div class="lower-content">
+                                    <center>
+                                        <h3><a href="index.html">Yudi</a></h3>
+                                    </center>
+                                    <center><span class="designation">Direktur Bumdes</span></center>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                         <div class="content_block_five">
                             <div class="content-box">
                                 <div class="sec-title pb_40 sec-title-animation animation-style2">
-                                    <span class="sub-title mb_10 title-animation">About us</span>
-                                    <h2 class="title-animation">The most loved <span>Agency</span></h2>
-                                    <p class="title-animation">Voted the fastest solution to implement the easiest to
-                                        administer your employee & business.</p>
+                                    <span class="sub-title mb_10 title-animation">SAMBUTAN</span>
+                                    <h2 class="title-animation">Sambutan Direktur BumDes <span>Pakukerto</span></h2>
+                                    <p class="title-animation">Assalamu’alaikum warahmatullahi wabarakatuh.
+
+                                        Puji syukur kita panjatkan ke hadirat Allah SWT, karena atas limpahan rahmat dan
+                                        karunia-Nya, Badan Usaha Milik Desa (BUMDes) ini dapat terus tumbuh dan
+                                        berkembang dalam rangka meningkatkan kesejahteraan masyarakat desa.
+
+                                        BUMDes hadir sebagai wadah bagi masyarakat desa untuk mengelola potensi lokal
+                                        secara mandiri, profesional, dan berkelanjutan. Kami percaya bahwa kemandirian
+                                        ekonomi desa adalah pondasi utama menuju desa yang kuat dan berdaya saing.
+
+                                        Dengan dukungan dari pemerintah desa, masyarakat, serta seluruh mitra dan
+                                        stakeholder, kami berkomitmen untuk terus berinovasi, membuka lapangan kerja,
+                                        dan menciptakan peluang usaha baru yang bermanfaat langsung bagi warga desa.
+
+                                        Akhir kata, kami mengajak seluruh elemen masyarakat untuk bersama-sama mendukung
+                                        dan mengembangkan BUMDes demi tercapainya kemajuan dan kemandirian desa yang
+                                        kita cintai.
+
+                                        Wassalamu’alaikum warahmatullahi wabarakatuh.
+
+                                        [Nama Direktur]
+                                        Direktur BUMDes [Nama Desa]</p>
                                 </div>
-                                <div class="inner-box clearfix">
+                                {{-- <div class="inner-box clearfix">
                                     <div class="single-item">
                                         <div class="icon-box"><i class="icon-29"></i></div>
                                         <h4><a href="job-details.html">Easiest Admin</a></h4>
@@ -356,7 +397,7 @@
                                         <h4><a href="job-details.html">Best support</a></h4>
                                         <span>Winter 2023</span>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
