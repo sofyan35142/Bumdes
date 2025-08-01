@@ -90,119 +90,126 @@
                     <h2 class="title-animation">Keuangan BumDes</h2>
                 </div>
                 <div class="inner-container">
-                    <div class="job-block-one">
-                        <div class="upper-box">
-                        </div>
-                        <div class="inner-box">
-                            <div class="title-box">
-                                <div class="icon-box"><i class="icon-44"></i></div>
-                                <h3>Pendapatan Usaha Toko Desa</h3>
-                                {{-- <span>San Fransisco, California</span> --}}
-                            </div>
-                            <div class="salary-box">
-                                <h5>Total Pemasukan:</h5>
-                                <span>Rp12.500.000</span>
-                            </div>
-                            <div class="experience-box">
-                                <h5>Total Pengeluaran:</h5>
-                                <span>Rp4.500.000</span>
-                            </div>
-                            <div class="btn-box">
-                                <a href="job-details.html" class="theme-btn btn-one">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="job-block-one">
-                        <div class="upper-box">
-                        </div>
-                        <div class="inner-box">
-                            <div class="title-box">
-                                <div class="icon-box"><i class="icon-44"></i></div>
-                                <h3>Pendapatan Usaha Toko Desa</h3>
-                                {{-- <span>San Fransisco, California</span> --}}
-                            </div>
-                            <div class="salary-box">
-                                <h5>Total Pemasukan:</h5>
-                                <span>Rp12.500.000</span>
-                            </div>
-                            <div class="experience-box">
-                                <h5>Total Pengeluaran:</h5>
-                                <span>Rp4.500.000</span>
-                            </div>
-                            <div class="btn-box">
-                                <a href="job-details.html" class="theme-btn btn-one">View Details</a>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="job-block-one">
+                                <div class="upper-box"></div>
+                                <div class="inner-box">
+                                    <div class="title-box">
+                                        <div class="icon-box"><i class="icon-44"></i></div>
+                                        <h3>Pendapatan Usaha Toko Desa</h3>
+                                    </div>
+                                    <div class="salary-box">
+                                        <h5>Total Pemasukan:</h5>
+                                        <span>Rp12.500.000</span>
+                                    </div>
+                                    <div class="experience-box">
+                                        <h5>Total Pengeluaran:</h5>
+                                        <span>Rp4.500.000</span>
+                                    </div>
+                                    <div class="btn-box">
+                                        <a href="job-details.html" class="theme-btn btn-one">View Details</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="job-block-one">
-                        <div class="upper-box">
-                        </div>
-                        <div class="inner-box">
-                            <div class="title-box">
-                                <div class="icon-box"><i class="icon-44"></i></div>
-                                <h3>Pendapatan Usaha Toko Desa</h3>
-                                {{-- <span>San Fransisco, California</span> --}}
-                            </div>
-                            <div class="salary-box">
-                                <h5>Total Pemasukan:</h5>
-                                <span>Rp12.500.000</span>
-                            </div>
-                            <div class="experience-box">
-                                <h5>Total Pengeluaran:</h5>
-                                <span>Rp4.500.000</span>
-                            </div>
-                            <div class="btn-box">
-                                <a href="job-details.html" class="theme-btn btn-one">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="job-block-one">
-                        <div class="upper-box">
-                        </div>
-                        <div class="inner-box">
-                            <div class="title-box">
-                                <div class="icon-box"><i class="icon-44"></i></div>
-                                <h3>Pendapatan Usaha Toko Desa</h3>
-                                {{-- <span>San Fransisco, California</span> --}}
-                            </div>
-                            <div class="salary-box">
-                                <h5>Total Pemasukan:</h5>
-                                <span>Rp12.500.000</span>
-                            </div>
-                            <div class="experience-box">
-                                <h5>Total Pengeluaran:</h5>
-                                <span>Rp4.500.000</span>
-                            </div>
-                            <div class="btn-box">
-                                <a href="job-details.html" class="theme-btn btn-one">View Details</a>
+
+                        <div class="col-6">
+                            <div class="job-block-one">
+                                <div class="upper-box"></div>
+                                <div class="inner-box">
+                                    <div class="title-box">
+                                        <div class="icon-box"><i class="icon-44"></i></div>
+                                        <h3>Pendapatan Usaha Toko Desa</h3>
+                                    </div>
+                                    <div class="salary-box">
+                                        <h5>Total Pemasukan:</h5>
+                                        <span>Rp12.500.000</span>
+                                    </div>
+                                    <div class="experience-box">
+                                        <h5>Total Pengeluaran:</h5>
+                                        <span>Rp4.500.000</span>
+                                    </div>
+                                    <div class="btn-box">
+                                        <a href="job-details.html" class="theme-btn btn-one">View Details</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="job-block-one">
-                        <div class="upper-box">
+
+                        <div class="col-6">
+                            <div class="job-block-one">
+                                <div class="upper-box"></div>
+                                <div class="inner-box">
+                                    <div class="title-box">
+                                        <div class="icon-box"><i class="icon-44"></i></div>
+                                        <h3>Pendapatan Usaha Toko Desa</h3>
+                                    </div>
+                                    <div class="salary-box">
+                                        <h5>Total Pemasukan:</h5>
+                                        <span>Rp12.500.000</span>
+                                    </div>
+                                    <div class="experience-box">
+                                        <h5>Total Pengeluaran:</h5>
+                                        <span>Rp4.500.000</span>
+                                    </div>
+                                    <div class="btn-box">
+                                        <a href="job-details.html" class="theme-btn btn-one">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="inner-box">
-                            <div class="title-box">
-                                <div class="icon-box"><i class="icon-44"></i></div>
-                                <h3>Pendapatan Usaha Toko Desa</h3>
-                                {{-- <span>San Fransisco, California</span> --}}
-                            </div>
-                            <div class="salary-box">
-                                <h5>Total Pemasukan:</h5>
-                                <span>Rp12.500.000</span>
-                            </div>
-                            <div class="experience-box">
-                                <h5>Total Pengeluaran:</h5>
-                                <span>Rp4.500.000</span>
-                            </div>
-                            <div class="btn-box">
-                                <a href="job-details.html" class="theme-btn btn-one">View Details</a>
+
+                        <div class="col-6">
+                            <div class="job-block-one">
+                                <div class="upper-box"></div>
+                                <div class="inner-box">
+                                    <div class="title-box">
+                                        <div class="icon-box"><i class="icon-44"></i></div>
+                                        <h3>Pendapatan Usaha Toko Desa</h3>
+                                    </div>
+                                    <div class="salary-box">
+                                        <h5>Total Pemasukan:</h5>
+                                        <span>Rp12.500.000</span>
+                                    </div>
+                                    <div class="experience-box">
+                                        <h5>Total Pengeluaran:</h5>
+                                        <span>Rp4.500.000</span>
+                                    </div>
+                                    <div class="btn-box">
+                                        <a href="job-details.html" class="theme-btn btn-one">View Details</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+
+                        <div class="col-6">
+                            <div class="job-block-one">
+                                <div class="upper-box"></div>
+                                <div class="inner-box">
+                                    <div class="title-box">
+                                        <div class="icon-box"><i class="icon-44"></i></div>
+                                        <h3>Pendapatan Usaha Toko Desa</h3>
+                                    </div>
+                                    <div class="salary-box">
+                                        <h5>Total Pemasukan:</h5>
+                                        <span>Rp12.500.000</span>
+                                    </div>
+                                    <div class="experience-box">
+                                        <h5>Total Pengeluaran:</h5>
+                                        <span>Rp4.500.000</span>
+                                    </div>
+                                    <div class="btn-box">
+                                        <a href="job-details.html" class="theme-btn btn-one">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End .row -->
+                </div> <!-- End .inner-container -->
             </div>
         </section>
+
         <!-- job-section end -->
 
 
