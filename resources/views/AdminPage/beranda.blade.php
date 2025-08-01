@@ -124,8 +124,8 @@
                                     <div class="float-end">
                                         <div class="dropdown">
                                             <a class="dropdown-toggle text-reset" href="#"
-                                                id="dropdownMenuButton5" data-bs-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
+                                                id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
                                                 <span class="fw-semibold">Sort By:</span> <span
                                                     class="text-muted">Yearly<i
                                                         class="mdi mdi-chevron-down ms-1"></i></span>
@@ -937,22 +937,21 @@
                     <label class="form-check-label" for="sidebar-color-dark">Dark</label>
                 </div>
                 <div class="form-check sidebar-setting">
-                    <input class="form-check-input" type="radio" name="sidebar-color"
-                        id="sidebar-color-colored" value="colored"
-                        onchange="document.body.setAttribute('data-sidebar', 'colored')">
+                    <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-colored"
+                        value="colored" onchange="document.body.setAttribute('data-sidebar', 'colored')">
                     <label class="form-check-label" for="sidebar-color-colored">Colored</label>
                 </div>
 
                 <h6 class="mt-4 mb-3 pt-2">Direction</h6>
 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-direction"
-                        id="layout-direction-ltr" value="ltr">
+                    <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-ltr"
+                        value="ltr">
                     <label class="form-check-label" for="layout-direction-ltr">LTR</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-direction"
-                        id="layout-direction-rtl" value="rtl">
+                    <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-rtl"
+                        value="rtl">
                     <label class="form-check-label" for="layout-direction-rtl">RTL</label>
                 </div>
 

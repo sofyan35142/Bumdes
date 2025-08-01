@@ -34,5 +34,5 @@ Route::get('/pages/lowongan', [pages::class, 'lowongan'])->name('lowongan');
 Route::get('/pages/keuangan', [pages::class, 'keuangan'])->name('keuangan');
 
 
-Route::get('/admin/ind', [Beranda::class, 'beranda'])->name('admin.beranda');
+Route::get('/admin', [Beranda::class, 'beranda'])->name('admin.beranda');
 
