@@ -9,6 +9,6 @@ class Beranda extends Controller
 {
     public function beranda()
     {
-        return view('Admin.beranda');
+        return view('AdminPage.beranda');
     }
 }
