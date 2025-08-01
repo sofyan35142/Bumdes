@@ -32,10 +32,10 @@
                                         <li><a href="{{ url('/') }}">Home</a></li>
                                         <li class="dropdown"><a href="{{ url('  ') }}">Profile</a>
                                             <ul>
-                                                <li><a href="{{ url('service') }}">Tentang BUMDes</a></li>
-                                                <li><a href="{{ url('service-details') }}">Visi & Misi</a></li>
-                                                <li><a href="{{ url('service-details-2') }}">Struktur Organisasi</a></li>
-                                                <li><a href="{{ url('service-details-3') }}">Dasar Hukum</a></li>
+                                                <li><a href="{{ url('/profile/tentangBumdes') }}">Tentang BUMDes</a></li>
+                                                <li><a href="{{ url('/profile/visimisi') }}">Visi & Misi</a></li>
+                                                <li><a href="{{ url('/profile/strukturorganisasi') }}">Struktur Organisasi</a></li>
+                                                <li><a href="{{ url('/profile/dasarhukum') }}">Dasar Hukum</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown"><a href="{{ url('  ') }}">Layanan Kami</a>
@@ -85,7 +85,7 @@
                                                 <li><a href="{{ url('/blogdetail') }}">Blog Details</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ url('contact') }}">Contact</a></li>
+                                        <li><a href="{{ url('/contact') }}">Contact</a></li>
                                     </ul>
                                 </div>
                             </nav>

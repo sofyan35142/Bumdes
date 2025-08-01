@@ -24,6 +24,7 @@
 <link href="{{ asset('LandingPage/assets/css/color.css') }}" id="jssDefault" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/rtl.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/style.css') }}" rel="stylesheet">
+<link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/page-title.css" rel="stylesheet">
 
 <!-- Module CSS -->
 <link href="{{ asset('LandingPage/assets/css/module-css/header.css') }}" rel="stylesheet">

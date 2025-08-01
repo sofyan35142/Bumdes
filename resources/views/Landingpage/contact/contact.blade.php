@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from jobaway.pixcelsthemes.com/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:57 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,10 +12,10 @@
     <link rel="icon" href="http://127.0.0.1:8000/LandingPage/assets/images/favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
-    <link href="../fonts.googleapis.com/css28c5c.css?family=Outfit:wght@100..900&amp;display=swap" rel="stylesheet">
-    <link
-        href="../fonts.googleapis.com/css2160f.css?family=Inter:wght@100..900&amp;family=Outfit:wght@100..900&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
+
 
     <!-- Stylesheets -->
     <link href="http://127.0.0.1:8000/LandingPage/assets/css/font-awesome-all.css" rel="stylesheet">
@@ -50,39 +48,7 @@
 
 
         <!-- preloader -->
-        <div class="loader-wrap">
-            <div class="preloader">
-                <div class="preloader-close"><i class="icon-27"></i></div>
-                <div id="handle-preloader" class="handle-preloader">
-                    <div class="animation-preloader">
-                        <div class="spinner"></div>
-                        <div class="txt-loading">
-                            <span data-text-preloader="j" class="letters-loading">
-                                j
-                            </span>
-                            <span data-text-preloader="o" class="letters-loading">
-                                o
-                            </span>
-                            <span data-text-preloader="b" class="letters-loading">
-                                b
-                            </span>
-                            <span data-text-preloader="a" class="letters-loading">
-                                a
-                            </span>
-                            <span data-text-preloader="w" class="letters-loading">
-                                w
-                            </span>
-                            <span data-text-preloader="a" class="letters-loading">
-                                a
-                            </span>
-                            <span data-text-preloader="y" class="letters-loading">
-                                y
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('Landingpage.layout.preloader')
         <!-- preloader end -->
 
 
@@ -98,7 +64,8 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png" alt=""></a>
+                    <figure class="logo-box"><a href="index.html"><img
+                                src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png" alt=""></a>
                     </figure>
                     <div class="close-search"><span class="icon-27"></span></div>
                 </div>
@@ -121,152 +88,7 @@
 
 
         <!-- main header -->
-        <header class="main-header header-style-three">
-            <!-- header-top -->
-            <div class="header-top">
-                <div class="auto-container">
-                    <div class="top-inner">
-                        <ul class="info">
-                            <li>
-                                <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-6.png" alt="">
-                                Call: <a href="tel:912345432">+91 (234) 5432</a>
-                            </li>
-                            <li>
-                                <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-7.png" alt="">
-                                Mail: <a href="mailto:jobinfo@example.com">jobinfo@example.com</a>
-                            </li>
-                        </ul>
-                        <div class="right-column">
-                            <div class="language-picker js-language-picker mr_30"
-                                data-trigger-class="btn btn--subtle">
-                                <form action="https://jobaway.pixcelsthemes.com/index-2.html"
-                                    class="language-picker__form">
-                                    <label for="language-picker-select">Select your language</label>
-                                    <select name="language-picker-select" id="language-picker-select">
-                                        <option lang="de" value="deutsch">DE</option>
-                                        <option lang="en" value="english" selected>EN</option>
-                                        <option lang="fr" value="francais">FR</option>
-                                        <option lang="it" value="italiano">IT</option>
-                                    </select>
-                                </form>
-                            </div>
-                            <ul class="social-links">
-                                <li><span>Share:</span></li>
-                                <li><a href="index-2.html"><i class="icon-22"></i></a></li>
-                                <li><a href="index-2.html"><i class="icon-23"></i></a></li>
-                                <li><a href="index-2.html"><i class="icon-24"></i></a></li>
-                                <li><a href="index-2.html"><i class="icon-25"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- header-lower -->
-            <div class="header-lower">
-                <div class="auto-container">
-                    <div class="outer-box">
-                        <figure class="logo-box"><a href="index.html"><img src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png"
-                                    alt=""></a></figure>
-                        <div class="menu-area">
-                            <!--Mobile Navigation Toggler-->
-                            <div class="mobile-nav-toggler">
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                            </div>
-                            <nav class="main-menu navbar-expand-md navbar-light clearfix">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        <li class="dropdown"><a href="index.html">Home</a>
-                                            <ul>
-                                                <li><a href="index.html">Home One</a></li>
-                                                <li><a href="index-2.html">Home Two</a></li>
-                                                <li><a href="index-3.html">Home Three</a></li>
-                                                <li><a href="index-4.html">Home Four</a></li>
-                                                <li><a href="index-5.html">Home Five</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li class="dropdown"><a href="index.html">Solutions</a>
-                                            <ul>
-                                                <li><a href="service.html">Our Solutions</a></li>
-                                                <li><a href="service-details.html">Executive Search</a></li>
-                                                <li><a href="service-details-2.html">Training Session</a></li>
-                                                <li><a href="service-details-3.html">Career Growth</a></li>
-                                                <li><a href="service-details-4.html">Payroll Services</a></li>
-                                                <li><a href="service-details-5.html">Workforce System</a></li>
-                                                <li><a href="service-details-6.html">Temporary Jobs</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="index.html">Pages</a>
-                                            <ul>
-                                                <li class="dropdown"><a href="index.html">Job</a>
-                                                    <ul>
-                                                        <li><a href="job.html">Place Job</a></li>
-                                                        <li><a href="job-2.html">Job Seekers</a></li>
-                                                        <li><a href="job-3.html">Job Openings</a></li>
-                                                        <li><a href="job-4.html">Job Apply</a></li>
-                                                        <li><a href="job-details.html">Job Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li class="dropdown"><a href="index.html">Portfolio</a>
-                                                    <ul>
-                                                        <li><a href="portfolio.html">Portfolio 3 column</a></li>
-                                                        <li><a href="portfolio-2.html">Portfolio 2 column</a></li>
-                                                        <li><a href="portfolio-3.html">Portfolio Masonry</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="team.html">Our Team</a></li>
-                                                <li><a href="faq.html">FAQ's</a></li>
-                                                <li><a href="testimonial.html">Testimonials</a></li>
-                                                <li><a href="login.html">Login</a></li>
-                                                <li><a href="signup.html">Sing Up</a></li>
-                                                <li><a href="error.html">404</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="index.html">Blog</a>
-                                            <ul>
-                                                <li><a href="blog.html">Blog Grid</a></li>
-                                                <li><a href="blog-2.html">Blog Standard</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="current"><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="menu-right-content">
-                            <div class="search-btn mr_20"><button class="search-toggler"><i
-                                        class="icon-1"></i></button></div>
-                            <div class="link-box mr_20"><a href="login.html">Log In</a></div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-one">Get Started</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--sticky Header-->
-            <div class="sticky-header">
-                <div class="outer-container">
-                    <div class="outer-box">
-                        <figure class="logo-box"><a href="index.html"><img src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png"
-                                    alt=""></a></figure>
-                        <div class="menu-area">
-                            <nav class="main-menu clearfix">
-                                <!--Keep This Empty / Menu will come through Javascript-->
-                            </nav>
-                        </div>
-                        <div class="menu-right-content">
-                            <div class="search-btn mr_20"><button class="search-toggler"><i
-                                        class="icon-1"></i></button></div>
-                            <div class="link-box mr_20"><a href="login.html">Log In</a></div>
-                            <div class="btn-box"><a href="index.html" class="theme-btn btn-one">Get Started</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        @include('Landingpage.layout.header')
         <!-- main-header end -->
 
 
@@ -275,10 +97,12 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="http://127.0.0.1:8000/LandingPage/assets/images/logo-2.png" alt=""
+                <div class="nav-logo"><a href="index.html"><img
+                            src="http://127.0.0.1:8000/LandingPage/assets/images/logo-2.png" alt=""
                             title=""></a></div>
                 <div class="menu-outer">
-                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
                     <ul>
@@ -326,19 +150,25 @@
                             <div class="info-box">
                                 <h3>Informasi Kontak</h3>
                                 <div class="single-item">
-                                    <div class="icon-box"><img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-27.png" alt="">
+                                    <div class="icon-box"><img
+                                            src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-27.png"
+                                            alt="">
                                     </div>
                                     <h4>Kantor BUMDes</h4>
                                     <p>Jl. Raya Dusun Janti, Desa Pakukerto, Kec. Sukodono, Kab. Sidoarjo</p>
                                 </div>
                                 <div class="single-item">
-                                    <div class="icon-box"><img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-28.png" alt="">
+                                    <div class="icon-box"><img
+                                            src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-28.png"
+                                            alt="">
                                     </div>
                                     <h4>Email</h4>
                                     <p><a href="mailto:bumdespakukerto@gmail.com">bumdespakukerto@gmail.com</a></p>
                                 </div>
                                 <div class="single-item">
-                                    <div class="icon-box"><img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-29.png" alt="">
+                                    <div class="icon-box"><img
+                                            src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-29.png"
+                                            alt="">
                                     </div>
                                     <h4>Nomor Telepon</h4>
                                     <p><a href="tel:+6281234567890">+62 812 3456 7890</a></p>
@@ -401,116 +231,7 @@
         <!-- google-map end -->
 
         <!-- main-footer -->
-        <footer class="main-footer home-2">
-            <div class="widget-section p_relative pt_80 pb_100">
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget logo-widget mr_30">
-                                <figure class="footer-logo mb_20"><a href="index.html"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png" alt=""></a></figure>
-                                <p>Since 2018, JobAway has connecting hospitality workers to thousands of business,
-                                    private events and universities.</p>
-                                <div class="download-btn">
-                                    <a href="about.html" class="apple-store">
-                                        <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-4.png" alt="">
-                                        <span>Download on</span>
-                                        App Store
-                                    </a>
-                                    <a href="about.html" class="play-store">
-                                        <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-5.png" alt="">
-                                        <span>Get it on</span>
-                                        Google Play
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>For Workers</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="index.html">Find Work</a></li>
-                                        <li><a href="index.html">Jobs in Dubai</a></li>
-                                        <li><a href="index.html">Jobs in Virginia</a></li>
-                                        <li><a href="index.html">Jobs in California</a></li>
-                                        <li><a href="index.html">Jobs in Alaska</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>For Business</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="index.html">Merchandising</a></li>
-                                        <li><a href="index.html">Hospitality Staff</a></li>
-                                        <li><a href="index.html">General Labour</a></li>
-                                        <li><a href="index.html">Car Drivers</a></li>
-                                        <li><a href="index.html">Bus Driver</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>Company</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="index.html">Career</a></li>
-                                        <li><a href="index.html">Partners</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="index.html">Clients</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>Help & Support</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="faq.html">General FAQ</a></li>
-                                        <li><a href="index.html">Support Center</a></li>
-                                        <li><a href="index.html">Privacy Policy</a></li>
-                                        <li><a href="index.html">Terms & Conditions</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="auto-container">
-                    <div class="bottom-inner">
-                        <div class="copyright">
-                            <p>Copyright &copy; 2024 <a href="index.html">JobAway</a> All rights reserved.</p>
-                        </div>
-                        <ul class="social-links">
-                            <li>
-                                <h5>Follow Us On:</h5>
-                            </li>
-                            <li><a href="index.html"><i class="icon-22"></i></a></li>
-                            <li><a href="index.html"><i class="icon-23"></i></a></li>
-                            <li><a href="index.html"><i class="icon-24"></i></a></li>
-                            <li><a href="index.html"><i class="icon-25"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @include('Landingpage.layout.footer')
         <!-- main-footer end -->
 
 
