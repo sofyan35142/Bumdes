@@ -32,10 +32,10 @@
                                         <li><a href="{{ url('/') }}">Home</a></li>
                                         <li class="dropdown"><a href="{{ url('  ') }}">Profile</a>
                                             <ul>
-                                                <li><a href="{{ url('service') }}">Tentang BUMDes</a></li>
-                                                <li><a href="{{ url('service-details') }}">Visi & Misi</a></li>
-                                                <li><a href="{{ url('service-details-2') }}">Struktur Organisasi</a></li>
-                                                <li><a href="{{ url('service-details-3') }}">Dasar Hukum</a></li>
+                                                <li><a href="{{ url('/profile/tentangBumdes') }}">Tentang BUMDes</a></li>
+                                                <li><a href="{{ url('/profile/visimisi') }}">Visi & Misi</a></li>
+                                                <li><a href="{{ url('/profile/strukturorganisasi') }}">Struktur Organisasi</a></li>
+                                                <li><a href="{{ url('/profile/dasarhukum') }}">Dasar Hukum</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown"><a href="{{ url('  ') }}">Layanan Kami</a>
@@ -70,12 +70,9 @@
                                                         </li>
                                                     </ul>
                                                 </li> --}}
-                                                <li><a href="{{ url('/galeri') }}">Galeri Foto & Video</a></li>
-                                                <li><a href="{{ url('/lowongan') }}">Lowongan Pekerjaan</a></li>
-                                                {{-- <li><a href="{{ url('testimonial') }}">Testimonials</a></li> --}}
-                                                <li><a href="{{ url('login') }}">Laporan Keuangan</a></li>
-                                                {{-- <li><a href="{{ url('signup') }}">Sign Up</a></li> --}}
-                                                {{-- <li><a href="{{ url('error') }}">404</a></li> --}}
+                                                <li><a href="{{ url('/pages/galeri') }}">Galeri Foto & Video</a></li>
+                                                <li><a href="{{ url('/pages/lowongan') }}">Lowongan Pekerjaan</a></li>
+                                                <li><a href="{{ url('/pages/keuangan') }}">Laporan Keuangan</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown"><a href="#">Blog</a>

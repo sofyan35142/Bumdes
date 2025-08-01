@@ -89,7 +89,7 @@
 
 
         <!-- page-title -->
-        <section class="page-title centred pt_110">
+        {{-- <section class="page-title centred pt_110">
             <div class="auto-container">
                 <div class="content-box">
                     <h1>Our Solutions</h1>
@@ -100,7 +100,7 @@
                     </ul>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- page-title end -->
 
 
@@ -108,8 +108,8 @@
         <section class="service-section centred pt_110 pb_90">
             <div class="auto-container">
                 <div class="sec-title pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">What We Provide</span>
-                    <h2 class="title-animation">Inspiring Staffing Solutions</h2>
+                    <span class="sub-title mb_10 title-animation">Seputar Lowongan</span>
+                    <h2 class="title-animation">Lowongan Pekerjaan BumDes</h2>
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-4 col-md-6 col-sm-12 service-block">

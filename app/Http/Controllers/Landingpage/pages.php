@@ -15,4 +15,8 @@ class pages extends Controller
     {
         return view('Landingpage.pages.lowongan');
     }
+    public function keuangan()
+    {
+        return view('Landingpage.pages.keuangan');
+    }
 }
