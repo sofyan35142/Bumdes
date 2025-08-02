@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Beranda;
 use App\Http\Controllers\Admin\VisiMisi;
+use App\Http\Controllers\Landingpage\Apdes;
 use App\Http\Controllers\Landingpage\Home;
 use App\Http\Controllers\Landingpage\Blog;
 use App\Http\Controllers\Landingpage\Profile;
@@ -48,6 +49,8 @@ Route::get('/pages/keuangan', [Pages::class, 'keuangan'])->name('pages.keuangan'
 // --- Kontak
 Route::get('/contact', [Contact::class, 'contact'])->name('contact');
 
+// --- Apdes
+Route::get('/apdes', [Apdes::class, 'apdes'])->name('apdes');
 
 
 // ==========================================================
