@@ -13,3 +13,5 @@
 <!-- App Css-->
 <link href="{{ asset('AdminPage/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 <link href="{{ asset('AdminPage/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+

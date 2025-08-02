@@ -36,3 +36,13 @@ Route::get('/pages/keuangan', [pages::class, 'keuangan'])->name('keuangan');
 
 Route::get('/admin', [Beranda::class, 'beranda'])->name('admin.beranda');
 
+//////////////////////////////SLIDERRRRRRRRRRRRRRR////////////////////////////////////////
+Route::get('/admin/slider', [Beranda::class, 'slider'])->name('admin.slider');
+Route::get('/admin/editslider/{id}', [Beranda::class, 'editslider']);
+Route::post('/admin/updateslider/{id}', [Beranda::class, 'updateslider'])->name('admin.updateslider');
+//////////////////////////////Sambutan DIrektur/////////////////////////////////////////
+Route::get('/admin/sambutan', [Beranda::class, 'sambutan'])->name('admin.sambutan');
+Route::get('/admin/editsambutan/{id}', [Beranda::class, 'editsambutan']);
+Route::post('/admin/updatesambutan/{id}', [Beranda::class, 'updatesambutan'])->name('admin.updatesambutan');
+
+
