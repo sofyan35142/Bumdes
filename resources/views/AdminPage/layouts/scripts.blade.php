@@ -13,3 +13,14 @@
 
     <!-- App js -->
     <script src="{{asset('AdminPage/assets/js/app.js')}}"></script>
+
+            <!-- ckeditor -->
+    <script src="{{ asset('AdminPage/assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js') }}"></script>
+
+        <!--tinymce js-->
+    <script src="{{ asset('AdminPage/assets/libs/tinymce/tinymce.min.js') }}"></script>
+
+        <!-- init js -->
+    <script src="{{ asset('AdminPage/assets/js/pages/form-editor.init.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" rel="stylesheet">
+

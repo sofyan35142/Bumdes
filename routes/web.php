@@ -37,6 +37,19 @@ Route::get('/pages/keuangan', [pages::class, 'keuangan'])->name('keuangan');
 
 Route::get('/admin', [Beranda::class, 'beranda'])->name('admin.beranda');
 
+<<<<<<< HEAD
 Route::get('/admin/visi-misi', [visiMisi::class, 'index'])->name('admin.visiMisi');
 Route::get('/admin/visi-misi/edit', [VisiMisi::class, 'edit'])->name('admin.visi_misi.edit');
 Route::put('/admin/visi-misi/update', [VisiMisi::class, 'edit'])->name('admin.visi_misi.update');
+=======
+//////////////////////////////SLIDERRRRRRRRRRRRRRR////////////////////////////////////////
+Route::get('/admin/slider', [Beranda::class, 'slider'])->name('admin.slider');
+Route::get('/admin/editslider/{id}', [Beranda::class, 'editslider']);
+Route::post('/admin/updateslider/{id}', [Beranda::class, 'updateslider'])->name('admin.updateslider');
+//////////////////////////////Sambutan DIrektur/////////////////////////////////////////
+Route::get('/admin/sambutan', [Beranda::class, 'sambutan'])->name('admin.sambutan');
+Route::get('/admin/editsambutan/{id}', [Beranda::class, 'editsambutan']);
+Route::post('/admin/updatesambutan/{id}', [Beranda::class, 'updatesambutan'])->name('admin.updatesambutan');
+
+
+>>>>>>> 09828339ac63708b7be75e014660edb70ca4c781
