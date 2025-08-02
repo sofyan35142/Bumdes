@@ -170,7 +170,6 @@
                 </div>
             </div>
         </section>
-        @include('Landingpage.layout.subscribe')
         @include('Landingpage.layout.footer')
         <div class="scroll-to-top">
             <svg class="scroll-top-inner" viewBox="-1 -1 102 102">

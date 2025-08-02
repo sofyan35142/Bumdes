@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Beranda;
+use App\Http\Controllers\Admin\visiMisi;
 use App\Http\Controllers\Landingpage\Blog;
 use App\Http\Controllers\Landingpage\home;
 use App\Http\Controllers\Landingpage\Profile;
@@ -36,3 +37,6 @@ Route::get('/pages/keuangan', [pages::class, 'keuangan'])->name('keuangan');
 
 Route::get('/admin', [Beranda::class, 'beranda'])->name('admin.beranda');
 
+Route::get('/admin/visi-misi', [visiMisi::class, 'index'])->name('admin.visiMisi');
+Route::get('/admin/visi-misi/edit', [VisiMisi::class, 'edit'])->name('admin.visi_misi.edit');
+Route::put('/admin/visi-misi/update', [VisiMisi::class, 'edit'])->name('admin.visi_misi.update');

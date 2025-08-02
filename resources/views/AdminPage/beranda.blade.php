@@ -8,7 +8,6 @@
 
 <body>
 
-    <!-- <body data-layout="horizontal" data-topbar="colored"> -->
 
     <!-- Begin page -->
     <div id="layout-wrapper">
