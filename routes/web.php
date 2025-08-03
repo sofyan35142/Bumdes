@@ -27,6 +27,7 @@ use App\Http\Controllers\Landingpage\Pages;
 
 // --- Beranda
 Route::get('/', [Home::class, 'home'])->name('home');
+Route::get('/detailunggulan', [Home::class, 'detailunggulan'])->name('home.detailunggulan');
 
 // --- Blog
 Route::get('/blog', [Blog::class, 'blog'])->name('blog');
@@ -67,7 +68,28 @@ Route::get('/admin/slider', [Beranda::class, 'slider'])->name('admin.slider');
 Route::get('/admin/editslider/{id}', [Beranda::class, 'editslider']);
 Route::post('/admin/updateslider/{id}', [Beranda::class, 'updateslider'])->name('admin.updateslider');
 
+// --- STATISTIK SINGKAT
+Route::get('/admin/statistik', [Beranda::class, 'statistik'])->name('admin.statistik');
+Route::get('/admin/editstatistik/{id}', [Beranda::class, 'editstatistik']);
+Route::post('/admin/updatestatistik/{id}', [Beranda::class, 'updatestatistik'])->name('admin.updatestatistik');
+
 // --- Sambutan Direktur
 Route::get('/admin/sambutan', [Beranda::class, 'sambutan'])->name('admin.sambutan');
 Route::get('/admin/editsambutan/{id}', [Beranda::class, 'editsambutan']);
 Route::post('/admin/updatesambutan/{id}', [Beranda::class, 'updatesambutan'])->name('admin.updatesambutan');
+
+// --- Layanan Unggulan
+Route::get('/admin/unggulan', [Beranda::class, 'unggulan'])->name('admin.unggulan');
+Route::get('/admin/tambahunggulan', [Beranda::class, 'tambahunggulan'])->name('admin.tambahunggulan');
+Route::post('/admin/insertunggulan', [Beranda::class, 'insertunggulan'])->name('admin.insertunggulan');
+Route::get('/admin/editunggulan/{id}', [Beranda::class, 'editunggulan']);
+Route::post('/admin/updateunggulan/{id}', [Beranda::class, 'updateunggulan'])->name('admin.updateunggulan');
+Route::get('/admin/hapusunggulan/{id}', [Beranda::class, 'hapusunggulan'])->name('admin.hapusunggulan');
+
+// --- Kegiatan BumDes
+Route::get('/admin/kegiatan', [Beranda::class, 'kegiatan'])->name('admin.kegiatan');
+Route::get('/admin/tambahkegiatan', [Beranda::class, 'tambahkegiatan'])->name('admin.tambahkegiatan');
+Route::post('/admin/insertkegiatan', [Beranda::class, 'insertkegiatan'])->name('admin.insertkegiatan');
+Route::get('/admin/editkegiatan/{id}', [Beranda::class, 'editkegiatan']);
+Route::post('/admin/updatekegiatan/{id}', [Beranda::class, 'updatekegiatan'])->name('admin.updatekegiatan');
+Route::get('/admin/hapuskegiatan/{id}', [Beranda::class, 'hapuskegiatan'])->name('admin.hapuskegiatan');

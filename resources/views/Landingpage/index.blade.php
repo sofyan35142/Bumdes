@@ -137,15 +137,12 @@
                     </div>
                     <div class="auto-container">
                         <div class="content-box">
-                            <span class="upper-text">Top Agency</span>
-                            <h2>Discover Your Next <span>Career Move</span> with JobAway</h2>
-                            <p>Implementing a robust employee referral program can be a creative and effective way to
-                                recruit at scale.</p>
+                            <span class="upper-text">Tentang BumDes</span>
+                            <h2>Bangun Masa Depan Desa Lebih Baik <span>Bersama BUMDes</span></h2>
+                            <p>Pemberdayaan ekonomi lokal dimulai dari desa. BUMDes hadir untuk mengelola potensi, membuka lapangan kerja, dan membangun kemandirian masyarakat secara berkelanjutan.</p>
                             <div class="btn-box">
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Hire Talents
-                                    Now</a>
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Find
-                                        Works</span></a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha Warga</span></a>
                             </div>
                         </div>
                     </div>
@@ -163,14 +160,11 @@
                     <div class="auto-container">
                         <div class="content-box">
                             <span class="upper-text">Top Agency</span>
-                            <h2>Discover Your Next <span>Career Move</span> with JobAway</h2>
-                            <p>Implementing a robust employee referral program can be a creative and effective way to
-                                recruit at scale.</p>
+                            <h2>Dukung Produk Lokal & UMKM Desa <span>Bersama BUMDes</span></h2>
+                            <p>BUMDes mendorong pertumbuhan ekonomi desa melalui pengembangan UMKM, pemasaran produk lokal, dan kolaborasi dengan masyarakat untuk meningkatkan kesejahteraan.</p>
                             <div class="btn-box">
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Hire Talents
-                                    Now</a>
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Find
-                                        Works</span></a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Produk Unggulan</a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Gabung Mitra UMKM</span></a>
                             </div>
                         </div>
                     </div>
@@ -188,14 +182,11 @@
                     <div class="auto-container">
                         <div class="content-box">
                             <span class="upper-text">Top Agency</span>
-                            <h2>Discover Your Next <span>Career Move</span> with JobAway</h2>
-                            <p>Implementing a robust employee referral program can be a creative and effective way to
-                                recruit at scale.</p>
+                            <h2>Wujudkan Desa Cerdas Melalui<span>Inovasi dan Kolaborasi</span></h2>
+                            <p>Dengan semangat kolaborasi dan digitalisasi, BUMDes menjadi jembatan inovasi dan solusi bagi masyarakat desa menuju masa depan yang mandiri dan modern.</p>
                             <div class="btn-box">
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Hire Talents
-                                    Now</a>
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Find
-                                        Works</span></a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Layanan Digital</a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span> Bangun Kemitraan</span></a>
                             </div>
                         </div>
                     </div>
@@ -430,8 +421,7 @@
                                     <h3><a href="{{ asset('index.html') }}">Mendukung UMKM Desa</a></h3>
                                     <p>Kami membantu pertumbuhan UMKM lokal melalui pelatihan dan dukungan akses
                                         pemasaran.</p>
-                                    <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
-                                                class="icon-7"></i></a>
+                                    <div class="link">
                                     </div>
                                 </div>
                             </div>
@@ -444,8 +434,7 @@
                                     <p>BUMDes beroperasi secara resmi dan sah berdasarkan landasan hukum yang kuat,
                                         serta berada di bawah pengawasan pemerintah desa.
                                     </p>
-                                    <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
-                                                class="icon-7"></i></a>
+                                    <div class="link">
                                     </div>
                                 </div>
                             </div>
@@ -457,8 +446,7 @@
                                     <h3><a href="{{ asset('index.html') }}">Memberdayakan Warga</a></h3>
                                     <p>Kami menyediakan pelatihan dan lapangan kerja untuk meningkatkan taraf hidup
                                         warga.</p>
-                                    <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
-                                                class="icon-7"></i></a>
+                                    <div class="link">
                                     </div>
                                 </div>
                             </div>
@@ -470,8 +458,7 @@
                                     <h3><a href="{{ asset('index.html') }}">Layanan Ramah & Terjangkau</a></h3>
                                     <p>Pelayanan kami mudah diakses dan dapat dinikmati oleh seluruh lapisan masyarakat
                                         desa.</p>
-                                    <div class="link"><a href="{{ asset('index.html') }}">Learn More<i
-                                                class="icon-7"></i></a>
+                                    <div class="link">
                                     </div>
                                 </div>
                             </div>
@@ -621,7 +608,7 @@
         <section class="service-section centred pt_120 pb_90">
             <div class="auto-container">
                 <div class="sec-title pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">What We Provide</span>
+                    <span class="sub-title mb_10 title-animation">Layanan BumDes Pakukerto</span>
                     <h2 class="title-animation">Layanan Unggulan Kami</h2>
                 </div>
                 <div class="row clearfix">
@@ -955,8 +942,8 @@
         <section class="team-section centred pt_120 pb_70">
             <div class="auto-container">
                 <div class="sec-title pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">Our Team</span>
-                    <h2 class="title-animation">Meet The Team</h2>
+                    <span class="sub-title mb_10 title-animation">BumDes Pakukerto</span>
+                    <h2 class="title-animation">Struktur Organisasi BUMDes</h2>
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-6 col-sm-12 team-block">

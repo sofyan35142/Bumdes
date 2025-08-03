@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
 
-
-<!-- Mirrored from themesbrand.com/minible/layouts/form-editors.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 07:29:51 GMT -->
 @include('AdminPage.layouts.head')
 
 
@@ -12,6 +10,7 @@
 
     <!-- Begin page -->
     <div id="layout-wrapper">
+
 
         @include('AdminPage.layouts.header')
         <!-- ========== Left Sidebar Start ========== -->
@@ -27,84 +26,96 @@
 
             <div class="page-content">
                 <div class="container-fluid">
-                    <form action="{{ route('admin.updatesambutan', $data->id) }}" method="POST"
-                        enctype="multipart/form-data">
-                        @csrf
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0">Editors</h4>
 
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                                            <li class="breadcrumb-item active">Editors</li>
-                                        </ol>
-                                    </div>
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-flex align-items-center justify-content-between">
+                                <h4 class="mb-0">Datatables</h4>
 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end page title -->
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="card">
-
-                                    <div class="card-body">
-                                        {{-- <h4 class="card-title">Ckeditor Classic editor</h4> --}}
-                                        <div class="mb-3 row">
-                                            <label for="blog-title-input" class="col-md-2 col-form-label">Nama
-                                                Direktur</label>
-                                            <div class="col-md-10">
-                                                <input class="form-control" type="text" id="blog-title-input"
-                                                    placeholder="Masukkan judul Kegiatan" name="Nama_Direktur"
-                                                    value="{{ $data->Nama_Direktur }}">
-                                            </div>
-                                        </div>
-                                        <h4 class="card-title">Sambutan</h4>
-                                        {{-- <p class="card-title-desc">Example of Ckeditor Classic editor</p> --}}
-                                        <textarea id="classic-editor" name="sambutan" class="form-control" rows="10">
-                                            {{ $data->sambutan }}
-                                        </textarea>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label for="foto-direktur-input" class="col-md-2 col-form-label">Foto
-                                            Direktur</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="file" id="foto-direktur-input"
-                                                accept="image/*" name="foto_direktur"
-                                                onchange="previewImage(this, 'preview-foto-direktur')">
-
-                                            {{-- Preview Gambar --}}
-                                            <div class="mt-3">
-                                                <p class="mb-2">Foto Saat Ini:</p>
-                                                <img id="preview-foto-direktur"
-                                                    src="{{ $data->foto_direktur ? asset('direktur/' . $data->foto_direktur) : 'https://via.placeholder.com/150x200?text=Belum+Ada+Foto' }}"
-                                                    alt="Foto Direktur" width="150" class="rounded shadow-sm border">
-                                            </div>
-
-                                            <div class="form-text mt-2">Unggah Foto Direktur</div>
-                                        </div>
-                                    </div>
-
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
+                                        <li class="breadcrumb-item active">Datatables</li>
+                                    </ol>
                                 </div>
 
                             </div>
-
-
-
                         </div>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        <!-- end row -->
-                    </form>
+                    </div>
+                    <!-- end page title -->
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">DATA STATISTIK SINGKAT BUMDES</h4>
+                                    {{-- <p class="card-title-desc">DataTables has most features enabled by
+                                        default, so all you need to do to use it with your own tables is to call
+                                        the construction function: <code>$().DataTable();</code>. --}}
+                                    </p>
+                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>NO</th>
+                                                <th>Warga Terlibat Aktif</th>
+                                                <th>Tingkat Kepuasan Mitra</th>
+                                                <th>Unit Usaha Aktif</th>
+                                                <th>Produk Usaha Terjual</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <?php $no = 1; ?>
+                                        @foreach ($statistik as $statistik)
+                                            <tr>
+                                                <td>{{ $no }}</td>
+                                                <td>{{ $statistik->Warga_aktif }}</td>
+                                                <td>{{ $statistik->Kepuasan_Mitra }}</td>
+                                                <td>{{ $statistik->Unit_Usaha }}</td>
+                                                <td>{{ $statistik->Produk_Desa }}</td>
+
+                                                <td>
+                                                    <a href="/admin/editstatistik/{{ $statistik->id }}"
+                                                        class="btn btn-warning"><i
+                                                            class="fa-solid fa-pen-to-square"></i></a>
+                                                    {{-- <a href="#" class="btn btn-danger delete" data-id="{{ $sambutan->id }}" data-sambutan="{{ $sambutan->nama }}"><i class="fa-solid fa-trash"></i></a> --}}
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                            <?php $no++; ?>
+                                        @endforeach
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
+
+
 
                 </div> <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
 
-            @include('AdminPage.layouts.footer')
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Minible.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Crafted with <i class="mdi mdi-heart text-danger"></i> by <a
+                                    href="https://themesbrand.com/" target="_blank" class="text-reset">Themesbrand</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
         <!-- end main content-->
 
@@ -237,31 +248,8 @@
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
-    <!-- JAVASCRIPT -->
     @include('AdminPage.layouts.scripts')
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#classic-editor'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-    <script>
-        function previewImage(input, previewId) {
-            const file = input.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById(previewId).src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-    </script>
-
 
 </body>
-
-<!-- Mirrored from themesbrand.com/minible/layouts/form-editors.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 07:29:52 GMT -->
 
 </html>

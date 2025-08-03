@@ -2,9 +2,9 @@
 <html lang="en">
 
 
-<!-- Mirrored from themesbrand.com/minible/layouts/form-editors.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 07:29:51 GMT -->
-@include('AdminPage.layouts.head')
+<!-- Mirrored from themesbrand.com/minible/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 07:29:48 GMT -->
 
+@include('AdminPage.layouts.head')
 
 <body>
 
@@ -13,11 +13,11 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
 
+
         @include('AdminPage.layouts.header')
         <!-- ========== Left Sidebar Start ========== -->
         @include('AdminPage.layouts.sidebar')
         <!-- Left Sidebar End -->
-
 
 
         <!-- ============================================================== -->
@@ -27,84 +27,105 @@
 
             <div class="page-content">
                 <div class="container-fluid">
-                    <form action="{{ route('admin.updatesambutan', $data->id) }}" method="POST"
-                        enctype="multipart/form-data">
-                        @csrf
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0">Editors</h4>
 
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-                                            <li class="breadcrumb-item active">Editors</li>
-                                        </ol>
-                                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-flex align-items-center justify-content-between">
+                                <h4 class="mb-0">Form Tambah Data Kegiatan</h4>
 
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Blog</a></li>
+                                        <li class="breadcrumb-item active">Tambah Data</li>
+                                    </ol>
                                 </div>
+
                             </div>
                         </div>
-                        <!-- end page title -->
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
 
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="card">
+                                    <h4 class="card-title">Input Data Kegiatan Baru</h4> <br>
+                                    {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
+                                        baru.</p> --}}
 
-                                    <div class="card-body">
-                                        {{-- <h4 class="card-title">Ckeditor Classic editor</h4> --}}
+                                    <form method="post" action="/admin/insertunggulan" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="mb-3 row">
                                             <label for="blog-title-input" class="col-md-2 col-form-label">Nama
-                                                Direktur</label>
+                                                Layanan</label>
                                             <div class="col-md-10">
                                                 <input class="form-control" type="text" id="blog-title-input"
-                                                    placeholder="Masukkan judul Kegiatan" name="Nama_Direktur"
-                                                    value="{{ $data->Nama_Direktur }}">
+                                                    placeholder="Masukkan judul Kegiatan" name="Nama_Layanan">
                                             </div>
                                         </div>
-                                        <h4 class="card-title">Sambutan</h4>
-                                        {{-- <p class="card-title-desc">Example of Ckeditor Classic editor</p> --}}
-                                        <textarea id="classic-editor" name="sambutan" class="form-control" rows="10">
-                                            {{ $data->sambutan }}
+
+                                        <h4 class="card-title">Deskripsi</h4>
+
+                                        <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">
                                         </textarea>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <label for="foto-direktur-input" class="col-md-2 col-form-label">Foto
-                                            Direktur</label>
-                                        <div class="col-md-10">
-                                            <input class="form-control" type="file" id="foto-direktur-input"
-                                                accept="image/*" name="foto_direktur"
-                                                onchange="previewImage(this, 'preview-foto-direktur')">
 
-                                            {{-- Preview Gambar --}}
-                                            <div class="mt-3">
-                                                <p class="mb-2">Foto Saat Ini:</p>
-                                                <img id="preview-foto-direktur"
-                                                    src="{{ $data->foto_direktur ? asset('direktur/' . $data->foto_direktur) : 'https://via.placeholder.com/150x200?text=Belum+Ada+Foto' }}"
-                                                    alt="Foto Direktur" width="150" class="rounded shadow-sm border">
+                                        <div class="mb-3 row">
+                                            <label for="blog-title-input"
+                                                class="col-md-2 col-form-label">Kategori</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" id="blog-title-input"
+                                                    placeholder="Masukkan judul Kegiatan" name="kategori">
                                             </div>
-
-                                            <div class="form-text mt-2">Unggah Foto Direktur</div>
                                         </div>
-                                    </div>
+                                        <div class="mb-3 row">
+                                            <label for="blog-image-input" class="col-md-2 col-form-label">Poster
+                                                Layanan</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="file" id="blog-image-input"
+                                                    accept="image/*" name="foto_layanan" onchange="previewImage(event)">
+                                                <div class="form-text">Unggah gambar poster Layanan</div>
+
+                                                <!-- Preview akan muncul di bawah input -->
+                                                <img id="image-preview" class="mt-2"
+                                                    style="max-height: 200px; display: none;">
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-wrap gap-3 mt-3">
+                                            <button type="submit"
+                                                class="btn btn-primary waves-effect waves-light w-md">Simpan
+                                                Blog</button>
+                                            <button type="reset"
+                                                class="btn btn-outline-secondary waves-effect waves-light w-md">Reset
+                                                Form</button>
+                                        </div>
+                                    </form>
 
                                 </div>
-
                             </div>
-
-
-
                         </div>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        <!-- end row -->
-                    </form>
-
-                </div> <!-- container-fluid -->
+                    </div>
+                </div>
             </div>
             <!-- End Page-content -->
 
-            @include('AdminPage.layouts.footer')
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Minible.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Crafted with <i class="mdi mdi-heart text-danger"></i> by <a
+                                    href="https://themesbrand.com/" target="_blank" class="text-reset">Themesbrand</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
         <!-- end main content-->
 
@@ -247,21 +268,23 @@
             });
     </script>
     <script>
-        function previewImage(input, previewId) {
-            const file = input.files[0];
-            if (file) {
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('image-preview');
+
+            if (input.files && input.files[0]) {
                 const reader = new FileReader();
+
                 reader.onload = function(e) {
-                    document.getElementById(previewId).src = e.target.result;
-                };
-                reader.readAsDataURL(file);
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+
+                reader.readAsDataURL(input.files[0]);
             }
         }
     </script>
 
-
 </body>
-
-<!-- Mirrored from themesbrand.com/minible/layouts/form-editors.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 07:29:52 GMT -->
 
 </html>

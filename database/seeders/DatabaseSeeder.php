@@ -15,18 +15,17 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-<<<<<<< HEAD
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
 
-        $this->call(VisiMisiSeeder::class);
-=======
+        // $this->call(VisiMisiSeeder::class);
     $this->call([
         SambutanDirek::class,
         sliderseed::class,
+        VisiMisiSeeder::class,
+        statistik::class
     ]);
->>>>>>> 09828339ac63708b7be75e014660edb70ca4c781
     }
 }
