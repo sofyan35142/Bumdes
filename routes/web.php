@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Beranda;
+use App\Http\Controllers\Admin\dasarHukumController;
 use App\Http\Controllers\Admin\StrukturOrganisasiController;
 use App\Http\Controllers\Admin\VisiMisi;
 use App\Http\Controllers\Landingpage\Apdes;
@@ -74,6 +75,11 @@ Route::post('/admin/struktur-organisasi/store', [StrukturOrganisasiController::c
 Route::get('/admin/struktur-organisasi/edit/{id}', [StrukturOrganisasiController::class, 'edit'])->name('admin.struktur.edit');
 Route::put('/admin/struktur-organisasi/update/{id}', [StrukturOrganisasiController::class, 'update'])->name('admin.struktur.update');
 Route::delete('/admin/struktur-organisasi/delete/{id}', [StrukturOrganisasiController::class, 'destroy'])->name('admin.struktur.delete');
+// --- Dasar Hukum
+Route::get('/admin/dasar-hukum', [dasarHukumController::class, 'index'])->name('admin.visiMisi');
+Route::get('/admin/dasar-hukum/edit', [dasarHukumController::class, 'editForm'])->name('admin.visi_misi.edit');
+Route::put('/admin/dasar-hukum/update', [dasarHukumController::class, 'update'])->name('admin.visi_misi.update');
+
 // --- Slider
 Route::get('/admin/slider', [Beranda::class, 'slider'])->name('admin.slider');
 Route::get('/admin/editslider/{id}', [Beranda::class, 'editslider']);

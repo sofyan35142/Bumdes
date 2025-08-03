@@ -1,44 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from jobaway.pixcelsthemes.com/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:51 GMT -->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-
-    <title>Jobaway - HTML 5 Template Preview</title>
-
-    <!-- Fav Icon -->
-    <link rel="icon" href="http://127.0.0.1:8000/LandingPage/assets/images/favicon.ico" type="image/x-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
-        rel="stylesheet">
-
-    <!-- Stylesheets -->
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/font-awesome-all.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/flaticon.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/owl.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/jquery.fancybox.min.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/animate.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/nice-select.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/odometer.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/elpath.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/color.css" id="jssDefault" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/rtl.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/style.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/header.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/page-title.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/faq.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/download.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/subscribe.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/footer.css" rel="stylesheet">
-    <link href="http://127.0.0.1:8000/LandingPage/assets/css/responsive.css" rel="stylesheet">
-
+    @include('Landingpage.layout.head')
 </head>
 
 
@@ -63,30 +28,7 @@
 
 
         <!--Search Popup-->
-        <div id="search-popup" class="search-popup">
-            <div class="popup-inner">
-                <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img
-                                src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png" alt=""></a>
-                    </figure>
-                    <div class="close-search"><span class="icon-27"></span></div>
-                </div>
-                <div class="overlay-layer"></div>
-                <div class="auto-container">
-                    <div class="search-form">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/index.html">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value=""
-                                        placeholder="Type your keyword and hit" required>
-                                    <button type="submit"><i class="icon-1"></i></button>
-                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('Landingpage.layout.search')
 
 
         <!-- main header -->
@@ -233,9 +175,11 @@
                             <div class="content-box">
                                 <h2>Panduan Regulasi <span>Pendirian BUMDes</span></h2>
                                 <ul class="list-item mb_30">
-                                    <li>Rangkuman dasar hukum BUMDes dalam satu dokumen praktis.</li>
-                                    <li>Dilengkapi dengan contoh Perdes, AD/ART, dan struktur organisasi.</li>
-                                    <li>Cocok untuk perangkat desa, BPD, maupun masyarakat umum.</li>
+                                    <ol>
+                                        <li>Rangkuman dasar hukum BUMDes dalam satu dokumen praktis.</li>
+                                        <li>Dilengkapi dengan contoh Perdes, AD/ART, dan struktur organisasi.</li>
+                                        <li>Cocok untuk perangkat desa, BPD, maupun masyarakat umum.</li>
+                                    </ol>
                                 </ul>
                                 <button type="button" class="theme-btn btn-one">Unduh Panduan</button>
                             </div>
@@ -272,33 +216,9 @@
     </div>
 
 
-    <!-- jequery plugins -->
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/bootstrap.min.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/owl.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/wow.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/validation.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.fancybox.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/appear.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/isotope.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/parallax-scroll.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.nice-select.min.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/scrolltop.min.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/gsap.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/ScrollTrigger.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/SplitText.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/language.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery-ui.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/lenis.min.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/odometer.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.lettering.min.js"></script>
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/jquery.circleType.js"></script>
+    <!-- javascripts -->
+    @include('Landingpage.layout.scripts')
 
-    <!-- main-js -->
-    <script src="http://127.0.0.1:8000/LandingPage/assets/js/script.js"></script>
-
-</body><!-- End of .page_wrapper -->
-
-<!-- Mirrored from jobaway.pixcelsthemes.com/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:51 GMT -->
+</body>
 
 </html>

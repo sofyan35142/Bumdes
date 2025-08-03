@@ -80,7 +80,7 @@ class Beranda extends Controller
     }
     public function updatesambutan(Request $request, $id)
     {
-        // dd($request->all());
+        dd($request->all());
         $sambutan = SambutanDirektur::findOrFail($id);
         // dd($sambutan);
 

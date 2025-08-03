@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SambutanDirek::class,
             StrukturOrganisasi::class,
-            VisiMisiSeeder::class
+            VisiMisiSeeder::class,
+            DasarHukumSeeder::class
         ]);
     }
 }
