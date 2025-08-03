@@ -11,4 +11,8 @@ class home extends Controller
     {
         return view('Landingpage.index');
     }
+    public function detailunggulan()
+    {
+        return view('Landingpage.detailunggulan');
+    }
 }
