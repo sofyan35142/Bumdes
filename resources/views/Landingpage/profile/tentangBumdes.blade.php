@@ -17,7 +17,8 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img src="http://127.0.0.1:8000/Landingpage/assets/images/logo.png" alt=""></a>
+                    <figure class="logo-box"><a href="index.html"><img
+                                src="http://127.0.0.1:8000/Landingpage/assets/images/logo.png" alt=""></a>
                     </figure>
                     <div class="close-search"><span class="icon-27"></span></div>
                 </div>
@@ -44,7 +45,8 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="http://127.0.0.1:8000/Landingpage/assets/images/logo-2.png" alt=""
+                <div class="nav-logo"><a href="index.html"><img
+                            src="http://127.0.0.1:8000/Landingpage/assets/images/logo-2.png" alt=""
                             title=""></a></div>
                 <div class="menu-outer"></div>
                 <div class="contact-info">
@@ -85,21 +87,20 @@
                         <div class="image_block_two">
                             <div class="image-inner">
                                 <div class="image-box mr_15">
-                                    <figure class="image image-1 mb_15"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-3.jpg"
+                                    <figure class="image image-1 mb_15"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-3.jpg"
                                             alt=""></figure>
-                                    <figure class="image image-2"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-4.jpg"
+                                    <figure class="image image-2"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-4.jpg"
                                             alt=""></figure>
                                 </div>
                                 <div class="image-box">
-                                    <figure class="image image-3 mb_15"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-5.jpg"
+                                    <figure class="image image-3 mb_15"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-5.jpg"
                                             alt=""></figure>
-                                    <figure class="image image-4"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-6.jpg"
+                                    <figure class="image image-4"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-6.jpg"
                                             alt=""></figure>
-                                </div>
-                                <div class="support-box">
-                                    <div class="icon-box"><i class="icon-28"></i></div>
-                                    <span>Bantuan Online</span>
-                                    <h4><a href="tel:912556889">+912 (556) 889</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -148,39 +149,51 @@
                 <div class="inner-container">
                     <div class="clients-box">
                         <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-1.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-1.png"
+                                    alt=""></a></figure>
                         <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-1.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-1.png"
+                                    alt=""></a></figure>
                     </div>
                     <div class="clients-box">
                         <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-2.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-2.png"
+                                    alt=""></a></figure>
                         <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-2.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-2.png"
+                                    alt=""></a></figure>
                     </div>
                     <div class="clients-box">
                         <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-3.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-3.png"
+                                    alt=""></a></figure>
                         <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-3.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-3.png"
+                                    alt=""></a></figure>
                     </div>
                     <div class="clients-box">
                         <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-4.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-4.png"
+                                    alt=""></a></figure>
                         <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-4.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-4.png"
+                                    alt=""></a></figure>
                     </div>
                     <div class="clients-box">
                         <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-5.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-5.png"
+                                    alt=""></a></figure>
                         <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-5.png" alt=""></a></figure>
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-5.png"
+                                    alt=""></a></figure>
                     </div>
                 </div>
             </div>
         </section>
         <section class="chooseus-section alternat-3 pt_120 pb_90">
-            <div class="pattern-layer" style="background-image: url(http://127.0.0.1:8000/Landingpage/assets/images/shape/shape-23.png);"></div>
+            <div class="pattern-layer"
+                style="background-image: url(http://127.0.0.1:8000/Landingpage/assets/images/shape/shape-23.png);">
+            </div>
             <div class="auto-container">
                 <div class="sec-title light centred pb_60 sec-title-animation animation-style2">
                     <span class="sub-title mb_10 title-animation">Mengapa Kami</span>
@@ -195,9 +208,7 @@
                                     <h3><a href="index.html">Meningkatkan Perekonomian</a></h3>
                                     <p>Kami fokus pada program yang meningkatkan pendapatan dan kesejahteraan masyarakat
                                         desa.</p>
-                                    <div class="link"><a href="index.html">Pelajari Lebih Lanjut<i
-                                                class="icon-7"></i></a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -208,9 +219,7 @@
                                     <h3><a href="index.html">Tata Kelola Transparan</a></h3>
                                     <p>Seluruh operasional kami dijalankan dengan prinsip transparansi dan akuntabilitas
                                         untuk kepercayaan publik.</p>
-                                    <div class="link"><a href="index.html">Pelajari Lebih Lanjut<i
-                                                class="icon-7"></i></a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -221,9 +230,6 @@
                                     <h3><a href="index.html">Inovasi Berkelanjutan</a></h3>
                                     <p>Kami selalu berinovasi untuk menciptakan produk dan layanan baru yang relevan
                                         dengan kebutuhan desa.</p>
-                                    <div class="link"><a href="index.html">Pelajari Lebih Lanjut<i
-                                                class="icon-7"></i></a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -325,9 +331,12 @@
                             data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><img src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-1.jpg" alt="">
+                                    <figure class="image"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-1.jpg"
+                                            alt="">
                                     </figure>
-                                    <figure class="overlay-image"><img src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-1.jpg"
+                                    <figure class="overlay-image"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-1.jpg"
                                             alt=""></figure>
                                 </div>
                                 <div class="lower-content">
@@ -342,9 +351,12 @@
                             data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><img src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-2.jpg" alt="">
+                                    <figure class="image"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-2.jpg"
+                                            alt="">
                                     </figure>
-                                    <figure class="overlay-image"><img src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-2.jpg"
+                                    <figure class="overlay-image"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-2.jpg"
                                             alt=""></figure>
                                 </div>
                                 <div class="lower-content">
@@ -359,9 +371,12 @@
                             data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><img src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-3.jpg" alt="">
+                                    <figure class="image"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-3.jpg"
+                                            alt="">
                                     </figure>
-                                    <figure class="overlay-image"><img src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-3.jpg"
+                                    <figure class="overlay-image"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-3.jpg"
                                             alt=""></figure>
                                 </div>
                                 <div class="lower-content">
@@ -376,9 +391,12 @@
                             data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><img src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-4.jpg" alt="">
+                                    <figure class="image"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-4.jpg"
+                                            alt="">
                                     </figure>
-                                    <figure class="overlay-image"><img src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-4.jpg"
+                                    <figure class="overlay-image"><img
+                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-4.jpg"
                                             alt=""></figure>
                                 </div>
                                 <div class="lower-content">
@@ -392,7 +410,9 @@
             </div>
         </section>
         <section class="testimonial-style-two pt_70 pb_120">
-            <div class="pattern-layer" style="background-image: url(http://127.0.0.1:8000/Landingpage/assets/images/shape/shape-17.png);"></div>
+            <div class="pattern-layer"
+                style="background-image: url(http://127.0.0.1:8000/Landingpage/assets/images/shape/shape-17.png);">
+            </div>
             <div class="auto-container">
                 <div class="sec-title centred pb_60 sec-title-animation animation-style2">
                     <span class="sub-title mb_10 title-animation">Testimoni</span>
@@ -401,9 +421,12 @@
                 <div class="two-item-carousel owl-carousel owl-theme owl-nav-none">
                     <div class="testimonial-block-two">
                         <div class="inner-box">
-                            <div class="icon-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png" alt=""></div>
+                            <div class="icon-box"><img
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
+                                    alt=""></div>
                             <div class="author-box">
-                                <figure class="thumb-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-1.png"
+                                <figure class="thumb-box"><img
+                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-1.png"
                                         alt=""></figure>
                                 <h4>Ibu Siti</h4>
                                 <span class="designation">Anggota, Desa Makmur</span>
@@ -414,9 +437,12 @@
                     </div>
                     <div class="testimonial-block-two">
                         <div class="inner-box">
-                            <div class="icon-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png" alt=""></div>
+                            <div class="icon-box"><img
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
+                                    alt=""></div>
                             <div class="author-box">
-                                <figure class="thumb-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-3.png"
+                                <figure class="thumb-box"><img
+                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-3.png"
                                         alt=""></figure>
                                 <h4>Bapak Widodo</h4>
                                 <span class="designation">Pelaku Usaha, Desa Sejahtera</span>
@@ -427,9 +453,12 @@
                     </div>
                     <div class="testimonial-block-two">
                         <div class="inner-box">
-                            <div class="icon-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png" alt=""></div>
+                            <div class="icon-box"><img
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
+                                    alt=""></div>
                             <div class="author-box">
-                                <figure class="thumb-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-1.png"
+                                <figure class="thumb-box"><img
+                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-1.png"
                                         alt=""></figure>
                                 <h4>Ibu Siti</h4>
                                 <span class="designation">Anggota, Desa Makmur</span>
@@ -440,9 +469,12 @@
                     </div>
                     <div class="testimonial-block-two">
                         <div class="inner-box">
-                            <div class="icon-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png" alt=""></div>
+                            <div class="icon-box"><img
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
+                                    alt=""></div>
                             <div class="author-box">
-                                <figure class="thumb-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-3.png"
+                                <figure class="thumb-box"><img
+                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-3.png"
                                         alt=""></figure>
                                 <h4>Bapak Widodo</h4>
                                 <span class="designation">Pelaku Usaha, Desa Sejahtera</span>
@@ -453,9 +485,12 @@
                     </div>
                     <div class="testimonial-block-two">
                         <div class="inner-box">
-                            <div class="icon-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png" alt=""></div>
+                            <div class="icon-box"><img
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
+                                    alt=""></div>
                             <div class="author-box">
-                                <figure class="thumb-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-1.png"
+                                <figure class="thumb-box"><img
+                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-1.png"
                                         alt=""></figure>
                                 <h4>Ibu Siti</h4>
                                 <span class="designation">Anggota, Desa Makmur</span>
@@ -466,9 +501,12 @@
                     </div>
                     <div class="testimonial-block-two">
                         <div class="inner-box">
-                            <div class="icon-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png" alt=""></div>
+                            <div class="icon-box"><img
+                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
+                                    alt=""></div>
                             <div class="author-box">
-                                <figure class="thumb-box"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-3.png"
+                                <figure class="thumb-box"><img
+                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-3.png"
                                         alt=""></figure>
                                 <h4>Bapak Widodo</h4>
                                 <span class="designation">Pelaku Usaha, Desa Sejahtera</span>

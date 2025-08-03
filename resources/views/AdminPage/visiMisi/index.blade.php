@@ -41,7 +41,7 @@
 
                                     @if ($data)
                                     {{-- Tombol Edit Visi Misi, sesuaikan rute dengan nama yang benar --}}
-                                    <a href="{{ route('admin.visi_misi.edit', $data->id) }}">
+                                    <a href="{{ route('admin.visi_misi.edit')}}">
                                         <button class="btn btn-primary mb-3">Edit Visi Misi</button>
                                     </a>
 
@@ -88,7 +88,8 @@
                                         @if ($data->gambar_visi_misi)
                                             <div class="col-md-6 mb-3">
                                                 <h5>Gambar Visi Misi</h5>
-                                                <img src="{{ asset('visimisi/' . $data->gambar_visi_misi) }}"
+                                                <img src="{{ asset($data->gambar_visi_misi) }}
+"
                                                     alt="Gambar Visi Misi" class="img-fluid rounded border"
                                                     style="max-height: 300px;">
                                             </div>
@@ -100,7 +101,7 @@
 
                                             {{-- Gambar Panduan --}}
                                             @if ($data->gambar_panduan)
-                                                <img src="{{ asset('visimisi/' . $data->gambar_panduan) }}"
+                                                <img src="{{ asset($data->gambar_panduan) }}"
                                                     alt="Gambar Panduan" class="img-fluid rounded border mb-3"
                                                     style="max-height: 200px;">
                                             @endif

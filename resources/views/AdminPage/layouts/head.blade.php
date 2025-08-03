@@ -12,6 +12,7 @@
 <link href="{{ asset('AdminPage/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- App Css-->
 <link href="{{ asset('AdminPage/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-<link href="{{ asset('AdminPage/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
+<!-- Toastr CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">

@@ -137,7 +137,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image-box ml_70">
-                            <figure class="image image-hov-one"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/faq-1.jpg"
+                            <figure class="image image-hov-one"><img src="http://127.0.0.1:8000/visimisi/faq-1.jpg"
                                     alt=""></figure>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                             <div class="image-box">
-                                <figure class="image"><img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/book-2.png" alt="">
+                                <figure class="image"><img src="http://127.0.0.1:8000/visimisi/book-2.png" alt="">
                                 </figure>
                             </div>
                         </div>
