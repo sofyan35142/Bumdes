@@ -139,10 +139,12 @@
                         <div class="content-box">
                             <span class="upper-text">Tentang BumDes</span>
                             <h2>Bangun Masa Depan Desa Lebih Baik <span>Bersama BUMDes</span></h2>
-                            <p>Pemberdayaan ekonomi lokal dimulai dari desa. BUMDes hadir untuk mengelola potensi, membuka lapangan kerja, dan membangun kemandirian masyarakat secara berkelanjutan.</p>
+                            <p>Pemberdayaan ekonomi lokal dimulai dari desa. BUMDes hadir untuk mengelola potensi,
+                                membuka lapangan kerja, dan membangun kemandirian masyarakat secara berkelanjutan.</p>
                             <div class="btn-box">
                                 <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha Warga</span></a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
+                                        Warga</span></a>
                             </div>
                         </div>
                     </div>
@@ -161,10 +163,13 @@
                         <div class="content-box">
                             <span class="upper-text">Top Agency</span>
                             <h2>Dukung Produk Lokal & UMKM Desa <span>Bersama BUMDes</span></h2>
-                            <p>BUMDes mendorong pertumbuhan ekonomi desa melalui pengembangan UMKM, pemasaran produk lokal, dan kolaborasi dengan masyarakat untuk meningkatkan kesejahteraan.</p>
+                            <p>BUMDes mendorong pertumbuhan ekonomi desa melalui pengembangan UMKM, pemasaran produk
+                                lokal, dan kolaborasi dengan masyarakat untuk meningkatkan kesejahteraan.</p>
                             <div class="btn-box">
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Produk Unggulan</a>
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Gabung Mitra UMKM</span></a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Produk
+                                    Unggulan</a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Gabung Mitra
+                                        UMKM</span></a>
                             </div>
                         </div>
                     </div>
@@ -183,10 +188,13 @@
                         <div class="content-box">
                             <span class="upper-text">Top Agency</span>
                             <h2>Wujudkan Desa Cerdas Melalui<span>Inovasi dan Kolaborasi</span></h2>
-                            <p>Dengan semangat kolaborasi dan digitalisasi, BUMDes menjadi jembatan inovasi dan solusi bagi masyarakat desa menuju masa depan yang mandiri dan modern.</p>
+                            <p>Dengan semangat kolaborasi dan digitalisasi, BUMDes menjadi jembatan inovasi dan solusi
+                                bagi masyarakat desa menuju masa depan yang mandiri dan modern.</p>
                             <div class="btn-box">
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Layanan Digital</a>
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span> Bangun Kemitraan</span></a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Layanan
+                                    Digital</a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span> Bangun
+                                        Kemitraan</span></a>
                             </div>
                         </div>
                     </div>
@@ -322,16 +330,15 @@
                             data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><img
-                                            src="{{ asset('LandingPage/assets/images/team/team-1.jpg') }}"
+                                    <figure class="image"><img src="{{ asset('direktur/' . $data->foto_direktur) }}"
                                             alt=""></figure>
                                     <figure class="overlay-image"><img
-                                            src="{{ asset('LandingPage/assets/images/team/team-1.jpg') }}"
-                                            alt=""></figure>
+                                            src="{{ asset('direktur/' . $data->foto_direktur) }}" alt="">
+                                    </figure>
                                 </div>
                                 <div class="lower-content">
                                     <center>
-                                        <h3><a href="index.html">Yudi</a></h3>
+                                        <h3><a href="index.html">{{ $data->Nama_Direktur }}</a></h3>
                                     </center>
                                     <center><span class="designation">Direktur Bumdes</span></center>
                                 </div>
@@ -344,28 +351,9 @@
                                 <div class="sec-title pb_40 sec-title-animation animation-style2">
                                     <span class="sub-title mb_10 title-animation">SAMBUTAN</span>
                                     <h2 class="title-animation">Sambutan Direktur BumDes <span>Pakukerto</span></h2>
-                                    <p class="title-animation">Assalamu’alaikum warahmatullahi wabarakatuh.
-
-                                        Puji syukur kita panjatkan ke hadirat Allah SWT, karena atas limpahan rahmat dan
-                                        karunia-Nya, Badan Usaha Milik Desa (BUMDes) ini dapat terus tumbuh dan
-                                        berkembang dalam rangka meningkatkan kesejahteraan masyarakat desa.
-
-                                        BUMDes hadir sebagai wadah bagi masyarakat desa untuk mengelola potensi lokal
-                                        secara mandiri, profesional, dan berkelanjutan. Kami percaya bahwa kemandirian
-                                        ekonomi desa adalah pondasi utama menuju desa yang kuat dan berdaya saing.
-
-                                        Dengan dukungan dari pemerintah desa, masyarakat, serta seluruh mitra dan
-                                        stakeholder, kami berkomitmen untuk terus berinovasi, membuka lapangan kerja,
-                                        dan menciptakan peluang usaha baru yang bermanfaat langsung bagi warga desa.
-
-                                        Akhir kata, kami mengajak seluruh elemen masyarakat untuk bersama-sama mendukung
-                                        dan mengembangkan BUMDes demi tercapainya kemajuan dan kemandirian desa yang
-                                        kita cintai.
-
-                                        Wassalamu’alaikum warahmatullahi wabarakatuh.
-
-                                        [Nama Direktur]
-                                        Direktur BUMDes [Nama Desa]</p>
+                                    <p class="title-animation">
+                                        {{ $data->sambutan }}
+                                    </p>
                                 </div>
                                 {{-- <div class="inner-box clearfix">
                                     <div class="single-item">
@@ -431,8 +419,8 @@
                                 <div class="inner-box">
                                     <div class="icon-box"><i class="icon-5"></i></div>
                                     <h3><a href="{{ asset('index.html') }}"> Legal & Terpercaya</a></h3>
-                                    <p>BUMDes beroperasi secara resmi dan sah berdasarkan landasan hukum yang kuat,
-                                        serta berada di bawah pengawasan pemerintah desa.
+                                    <p>BUMDes beroperasi secara resmi dengan landasan hukum yang kuat dan diawasi oleh
+                                        pemerintah desa.
                                     </p>
                                     <div class="link">
                                     </div>

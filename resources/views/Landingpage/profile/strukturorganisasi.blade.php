@@ -36,7 +36,8 @@
         <!-- team-section -->
         <section class="team-section centred pt_110 pb_70">
             <div class="pattern-layer"
-                style="background-image: url(http://127.0.0.1:8000/Landingpage/assets/images/shape/shape-2.png);"></div>
+                style="background-image: url(http://127.0.0.1:8000/Landingpage/assets/images/shape/shape-2.png);">
+            </div>
             <div class="auto-container">
                 <div class="sec-title pb_60 sec-title-animation animation-style2">
                     <span class="sub-title mb_10 title-animation">Struktur Organisasi</span>
@@ -44,101 +45,27 @@
                 </div>
                 <div class="row clearfix">
                     <!-- Anggota Struktur -->
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-1.jpg"
-                                            alt=""></figure>
-                                    <figure class="overlay-image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-1.jpg"
-                                            alt=""></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="#">Ravlindo Pratama</a></h3>
-                                    <span class="designation">Ketua BUMDes</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="200ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-2.jpg"
-                                            alt=""></figure>
-                                    <figure class="overlay-image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-2.jpg"
-                                            alt=""></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="#">Dino Maulana</a></h3>
-                                    <span class="designation">Sekretaris</span>
+                    @foreach ($data as $item)
+                        <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                            <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                                data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <figure class="image"><img
+                                                src="{{asset($item->foto)}}"
+                                                alt=""></figure>
+                                        <figure class="overlay-image"><img
+                                                src="{{asset($item->foto)}}"
+                                                alt=""></figure>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h3><a href="#">{{$item->nama}}</a></h3>
+                                        <span class="designation">{{$item->jabatan}}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="400ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-3.jpg"
-                                            alt=""></figure>
-                                    <figure class="overlay-image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-3.jpg"
-                                            alt=""></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="#">Zaki Almukhtarom</a></h3>
-                                    <span class="designation">Bendahara</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="600ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-4.jpg"
-                                            alt=""></figure>
-                                    <figure class="overlay-image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-4.jpg"
-                                            alt=""></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="#">Sofyan Hidayat</a></h3>
-                                    <span class="designation">Koordinator Usaha</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-5.jpg"
-                                            alt=""></figure>
-                                    <figure class="overlay-image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-5.jpg"
-                                            alt=""></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="#">Daffa Ramadhan</a></h3>
-                                    <span class="designation">Staf Administrasi</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -152,7 +79,8 @@
                         <h2 class="title-animation">Bersama Membangun Desa, Bersama BUMDes</h2>
                     </div>
                     <div class="text-box">
-                        <p>BUMDes adalah motor penggerak ekonomi desa. Bergabunglah bersama kami dalam membangun usaha
+                        <p>BUMDes adalah motor penggerak ekonomi desa. Bergabunglah bersama kami dalam membangun
+                            usaha
                             mandiri dan berkelanjutan untuk kesejahteraan warga.</p>
                         <a href="contact.html" class="theme-btn btn-one">Hubungi Kami</a>
                     </div>

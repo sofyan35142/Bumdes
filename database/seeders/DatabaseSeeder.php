@@ -14,33 +14,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-<<<<<<< HEAD
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-        // $this->call(VisiMisiSeeder::class);
-    $this->call([
-        SambutanDirek::class,
-        sliderseed::class,
-        VisiMisiSeeder::class,
-        statistik::class
-    ]);
-=======
+        // Membuat user dummy
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
 
+        // Memanggil seeder-seeder yang dibutuhkan
         $this->call([
             SambutanDirek::class,
-            StrukturOrganisasi::class,
+            SliderSeed::class,
             VisiMisiSeeder::class,
-            DasarHukumSeeder::class
+            Statistik::class,
+            StrukturOrganisasi::class,
+            DasarHukumSeeder::class,
         ]);
->>>>>>> 7007257c50bd923beb9a2d7bd3b796945eef966e
     }
 }
