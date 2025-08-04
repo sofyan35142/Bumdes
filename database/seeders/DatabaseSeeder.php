@@ -14,9 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-<<<<<<< HEAD
-        // Membuat user dummy
-=======
         // User::factory(10)->create();
 
         // User::factory()->create([
@@ -31,7 +28,6 @@ class DatabaseSeeder extends Seeder
         VisiMisiSeeder::class,
         statistik::class
     ]);
->>>>>>> 5c444341e0d4c725b84487e63aec808615322527
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
