@@ -29,4 +29,23 @@ class Apdes extends Controller
         'pendapatan', 'belanja', 'pembiayaan', 'grafikPerTahun', 'tahun'
     ));
 }
+
+    public function create()
+    {
+        return view('AdminPage.Apdes.create');
+    }
+    public function store(Request $request)
+    {
+      
+       $data = ApbdesItem::create([
+            'tahun' => $request->tahun,
+            'jenis' => $request->jenis,
+            'kategori' => $request->kategori,
+            'jumlah' => $request->jumlah,
+       ]);
+
+        return redirect()->route('apdes')->with('success', 'Data APBDES berhasil ditambahkan.');
+    }
+ 
+   
 }

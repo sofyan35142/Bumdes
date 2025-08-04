@@ -19,7 +19,6 @@ return new class extends Migration
             $table->decimal('jumlah', 15, 2);
             $table->timestamps();
         });
-
     }
 
     /**

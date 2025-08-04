@@ -96,6 +96,11 @@ Route::get('/admin/sambutan', [Beranda::class, 'sambutan'])->name('admin.sambuta
 Route::get('/admin/editsambutan/{id}', [Beranda::class, 'editsambutan']);
 Route::post('/admin/updatesambutan/{id}', [Beranda::class, 'updatesambutan'])->name('admin.updatesambutan');
 
+// --- ApDesa
+Route::get('/admin/apdes', [Apdes::class, 'index'])->name('admin.apdes');
+Route::get('/admin/apdes/create', [Apdes::class, 'create'])->name('admin.apdes.create');
+Route::post('/admin/apdes/store', [Apdes::class, 'store'])->name('admin.apdes.store');
+
 // --- Layanan Unggulan
 Route::get('/admin/unggulan', [Beranda::class, 'unggulan'])->name('admin.unggulan');
 Route::get('/admin/tambahunggulan', [Beranda::class, 'tambahunggulan'])->name('admin.tambahunggulan');
