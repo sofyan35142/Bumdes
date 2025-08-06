@@ -22,15 +22,16 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // $this->call(VisiMisiSeeder::class);
-    $this->call([
-        SambutanDirek::class,
-        sliderseed::class,
-        VisiMisiSeeder::class,
-        statistik::class
-    ]);
+    // $this->call([
+    //     SambutanDirek::class,
+    //     sliderseed::class,
+    //     VisiMisiSeeder::class,
+    //     statistik::class
+    // ]);
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 'pakukerto@gmail.com',
+            'password' => 'pakukertojaya',
         ]);
         $jenisList = ['pendapatan', 'belanja', 'pembiayaan'];
     $kategoriList = [
@@ -60,6 +61,9 @@ class DatabaseSeeder extends Seeder
             Statistik::class,
             StrukturOrganisasi::class,
             DasarHukumSeeder::class,
+            Kategori::class,
+            LayananUnggulan::class,
+            KegiatanSeeder::class,
         ]);
     }
 }

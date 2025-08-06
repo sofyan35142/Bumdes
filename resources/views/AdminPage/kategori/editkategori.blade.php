@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="en">
 
-@include('AdminPage.layouts.head')
 
+<!-- Mirrored from themesbrand.com/minible/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 07:29:48 GMT -->
+
+@include('AdminPage.layouts.head')
 
 <body>
 
@@ -18,7 +20,6 @@
         <!-- Left Sidebar End -->
 
 
-
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
@@ -27,89 +28,56 @@
             <div class="page-content">
                 <div class="container-fluid">
 
-                    <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Datatables</h4>
+                                <h4 class="mb-0">Form Tambah Data Kegiatan</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Datatables</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Blog</a></li>
+                                        <li class="breadcrumb-item active">Edit Data Kategori</li>
                                     </ol>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
-
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA LAYANAN kegiatan BUMDES PAKUKERTO</h4>
-                                    {{-- <p class="card-title-desc">DataTables has most features enabled by
-                                        default, so all you need to do to use it with your own tables is to call
-                                        the construction function: <code>$().DataTable();</code>. --}}
-                                    {{-- </p> --}}
-                                     <a href="/admin/tambahkegiatan"><button class="btn btn-primary"> Tambah Data
-                                            Kegiatan</button></a>
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>NO</th>
-                                                <th>Judul kegiatan BumDes</th>
-                                                <th>Tanggal Kegiatan</th>
-                                                <th>Kategori Kegiatan</th>
-                                                <th>Deskripsi Kegiatan</th>
-                                                <th>Foto Kegiatan</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <?php $no = 1; ?>
-                                        @foreach ($kegiatan as $kegiatan)
-                                            <tr>
-                                                <td>{{ $no }}</td>
-                                                <td>{{ $kegiatan->Judul_Kegiatan }}</td>
-                                                <td>{{ $kegiatan->tanggal_kegiatan }}</td>
-                                                <td>{{ $kegiatan->kategori->nama_kategori ?? '-' }}</td>
-                                                <td style="word-break: break-all;">{!! $kegiatan->deskripsi_kegiatan !!}</td>
-                                                {{-- <td>{{ $kegiatan->kategori }}</td> --}}
-                                                <td>
-                                                    <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
-                                                        alt="" style="width: 80px; height:80px;">
-                                                </td>
 
+                                    <h4 class="card-title">Edit Data Kategori</h4> <br>
+                                    {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
+                                        baru.</p> --}}
 
-                                                <td>
-                                                    <a href="/admin/editkegiatan/{{ $kegiatan->id }}"
-                                                        class="btn btn-warning"><i
-                                                            class="fa-solid fa-pen-to-square"></i></a>
-                                                    <a href="#" class="btn btn-danger btn-delete"
-                                                        data-id="{{ $kegiatan->id }}">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </a>
-                                                </td>
-
-                                            </tr>
-
-
-                                            </tbody>
-                                            <?php $no++; ?>
-                                        @endforeach
-                                    </table>
+                                    <form method="post" action="{{ route('admin.updatekategori', $kategori->id) }}" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="mb-3 row">
+                                            <label for="blog-title-input" class="col-md-2 col-form-label">Nama
+                                                Kategori</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" id="blog-title-input"
+                                                    placeholder="Masukkan nama Kategori" name="nama_kategori"
+                                                    value="{{ old('nama_kategori', $kategori->nama_kategori) }}">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-3 mt-3">
+                                            <button type="submit"
+                                                class="btn btn-primary waves-effect waves-light w-md">Simpan
+                                                Blog</button>
+                                            <button type="reset"
+                                                class="btn btn-outline-secondary waves-effect waves-light w-md">Reset
+                                                Form</button>
+                                        </div>
+                                    </form>
 
                                 </div>
                             </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
-
-
-
-                </div> <!-- container-fluid -->
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- End Page-content -->
 
@@ -263,44 +231,31 @@
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
+    <!-- JAVASCRIPT -->
     @include('AdminPage.layouts.scripts')
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                    confirmButton: "btn btn-success",
-                    cancelButton: "btn btn-danger"
-                },
-                buttonsStyling: false
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#classic-editor'))
+            .catch(error => {
+                console.error(error);
             });
+    </script>
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('image-preview');
 
-            document.querySelectorAll('.btn-delete').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
 
-                    swalWithBootstrapButtons.fire({
-                        title: "Yakin mau hapus?",
-                        text: "Data yang dihapus tidak bisa dikembalikan!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonText: "Ya, hapus!",
-                        cancelButtonText: "Batal",
-                        reverseButtons: true
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            // Lakukan penghapusan, misalnya redirect ke route destroy
-                            window.location.href = "/admin/hapuskegiatan/" + id;
-                        } else if (result.dismiss === Swal.DismissReason.cancel) {
-                            swalWithBootstrapButtons.fire(
-                                "Dibatalkan",
-                                "Data tidak jadi dihapus :)",
-                                "error"
-                            );
-                        }
-                    });
-                });
-            });
-        });
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
     </script>
 
 </body>

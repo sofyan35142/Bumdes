@@ -49,12 +49,13 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA SAMBUTAN KEPALA DESA</h4>
+                                    <h4 class="card-title">DATA LAYANAN UNGGULAN BUMDES PAKUKERTO</h4>
                                     {{-- <p class="card-title-desc">DataTables has most features enabled by
                                         default, so all you need to do to use it with your own tables is to call
                                         the construction function: <code>$().DataTable();</code>. --}}
                                     {{-- </p> --}}
-                                    <button><a href="/admin/tambahunggulan">Tambah Data</button>
+                                     <a href="/admin/tambahunggulan"><button class="btn btn-primary"> Tambah Data
+                                            Kegiatan</button></a>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
@@ -73,7 +74,7 @@
                                                 <td>{{ $no }}</td>
                                                 <td>{{ $unggulan->nama_layanan }}</td>
                                                 <td style="word-break: break-all;">{!! $unggulan->deskripsi !!}</td>
-                                                <td>{{ $unggulan->kategori }}</td>
+                                                <td>{{ $unggulan->kategori->nama_kategori ?? '-' }}</td>
                                                 <td>
                                                     <img src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
                                                         alt="" style="width: 80px; height:80px;">

@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('layanan_unggulans', function (Blueprint $table) {
+         Schema::create('media_partners', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_layanan')->nullable();
-            $table->text('deskripsi')->nullable();
-            $table->string('kategori')->nullable();
-            $table->string('foto_layanan')->nullable();
+            $table->string('Nama_Media');
+            $table->string('Logo_Media')->nullable(); // Path ke file gambar/logo
             $table->timestamps();
         });
     }

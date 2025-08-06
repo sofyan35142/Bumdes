@@ -47,5 +47,6 @@
 <link href="{{ asset('LandingPage/assets/css/module-css/blog-sidebar.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/portfolio.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/job.css') }}" rel="stylesheet">
+<link href="{{ asset('LandingPage/assets/css/module-css/login.css') }}" rel="stylesheet">
 
 <link href="{{ asset('LandingPage/assets/css/module-css/service-details.css') }}" rel="stylesheet">
