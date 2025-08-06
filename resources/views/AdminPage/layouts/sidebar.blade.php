@@ -91,6 +91,12 @@
                         <span>APDesa</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.testimonial.testimonial') }}">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Testimoni</span>
+                    </a>
+                </li>
 
                 <!-- Layanan Unggulan -->
                 <li>

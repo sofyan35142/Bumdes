@@ -11,6 +11,7 @@ use App\Http\Controllers\Landingpage\Blog;
 use App\Http\Controllers\Landingpage\Profile;
 use App\Http\Controllers\Landingpage\Contact;
 use App\Http\Controllers\Landingpage\Pages;
+use App\Http\Controllers\Admin\Testimonial;
 use App\Models\StrukturOrganisasi;
 
 /*
@@ -116,3 +117,9 @@ Route::post('/admin/insertkegiatan', [Beranda::class, 'insertkegiatan'])->name('
 Route::get('/admin/editkegiatan/{id}', [Beranda::class, 'editkegiatan']);
 Route::post('/admin/updatekegiatan/{id}', [Beranda::class, 'updatekegiatan'])->name('admin.updatekegiatan');
 Route::get('/admin/hapuskegiatan/{id}', [Beranda::class, 'hapuskegiatan'])->name('admin.hapuskegiatan');
+
+// --- Testimonial 
+Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
+Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
+Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
+Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
