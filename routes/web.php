@@ -16,6 +16,7 @@ use App\Http\Controllers\Landingpage\Pages;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MediaPartnerController;
 use App\Models\MediaPartner;
+use App\Http\Controllers\Admin\Testimonial;
 use App\Models\StrukturOrganisasi;
 
 /*
@@ -142,3 +143,15 @@ Route::get('/admin/hapuskategori/{id}', [KategoriController::class, 'hapuskatego
     Route::post('/admin/updatemediapartner/{id}', [MediaPartnerController::class, 'updatemediapartner'])->name('admin.updatemediapartner');
     Route::get('/admin/hapusmediapartner/{id}', [MediaPartnerController::class, 'hapusmediapartner'])->name('admin.hapusmediapartner');
 // });
+Route::get('/admin/kegiatan', [Beranda::class, 'kegiatan'])->name('admin.kegiatan');
+Route::get('/admin/tambahkegiatan', [Beranda::class, 'tambahkegiatan'])->name('admin.tambahkegiatan');
+Route::post('/admin/insertkegiatan', [Beranda::class, 'insertkegiatan'])->name('admin.insertkegiatan');
+Route::get('/admin/editkegiatan/{id}', [Beranda::class, 'editkegiatan']);
+Route::post('/admin/updatekegiatan/{id}', [Beranda::class, 'updatekegiatan'])->name('admin.updatekegiatan');
+Route::get('/admin/hapuskegiatan/{id}', [Beranda::class, 'hapuskegiatan'])->name('admin.hapuskegiatan');
+
+// --- Testimonial
+Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
+Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
+Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
+Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
