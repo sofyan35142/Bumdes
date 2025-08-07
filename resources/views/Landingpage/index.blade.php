@@ -689,11 +689,12 @@
     max-height: 4.5em;
     text-overflow: ellipsis;
 ">
-                                            {{ $unggulan->deskripsi }}
+                                            {!! $unggulan->deskripsi !!}
                                         </p>
 
                                         <div class="btn-box">
-                                            <a href="service-details-2.html" class="theme-btn btn-one">View
+                                            <a href="/detailunggulan/{{ $unggulan->id }}"
+                                                class="theme-btn btn-one">View
                                                 Details</a>
                                         </div>
                                     </div>
@@ -1146,13 +1147,13 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image">
-                                            <a href="blog-details.html">
+                                            <a href="{{ route('blogdetail', $kegiatan->id) }}">
                                                 <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
                                                     alt="">
                                             </a>
                                         </figure>
                                         <figure class="overlay-image">
-                                            <a href="blog-details.html">
+                                            <a href="{{ route('blogdetail', $kegiatan->id) }}">
                                                 <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
                                                     alt="">
                                             </a>
@@ -1160,9 +1161,12 @@
                                     </div>
                                     <div class="lower-content">
                                         <span class="category">{{ $kegiatan->kategori->nama_kategori ?? '-' }}</span>
-                                        <h3><a href="index-2.html">{{ $kegiatan->Judul_Kegiatan }}</a></h3>
+                                        <h3><a
+                                                href="{{ route('blogdetail', $kegiatan->id) }}">{{ $kegiatan->Judul_Kegiatan }}</a>
+                                        </h3>
                                         <ul class="post-info">
-                                            <li>By <a href="blog-details.html">Sekertaris BumDes</a></li>
+                                            <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Sekertaris
+                                                    BumDes</a></li>
                                             <li><span>{{ $kegiatan->tanggal_kegiatan }}</span></li>
                                         </ul>
                                     </div>
@@ -1170,6 +1174,7 @@
                             </div>
                         </div>
                     @endforeach
+
 
                     <!-- News Block 2 -->
                     {{-- <div class="col-lg-4 col-md-6 col-sm-12 news-block">

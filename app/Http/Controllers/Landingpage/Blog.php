@@ -3,16 +3,19 @@
 namespace App\Http\Controllers\Landingpage;
 
 use App\Http\Controllers\Controller;
+use App\Models\kegiatan;
 use Illuminate\Http\Request;
 
 class Blog extends Controller
 {
     public function blog()
     {
-        return view('Landingpage.blog.blog');
+        $kegiatan = kegiatan::all();
+        return view('Landingpage.blog.blog',  compact('kegiatan'));
     }
-    public function blogdetail()
+    public function blogdetail($id)
     {
-        return view('Landingpage.blog.blogdetail');
+        $detailblog = kegiatan::with('kategori')->findOrFail($id);
+        return view('Landingpage.blog.blogdetail', compact('detailblog'));
     }
 }

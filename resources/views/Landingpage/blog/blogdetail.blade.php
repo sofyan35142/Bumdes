@@ -120,7 +120,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="sidebar-widget category-widget mb_50">
+                            {{-- <div class="sidebar-widget category-widget mb_50">
                                 <div class="widget-title mb_11">
                                     <h3>Categories</h3>
                                 </div>
@@ -134,7 +134,7 @@
                                         <li><a href="blog-details.html">Recruitment Agencies<span>(11)</span></a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="sidebar-widget post-widget mb_60">
                                 <div class="widget-title mb_20">
                                     <h3>Latest Posts</h3>
@@ -161,7 +161,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar-widget tags-widget mb_45">
+                            {{-- <div class="sidebar-widget tags-widget mb_45">
                                 <div class="widget-title mb_20">
                                     <h3>Popular tag</h3>
                                 </div>
@@ -174,7 +174,7 @@
                                         <li><a href="blog-details.html">Technology</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="sidebar-widget archives-widget">
                                 <div class="widget-title mb_11">
                                     <h3>Archives</h3>
@@ -209,27 +209,23 @@
                             <div class="news-block-two">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><img src="{{ asset('/Landingpage/assets/images/news/news-15.jpg') }}"
+                                        <figure class="image"><img src="{{ asset('foto kegiatan BumDes/' . $detailblog->foto_kegiatan) }}"
                                                 alt=""></figure>
                                     </div>
                                     <div class="lower-content">
                                         <span class="category">Business</span>
-                                        <h3>Create a series of blog posts discussing common interview Discuss the
-                                            company’s core values</h3>
+                                        <h3>{{$detailblog->Judul_Kegiatan}}</h3>
                                         <ul class="post-info">
                                             <li>By <a href="blog-details.html">Ema Chawal</a></li>
-                                            <li><span>March 18, 2023</span></li>
+                                            <li><span>{{ $detailblog->tanggal_kegiatan }}</span></li>
                                         </ul>
                                     </div>
                                     <div class="text-box pt_25 mb_50">
-                                        <p class="mb_30">Another post might tackle technical questions relevant to
-                                            your industry, offering strategies for breaking down complex problems and
-                                            showcasing problem-solving skills. By breaking down each type of question
-                                            and offering practical advice, sample answers.</p>
-                                        <p class="mb_40">tips for tailoring responses to align with the company's
+                                        <p class="mb_30">{!! $detailblog->deskripsi_kegiatan !!}</p>
+                                        {{-- <p class="mb_40">tips for tailoring responses to align with the company's
                                             values and expectations, this blog series can become an essential resource
                                             for candidates aiming to succeed in their interviews and secure their
-                                            desired positions.</p>
+                                            desired positions.</p> --}}
                                         <blockquote>
                                             <div class="icon-box"><i class="icon-36"></i></div>
                                             <h4>That's why we adhere to strict quality standards and regulations to
@@ -252,7 +248,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="content-one mb_40">
+                            {{-- <div class="content-one mb_40">
                                 <h3>Hiring & Onboarding Process</h3>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                     Ipsum has been the industry's standard dummy text ever since the 1500s, when an
@@ -325,7 +321,7 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

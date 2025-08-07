@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('keterangan');
-            $table->string('deskripsi_testimonial');
-            $table->integer('rating');
-            $table->integer('status')->default(0); // 0 = pending, 1 = acc 
+            $table->text('deskripsi_testimonial');
+            $table->string('nomor_telepone')->nullable();
+            $table->integer('status')->default(0); // 0 = pending, 1 = acc
             $table->string('foto_testimonial')->nullable();
             $table->timestamps();
         });

@@ -13,7 +13,8 @@ class pages extends Controller
     }
     public function lowongan()
     {
-        return view('Landingpage.pages.lowongan');
+        $Lowongan = \App\Models\LowonganPekerjaan::where('status', 'dibuka')->get();
+        return view('Landingpage.pages.lowongan', compact('Lowongan'));
     }
     public function keuangan()
     {

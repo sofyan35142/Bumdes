@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'pakukerto@gmail.com',
-            'password' => 'pakukertojaya',
+            'password' => 'pakukerto123',
         ]);
         $jenisList = ['pendapatan', 'belanja', 'pembiayaan'];
     $kategoriList = [
@@ -64,6 +64,7 @@ class DatabaseSeeder extends Seeder
             Kategori::class,
             LayananUnggulan::class,
             KegiatanSeeder::class,
+            Testimonial::class,
         ]);
     }
 }
