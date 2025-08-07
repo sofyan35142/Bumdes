@@ -83,7 +83,7 @@ class Beranda extends Controller
     }
     public function updatesambutan(Request $request, $id)
     {
-        dd($request->all());
+        // dd($request->all());
         $sambutan = SambutanDirektur::findOrFail($id);
         // dd($sambutan);
 
@@ -138,24 +138,27 @@ class Beranda extends Controller
     }
 
     //////////////////////////// L A Y A N A N  U N G G U L A N ///////////////////////////////////////
-        public function unggulan()
+    public function unggulan()
     {
-        $unggulan = LayananUnggulan::all();
+        $unggulan = LayananUnggulan::with('kategori')->latest()->get();
+
+        // $unggulan = LayananUnggulan::all();
         return view('AdminPage.Home.Unggulan.unggulan', compact('unggulan'));
     }
     public function tambahunggulan()
     {
-        return view('AdminPage.Home.Unggulan.tambahunggulan');
+        $kategoris = \App\Models\kategorimodel::all();
+        return view('AdminPage.Home.Unggulan.tambahunggulan', compact('kategoris'));
     }
 
     public function insertunggulan(Request $request)
     {
         // dd($request->all());
-       // Validasi input
+        // Validasi input
         $request->validate([
             'Nama_Layanan' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'kategori' => 'required|string',
+            'kategori_id' => 'required|exists:kategorimodels,id',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -163,7 +166,8 @@ class Beranda extends Controller
         $unggulan = new LayananUnggulan();
         $unggulan->Nama_Layanan = $request->Nama_Layanan;
         $unggulan->deskripsi = $request->deskripsi;
-        $unggulan->kategori = $request->kategori;
+        $unggulan->kategori_id = $request->kategori_id; // ← ini yang benar
+
 
         // Upload gambar jika ada
         if ($request->hasFile('foto_layanan')) {
@@ -182,7 +186,8 @@ class Beranda extends Controller
     public function editunggulan($id)
     {
         $unggulan = LayananUnggulan::findOrFail($id);
-        return view('AdminPage.Home.Unggulan.editunggulan', compact('unggulan'));
+        $kategoris = \App\Models\kategorimodel::all();
+        return view('AdminPage.Home.Unggulan.editunggulan', compact('unggulan', 'kategoris'));
     }
 
     public function updateunggulan(Request $request, $id)
@@ -203,7 +208,7 @@ class Beranda extends Controller
         $unggulan->update([
             'nama_layanan' => $request->input('nama_layanan'),
             'deskripsi' => $request->input('deskripsi'),
-            'kategori' => $request->input('kategori'),
+            'kategori_id' => $request->input('kategori'), // ← perbaikan di sini
             'foto_layanan' => $foto_layanan,
         ]);
 
@@ -216,4 +221,6 @@ class Beranda extends Controller
 
         return redirect()->route('admin.unggulan')->with('success', 'Layanan Unggulan berhasil dihapus');
     }
+
+    
 }

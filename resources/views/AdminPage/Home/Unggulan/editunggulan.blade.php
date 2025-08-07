@@ -52,7 +52,8 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="{{ route('admin.updateunggulan', $unggulan->id) }}" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('admin.updateunggulan', $unggulan->id) }}"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3 row">
                                             <label for="blog-title-input" class="col-md-2 col-form-label">Nama
@@ -68,33 +69,42 @@
                                         <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">{{ old('deskripsi', $unggulan->deskripsi) }}</textarea>
 
                                         <div class="mb-3 row">
-                                            <label for="kategori-input" class="col-md-2 col-form-label">Kategori</label>
+                                            <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="text" id="kategori-input"
-                                                    placeholder="Masukkan kategori" name="kategori"
-                                                    value="{{ old('kategori', $unggulan->kategori) }}">
+                                                <select class="form-select" name="kategori_id" id="kategori_id"
+                                                    required>
+                                                    <option value="" disabled>Pilih Kategori</option>
+                                                    @foreach ($kategoris as $kat)
+                                                        <option value="{{ $kat->id }}"
+                                                            {{ $unggulan->kategori_id == $kat->id ? 'selected' : '' }}>
+                                                            {{ $kat->nama_kategori }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class="mb-3 row">
-    <label for="foto_layanan" class="col-md-2 col-form-label">Poster Layanan</label>
-    <div class="col-md-10">
-        <input class="form-control" type="file" id="foto_layanan"
-            accept="image/*" name="foto_layanan" onchange="previewImage(event)">
-        <div class="form-text">Unggah gambar baru jika ingin mengganti</div>
+                                            <label for="foto_layanan" class="col-md-2 col-form-label">Poster
+                                                Layanan</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="file" id="foto_layanan"
+                                                    accept="image/*" name="foto_layanan" onchange="previewImage(event)">
+                                                <div class="form-text">Unggah gambar baru jika ingin mengganti</div>
 
-        <!-- Gambar lama (default) -->
-        @if ($unggulan->foto_layanan)
-            <div class="mt-2">
-                <img id="image-preview"
-                    src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
-                    alt="Gambar Layanan" width="200">
-            </div>
-        @else
-            <img id="image-preview" class="mt-2" style="max-height: 200px; display: none;">
-        @endif
-    </div>
-</div>
+                                                <!-- Gambar lama (default) -->
+                                                @if ($unggulan->foto_layanan)
+                                                    <div class="mt-2">
+                                                        <img id="image-preview"
+                                                            src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
+                                                            alt="Gambar Layanan" width="200">
+                                                    </div>
+                                                @else
+                                                    <img id="image-preview" class="mt-2"
+                                                        style="max-height: 200px; display: none;">
+                                                @endif
+                                            </div>
+                                        </div>
 
                                         <div class="d-flex flex-wrap gap-3 mt-3">
                                             <button type="submit"
@@ -273,23 +283,23 @@
                 console.error(error);
             });
     </script>
-<script>
-    function previewImage(event) {
-        const input = event.target;
-        const preview = document.getElementById('image-preview');
+    <script>
+        function previewImage(event) {
+            const input = event.target;
+            const preview = document.getElementById('image-preview');
 
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
 
-            reader.onload = function(e) {
-                preview.src = e.target.result;
-                preview.style.display = 'block';
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+
+                reader.readAsDataURL(input.files[0]);
             }
-
-            reader.readAsDataURL(input.files[0]);
         }
-    }
-</script>
+    </script>
 
 
 </body>

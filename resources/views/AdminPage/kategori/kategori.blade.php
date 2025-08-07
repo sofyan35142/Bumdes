@@ -49,47 +49,33 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA LAYANAN kegiatan BUMDES PAKUKERTO</h4>
+                                    <h4 class="card-title">DATA KATEGORI BUMDES PAKUKERTO</h4>
                                     {{-- <p class="card-title-desc">DataTables has most features enabled by
                                         default, so all you need to do to use it with your own tables is to call
                                         the construction function: <code>$().DataTable();</code>. --}}
                                     {{-- </p> --}}
-                                     <a href="/admin/tambahkegiatan"><button class="btn btn-primary"> Tambah Data
-                                            Kegiatan</button></a>
+                                     <CENTER><a href="/admin/tambahkategori"><button class="btn btn-primary"> Tambah Data
+                                            Kegiatan</button></a></CENTER>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
-                                                <th>Judul kegiatan BumDes</th>
-                                                <th>Tanggal Kegiatan</th>
-                                                <th>Kategori Kegiatan</th>
-                                                <th>Deskripsi Kegiatan</th>
-                                                <th>Foto Kegiatan</th>
+                                                <th>Nama Kategori</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <?php $no = 1; ?>
-                                        @foreach ($kegiatan as $kegiatan)
+                                        @foreach ($kategori as $kategori)
                                             <tr>
                                                 <td>{{ $no }}</td>
-                                                <td>{{ $kegiatan->Judul_Kegiatan }}</td>
-                                                <td>{{ $kegiatan->tanggal_kegiatan }}</td>
-                                                <td>{{ $kegiatan->kategori->nama_kategori ?? '-' }}</td>
-                                                <td style="word-break: break-all;">{!! $kegiatan->deskripsi_kegiatan !!}</td>
-                                                {{-- <td>{{ $kegiatan->kategori }}</td> --}}
+                                                <td>{{ $kategori->nama_kategori }}</td>
                                                 <td>
-                                                    <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
-                                                        alt="" style="width: 80px; height:80px;">
-                                                </td>
-
-
-                                                <td>
-                                                    <a href="/admin/editkegiatan/{{ $kegiatan->id }}"
+                                                    <a href="/admin/editkategori/{{ $kategori->id }}"
                                                         class="btn btn-warning"><i
                                                             class="fa-solid fa-pen-to-square"></i></a>
                                                     <a href="#" class="btn btn-danger btn-delete"
-                                                        data-id="{{ $kegiatan->id }}">
+                                                        data-id="{{ $kategori->id }}">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </a>
                                                 </td>
@@ -289,7 +275,7 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Lakukan penghapusan, misalnya redirect ke route destroy
-                            window.location.href = "/admin/hapuskegiatan/" + id;
+                            window.location.href = "/admin/hapuskategori/" + id;
                         } else if (result.dismiss === Swal.DismissReason.cancel) {
                             swalWithBootstrapButtons.fire(
                                 "Dibatalkan",

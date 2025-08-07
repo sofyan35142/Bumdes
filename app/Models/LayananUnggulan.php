@@ -14,4 +14,8 @@ class LayananUnggulan extends Model
         'kategori',
         'foto_layanan',
     ];
+public function kategori()
+{
+    return $this->belongsTo(kategorimodel::class, 'kategori_id');
+}
 }

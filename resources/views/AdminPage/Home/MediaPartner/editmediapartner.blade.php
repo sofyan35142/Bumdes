@@ -3,7 +3,6 @@
 
 @include('AdminPage.layouts.head')
 
-
 <body>
 
     <!-- <body data-layout="horizontal" data-topbar="colored"> -->
@@ -31,12 +30,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Datatables</h4>
+                                <h4 class="mb-0">Repeater</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Datatables</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
+                                        <li class="breadcrumb-item active">Repeater</li>
                                     </ol>
                                 </div>
 
@@ -49,70 +48,55 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA LAYANAN kegiatan BUMDES PAKUKERTO</h4>
-                                    {{-- <p class="card-title-desc">DataTables has most features enabled by
-                                        default, so all you need to do to use it with your own tables is to call
-                                        the construction function: <code>$().DataTable();</code>. --}}
-                                    {{-- </p> --}}
-                                     <a href="/admin/tambahkegiatan"><button class="btn btn-primary"> Tambah Data
-                                            Kegiatan</button></a>
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>NO</th>
-                                                <th>Judul kegiatan BumDes</th>
-                                                <th>Tanggal Kegiatan</th>
-                                                <th>Kategori Kegiatan</th>
-                                                <th>Deskripsi Kegiatan</th>
-                                                <th>Foto Kegiatan</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <?php $no = 1; ?>
-                                        @foreach ($kegiatan as $kegiatan)
-                                            <tr>
-                                                <td>{{ $no }}</td>
-                                                <td>{{ $kegiatan->Judul_Kegiatan }}</td>
-                                                <td>{{ $kegiatan->tanggal_kegiatan }}</td>
-                                                <td>{{ $kegiatan->kategori->nama_kategori ?? '-' }}</td>
-                                                <td style="word-break: break-all;">{!! $kegiatan->deskripsi_kegiatan !!}</td>
-                                                {{-- <td>{{ $kegiatan->kategori }}</td> --}}
-                                                <td>
-                                                    <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
-                                                        alt="" style="width: 80px; height:80px;">
-                                                </td>
+                                    <h4 class="card-title mb-4">Example</h4>
+                                    <form action="{{ route('admin.updatemediapartner', $mediapartner->id) }}"
+                                        method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="mb-3">
+                                            <label>Nama Media Partner</label>
+                                            <input type="text" name="Nama_Media" class="form-control"
+                                                value="{{ $mediapartner->Nama_Media }}">
+                                        </div>
 
+                                        <div class="mb-3">
+                                            <label>Logo Lama:</label><br>
+                                            <img src="{{ asset('Media Partner/' . $mediapartner->Logo_Media) }}"
+                                                width="120">
+                                        </div>
 
-                                                <td>
-                                                    <a href="/admin/editkegiatan/{{ $kegiatan->id }}"
-                                                        class="btn btn-warning"><i
-                                                            class="fa-solid fa-pen-to-square"></i></a>
-                                                    <a href="#" class="btn btn-danger btn-delete"
-                                                        data-id="{{ $kegiatan->id }}">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </a>
-                                                </td>
+                                        <div class="mb-3">
+                                            <label>Upload Logo Baru (jika ingin ganti):</label>
+                                            <input type="file" name="Logo_Media" class="form-control"
+                                                accept="image/*" onchange="previewImage(this)">
+                                            <img class="img-preview mt-2" style="max-height: 120px; display: none;">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </form>
 
-                                            </tr>
-
-
-                                            </tbody>
-                                            <?php $no++; ?>
-                                        @endforeach
-                                    </table>
+                                    <script>
+                                        function previewImage(input) {
+                                            const preview = input.nextElementSibling;
+                                            if (input.files && input.files[0]) {
+                                                const reader = new FileReader();
+                                                reader.onload = function(e) {
+                                                    preview.src = e.target.result;
+                                                    preview.style.display = 'block';
+                                                };
+                                                reader.readAsDataURL(input.files[0]);
+                                            }
+                                        }
+                                    </script>
 
                                 </div>
                             </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
-
-
+                        </div>
+                    </div>
+                    <!-- end row -->
+                    <!-- end row -->
 
                 </div> <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
-
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -131,6 +115,7 @@
                     </div>
                 </div>
             </footer>
+
         </div>
         <!-- end main content-->
 
@@ -264,43 +249,21 @@
     <div class="rightbar-overlay"></div>
 
     @include('AdminPage.layouts.scripts')
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                    confirmButton: "btn btn-success",
-                    cancelButton: "btn btn-danger"
-                },
-                buttonsStyling: false
-            });
-
-            document.querySelectorAll('.btn-delete').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-
-                    swalWithBootstrapButtons.fire({
-                        title: "Yakin mau hapus?",
-                        text: "Data yang dihapus tidak bisa dikembalikan!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonText: "Ya, hapus!",
-                        cancelButtonText: "Batal",
-                        reverseButtons: true
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            // Lakukan penghapusan, misalnya redirect ke route destroy
-                            window.location.href = "/admin/hapuskegiatan/" + id;
-                        } else if (result.dismiss === Swal.DismissReason.cancel) {
-                            swalWithBootstrapButtons.fire(
-                                "Dibatalkan",
-                                "Data tidak jadi dihapus :)",
-                                "error"
-                            );
-                        }
-                    });
-                });
-            });
-        });
+    <script>
+        function previewImage(input) {
+            const imgPreview = input.closest('.mb-3').querySelector('.img-preview');
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imgPreview.src = e.target.result;
+                    imgPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                imgPreview.src = '#';
+                imgPreview.style.display = 'none';
+            }
+        }
     </script>
 
 </body>

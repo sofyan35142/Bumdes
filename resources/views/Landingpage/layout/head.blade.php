@@ -50,4 +50,9 @@
 <link href="{{ asset('LandingPage/assets/css/module-css/blog-sidebar.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/portfolio.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/job.css') }}" rel="stylesheet">
+<<<<<<< HEAD
+=======
+<link href="{{ asset('LandingPage/assets/css/module-css/login.css') }}" rel="stylesheet">
+
+>>>>>>> f3b64b426db73719d1e99bec546e40389acf5f88
 <link href="{{ asset('LandingPage/assets/css/module-css/service-details.css') }}" rel="stylesheet">
