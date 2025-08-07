@@ -36,6 +36,25 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+<!-- ========== DataTables ========== -->
+<!-- Required datatable js -->
+<script src="{{ asset('AdminPage/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('AdminPage/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+
+<!-- Buttons examples -->
+<script src="{{ asset('AdminPage/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('AdminPage/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('AdminPage/assets/libs/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('AdminPage/assets/libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('AdminPage/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js') }}"></script>
+
+<!-- Responsive examples -->
+<script src="{{ asset('AdminPage/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('AdminPage/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
+
+<!-- Datatable init js -->
+<script src="{{ asset('AdminPage/assets/js/pages/datatables.init.js') }}"></script>
+
 <!-- ========== Toastr Notifications ========== -->
 <script>
     @if (session('success'))

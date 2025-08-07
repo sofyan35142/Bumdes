@@ -4,14 +4,15 @@
 
 <title>BUMDES - Badan Usaha Milik Desa Pakukerto</title>
 
-<!-- Fav Icon -->
+<!-- Favicon -->
 <link rel="icon" href="{{ asset('LandingPage/assets/images/favicon.ico') }}" type="image/x-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
 
-<!-- Stylesheets -->
+<!-- Core Stylesheets -->
 <link href="{{ asset('LandingPage/assets/css/font-awesome-all.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/flaticon.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/owl.css') }}" rel="stylesheet">
@@ -24,7 +25,7 @@
 <link href="{{ asset('LandingPage/assets/css/color.css') }}" id="jssDefault" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/rtl.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/style.css') }}" rel="stylesheet">
-<link href="http://127.0.0.1:8000/LandingPage/assets/css/module-css/page-title.css" rel="stylesheet">
+<link href="{{ asset('LandingPage/assets/css/responsive.css') }}" rel="stylesheet">
 
 <!-- Module CSS -->
 <link href="{{ asset('LandingPage/assets/css/module-css/header.css') }}" rel="stylesheet">
@@ -43,7 +44,8 @@
 <link href="{{ asset('LandingPage/assets/css/module-css/download.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/subscribe.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/footer.css') }}" rel="stylesheet">
-<link href="{{ asset('LandingPage/assets/css/responsive.css') }}" rel="stylesheet">
+<link href="{{ asset('LandingPage/assets/css/module-css/page-title.css') }}" rel="stylesheet">
+<link href="{{ asset('LandingPage/assets/css/module-css/contact.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/blog-sidebar.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/portfolio.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/job.css') }}" rel="stylesheet">

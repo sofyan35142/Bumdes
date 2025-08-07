@@ -7,7 +7,8 @@
 <link rel="shortcut icon" href="{{ asset('AdminPage/assets/images/favicon.ico') }}">
 
 <!-- Bootstrap Css -->
-<link href="{{ asset('AdminPage/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<link href="{{ asset('AdminPage/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet"
+    type="text/css" />
 <!-- Icons Css -->
 <link href="{{ asset('AdminPage/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 <!-- App Css-->
@@ -16,3 +17,13 @@
 
 <!-- Toastr CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
+<!-- DataTables -->
+<link href="{{ asset('AdminPage/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
+    type="text/css" />
+<link href="{{ asset('AdminPage/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}"
+    rel="stylesheet" type="text/css" />v
+
+<!-- Responsive datatable examples -->
+<link href="{{asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet"
+    type="text/css" />

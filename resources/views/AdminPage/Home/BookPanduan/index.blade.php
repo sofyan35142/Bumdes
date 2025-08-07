@@ -24,92 +24,72 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content">
+
             <div class="page-content">
                 <div class="container-fluid">
 
-                    {{-- Judul halaman --}}
+                    <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Manajemen Dasar Hukum BUMDes</h4>
-                                <div class="page-title-right d-flex align-items-center">
+                                <h4 class="mb-0">Panduan BUMDes</h4>
+
+                                <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Profil</a></li>
-                                        <li class="breadcrumb-item active">Dasar Hukum</li>
+                                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                        <li class="breadcrumb-item active">Panduan</li>
                                     </ol>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- end page title -->
 
-                    {{-- Konten utama --}}
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-xl-12">
                             <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Data Dasar Hukum BUMDes</h4>
+                                <div class="card-body position-relative">
 
-                                    @if ($data)
-                                        {{-- Tombol Edit --}}
-                                        <a href="{{ route('admin.dasarHukum.edit') }}">
-                                            <button class="btn btn-primary mb-3">Edit Dasar Hukum</button>
+                                    <!-- Tombol Edit -->
+                                    <a href="{{ route('admin.bookPanduan.edit') }}"
+                                        class="btn btn-warning btn-sm position-absolute top-0 end-0 m-3">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+
+                                    <h4 class="card-title">{{ $data->judul }}</h4>
+                                    <p class="card-title-desc">Berikut adalah panduan lengkap untuk pengelolaan dan
+                                        pengembangan BUMDes tahun 2025.</p>
+
+                                    <!-- Gambar Buku -->
+                                    <div class="text-center mb-4">
+                                        <img src="{{ asset($data->gambar) }}" alt="Panduan BUMDes"
+                                            class="img-fluid img-thumbnail" style="max-height: 300px;">
+                                    </div>
+
+                                    <!-- Poin-poin -->
+                                    <div>
+                                        {!! $data->points !!}
+                                    </div>
+
+                                    <!-- Tombol Unduh -->
+                                    <div class="mt-4">
+                                        <a href="{{ asset($data->file_ebook) }}" target="_blank"
+                                            class="btn btn-primary">
+                                            <i class="fas fa-download"></i> Unduh Panduan (PDF)
                                         </a>
-
-                                        {{-- Accordion Points --}}
-                                        <h5 class="mt-3">Poin Dasar Hukum</h5>
-                                        <ol>
-                                            @foreach ($data->points as $point)
-                                                <li>
-                                                    <strong>{{ $point['title'] }}</strong><br>
-                                                    <span>{{ $point['body'] }}</span>
-                                                </li>
-                                            @endforeach
-                                        </ol>
-
-                                        {{-- Gambar Samping Accordion --}}
-                                        @if ($data->gambar_samping)
-                                            <div class="mt-4">
-                                                <h5>Gambar Samping</h5>
-                                                <img src="{{ asset($data->gambar_samping) }}" alt="Gambar Samping"
-                                                    class="img-fluid rounded border" style="max-height: 300px;">
-                                            </div>
-                                        @endif
-
-                                        {{-- Sertifikat --}}
-                                        <div class="mt-4">
-                                            <h5>{{ $data->judul }}</h5>
-                                            <div>{!! $data->sertifikat_list !!}</div>
-
-                                            @if ($data->sertifikat_file)
-                                                <div class="mt-2">
-                                                    <a href="{{ asset('storage/' . $data->sertifikat_file) }}"
-                                                        target="_blank">
-                                                        Lihat Sertifikat (PDF)
-                                                    </a>
-                                                </div>
-                                            @endif
-                                        </div>
-
-                                        {{-- Gambar Buku --}}
-                                        @if ($data->gambar_buku)
-                                            <div class="mt-4">
-                                                <h5>Gambar Buku</h5>
-                                                <img src="{{ asset($data->gambar_buku) }}" alt="Gambar Buku"
-                                                    class="img-fluid rounded border" style="max-height: 300px;">
-                                            </div>
-                                        @endif
-                                    @else
-                                        <p class="text-muted">Data dasar hukum belum tersedia.</p>
-                                    @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </div>
 
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            @include('AdminPage.layouts.footer')
+        </div>
         <!-- end main content-->
 
     </div>
@@ -250,6 +230,19 @@
                 console.error(error);
             });
     </script>
+    <script>
+        function previewImage(input, previewId) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(previewId).src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
 
 </body>
 

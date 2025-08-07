@@ -11,19 +11,19 @@ class CreateDasarHukumTable extends Migration
         Schema::create('dasar_hukum', function (Blueprint $table) {
             $table->id();
 
-            // Accordion points sebagai JSON
+            // Accordion points sebagai JSON (bisa array of poin)
             $table->json('points')->nullable();
 
-            // Gambar samping accordion
+            // Gambar di samping accordion
             $table->string('gambar_samping')->nullable();
 
-            // Panduan
-            $table->string('panduan_judul')->nullable();
-            $table->text('panduan_list')->nullable(); // pakai \n sebagai pemisah antar poin
-            $table->string('panduan_file')->nullable(); // file PDF
-            $table->string('gambar_panduan')->nullable(); // gambar buku
+            // Informasi sertifikat
+            $table->string('judul')->nullable();
+            $table->text('sertifikat_list')->nullable(); // Pisahkan poin pakai \n
+            $table->string('sertifikat_file')->nullable(); // File PDF sertifikat
+            $table->string('gambar_buku')->nullable(); // Gambar pendukung sertifikat
 
-            $table->timestamps();
+            $table->timestamps(); // created_at & updated_at
         });
     }
 

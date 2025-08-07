@@ -14,10 +14,6 @@ return new class extends Migration
             $table->json('misi')->nullable();
             $table->json('tujuan')->nullable();
             $table->string('gambar_visi_misi')->nullable();
-            $table->string('judul_panduan')->nullable();
-            $table->json('poin_panduan')->nullable();
-            $table->string('gambar_panduan')->nullable();
-            $table->string('file_panduan')->nullable();
             $table->timestamps();
         });
     }

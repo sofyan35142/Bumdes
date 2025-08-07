@@ -657,6 +657,31 @@
                 <div class="row clearfix">
 
                     <!-- Service Block 1 -->
+<<<<<<< HEAD
+                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <a href="service-details-2.html">
+                                            <img src="{{ asset('Pelatihan UMKM.png') }}" alt="">
+                                        </a>
+                                    </figure>
+                                    <figure class="overlay-image">
+                                        <a href="service-details-2.html">
+                                            <img src="{{ asset('Landingpage/assets/images/service/service-1.jpg') }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="lower-content">
+                                    <h3><a href="service-details-2.html">Pelatihan UMKM</a></h3>
+                                    <p>Kami mengadakan pelatihan keterampilan untuk pelaku UMKM desa agar bisa naik
+                                        kelas secara digital maupun produksi.</p>
+                                    <div class="btn-box">
+                                        <a href="service-details-2.html" class="theme-btn btn-one">View Details</a>
+=======
                     @foreach ($unggulan as $unggulan)
                         <div class="col-lg-4 col-md-6 col-sm-12 service-block">
 
@@ -697,6 +722,7 @@
                                                 class="theme-btn btn-one">View
                                                 Details</a>
                                         </div>
+>>>>>>> f3b64b426db73719d1e99bec546e40389acf5f88
                                     </div>
                                 </div>
                             </div>
@@ -1106,19 +1132,24 @@
                     <div class="row align-items-center">
                         <div class="col-lg-8 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h2>Panduan <span>BUMDes</span> 2025 untuk Usaha Desa Berkelanjutan</h2>
+                                @php
+                                    $judul = explode(' ', $book->judul, 2);
+                                @endphp
+                                <h2>{{ $judul[0] }}
+                                    @if (isset($judul[1]))
+                                        <span>{{ $judul[1] }}</span>
+                                    @endif
+                                </h2>
                                 <ul class="list-item mb_30">
-                                    <li>Pelajari langkah-langkah membangun dan mengelola unit usaha desa.</li>
-                                    <li> Dapatkan tips pengelolaan keuangan dan laporan transparan.</li>
-                                    <li>Strategi pemasaran dan kolaborasi UMKM lokal.</li>
+                                    {!!$book->points!!}
                                 </ul>
-                                <button type="button" class="theme-btn btn-one">Download E-book</button>
+                                <a type="button" href="{{asset($book->file_ebook)}}" download class="theme-btn btn-one">Download E-book</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                             <div class="image-box">
                                 <figure class="image">
-                                    <img src="{{ asset('landingpage/assets/images/resource/book-2.png') }}"
+                                    <img src="{{ asset($book->gambar) }}"
                                         alt="">
                                 </figure>
                             </div>
