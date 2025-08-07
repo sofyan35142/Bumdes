@@ -87,11 +87,11 @@
         <section class="page-title centred pt_110">
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>Blog Grid</h1>
+                    <h1>Blog</h1>
                     <ul class="bread-crumb clearfix">
                         <li><a href="/">Home</a></li>
                         <li>-</li>
-                        <li>Blog Grid</li>
+                        <li>Blog</li>
                     </ul>
                 </div>
             </div>
@@ -192,25 +192,29 @@
                     <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                         <div class="blog-grid-content">
                             <div class="row clearfix">
+                                @foreach ($kegiatan as $kegiatan)
+
+
                                 <div class="col-lg-6 col-md-6 col-sm-12 news-block">
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                                <figure class="image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-4.jpg') }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/news-4.jpg') }}" alt=""></a></figure>
+                                                <figure class="image"><a href="{{ route('blogdetail', $kegiatan->id) }}"><img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}" alt=""></a></figure>
+                                                <figure class="overlay-image"><a href="{{ route('blogdetail', $kegiatan->id) }}"><img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}" alt=""></a></figure>
                                             </div>
                                             <div class="lower-content">
-                                                <span class="category">Business</span>
-                                                <h3><a href="blog-details.html">Create a series of blog posts discussing common interview</a></h3>
+                                                <span class="category">{{ $kegiatan->kategori->nama_kategori ?? '-' }}</span>
+                                                <h3><a href="{{ route('blogdetail', $kegiatan->id) }}">{{ $kegiatan->Judul_Kegiatan }}</a></h3>
                                                 <ul class="post-info">
-                                                    <li>By <a href="blog-details.html">Alex Beniwal</a></li>
-                                                    <li><span>March 20, 2023</span></li>
+                                                    <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Alex Beniwal</a></li>
+                                                    <li><span>{{ $kegiatan->tanggal_kegiatan }}</span></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 news-block">
+                                @endforeach
+                                {{-- <div class="col-lg-6 col-md-6 col-sm-12 news-block">
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                                         <div class="inner-box">
                                             <div class="image-box">
@@ -335,7 +339,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="pagination-wrapper">
                                 <ul class="pagination clearfix">
@@ -381,114 +385,7 @@
 
 
         <!-- main-footer -->
-<<<<<<< HEAD
         @include('Landingpage.layout.footer')
-=======
-        <footer class="main-footer home-2">
-            <div class="widget-section p_relative pt_80 pb_100">
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget logo-widget mr_30">
-                                <figure class="footer-logo mb_20"><a href="index.html"><img src="{{ asset('LandingPage/assets/images/logo.png') }}" alt=""></a></figure>
-                                <p>Since 2018, JobAway has connecting hospitality workers to thousands of business, private events and universities.</p>
-                                <div class="download-btn">
-                                    <a href="about.html" class="apple-store">
-                                        <img src="{{ asset('LandingPage/assets/images/icons/icon-4.png') }}" alt="">
-                                        <span>Download on</span>
-                                        App Store
-                                    </a>
-                                    <a href="about.html" class="play-store">
-                                        <img src="{{ asset('LandingPage/assets/images/icons/icon-5.png') }}" alt="">
-                                        <span>Get it on</span>
-                                        Google Play
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>For Workers</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="index.html">Find Work</a></li>
-                                        <li><a href="index.html">Jobs in Dubai</a></li>
-                                        <li><a href="index.html">Jobs in Virginia</a></li>
-                                        <li><a href="index.html">Jobs in California</a></li>
-                                        <li><a href="index.html">Jobs in Alaska</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>For Business</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="index.html">Merchandising</a></li>
-                                        <li><a href="index.html">Hospitality Staff</a></li>
-                                        <li><a href="index.html">General Labour</a></li>
-                                        <li><a href="index.html">Car Drivers</a></li>
-                                        <li><a href="index.html">Bus Driver</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>Company</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="index.html">Career</a></li>
-                                        <li><a href="index.html">Partners</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="index.html">Clients</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h4>Help & Support</h4>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="faq.html">General FAQ</a></li>
-                                        <li><a href="index.html">Support Center</a></li>
-                                        <li><a href="index.html">Privacy Policy</a></li>
-                                        <li><a href="index.html">Terms & Conditions</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="auto-container">
-                    <div class="bottom-inner">
-                        <div class="copyright"><p>Copyright &copy; 2024 <a href="index.html">JobAway</a> All rights reserved.</p></div>
-                        <ul class="social-links">
-                            <li><h5>Follow Us On:</h5></li>
-                            <li><a href="index.html"><i class="icon-22"></i></a></li>
-                            <li><a href="index.html"><i class="icon-23"></i></a></li>
-                            <li><a href="index.html"><i class="icon-24"></i></a></li>
-                            <li><a href="index.html"><i class="icon-25"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
->>>>>>> 0834c6ef6f2c7e52a0e9d226daf298aa4c8ea7cb
         <!-- main-footer end -->
 
 

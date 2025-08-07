@@ -26,7 +26,7 @@
 
 
         <!--Search Popup-->
-        <div id="search-popup" class="search-popup">
+        {{-- <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">
                     <figure class="logo-box"><a href="index.html"><img src="assets/images/logo.png" alt=""></a>
@@ -48,16 +48,16 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
 
         <!-- main header -->
-@include('Landingpage.layout.header')
+        {{-- @include('Landingpage.layout.header') --}}
         <!-- main-header end -->
 
 
         <!-- Mobile Menu  -->
-        <div class="mobile-menu">
+        {{-- <div class="mobile-menu">
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
@@ -83,74 +83,59 @@
                     </ul>
                 </div>
             </nav>
-        </div>
+        </div> --}}
         <!-- End Mobile Menu -->
 
 
         <!-- page-title -->
-        <section class="page-title centred pt_110">
-            <div class="auto-container">
-                <div class="content-box">
-                    <h1>Login</h1>
-                    <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
-                        <li>-</li>
-                        <li>Login</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
         <!-- page-title end -->
 
 
         <!-- sign-section -->
-        <section class="sign-section pt_110 pb_120">
-            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-25.png);"></div>
-            <div class="auto-container">
-                <div class="form-inner">
-                    <form method="post" action="/admin/postsignin">
-                        @csrf
-                        <div class="form-group">
-                            <label>Email <span>*</span></label>
-                            <input type="email" name="email" placeholder="masukkan email" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Password <span>*</span></label>
-                            <input type="password" name="password" placeholder="masukan password" required>
-                        </div>
-                        <div class="form-group message-btn">
-                            <button type="submit" class="theme-btn btn-one">Log In</button>
-                        </div>
-                        <span class="text">or</span>
-                        <ul class="social-links clearfix">
-                            <li>
-                                <a href="login.html"><img src="assets/images/icons/icon-25.png"
-                                        alt="">Continue with Google</a>
-                            </li>
-                            <li>
-                                <a href="login.html"><img src="assets/images/icons/icon-26.png"
-                                        alt="">Continue with Facebook</a>
-                            </li>
-                        </ul>
-                    </form>
-                    <div class="other-option">
-                        <div class="check-box">
-                            <input class="check" type="checkbox" id="checkbox1">
-                            <label for="checkbox1">Remember me</label>
-                        </div>
-                        <button class="forgot-password">Forget password?</button>
+        <div
+            style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #f5f7fa; font-family: 'Segoe UI', sans-serif;">
+            <div
+                style="background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); width: 100%; max-width: 400px;">
+                <h2 style="text-align: center; font-size: 24px; font-weight: 600; margin-bottom: 30px; color: #333;">
+                    Login ke Admin</h2>
+                    {{-- <p >Masukkan email dan password untuk mengakses dashboard admin</p> --}}
+
+                <form action="/admin/postsignin" method="POST">
+                    @csrf
+                    <!-- CSRF Token -->
+                    <!-- Email -->
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #555;">Email *</label>
+                    <input type="email" placeholder="masukkan email" required
+                        style="width: 100%; padding: 12px 16px; border: 1px solid #ccc; border-radius: 12px; margin-bottom: 20px; font-size: 14px; transition: 0.3s; outline: none;"
+                        onfocus="this.style.borderColor='#4ade80'" onblur="this.style.borderColor='#ccc'" name="email">
+
+                    <!-- Password -->
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #555;">Password *</label>
+                    <div style="position: relative; margin-bottom: 30px;">
+                        <input type="password" id="password" placeholder="masukkan password" required
+                            style="width: 100%; padding: 12px 40px 12px 16px; border: 1px solid #ccc; border-radius: 12px; font-size: 14px; transition: 0.3s; outline: none;"
+                            onfocus="this.style.borderColor='#4ade80'" onblur="this.style.borderColor='#ccc'" name="password">
+                        <span onclick="togglePassword()"
+                            style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                            👁️
+                        </span>
                     </div>
-                    <div class="lower-text centred">
-                        <p>Not registered yet? <a href="signup.html">Create an Account</a></p>
-                    </div>
-                </div>
+
+                    <!-- Button -->
+                    <button type="submit"
+                        style="width: 100%; padding: 12px; background-color: #4ade80; color: white; font-weight: 600; border: none; border-radius: 9999px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;"
+                        onmouseover="this.style.backgroundColor='#22c55e'"
+                        onmouseout="this.style.backgroundColor='#4ade80'">
+                        Log In
+                    </button>
+                </form>
             </div>
-        </section>
+        </div>
         <!-- sign-section end -->
 
 
         <!-- subscribe-style-two -->
-        <section class="subscribe-style-two">
+        {{-- <section class="subscribe-style-two">
             <div class="bg-color"></div>
             <div class="auto-container">
                 <div class="inner-container">
@@ -171,12 +156,12 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- subscribe-style-two end -->
 
 
         <!-- main-footer -->
-        @include('Landingpage.layout.footer')
+        {{-- @include('Landingpage.layout.footer') --}}
         <!-- main-footer end -->
 
 
@@ -192,6 +177,12 @@
 
 
     @include('Landingpage.layout.scripts')
+    <script>
+        function togglePassword() {
+            const input = document.getElementById('password');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+    </script>
 </body><!-- End of .page_wrapper -->
 
 <!-- Mirrored from jobaway.pixcelsthemes.com/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:53 GMT -->

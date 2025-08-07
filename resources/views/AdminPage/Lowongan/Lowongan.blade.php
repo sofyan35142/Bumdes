@@ -49,100 +49,70 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA TESTIMONIAL</h4>
+                                    <h4 class="card-title">DATA LAYANAN UNGGULAN BUMDES PAKUKERTO</h4>
                                     {{-- <p class="card-title-desc">DataTables has most features enabled by
                                         default, so all you need to do to use it with your own tables is to call
                                         the construction function: <code>$().DataTable();</code>. --}}
-                                    </p>
+                                    {{-- </p> --}}
+                                     <a href="/admin/tambahlowongan"><button class="btn btn-primary"> Tambah Data
+                                            Lowongan</button></a>
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th>NO</th>
-                                                <th>Nama</th>
-                                                <th>Keterangan</th>
-                                                <th>Deskripsi Testimonial</th>
-                                                <th>Rating</th>
-                                                <th>Status</th>
-                                                <th>Foto</th>
+                                                <th>Judul Lowongan</th>
+                                                <th>Deskripsi</th>
+                                                <th>Tugas</th>
+                                                <th>Kualifikasi</th>
+                                                <th>Tanggal Dibuka</th>
+                                                <th>Tanggal Ditutup</th>
+                                                <th>Lokasi</th>
+                                                <th>Poster Lowongan Pekerjaan</th>
+                                                <th>Status Lowongan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <?php $no = 1; ?>
-                                        @foreach ($testimonial as $row)
+                                        @foreach ($lowongan as $lowongan)
                                             <tr>
                                                 <td>{{ $no }}</td>
-                                                <td>{{ $row->nama }}</td>
-                                                <td>{{ $row->keterangan }}</td>
-                                                <td>{{ $row->deskripsi_testimonial }}</td>
-                                                <td>{{ $row->nomor_telepone }}</td>
-                                                {{-- <td>
-                                                    @for ($i = 1; $i <= $row->rating; $i++)
-                                                        <i class="fas fa-star text-warning"></i>
-                                                    @endfor
-                                                </td> --}}
+                                                <td>{{ $lowongan->judul_lowongan }}</td>
+                                                <td style="word-break: break-all;">{!! $lowongan->deskripsi !!}</td>
+                                                <td style="word-break: break-all;">{!! $lowongan->tugas !!}</td>
+                                                <td style="word-break: break-all;">{!! $lowongan->kualifikasi !!}</td>
+                                                <td>{{ $lowongan->tanggal_dibuka }}</td>
+                                                <td>{{ $lowongan->tanggal_ditutup }}</td>
+                                                <td>{{ $lowongan->lokasi }}</td>
                                                 <td>
-                                                    @if ($row->status == 1)
-                                                        <span class="badge bg-success">Approved</span>
-                                                    @elseif ($row->status == 2)
-                                                        <span class="badge bg-danger">Ditolak</span>
-                                                    @else
-                                                        <span class="badge bg-warning">Pending</span>
-                                                    @endif
+                                                    <img src="{{ asset('poster_lowongan/' . $lowongan->poster_lowongan) }}"
+                                                        alt="" style="width: 80px; height:80px;">
                                                 </td>
+
+        <td>
+            {{-- Menampilkan status --}}
+            @if ($lowongan->status == 'dibuka')
+                <span class="badge bg-success">Dibuka</span>
+            @else
+                <span class="badge bg-danger">Ditutup</span>
+            @endif
+        </td>
                                                 <td>
-                                                    @if ($row->foto_testimonial)
-                                                        <img src="{{ asset('Testimonial/' . $row->foto_testimonial) }}"
-                                                            alt="testimonial" width="100">
-                                                    @else
-                                                        No Image
-                                                    @endif
-                                                </td>
-                                                <td>
-                                                    <style>
-                                                        .btn-square {
-                                                            width: 40px;
-                                                            height: 40px;
-                                                            padding: 0;
-                                                            text-align: center;
-                                                            font-size: 16px;
-                                                            line-height: 40px;
-                                                        }
-                                                    </style>
-
-                                                    @if ($row->status == 0)
-                                                        {{-- Setujui --}}
-                                                        <a href="/admin/testimonial/accept/{{ $row->id }}"
-                                                            class="btn btn-success btn-square mb-1" title="Setujui">
-                                                            <i class="fa-solid fa-check"></i>
-                                                        </a>
-
-                                                        {{-- Tolak --}}
-                                                        <a href="/admin/testimonial/reject/{{ $row->id }}"
-                                                            class="btn btn-warning btn-square mb-1" title="Tolak">
-                                                            <i class="fa-solid fa-xmark"></i>
-                                                        </a>
-                                                    @elseif ($row->status == 1)
-                                                        <span class="badge bg-success mb-1" title="Disetujui">
-                                                            <i class="fa-solid fa-check"></i>
-                                                        </span>
-                                                    @elseif ($row->status == 2)
-                                                        <span class="badge bg-danger mb-1" title="Ditolak">
-                                                            <i class="fa-solid fa-xmark"></i>
-                                                        </span>
-                                                    @endif
-
-                                                    {{-- Hapus --}}
-                                                    <a href="#" class="btn btn-danger btn-square btn-delete"
-                                                        data-id="{{ $row->id }}">
+                                                    <a href="/admin/editlowongan/{{ $lowongan->id }}"
+                                                        class="btn btn-warning"><i
+                                                            class="fa-solid fa-pen-to-square"></i></a>
+                                                    <a href="#" class="btn btn-danger btn-delete"
+                                                        data-id="{{ $lowongan->id }}">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </a>
                                                 </td>
 
                                             </tr>
+
+
+                                            </tbody>
                                             <?php $no++; ?>
                                         @endforeach
-                                        </tbody>
                                     </table>
 
                                 </div>
@@ -307,7 +277,7 @@
     <div class="rightbar-overlay"></div>
 
     @include('AdminPage.layouts.scripts')
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
@@ -332,7 +302,7 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Lakukan penghapusan, misalnya redirect ke route destroy
-                            window.location.href = "/admin/testimonial/delete/" + id;
+                            window.location.href = "/admin/hapuslowongan/" + id;
                         } else if (result.dismiss === Swal.DismissReason.cancel) {
                             swalWithBootstrapButtons.fire(
                                 "Dibatalkan",

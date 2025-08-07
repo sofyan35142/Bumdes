@@ -612,11 +612,30 @@
                                     <div class="lower-content">
                                         <h3><a href="#">{{ $item->nama_layanan }}</a></h3>
                                         <p
+<<<<<<< HEAD
                                             style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.5em; max-height: 4.5em; text-overflow: ellipsis;">
                                             {{ $item->deskripsi }}
+=======
+                                            style="
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.5em;
+    max-height: 4.5em;
+    text-overflow: ellipsis;
+">
+                                            {!! $unggulan->deskripsi !!}
+>>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
                                         </p>
                                         <div class="btn-box">
+<<<<<<< HEAD
                                             <a href="#" class="theme-btn btn-one">View Details</a>
+=======
+                                            <a href="/detailunggulan/{{ $unggulan->id }}"
+                                                class="theme-btn btn-one">View
+                                                Details</a>
+>>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
                                         </div>
                                     </div>
                                 </div>
@@ -1009,13 +1028,13 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image">
-                                            <a href="blog-details.html">
+                                            <a href="{{ route('blogdetail', $kegiatan->id) }}">
                                                 <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
                                                     alt="">
                                             </a>
                                         </figure>
                                         <figure class="overlay-image">
-                                            <a href="blog-details.html">
+                                            <a href="{{ route('blogdetail', $kegiatan->id) }}">
                                                 <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
                                                     alt="">
                                             </a>
@@ -1023,9 +1042,12 @@
                                     </div>
                                     <div class="lower-content">
                                         <span class="category">{{ $kegiatan->kategori->nama_kategori ?? '-' }}</span>
-                                        <h3><a href="index-2.html">{{ $kegiatan->Judul_Kegiatan }}</a></h3>
+                                        <h3><a
+                                                href="{{ route('blogdetail', $kegiatan->id) }}">{{ $kegiatan->Judul_Kegiatan }}</a>
+                                        </h3>
                                         <ul class="post-info">
-                                            <li>By <a href="blog-details.html">Sekertaris BumDes</a></li>
+                                            <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Sekertaris
+                                                    BumDes</a></li>
                                             <li><span>{{ $kegiatan->tanggal_kegiatan }}</span></li>
                                         </ul>
                                     </div>
@@ -1033,6 +1055,74 @@
                             </div>
                         </div>
                     @endforeach
+<<<<<<< HEAD
+=======
+
+
+                    <!-- News Block 2 -->
+                    {{-- <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <a href="blog-details.html">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                    <figure class="overlay-image">
+                                        <a href="blog-details.html">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="lower-content">
+                                    <span class="category">Analytics</span>
+                                    <h3><a href="index-2.html">Explore the concept of personal branding and its impact
+                                            on</a></h3>
+                                    <ul class="post-info">
+                                        <li>By <a href="blog-details.html">Alex Beniwal</a></li>
+                                        <li><span>March 19, 2023</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+
+                    <!-- News Block 3 -->
+                    {{-- <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image">
+                                        <a href="blog-details.html">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                    <figure class="overlay-image">
+                                        <a href="blog-details.html">
+                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                                <div class="lower-content">
+                                    <span class="category">Business</span>
+                                    <h3><a href="index-2.html">Feature interviews with employees from top companies</a>
+                                    </h3>
+                                    <ul class="post-info">
+                                        <li>By <a href="blog-details.html">Alex Beniwal</a></li>
+                                        <li><span>March 18, 2023</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+>>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
                 </div>
             </div>
         </section>

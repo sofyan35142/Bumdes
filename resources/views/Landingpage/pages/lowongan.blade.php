@@ -112,132 +112,39 @@
                     <h2 class="title-animation">Lowongan Pekerjaan BumDes</h2>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><a href="service-details-2.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-1.jpg"
-                                                alt=""></a></figure>
-                                    <figure class="overlay-image"><a href="service-details-2.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-1.jpg"
-                                                alt=""></a></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="service-details-2.html">Training Session</a></h3>
-                                    <p>These experts guide new employees through interactive workshops</p>
-                                    <div class="btn-box"><a href="service-details-2.html" class="theme-btn btn-one">View
-                                            Details</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="300ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><a href="service-details.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-2.jpg"
-                                                alt=""></a></figure>
-                                    <figure class="overlay-image"><a href="service-details.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-2.jpg"
-                                                alt=""></a></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="service-details.html">Executive Search</a></h3>
-                                    <p>Our executive search services are customized to meet your specific</p>
-                                    <div class="btn-box"><a href="service-details.html"
-                                            class="theme-btn btn-one">View Details</a></div>
+                    @foreach ($Lowongan as $lowongan)
+                        <div class="col-lg-4 col-md-6 col-sm-12 service-block">
+                            <div class="service-block-one wow fadeInUp animated" data-wow-delay="00ms"
+                                data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <figure class="image"><a href="service-details-2.html"><img
+                                                    src="{{ asset('poster_lowongan/' . $lowongan->poster_lowongan) }}"
+                                                    alt="" style="width: 250px; height:250px;"></a></figure>
+                                        <figure class="overlay-image"><a href="service-details-2.html"><img
+                                                    src="{{ asset('poster_lowongan/' . $lowongan->poster_lowongan) }}"
+                                                    alt="" style="width: 250px; height:250px;"></a></figure>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h3><a href="service-details-2.html">{{ $lowongan->judul_lowongan }}</a></h3>
+                                        <div
+                                            style="
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    ">
+                                            {{ \Illuminate\Support\Str::limit(strip_tags($lowongan->deskripsi), 500, '...') }}
+                                        </div>
+                                        <div class="btn-box"><a href="service-details-2.html"
+                                                class="theme-btn btn-one">View
+                                                Details</a></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="600ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><a href="service-details-6.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-3.jpg"
-                                                alt=""></a></figure>
-                                    <figure class="overlay-image"><a href="service-details-6.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-3.jpg"
-                                                alt=""></a></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="service-details-6.html">Temporary Jobs</a></h3>
-                                    <p>Apply for our temporary jobs and become part of our talent pool</p>
-                                    <div class="btn-box"><a href="service-details-6.html"
-                                            class="theme-btn btn-one">View Details</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><a href="service-details-4.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-4.jpg"
-                                                alt=""></a></figure>
-                                    <figure class="overlay-image"><a href="service-details-4.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-1.jpg"
-                                                alt=""></a></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="service-details-4.html">Payroll Services</a></h3>
-                                    <p>Utilizing a reliable payroll service can significantly improve operational</p>
-                                    <div class="btn-box"><a href="service-details-4.html"
-                                            class="theme-btn btn-one">View Details</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="300ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><a href="service-details-5.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-5.jpg"
-                                                alt=""></a></figure>
-                                    <figure class="overlay-image"><a href="service-details-5.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-2.jpg"
-                                                alt=""></a></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="service-details-5.html">Workforce System</a></h3>
-                                    <p>This system leverages advanced technologies such as Applicant Tracking</p>
-                                    <div class="btn-box"><a href="service-details-5.html"
-                                            class="theme-btn btn-one">View Details</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="600ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><a href="service-details-3.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-6.jpg"
-                                                alt=""></a></figure>
-                                    <figure class="overlay-image"><a href="service-details-3.html"><img
-                                                src="http://127.0.0.1:8000/LandingPage/assets/images/service/service-3.jpg"
-                                                alt=""></a></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="service-details-3.html">Career Growth</a></h3>
-                                    <p>career growth is about fostering a culture where individuals can achieve</p>
-                                    <div class="btn-box"><a href="service-details-3.html"
-                                            class="theme-btn btn-one">View Details</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -245,32 +152,6 @@
 
 
         <!-- subscribe-style-two -->
-        <section class="subscribe-style-two">
-            <div class="bg-color"></div>
-            <div class="auto-container">
-                <div class="inner-container">
-                    <div class="shape-box">
-                        <div class="shape-1"
-                            style="background-image: url(http://127.0.0.1:8000/LandingPage/assets/images/shape/shape-8.png);">
-                        </div>
-                        <div class="shape-2"
-                            style="background-image: url(http://127.0.0.1:8000/LandingPage/assets/images/shape/shape-9.png);">
-                        </div>
-                    </div>
-                    <div class="text-box">
-                        <h2>Subscribe for <span>latest update</span></h2>
-                    </div>
-                    <div class="form-inner">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/contact.html">
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Email Address" required>
-                                <button type="submit" class="theme-btn btn-one">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!-- subscribe-style-two end -->
 
 

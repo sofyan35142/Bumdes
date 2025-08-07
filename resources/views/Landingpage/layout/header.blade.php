@@ -44,9 +44,34 @@
                                 <li><a href="/layanan">Layanan Kami</a></li>
                                 <li class="dropdown"><a href="#">Pages</a>
                                     <ul>
+<<<<<<< HEAD
                                         <li><a href="/pages/galeri">Galeri Foto & Video</a></li>
                                         <li><a href="/pages/lowongan">Lowongan Pekerjaan</a></li>
                                         <li><a href="/pages/keuangan">Laporan Keuangan</a></li>
+=======
+                                        {{-- <li class="dropdown"><a href="#">Job</a>
+                                            <ul>
+                                                <li><a href="{{ url('job') }}">Place Job</a></li>
+                                                <li><a href="{{ url('job-2') }}">Job Seekers</a></li>
+                                                <li><a href="{{ url('job-3') }}">Job Openings</a></li>
+                                                <li><a href="{{ url('job-4') }}">Job Apply</a></li>
+                                                <li><a href="{{ url('job-details') }}">Job Details</a></li>
+                                            </ul>
+                                        </li> --}}
+                                        {{-- <li class="dropdown"><a href="#">Portfolio</a>
+                                            <ul>
+                                                <li><a href="{{ url('portfolio') }}">Portfolio 3 column</a>
+                                                </li>
+                                                <li><a href="{{ url('portfolio-2') }}">Portfolio 2 column</a>
+                                                </li>
+                                                <li><a href="{{ url('portfolio-3') }}">Portfolio Masonry</a>
+                                                </li>
+                                            </ul>
+                                        </li> --}}
+                                        <li><a href="{{ url('/pages/galeri') }}">Galeri Foto & Video</a></li>
+                                        <li><a href="{{ url('/pages/lowongan') }}">Lowongan Pekerjaan</a></li>
+                                        <li><a href="{{ url('/apdes') }}">Laporan Keuangan</a></li>
+>>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
                                     </ul>
                                     <div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>
                                 </li>

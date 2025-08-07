@@ -108,11 +108,23 @@
 
                 <!-- Kegiatan BumDes -->
                 <li>
+                    <a href="{{ route('admin.kategori') }}">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Kategori BumDes</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('admin.kegiatan') }}">
                         <i class="fas fa-calendar-alt"></i>
                         <span>Kegiatan BumDes</span>
                     </a>
                 </li>
+                {{-- <li>
+                    <a href="{{ route('admin.kegiatan') }}">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Kegiatan BumDes</span>
+                    </a>
+                </li> --}}
             </ul>
 
         </div>
