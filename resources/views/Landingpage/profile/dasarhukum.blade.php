@@ -173,21 +173,22 @@
                     <div class="row align-items-center">
                         <div class="col-lg-8 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h2>Panduan Regulasi <span>Pendirian BUMDes</span></h2>
+                                <h2>Sertifikat Badan Hukum <span>BUM Desa Mandiri Sejahtera Pakukerto</span></h2>
                                 <ul class="list-item mb_30">
-                                    <ol>
-                                        <li>Rangkuman dasar hukum BUMDes dalam satu dokumen praktis.</li>
-                                        <li>Dilengkapi dengan contoh Perdes, AD/ART, dan struktur organisasi.</li>
-                                        <li>Cocok untuk perangkat desa, BPD, maupun masyarakat umum.</li>
-                                    </ol>
+                                    <li>Nomor Sertifikat: AHU-01511.AH.01.33.TAHUN 2025</li>
+                                    <li>Tanggal Diterbitkan: 06 Maret 2025</li>
+                                    <li>Kedudukan: Desa Pakukerto, Kecamatan Sukorejo, Kabupaten
+                                        Pasuruan, Provinsi Jawa Timur</li>
+                                    <li>Status: Telah terdaftar sebagai badan hukum yang tercatat dalam
+                                        pangkalan data Direktorat Jenderal Administrasi Hukum Umum</li>
                                 </ul>
-                                <button type="button" class="theme-btn btn-one">Unduh Panduan</button>
+                                <button type="button" class="theme-btn btn-one">Unduh Sertifikat</button>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                             <div class="image-box">
-                                <figure class="image"><img
-                                        src="http://127.0.0.1:8000/LandingPage/assets/images/resource/book-2.png"
+                                <figure class="image">
+                                    <img src="http://127.0.0.1:8000/LandingPage/assets/images/resource/book-2.png"
                                         alt="">
                                 </figure>
                             </div>

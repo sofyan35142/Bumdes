@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers\Landingpage;
 
-use App\Http\Controllers\Controller;
-use App\Models\SambutanDirektur;
 use Illuminate\Http\Request;
+use App\Models\PanduanBumdes;
+use App\Models\SambutanDirektur;
+use App\Http\Controllers\Controller;
 
 class home extends Controller
 {
     public function home()
     {
         $data = SambutanDirektur::first();
-        return view('Landingpage.index',compact('data'));
+        $book = PanduanBumdes::first();
+        return view('Landingpage.index',compact('data','book'));
     }
     public function detailunggulan()
     {

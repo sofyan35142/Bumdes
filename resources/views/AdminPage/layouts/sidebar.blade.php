@@ -55,7 +55,7 @@
                             <a href="{{ route('admin.struktur.index') }}">Struktur Organisasi</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.visiMisi') }}">Dasar Hukum</a> {{-- Gantilah jika punya rute khusus --}}
+                            <a href="{{ route('admin.dasarHukum') }}">Dasar Hukum</a> {{-- Gantilah jika punya rute khusus --}}
                         </li>
                     </ul>
                 </li>

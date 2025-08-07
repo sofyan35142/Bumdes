@@ -1,17 +1,20 @@
 <?php
 
+use App\Models\StrukturOrganisasi;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Beranda;
-use App\Http\Controllers\Admin\dasarHukumController;
-use App\Http\Controllers\Admin\StrukturOrganisasiController;
 use App\Http\Controllers\Admin\VisiMisi;
-use App\Http\Controllers\Landingpage\Apdes;
-use App\Http\Controllers\Landingpage\Home;
 use App\Http\Controllers\Landingpage\Blog;
-use App\Http\Controllers\Landingpage\Profile;
-use App\Http\Controllers\Landingpage\Contact;
+use App\Http\Controllers\Landingpage\Home;
+use App\Http\Controllers\Landingpage\Apdes;
 use App\Http\Controllers\Landingpage\Pages;
-use App\Models\StrukturOrganisasi;
+use App\Http\Controllers\Landingpage\Contact;
+use App\Http\Controllers\Landingpage\Profile;
+use App\Http\Controllers\Admin\dasarHukumController;
+use App\Http\Controllers\Admin\Layanan;
+use App\Http\Controllers\Admin\PanduanBumdesController;
+use App\Http\Controllers\Admin\StrukturOrganisasiController;
+use App\Http\Controllers\Landingpage\LayananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,11 +54,14 @@ Route::get('/pages/lowongan', [Pages::class, 'lowongan'])->name('pages.lowongan'
 Route::get('/pages/keuangan', [Pages::class, 'keuangan'])->name('pages.keuangan');
 
 // --- Kontak
-Route::get('/contact', [Contact::class, 'contact'])->name('contact');
+Route::get('/contact', [Contact::class, 'contact'])->name('landingpage.contact');
 
 // --- Apdes
 Route::get('/apdes', [Apdes::class, 'apdes'])->name('apdes');
 
+// --- Layanan Kami
+Route::get('/layanan', [LayananController::class, 'index'])->name('landingpage.layanan');
+Route::post('/layanan/store', [LayananController::class, 'storePengajuan'])->name('pengajuan.store');
 
 // ==========================================================
 // ===================== 2. ADMIN PANEL =====================
@@ -77,9 +83,9 @@ Route::get('/admin/struktur-organisasi/edit/{id}', [StrukturOrganisasiController
 Route::put('/admin/struktur-organisasi/update/{id}', [StrukturOrganisasiController::class, 'update'])->name('admin.struktur.update');
 Route::delete('/admin/struktur-organisasi/delete/{id}', [StrukturOrganisasiController::class, 'destroy'])->name('admin.struktur.delete');
 // --- Dasar Hukum
-Route::get('/admin/dasar-hukum', [dasarHukumController::class, 'index'])->name('admin.visiMisi');
-Route::get('/admin/dasar-hukum/edit', [dasarHukumController::class, 'editForm'])->name('admin.visi_misi.edit');
-Route::put('/admin/dasar-hukum/update', [dasarHukumController::class, 'update'])->name('admin.visi_misi.update');
+Route::get('/admin/dasar-hukum', [dasarHukumController::class, 'index'])->name('admin.dasarHukum');
+Route::get('/admin/dasar-hukum/edit', [dasarHukumController::class, 'edit'])->name('admin.dasarHukum.edit');
+Route::put('/admin/dasar-hukum/update', [dasarHukumController::class, 'update'])->name('admin.dasarHukum.update');
 
 // --- Slider
 Route::get('/admin/slider', [Beranda::class, 'slider'])->name('admin.slider');
@@ -116,3 +122,12 @@ Route::post('/admin/insertkegiatan', [Beranda::class, 'insertkegiatan'])->name('
 Route::get('/admin/editkegiatan/{id}', [Beranda::class, 'editkegiatan']);
 Route::post('/admin/updatekegiatan/{id}', [Beranda::class, 'updatekegiatan'])->name('admin.updatekegiatan');
 Route::get('/admin/hapuskegiatan/{id}', [Beranda::class, 'hapuskegiatan'])->name('admin.hapuskegiatan');
+
+// --- Book Panduan BUMDes
+Route::get('/admin/book-panduan', [PanduanBumdesController::class, 'index'])->name('admin.bookPanduan.index');
+Route::get('/admin/book-panduan/edit', [PanduanBumdesController::class, 'edit'])->name('admin.bookPanduan.edit');
+Route::put('/admin/book-panduan/update', [PanduanBumdesController::class, 'update'])->name('admin.bookPanduan.update');
+
+// --- Layanan
+Route::get('/admin/layanan', [Layanan::class, 'index'])->name('admin.layanan.index');
+Route::delete('/admin/layanan/{id}', [Layanan::class, 'destroy'])->name('admin.layanan.destroy');

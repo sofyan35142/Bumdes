@@ -1,23 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     @include('Landingpage.layout.head')
 </head>
 
+
+<!-- page wrapper -->
+
 <body>
+
     <div class="boxed_wrapper ltr">
 
+
+        <!-- preloader -->
         @include('Landingpage.layout.preloader')
+        <!-- preloader end -->
+
 
         <!-- page-direction -->
         <div class="page_direction">
             <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
             <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
         </div>
+        <!-- page-direction end -->
 
+
+        <!--Search Popup-->
         @include('Landingpage.layout.search')
+
+
+        <!-- main header -->
         @include('Landingpage.layout.header')
+        <!-- main-header end -->
+
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><i class="fas fa-times"></i></div>
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="index.html"><img
+                            src="http://127.0.0.1:8000/LandingPage/assets/images/logo-2.png" alt=""
+                            title=""></a></div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+                <div class="contact-info">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Chicago 12, Melborne City, USA</li>
+                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
+                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End Mobile Menu -->
 
         <!-- page-title -->
         <section class="page-title centred pt_110">
@@ -51,16 +100,14 @@
                                 data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><img
-                                                src="{{asset($item->foto)}}"
-                                                alt=""></figure>
-                                        <figure class="overlay-image"><img
-                                                src="{{asset($item->foto)}}"
+                                        <figure class="image"><img src="{{ asset($item->foto) }}" alt="">
+                                        </figure>
+                                        <figure class="overlay-image"><img src="{{ asset($item->foto) }}"
                                                 alt=""></figure>
                                     </div>
                                     <div class="lower-content">
-                                        <h3><a href="#">{{$item->nama}}</a></h3>
-                                        <span class="designation">{{$item->jabatan}}</span>
+                                        <h3><a href="#">{{ $item->nama }}</a></h3>
+                                        <span class="designation">{{ $item->jabatan }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -82,14 +129,19 @@
                         <p>BUMDes adalah motor penggerak ekonomi desa. Bergabunglah bersama kami dalam membangun
                             usaha
                             mandiri dan berkelanjutan untuk kesejahteraan warga.</p>
-                        <a href="contact.html" class="theme-btn btn-one">Hubungi Kami</a>
+                        <a href="{{ asset('landingpage.contact') }}" class="theme-btn btn-one">Hubungi Kami</a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- main-footer -->
         @include('Landingpage.layout.footer')
+        <!-- main-footer end -->
 
+
+
+        <!--Scroll to top-->
         <div class="scroll-to-top">
             <svg class="scroll-top-inner" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
@@ -98,7 +150,10 @@
 
     </div>
 
+
+    <!-- javascripts -->
     @include('Landingpage.layout.scripts')
+
 </body>
 
 </html>

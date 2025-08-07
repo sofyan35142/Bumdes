@@ -6,25 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class DasarHukum extends Model
 {
-    // Nama tabel secara eksplisit (opsional, hanya jika tidak pakai plural)
+    // Nama tabel
     protected $table = 'dasar_hukum';
 
-    // Kolom yang bisa diisi (fillable)
+    // Kolom yang bisa diisi
     protected $fillable = [
         'points',
         'gambar_samping',
-        'panduan_judul',
-        'panduan_list',
-        'panduan_file',
-        'gambar_panduan',
+        'judul',
+        'sertifikat_list',
+        'sertifikat_file',
+        'gambar_buku',
     ];
 
-    // Cast JSON ke array otomatis
+    // Tipe data otomatis casting
     protected $casts = [
         'points' => 'array',
     ];
 
-    // Jika pakai timestamps, ini default-nya true, jadi boleh dihapus kalau tidak diubah
+    // Timestamps aktif (default true)
     public $timestamps = true;
-
 }

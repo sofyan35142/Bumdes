@@ -40,92 +40,61 @@
                                     <h4 class="card-title">Data Visi Misi BUMDes</h4>
 
                                     @if ($data)
-                                    {{-- Tombol Edit Visi Misi, sesuaikan rute dengan nama yang benar --}}
-                                    <a href="{{ route('admin.visi_misi.edit')}}">
-                                        <button class="btn btn-primary mb-3">Edit Visi Misi</button>
-                                    </a>
+                                        {{-- Tombol Edit Visi Misi --}}
+                                        <a href="{{ route('admin.visi_misi.edit')}}">
+                                            <button class="btn btn-primary mb-3">Edit Visi Misi</button>
+                                        </a>
 
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 20%">Visi</th>
-                                                <th>Misi</th>
-                                                <th>Tujuan</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                {{-- Menampilkan Visi --}}
-                                                <td>{{ $data->visi }}</td>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 20%">Visi</th>
+                                                    <th>Misi</th>
+                                                    <th>Tujuan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    {{-- Menampilkan Visi --}}
+                                                    <td>{{ $data->visi }}</td>
 
-                                                {{-- Menampilkan Misi sebagai list --}}
-                                                <td>
-                                                    <ol>
-                                                        @if (is_array($data->misi))
-                                                            @foreach ($data->misi as $misiItem)
-                                                                <li>{{ $misiItem }}</li>
-                                                            @endforeach
-                                                        @endif
-                                                    </ol>
-                                                </td>
+                                                    {{-- Menampilkan Misi sebagai list --}}
+                                                    <td>
+                                                        <ol>
+                                                            @if (is_array($data->misi))
+                                                                @foreach ($data->misi as $misiItem)
+                                                                    <li>{{ $misiItem }}</li>
+                                                                @endforeach
+                                                            @endif
+                                                        </ol>
+                                                    </td>
 
-                                                {{-- Menampilkan Tujuan sebagai list --}}
-                                                <td>
-                                                    <ol>
-                                                        @if (is_array($data->tujuan))
-                                                            @foreach ($data->tujuan as $tujuanItem)
-                                                                <li>{{ $tujuanItem }}</li>
-                                                            @endforeach
-                                                        @endif
-                                                    </ol>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                    {{-- Menampilkan Tujuan sebagai list --}}
+                                                    <td>
+                                                        <ol>
+                                                            @if (is_array($data->tujuan))
+                                                                @foreach ($data->tujuan as $tujuanItem)
+                                                                    <li>{{ $tujuanItem }}</li>
+                                                                @endforeach
+                                                            @endif
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
-                                    <div class="row mt-4">
-                                        {{-- Menampilkan Gambar Visi Misi --}}
-                                        @if ($data->gambar_visi_misi)
-                                            <div class="col-md-6 mb-3">
-                                                <h5>Gambar Visi Misi</h5>
-                                                <img src="{{ asset($data->gambar_visi_misi) }}
-"
-                                                    alt="Gambar Visi Misi" class="img-fluid rounded border"
-                                                    style="max-height: 300px;">
-                                            </div>
-                                        @endif
-
-                                        {{-- Menampilkan Panduan --}}
-                                        <div class="col-md-6 mb-3">
-                                            <h5>{{ $data->judul_panduan ?? 'Panduan BUMDes' }}</h5>
-
-                                            {{-- Gambar Panduan --}}
-                                            @if ($data->gambar_panduan)
-                                                <img src="{{ asset($data->gambar_panduan) }}"
-                                                    alt="Gambar Panduan" class="img-fluid rounded border mb-3"
-                                                    style="max-height: 200px;">
-                                            @endif
-
-                                            {{-- Poin-poin Panduan --}}
-                                            @if (is_array($data->poin_panduan))
-                                                <ul class="list-unstyled">
-                                                    @foreach ($data->poin_panduan as $poin)
-                                                        <li><i class="mdi mdi-check-bold text-primary me-2"></i>{{ $poin }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            @endif
-
-                                            {{-- Link Unduh File Panduan --}}
-                                            @if ($data->file_panduan)
-                                                <a href="{{ asset('panduan/' . $data->file_panduan) }}" class="btn btn-info mt-2" download>
-                                                    <i class="mdi mdi-download me-1"></i>Unduh Panduan
-                                                </a>
+                                        <div class="row mt-4">
+                                            {{-- Menampilkan Gambar Visi Misi --}}
+                                            @if ($data->gambar_visi_misi)
+                                                <div class="col-md-6 mb-3">
+                                                    <h5>Gambar Visi Misi</h5>
+                                                    <img src="{{ asset($data->gambar_visi_misi) }}"
+                                                        alt="Gambar Visi Misi" class="img-fluid rounded border"
+                                                        style="max-height: 300px;">
+                                                </div>
                                             @endif
                                         </div>
-                                    </div>
-                                    @else
-                                        <p>Data Visi Misi BUMDes belum tersedia.</p>
-                                    @endif
+                                    @endif {{-- ✅ Tambahan untuk menutup @if ($data) --}}
                                 </div>
                             </div>
                         </div>

@@ -28,17 +28,18 @@ class DasarHukumSeeder extends Seeder
                     'body' => 'Memberikan petunjuk teknis mengenai tata cara pengelolaan aset desa yang dapat digunakan BUMDes dalam operasionalnya.',
                 ],
             ]),
-            'gambar_samping' => 'LandingPage/assets/images/resource/faq-1.jpg',
-            'panduan_judul' => 'Panduan Regulasi Pendirian BUMDes',
-            'panduan_list' => '
-                <ol>
-                    <li>Rangkuman dasar hukum BUMDes dalam satu dokumen praktis.</li>
-                    <li>Dilengkapi dengan contoh Perdes, AD/ART, dan struktur organisasi.</li>
-                    <li>Cocok untuk perangkat desa, BPD, maupun masyarakat umum.</li>
-                </ol>
+            'gambar_samping' => 'dasarhukum/faq-1.jpg',
+            'judul' => 'Sertifikat Badan Hukum BUM Desa Mandiri Sejahtera Pakukerto',
+            'sertifikat_list' => '
+                <ul>
+                    <li>Nomor Sertifikat: AHU-01511.AH.01.33.TAHUN 2025</li>
+                    <li>Tanggal Diterbitkan: 06 Maret 2025</li>
+                    <li>Kedudukan: Desa Pakukerto, Kecamatan Sukorejo, Kabupaten Pasuruan, Provinsi Jawa Timur</li>
+                    <li>Status: Telah terdaftar sebagai badan hukum yang tercatat dalam pangkalan data Direktorat Jenderal Administrasi Hukum Umum</li>
+                </ul>
             ',
-            'panduan_file' => 'panduan-pendirian-bumdes.pdf',
-            'gambar_panduan' => 'LandingPage/assets/images/resource/book-2.png',
+            'sertifikat_file' => 'dasarhukum/sertifikat-bumdes.pdf',
+            'gambar_buku' => 'dasarhukum/book-2.png',
         ]);
     }
 }

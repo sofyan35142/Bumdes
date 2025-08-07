@@ -28,23 +28,12 @@ class VisiMisiSeeder extends Seeder
             'Mendorong kemandirian ekonomi desa dan partisipasi aktif masyarakat dalam pembangunan.'
         ];
 
-        // Data Panduan
-        $poinPanduan = [
-            'Mempelajari langkah-langkah pendirian dan legalitas BUMDes.',
-            'Memahami model bisnis yang efektif dan relevan dengan potensi desa.',
-            'Strategi pemasaran dan pengembangan produk unggulan BUMDes.'
-        ];
-
         // Masukkan data ke dalam tabel 'visi_misi'
         DB::table('visi_misi')->insert([
             'visi' => 'Menjadi pendorong utama pertumbuhan ekonomi desa dan kesejahteraan masyarakat melalui pengelolaan potensi desa secara profesional, transparan, dan berkelanjutan.',
             'misi' => json_encode($misi),
             'tujuan' => json_encode($tujuan),
             'gambar_visi_misi' => 'visimisi/faq-1.jpg',
-            'judul_panduan' => 'Panduan Praktis Pengelolaan BUMDes yang Sukses dan Berkelanjutan',
-            'poin_panduan' => json_encode($poinPanduan),
-            'gambar_panduan' => 'visimisi/book-2.png',
-            'file_panduan' => 'visimisi/panduan.pdf',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

@@ -24,92 +24,85 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content">
+
             <div class="page-content">
                 <div class="container-fluid">
-
-                    {{-- Judul halaman --}}
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Manajemen Dasar Hukum BUMDes</h4>
-                                <div class="page-title-right d-flex align-items-center">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Profil</a></li>
-                                        <li class="breadcrumb-item active">Dasar Hukum</li>
-                                    </ol>
+                    <form action="{{ route('admin.bookPanduan.update') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0">Edit Panduan Bumdes</h4>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {{-- Konten utama --}}
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Data Dasar Hukum BUMDes</h4>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
 
-                                    @if ($data)
-                                        {{-- Tombol Edit --}}
-                                        <a href="{{ route('admin.dasarHukum.edit') }}">
-                                            <button class="btn btn-primary mb-3">Edit Dasar Hukum</button>
-                                        </a>
-
-                                        {{-- Accordion Points --}}
-                                        <h5 class="mt-3">Poin Dasar Hukum</h5>
-                                        <ol>
-                                            @foreach ($data->points as $point)
-                                                <li>
-                                                    <strong>{{ $point['title'] }}</strong><br>
-                                                    <span>{{ $point['body'] }}</span>
-                                                </li>
-                                            @endforeach
-                                        </ol>
-
-                                        {{-- Gambar Samping Accordion --}}
-                                        @if ($data->gambar_samping)
-                                            <div class="mt-4">
-                                                <h5>Gambar Samping</h5>
-                                                <img src="{{ asset($data->gambar_samping) }}" alt="Gambar Samping"
-                                                    class="img-fluid rounded border" style="max-height: 300px;">
+                                        {{-- Judul --}}
+                                        <div class="mb-3 row">
+                                            <label class="col-md-2 col-form-label">Judul</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" name="judul"
+                                                    value="{{ $data->judul }}">
                                             </div>
-                                        @endif
-
-                                        {{-- Sertifikat --}}
-                                        <div class="mt-4">
-                                            <h5>{{ $data->judul }}</h5>
-                                            <div>{!! $data->sertifikat_list !!}</div>
-
-                                            @if ($data->sertifikat_file)
-                                                <div class="mt-2">
-                                                    <a href="{{ asset('storage/' . $data->sertifikat_file) }}"
-                                                        target="_blank">
-                                                        Lihat Sertifikat (PDF)
-                                                    </a>
-                                                </div>
-                                            @endif
                                         </div>
 
-                                        {{-- Gambar Buku --}}
-                                        @if ($data->gambar_buku)
-                                            <div class="mt-4">
-                                                <h5>Gambar Buku</h5>
-                                                <img src="{{ asset($data->gambar_buku) }}" alt="Gambar Buku"
-                                                    class="img-fluid rounded border" style="max-height: 300px;">
+                                        {{-- Points --}}
+                                        <h4 class="card-title">Isi Panduan (Bullet Points)</h4>
+                                        <textarea id="classic-editor" name="points" class="form-control" rows="10">
+                        {{ $data->points }}
+                    </textarea>
+
+                                        {{-- Upload E-Book --}}
+                                        <div class="mb-3 row mt-4">
+                                            <label class="col-md-2 col-form-label">E-Book (PDF)</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="file" accept="application/pdf"
+                                                    name="file_ebook">
+                                                @if ($data->file_ebook)
+                                                    <div class="mt-2">
+                                                        <a href="{{ asset('ebook/' . $data->file_ebook) }}"
+                                                            target="_blank">Lihat File Saat Ini</a>
+                                                    </div>
+                                                @endif
                                             </div>
-                                        @endif
-                                    @else
-                                        <p class="text-muted">Data dasar hukum belum tersedia.</p>
-                                    @endif
+                                        </div>
+
+                                        {{-- Upload Gambar --}}
+                                        <div class="mb-3 row">
+                                            <label class="col-md-2 col-form-label">Gambar Cover</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="file" accept="image/*"
+                                                    name="gambar" onchange="previewImage(this, 'preview-gambar')">
+
+                                                <div class="mt-3">
+                                                    <p class="mb-2">Gambar Saat Ini:</p>
+                                                    <img id="preview-gambar"
+                                                        src="{{ $data->gambar ? asset($data->gambar) : 'https://via.placeholder.com/150x200?text=Belum+Ada+Gambar' }}"
+                                                        alt="Gambar Cover" width="150"
+                                                        class="rounded shadow-sm border">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary mt-3">Simpan Perubahan</button>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                </div>
+                    </form>
+                </div> <!-- container-fluid -->
             </div>
-        </div>
+            <!-- End Page-content -->
 
+            @include('AdminPage.layouts.footer')
+        </div>
         <!-- end main content-->
 
     </div>
@@ -250,6 +243,19 @@
                 console.error(error);
             });
     </script>
+    <script>
+        function previewImage(input, previewId) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(previewId).src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
 
 </body>
 

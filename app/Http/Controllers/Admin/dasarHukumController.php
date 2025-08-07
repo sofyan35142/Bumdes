@@ -11,30 +11,50 @@ class DasarHukumController extends Controller
     public function index()
     {
         $data = DasarHukum::first();
+
+        // Convert points (string JSON) jadi array
+        if ($data && is_string($data->points)) {
+            $data->points = json_decode($data->points, true);
+        }
+
         return view('AdminPage.dasarHukum.index', compact('data'));
     }
 
-    public function editForm()
+    public function edit()
     {
         $data = DasarHukum::first();
-        return view('AdminPage.dasarHukum.edit', compact('data'));
+
+        // Decode points jika masih string JSON
+        if ($data && is_string($data->points)) {
+            $decoded = json_decode($data->points, true);
+            $data->points = is_array($decoded) ? $decoded : [];
+        }
+
+        return view('AdminPage.DasarHukum.edit', compact('data'));
     }
+
 
     public function update(Request $request)
     {
+
+        // dd($request->all());
         $request->validate([
             'points' => 'nullable|array',
             'points.*.title' => 'nullable|string',
             'points.*.body' => 'nullable|string',
+
             'gambar_samping' => 'nullable|image|max:2048',
-            'panduan_judul' => 'nullable|string',
-            'panduan_list' => 'nullable|string',
-            'gambar_panduan' => 'nullable|image|max:2048',
-            'panduan_file' => 'nullable|file|mimes:pdf|max:5120',
+
+            'judul' => 'nullable|string',
+            'sertifikat_list' => 'nullable|string',
+
+            'gambar_buku' => 'nullable|image|max:2048',
+            'sertifikat_file' => 'nullable|file|mimes:pdf|max:5120',
         ]);
 
         $data = DasarHukum::first();
 
+        // Upload gambar_samping
         if ($request->hasFile('gambar_samping')) {
             $file = $request->file('gambar_samping');
             $filename = $file->getClientOriginalName();
@@ -42,29 +62,32 @@ class DasarHukumController extends Controller
             $data->gambar_samping = 'dasarhukum/' . $filename;
         }
 
-        if ($request->hasFile('gambar_panduan')) {
-            $file = $request->file('gambar_panduan');
+        // Upload gambar_buku
+        if ($request->hasFile('gambar_buku')) {
+            $file = $request->file('gambar_buku');
             $filename = $file->getClientOriginalName();
             $file->move(public_path('dasarhukum'), $filename);
-            $data->gambar_panduan = 'dasarhukum/' . $filename;
+            $data->gambar_buku = 'dasarhukum/' . $filename;
         }
 
-        if ($request->hasFile('panduan_file')) {
-            $file = $request->file('panduan_file');
+        // Upload sertifikat_file
+        if ($request->hasFile('sertifikat_file')) {
+            $file = $request->file('sertifikat_file');
             $filename = $file->getClientOriginalName();
             $file->move(public_path('dasarhukum'), $filename);
-            $data->panduan_file = 'dasarhukum/' . $filename;
+            $data->sertifikat_file = 'dasarhukum/' . $filename;
         }
 
+        // Update data
         $data->update([
-            'points' => json_encode($request->input('points')),
-            'panduan_judul' => $request->panduan_judul,
-            'panduan_list' => $request->panduan_list,
+            'points' => json_encode($request->input('points_raw')),
+            'judul' => $request->judul,
+            'sertifikat_list' => $request->sertifikat_list,
             'gambar_samping' => $data->gambar_samping,
-            'gambar_panduan' => $data->gambar_panduan,
-            'panduan_file' => $data->panduan_file,
+            'gambar_buku' => $data->gambar_buku,
+            'sertifikat_file' => $data->sertifikat_file,
         ]);
 
-        return redirect()->route('admin.visiMisi')->with('success', 'Dasar Hukum berhasil diperbarui!');
+        return redirect()->route('admin.dasarHukum')->with('success', 'Dasar Hukum berhasil diperbarui!');
     }
 }
