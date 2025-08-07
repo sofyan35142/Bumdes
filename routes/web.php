@@ -1,21 +1,15 @@
 <?php
 
-use App\Models\StrukturOrganisasi;
+use App\Http\Controllers\Admin\Alasan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Beranda;
-<<<<<<< HEAD
-=======
-use App\Http\Controllers\Admin\dasarHukumController;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\KegiatanController;
-use App\Http\Controllers\Admin\StrukturOrganisasiController;
->>>>>>> f3b64b426db73719d1e99bec546e40389acf5f88
 use App\Http\Controllers\Admin\VisiMisi;
 use App\Http\Controllers\Landingpage\Blog;
 use App\Http\Controllers\Landingpage\Home;
 use App\Http\Controllers\Landingpage\Apdes;
 use App\Http\Controllers\Landingpage\Pages;
-<<<<<<< HEAD
 use App\Http\Controllers\Landingpage\Contact;
 use App\Http\Controllers\Landingpage\Profile;
 use App\Http\Controllers\Admin\dasarHukumController;
@@ -23,13 +17,12 @@ use App\Http\Controllers\Admin\Layanan;
 use App\Http\Controllers\Admin\PanduanBumdesController;
 use App\Http\Controllers\Admin\StrukturOrganisasiController;
 use App\Http\Controllers\Landingpage\LayananController;
-=======
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MediaPartnerController;
 use App\Models\MediaPartner;
 use App\Http\Controllers\Admin\Testimonial;
+use App\Http\Controllers\Admin\informasiKontak;
 use App\Models\StrukturOrganisasi;
->>>>>>> f3b64b426db73719d1e99bec546e40389acf5f88
 
 /*
 |--------------------------------------------------------------------------
@@ -165,7 +158,6 @@ Route::get('/admin/editkegiatan/{id}', [Beranda::class, 'editkegiatan']);
 Route::post('/admin/updatekegiatan/{id}', [Beranda::class, 'updatekegiatan'])->name('admin.updatekegiatan');
 Route::get('/admin/hapuskegiatan/{id}', [Beranda::class, 'hapuskegiatan'])->name('admin.hapuskegiatan');
 
-<<<<<<< HEAD
 // --- Book Panduan BUMDes
 Route::get('/admin/book-panduan', [PanduanBumdesController::class, 'index'])->name('admin.bookPanduan.index');
 Route::get('/admin/book-panduan/edit', [PanduanBumdesController::class, 'edit'])->name('admin.bookPanduan.edit');
@@ -174,10 +166,16 @@ Route::put('/admin/book-panduan/update', [PanduanBumdesController::class, 'updat
 // --- Layanan
 Route::get('/admin/layanan', [Layanan::class, 'index'])->name('admin.layanan.index');
 Route::delete('/admin/layanan/{id}', [Layanan::class, 'destroy'])->name('admin.layanan.destroy');
-=======
 // --- Testimonial
 Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
 Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
 Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
 Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
->>>>>>> f3b64b426db73719d1e99bec546e40389acf5f88
+// --- Contact
+Route::get('/admin/contact', [InformasiKontak::class, 'index'])->name('admin.contact.index');
+Route::get('/admin/contact/edit', [InformasiKontak::class, 'edit'])->name('admin.contact.edit');
+Route::put('/admin/contact', [InformasiKontak::class, 'update'])->name('admin.contact.update');
+// --- Kenapa BUMDes
+Route::get('/admin/alasan', [Alasan::class, 'index'])->name('admin.alasan.index');
+Route::get('/admin/alasan/edit/{id}', [Alasan::class, 'edit'])->name('admin.alasan.edit');
+Route::put('/admin/alasan/{id}', [Alasan::class, 'update'])->name('admin.alasan.update');

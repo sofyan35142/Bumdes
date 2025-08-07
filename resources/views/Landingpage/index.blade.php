@@ -329,37 +329,6 @@
         <section class="about-style-four pt_120 pb_120">
             <div class="auto-container">
                 <div class="row align-items-center">
-                    {{-- <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                        <div class="image_block_two">
-                            <div class="image-inner">
-                                <div class="image-box mr_15">
-                                    <figure class="image image-1 mb_15">
-                                        <img src="{{ asset('Landingpage/assets/images/resource/about-3.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                    <figure class="image image-2">
-                                        <img src="{{ asset('Landingpage/assets/images/resource/about-4.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                </div>
-                                <div class="image-box">
-                                    <figure class="image image-3 mb_15">
-                                        <img src="{{ asset('Landingpage/assets/images/resource/about-5.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                    <figure class="image image-4">
-                                        <img src="{{ asset('Landingpage/assets/images/resource/about-6.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                </div>
-                                <div class="support-box">
-                                    <div class="icon-box"><i class="icon-28"></i></div>
-                                    <span>Online Support</span>
-                                    <h4><a href="tel:912556889">+912 (556) 889</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms"
                             data-wow-duration="1500ms">
@@ -453,59 +422,24 @@
                 </div>
                 <div class="auto-container">
                     <div class="sec-title light pb_60 sec-title-animation animation-style2">
-                        <span class="sub-title mb_10 title-animation">Why Us</span>
+                        <span class="sub-title mb_10 title-animation">Menagapa Kami</span>
                         <h2 class="title-animation">Kenapa Memilih BumDes Pakukerto ?</h2>
                     </div>
                     <div class="row clearfix">
-                        <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
-                            <div class="chooseus-block-one">
-                                <div class="inner-box">
-                                    <div class="icon-box"><i class="icon-4"></i></div>
-                                    <h3><a href="{{ asset('index.html') }}">Mendukung UMKM Desa</a></h3>
-                                    <p>Kami membantu pertumbuhan UMKM lokal melalui pelatihan dan dukungan akses
-                                        pemasaran.</p>
-                                    <div class="link">
+                        @foreach ($alasan as $item)
+                            <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
+                                <div class="chooseus-block-one">
+                                    <div class="inner-box">
+                                        <div class="icon-box">
+                                            <i class="{{ $item->ikon }}"></i>
+                                        </div>
+                                        <h3><a href="#">{{ $item->judul }}</a></h3>
+                                        <p class="overflow-auto" style="height: 9pc">{{ $item->deskripsi }}</p>
+                                        <div class="link"></div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
-                            <div class="chooseus-block-one">
-                                <div class="inner-box">
-                                    <div class="icon-box"><i class="icon-5"></i></div>
-                                    <h3><a href="{{ asset('index.html') }}"> Legal Dan Terpercaya</a></h3>
-                                    <p>BUMDes beroperasi secara resmi dengan landasan hukum yang kuat dan diawasi oleh
-                                        pemerintah desa pakukerto sendiri.
-                                    </p>
-                                    <div class="link">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
-                            <div class="chooseus-block-one">
-                                <div class="inner-box">
-                                    <div class="icon-box"><i class="icon-6"></i></div>
-                                    <h3><a href="{{ asset('index.html') }}">Memberdayakan Warga</a></h3>
-                                    <p>Kami menyediakan pelatihan dan lapangan kerja untuk meningkatkan taraf hidup
-                                        warga.</p>
-                                    <div class="link">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
-                            <div class="chooseus-block-one">
-                                <div class="inner-box">
-                                    <div class="icon-box"><i class="icon-33"></i></div>
-                                    <h3><a href="{{ asset('index.html') }}">Layanan Ramah & Terjangkau</a></h3>
-                                    <p>Pelayanan kami mudah diakses dan dapat dinikmati oleh seluruh lapisan masyarakat
-                                        desa.</p>
-                                    <div class="link">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -654,146 +588,44 @@
                     <span class="sub-title mb_10 title-animation">Layanan BumDes Pakukerto</span>
                     <h2 class="title-animation">Layanan Unggulan Kami</h2>
                 </div>
+
                 <div class="row clearfix">
-
-                    <!-- Service Block 1 -->
-<<<<<<< HEAD
-                    <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <a href="service-details-2.html">
-                                            <img src="{{ asset('Pelatihan UMKM.png') }}" alt="">
-                                        </a>
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <a href="service-details-2.html">
-                                            <img src="{{ asset('Landingpage/assets/images/service/service-1.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="service-details-2.html">Pelatihan UMKM</a></h3>
-                                    <p>Kami mengadakan pelatihan keterampilan untuk pelaku UMKM desa agar bisa naik
-                                        kelas secara digital maupun produksi.</p>
-                                    <div class="btn-box">
-                                        <a href="service-details-2.html" class="theme-btn btn-one">View Details</a>
-=======
-                    @foreach ($unggulan as $unggulan)
+                    @foreach ($unggulan as $item)
                         <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-
                             <div class="service-block-one wow fadeInUp animated" data-wow-delay="00ms"
                                 data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image">
-                                            <a href="service-details-2.html">
-                                                <img src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
+                                            <a href="#">
+                                                <img src="{{ asset('foto layanan unggulan/' . $item->foto_layanan) }}"
                                                     alt="">
                                             </a>
                                         </figure>
                                         <figure class="overlay-image">
-                                            <a href="service-details-2.html">
-                                                <img src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
+                                            <a href="#">
+                                                <img src="{{ asset('foto layanan unggulan/' . $item->foto_layanan) }}"
                                                     alt="">
                                             </a>
                                         </figure>
                                     </div>
                                     <div class="lower-content">
-                                        <h3><a href="service-details-2.html">{{ $unggulan->nama_layanan }}</a></h3>
+                                        <h3><a href="#">{{ $item->nama_layanan }}</a></h3>
                                         <p
-                                            style="
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    line-height: 1.5em;
-    max-height: 4.5em;
-    text-overflow: ellipsis;
-">
-                                            {{ $unggulan->deskripsi }}
+                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.5em; max-height: 4.5em; text-overflow: ellipsis;">
+                                            {{ $item->deskripsi }}
                                         </p>
-
                                         <div class="btn-box">
-                                            <a href="service-details-2.html" class="theme-btn btn-one">View
-                                                Details</a>
+                                            <a href="#" class="theme-btn btn-one">View Details</a>
                                         </div>
->>>>>>> f3b64b426db73719d1e99bec546e40389acf5f88
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
-
-                    <!-- Service Block 2 -->
-                    {{-- <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="300ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <a href="service-details.html">
-                                            <img src="{{ asset('Landingpage/assets/images/service/service-2.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <a href="service-details.html">
-                                            <img src="{{ asset('Landingpage/assets/images/service/service-2.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="service-details.html">Pemasaran Produk Desa</a></h3>
-                                    <p>Membantu warga desa menjual produk unggulan (kerajinan, pertanian, kuliner) ke
-                                        pasar yang lebih luas.</p>
-                                    <div class="btn-box">
-                                        <a href="service-details.html" class="theme-btn btn-one">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                    <!-- Service Block 3 -->
-                    {{-- <div class="col-lg-4 col-md-6 col-sm-12 service-block">
-                        <div class="service-block-one wow fadeInUp animated" data-wow-delay="600ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <a href="service-details-6.html">
-                                            <img src="{{ asset('Landingpage/assets/images/service/service-3.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <a href="service-details-6.html">
-                                            <img src="{{ asset('Landingpage/assets/images/service/service-3.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="service-details-6.html">Layanan Simpan Pinjam</a></h3>
-                                    <p>Melayani pinjaman usaha mikro dan simpanan warga dengan proses yang cepat dan
-                                        aman.</p>
-                                    <div class="btn-box">
-                                        <a href="service-details-6.html" class="theme-btn btn-one">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-
                 </div>
             </div>
         </section>
-
         <!-- service-section end -->
 
 
@@ -1140,16 +972,16 @@
                                     @endif
                                 </h2>
                                 <ul class="list-item mb_30">
-                                    {!!$book->points!!}
+                                    {!! $book->points !!}
                                 </ul>
-                                <a type="button" href="{{asset($book->file_ebook)}}" download class="theme-btn btn-one">Download E-book</a>
+                                <a type="button" href="{{ asset($book->file_ebook) }}" download
+                                    class="theme-btn btn-one">Download E-book</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                             <div class="image-box">
                                 <figure class="image">
-                                    <img src="{{ asset($book->gambar) }}"
-                                        alt="">
+                                    <img src="{{ asset($book->gambar) }}" alt="">
                                 </figure>
                             </div>
                         </div>
@@ -1201,107 +1033,11 @@
                             </div>
                         </div>
                     @endforeach
-
-                    <!-- News Block 2 -->
-                    {{-- <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <span class="category">Analytics</span>
-                                    <h3><a href="index-2.html">Explore the concept of personal branding and its impact
-                                            on</a></h3>
-                                    <ul class="post-info">
-                                        <li>By <a href="blog-details.html">Alex Beniwal</a></li>
-                                        <li><span>March 19, 2023</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                    <!-- News Block 3 -->
-                    {{-- <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <span class="category">Business</span>
-                                    <h3><a href="index-2.html">Feature interviews with employees from top companies</a>
-                                    </h3>
-                                    <ul class="post-info">
-                                        <li>By <a href="blog-details.html">Alex Beniwal</a></li>
-                                        <li><span>March 18, 2023</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </section>
 
         <!-- news-section end -->
-
-
-        <!-- subscribe-style-two -->
-        <section class="subscribe-style-two">
-            <div class="bg-color-2"></div>
-            <div class="auto-container">
-                <div class="inner-container">
-                    <div class="shape-box">
-                        <div class="shape-1"
-                            style="background-image: url('{{ asset('Landingpage/assets/images/shape/shape-8.png') }}');">
-                        </div>
-                        <div class="shape-2"
-                            style="background-image: url('{{ asset('Landingpage/assets/images/shape/shape-9.png') }}');">
-                        </div>
-                    </div>
-                    <div class="text-box">
-                        <h2>Subscribe for <span>latest update</span></h2>
-                    </div>
-                    <div class="form-inner">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/contact.html">
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Email Address" required>
-                                <button type="submit" class="theme-btn btn-one">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- subscribe-style-two end -->
-
 
         <!-- main-footer -->
         @include('Landingpage.layout.footer')
@@ -1322,7 +1058,5 @@
     <!-- main-footer end -->
 
 </body><!-- End of .page_wrapper -->
-
-<!-- Mirrored from jobaway.pixcelsthemes.com/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:02 GMT -->
 
 </html>

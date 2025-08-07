@@ -21,9 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-<<<<<<< HEAD
         // Membuat satu user contoh
-=======
         // User::factory(10)->create();
 
         // User::factory()->create([
@@ -38,7 +36,6 @@ class DatabaseSeeder extends Seeder
     //     VisiMisiSeeder::class,
     //     statistik::class
     // ]);
->>>>>>> f3b64b426db73719d1e99bec546e40389acf5f88
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'pakukerto@gmail.com',
@@ -74,13 +71,12 @@ class DatabaseSeeder extends Seeder
             Statistik::class,
             StrukturOrganisasi::class,
             DasarHukumSeeder::class,
-<<<<<<< HEAD
-            bookPanduanSeeder::class
-=======
+            bookPanduanSeeder::class,
             Kategori::class,
             LayananUnggulan::class,
             KegiatanSeeder::class,
->>>>>>> f3b64b426db73719d1e99bec546e40389acf5f88
+            InformasiKontakSeeder::class,
+            AlasanMemilihBumdesSeeder::class,
         ]);
     }
 }
