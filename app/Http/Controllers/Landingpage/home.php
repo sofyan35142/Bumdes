@@ -10,8 +10,6 @@ use App\Models\MediaPartner;
 use App\Models\SambutanDirektur;
 use Illuminate\Http\Request;
 use App\Models\PanduanBumdes;
-use App\Models\SambutanDirektur;
-use App\Http\Controllers\Controller;
 
 class home extends Controller
 {
@@ -19,13 +17,13 @@ class home extends Controller
     {
         $data = SambutanDirektur::first();
         $book = PanduanBumdes::first();
-        return view('Landingpage.index',compact('data','book'));
+        // return view('Landingpage.index',compact('data','book'));
         $unggulan = LayananUnggulan::with('kategori')->latest()->take(3)->get();
         $kegiatan = kegiatan::latest()->take('3')->get();
         $mediaPartner = MediaPartner::all();
 
-        return view('Landingpage.index', compact('data', 'unggulan', 'kegiatan', 'mediaPartner'));
-        return view('Landingpage.index',compact('data', 'unggulan', 'kegiatan', 'mediaPartner'));
+        return view('Landingpage.index', compact('data','book', 'unggulan', 'kegiatan', 'mediaPartner'));
+        // return view('Landingpage.index',compact('data', 'unggulan', 'kegiatan', 'mediaPartner'));
     }
     public function detailunggulan($id)
     {
