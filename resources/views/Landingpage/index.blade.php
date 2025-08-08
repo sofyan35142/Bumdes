@@ -434,7 +434,13 @@
                                             <i class="{{ $item->ikon }}"></i>
                                         </div>
                                         <h3><a href="#">{{ $item->judul }}</a></h3>
-                                        <p class="overflow-auto" style="height: 9pc">{{ $item->deskripsi }}</p>
+                                        {{-- @foreach ($alasan as $item) --}}
+                                            <p class="overflow-auto" style="height: 9pc">
+                                                {{ $item->deskripsi }}
+                                            </p>
+                                        {{-- @endforeach --}}
+
+
                                         <div class="link"></div>
                                     </div>
                                 </div>
@@ -612,6 +618,7 @@
                                     <div class="lower-content">
                                         <h3><a href="#">{{ $item->nama_layanan }}</a></h3>
                                         <p
+<<<<<<< HEAD
                                             style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.5em; max-height: 4.5em; text-overflow: ellipsis;">
                                             {{ $item->deskripsi }}
                                             style="
@@ -630,6 +637,22 @@
                                             <a href="/detailunggulan/{{ $item->id }}"
                                                 class="theme-btn btn-one">View
                                                 Details</a>
+=======
+                                            style="
+                                    overflow: hidden;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 3;
+                                    -webkit-box-orient: vertical;
+                                    line-height: 1.5em;
+                                    max-height: 4.5em;
+                                    text-overflow: ellipsis;">
+                                            {!! $item->deskripsi !!}
+                                        </p>
+                                        <div class="btn-box">
+                                            {{-- <a href="#" class="theme-btn btn-one">View Details</a> --}}
+                                            <a href="/detailunggulan/{{ $item->id }}"
+                                                class="theme-btn btn-one">View Details</a>
+>>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
                                         </div>
                                     </div>
                                 </div>
@@ -640,7 +663,6 @@
             </div>
         </section>
         <!-- service-section end -->
-
 
         <!-- funfact-section -->
         <section class="funfact-section alternat-2 centred pb_90">
@@ -988,6 +1010,7 @@
                             </div>
                         </div>
                     @endforeach
+<<<<<<< HEAD
 
 
                     <!-- News Block 2 -->
@@ -1053,6 +1076,8 @@
                             </div>
                         </div>
                     </div> --}}
+=======
+>>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
                 </div>
             </div>
         </section>

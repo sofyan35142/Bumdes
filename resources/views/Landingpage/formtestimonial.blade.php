@@ -307,7 +307,7 @@
                 .then(async response => {
                     if (response.ok) {
                         // ✅ SUKSES: pindah ke halaman sukses
-                        window.location.href = '/testimoni/sukses';
+                        window.location.href = '/sukses';
                     } else {
                         const err = await response.text();
                         console.error("Gagal mengirim data:", err);

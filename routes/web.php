@@ -3,8 +3,11 @@
 use App\Http\Controllers\Admin\Alasan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Beranda;
+<<<<<<< HEAD
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\KegiatanController;
+=======
+>>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
 use App\Http\Controllers\Admin\dasarHukumController;
 use App\Http\Controllers\Admin\StrukturOrganisasiController;
 use App\Http\Controllers\Admin\VisiMisi;
@@ -62,6 +65,7 @@ Route::get('/galeri', [Pages::class, 'galeri'])->name('galeri');
 Route::get('/lowongan', [Pages::class, 'lowongan'])->name('lowongan');
 Route::get('/pages/galeri', [Pages::class, 'galeri'])->name('pages.galeri');
 Route::get('/pages/lowongan', [Pages::class, 'lowongan'])->name('pages.lowongan');
+Route::get('/pages/lowongan/detail/{id}', [Pages::class, 'lowongandetail'])->name('pages.lowongandetail');
 Route::get('/pages/keuangan', [Pages::class, 'keuangan'])->name('pages.keuangan');
 
 // --- Kontak
@@ -170,7 +174,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/updatemediapartner/{id}', [MediaPartnerController::class, 'updatemediapartner'])->name('admin.updatemediapartner');
     Route::get('/admin/hapusmediapartner/{id}', [MediaPartnerController::class, 'hapusmediapartner'])->name('admin.hapusmediapartner');
 
+<<<<<<< HEAD
     // --- Book Panduan BUMDes
+=======
+>>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
     // Testimonial
     Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
     Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
@@ -187,9 +194,33 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/updatelowongan/{id}', [LowonganPekerjaan::class, 'updatelowongan'])->name('admin.updatelowongan');
     Route::get('/admin/hapuslowongan/{id}', [LowonganPekerjaan::class, 'hapuslowongan'])->name('admin.hapuslowongan');
     // --- Book Panduan BUMDes
+<<<<<<< HEAD
     Route::get('/admin/book-panduan', [PanduanBumdesController::class, 'index'])->name('admin.bookPanduan.index');
     Route::get('/admin/book-panduan/edit', [PanduanBumdesController::class, 'edit'])->name('admin.bookPanduan.edit');
     Route::put('/admin/book-panduan/update', [PanduanBumdesController::class, 'update'])->name('admin.bookPanduan.update');
+=======
+Route::get('/admin/book-panduan', [PanduanBumdesController::class, 'index'])->name('admin.bookPanduan.index');
+Route::get('/admin/book-panduan/edit', [PanduanBumdesController::class, 'edit'])->name('admin.bookPanduan.edit');
+Route::put('/admin/book-panduan/update', [PanduanBumdesController::class, 'update'])->name('admin.bookPanduan.update');
+
+// --- Layanan
+Route::get('/admin/layanan', [Layanan::class, 'index'])->name('admin.layanan.index');
+Route::delete('/admin/layanan/{id}', [Layanan::class, 'destroy'])->name('admin.layanan.destroy');
+// --- Testimonial
+Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
+Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
+Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
+Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
+// --- Contact
+Route::get('/admin/contact', [InformasiKontak::class, 'index'])->name('admin.contact.index');
+Route::get('/admin/contact/edit', [InformasiKontak::class, 'edit'])->name('admin.contact.edit');
+Route::put('/admin/contact', [InformasiKontak::class, 'update'])->name('admin.contact.update');
+// --- Kenapa BUMDes
+Route::get('/admin/alasan', [Alasan::class, 'index'])->name('admin.alasan.index');
+Route::get('/admin/alasan/edit/{id}', [Alasan::class, 'edit'])->name('admin.alasan.edit');
+Route::put('/admin/alasan/{id}', [Alasan::class, 'update'])->name('admin.alasan.update');
+
+>>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
 
     // --- Layanan
     Route::get('/admin/layanan', [Layanan::class, 'index'])->name('admin.layanan.index');

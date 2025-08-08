@@ -28,14 +28,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-        // $this->call(VisiMisiSeeder::class);
-    // $this->call([
-    //     SambutanDirek::class,
-    //     sliderseed::class,
-    //     VisiMisiSeeder::class,
-    //     statistik::class
-    // ]);
+        // Membuat user admin
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'pakukerto@gmail.com',
@@ -78,6 +71,11 @@ class DatabaseSeeder extends Seeder
             InformasiKontakSeeder::class,
             AlasanMemilihBumdesSeeder::class,
             Testimonial::class,
+<<<<<<< HEAD
+=======
+            LowonganSeeder::class,
+            MediaPartnerSeeder::class,
+>>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
         ]);
     }
 }

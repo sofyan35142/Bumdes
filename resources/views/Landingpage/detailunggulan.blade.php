@@ -151,11 +151,7 @@
                                     src="{{ asset('foto layanan unggulan/' . $detailunggulan->foto_layanan) }}"
                                     alt=""></figure>
                             <div class="text-box mb_110">
-                                <p class="mb_25">{!! $detailunggulan->deskripsi !!}</p>
-                                {{-- <p>Leveraging an extensive network and advanced assessment tools, executive search firms
-                                    meticulously evaluate candidates’ qualifications, experience, and leadership
-                                    capabilities. The process includes rigorous interviews, reference checks, and often
-                                    psychometric testing to ensure a comprehensive evaluation.</p> --}}
+                                <p class="mb_25">{!! nl2br(e($detailunggulan->deskripsi)) !!}</p>
                             </div>
                         </div>
                     </div>
