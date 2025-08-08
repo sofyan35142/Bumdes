@@ -612,10 +612,8 @@
                                     <div class="lower-content">
                                         <h3><a href="#">{{ $item->nama_layanan }}</a></h3>
                                         <p
-<<<<<<< HEAD
                                             style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.5em; max-height: 4.5em; text-overflow: ellipsis;">
                                             {{ $item->deskripsi }}
-=======
                                             style="
     overflow: hidden;
     display: -webkit-box;
@@ -625,17 +623,13 @@
     max-height: 4.5em;
     text-overflow: ellipsis;
 ">
-                                            {!! $unggulan->deskripsi !!}
->>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
+                                            {!! $item->deskripsi !!}
                                         </p>
                                         <div class="btn-box">
-<<<<<<< HEAD
                                             <a href="#" class="theme-btn btn-one">View Details</a>
-=======
-                                            <a href="/detailunggulan/{{ $unggulan->id }}"
+                                            <a href="/detailunggulan/{{ $item->id }}"
                                                 class="theme-btn btn-one">View
                                                 Details</a>
->>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
                                         </div>
                                     </div>
                                 </div>
@@ -881,90 +875,29 @@
                     <h2 class="title-animation">Struktur Organisasi BUMDes</h2>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-1.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-1.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="#">Tom Oliver</a></h3>
-                                    <span class="designation">Founder</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="200ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-2.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-2.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="#">Loenard Barnes</a></h3>
-                                    <span class="designation">Lead Engineer</span>
+                    @foreach ($team as $index => $member)
+                        <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                            <div class="team-block-one wow fadeInUp animated" data-wow-delay="{{ $index * 200 }}ms"
+                                data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <figure class="image">
+                                            <img src="{{ asset($member->foto) }}"
+                                                alt="">
+                                        </figure>
+                                        <figure class="overlay-image">
+                                            <img src="{{ asset($member->foto) }}"
+                                                alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h3><a href="#">{{ $member->nama }}</a></h3>
+                                        <span class="designation">{{ $member->jabatan }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="400ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-3.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-3.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="#">Gilbert Sherman</a></h3>
-                                    <span class="designation">Sales Manager</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="600ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-4.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <img src="{{ asset('landingpage/assets/images/team/team-4.jpg') }}"
-                                            alt="">
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="#">Franklin Bailey</a></h3>
-                                    <span class="designation">Art Director</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -1055,8 +988,6 @@
                             </div>
                         </div>
                     @endforeach
-<<<<<<< HEAD
-=======
 
 
                     <!-- News Block 2 -->
@@ -1122,7 +1053,6 @@
                             </div>
                         </div>
                     </div> --}}
->>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
                 </div>
             </div>
         </section>

@@ -21,10 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-<<<<<<< HEAD
         // Membuat satu user contoh
-=======
->>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
         // User::factory(10)->create();
 
         // User::factory()->create([
@@ -78,12 +75,9 @@ class DatabaseSeeder extends Seeder
             Kategori::class,
             LayananUnggulan::class,
             KegiatanSeeder::class,
-<<<<<<< HEAD
             InformasiKontakSeeder::class,
             AlasanMemilihBumdesSeeder::class,
-=======
             Testimonial::class,
->>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
         ]);
     }
 }

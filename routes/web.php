@@ -3,15 +3,10 @@
 use App\Http\Controllers\Admin\Alasan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Beranda;
-<<<<<<< HEAD
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\KegiatanController;
-=======
 use App\Http\Controllers\Admin\dasarHukumController;
-use App\Http\Controllers\Admin\KategoriController;
-use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\Admin\StrukturOrganisasiController;
->>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
 use App\Http\Controllers\Admin\VisiMisi;
 use App\Http\Controllers\Landingpage\Blog;
 use App\Http\Controllers\Landingpage\Home;
@@ -26,12 +21,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MediaPartnerController;
 use App\Models\MediaPartner;
 use App\Http\Controllers\Admin\Testimonial;
-<<<<<<< HEAD
 use App\Http\Controllers\Admin\informasiKontak;
 use App\Models\StrukturOrganisasi;
-=======
 use App\Http\Controllers\LowonganPekerjaan;
->>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
 
 /*
 |--------------------------------------------------------------------------
@@ -101,17 +93,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/visi-misi', [VisiMisi::class, 'index'])->name('admin.visiMisi');
     Route::get('/admin/visi-misi/edit', [VisiMisi::class, 'editForm'])->name('admin.visi_misi.edit');
     Route::put('/admin/visi-misi/update', [VisiMisi::class, 'update'])->name('admin.visi_misi.update');
-// --- Struktur Organisasi
-Route::get('/admin/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('admin.struktur.index');
-Route::get('/admin/struktur-organisasi/create', [StrukturOrganisasiController::class, 'create'])->name('admin.struktur.create');
-Route::post('/admin/struktur-organisasi/store', [StrukturOrganisasiController::class, 'store'])->name('admin.struktur.store');
-Route::get('/admin/struktur-organisasi/edit/{id}', [StrukturOrganisasiController::class, 'edit'])->name('admin.struktur.edit');
-Route::put('/admin/struktur-organisasi/update/{id}', [StrukturOrganisasiController::class, 'update'])->name('admin.struktur.update');
-Route::delete('/admin/struktur-organisasi/delete/{id}', [StrukturOrganisasiController::class, 'destroy'])->name('admin.struktur.delete');
-// --- Dasar Hukum
-Route::get('/admin/dasar-hukum', [dasarHukumController::class, 'index'])->name('admin.dasarHukum');
-Route::get('/admin/dasar-hukum/edit', [dasarHukumController::class, 'edit'])->name('admin.dasarHukum.edit');
-Route::put('/admin/dasar-hukum/update', [dasarHukumController::class, 'update'])->name('admin.dasarHukum.update');
+    // --- Struktur Organisasi
+    Route::get('/admin/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('admin.struktur.index');
+    Route::get('/admin/struktur-organisasi/create', [StrukturOrganisasiController::class, 'create'])->name('admin.struktur.create');
+    Route::post('/admin/struktur-organisasi/store', [StrukturOrganisasiController::class, 'store'])->name('admin.struktur.store');
+    Route::get('/admin/struktur-organisasi/edit/{id}', [StrukturOrganisasiController::class, 'edit'])->name('admin.struktur.edit');
+    Route::put('/admin/struktur-organisasi/update/{id}', [StrukturOrganisasiController::class, 'update'])->name('admin.struktur.update');
+    Route::delete('/admin/struktur-organisasi/delete/{id}', [StrukturOrganisasiController::class, 'destroy'])->name('admin.struktur.delete');
+    // --- Dasar Hukum
+    Route::get('/admin/dasar-hukum', [dasarHukumController::class, 'index'])->name('admin.dasarHukum.index');
+    Route::get('/admin/dasar-hukum/edit', [dasarHukumController::class, 'edit'])->name('admin.dasarHukum.edit');
+    Route::put('/admin/dasar-hukum/update', [dasarHukumController::class, 'update'])->name('admin.dasarHukum.update');
 
     // Struktur Organisasi
     Route::get('/admin/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('admin.struktur.index');
@@ -178,9 +170,7 @@ Route::put('/admin/dasar-hukum/update', [dasarHukumController::class, 'update'])
     Route::post('/admin/updatemediapartner/{id}', [MediaPartnerController::class, 'updatemediapartner'])->name('admin.updatemediapartner');
     Route::get('/admin/hapusmediapartner/{id}', [MediaPartnerController::class, 'hapusmediapartner'])->name('admin.hapusmediapartner');
 
-<<<<<<< HEAD
-// --- Book Panduan BUMDes
-=======
+    // --- Book Panduan BUMDes
     // Testimonial
     Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
     Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
@@ -197,30 +187,24 @@ Route::put('/admin/dasar-hukum/update', [dasarHukumController::class, 'update'])
     Route::post('/admin/updatelowongan/{id}', [LowonganPekerjaan::class, 'updatelowongan'])->name('admin.updatelowongan');
     Route::get('/admin/hapuslowongan/{id}', [LowonganPekerjaan::class, 'hapuslowongan'])->name('admin.hapuslowongan');
     // --- Book Panduan BUMDes
->>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f
-Route::get('/admin/book-panduan', [PanduanBumdesController::class, 'index'])->name('admin.bookPanduan.index');
-Route::get('/admin/book-panduan/edit', [PanduanBumdesController::class, 'edit'])->name('admin.bookPanduan.edit');
-Route::put('/admin/book-panduan/update', [PanduanBumdesController::class, 'update'])->name('admin.bookPanduan.update');
+    Route::get('/admin/book-panduan', [PanduanBumdesController::class, 'index'])->name('admin.bookPanduan.index');
+    Route::get('/admin/book-panduan/edit', [PanduanBumdesController::class, 'edit'])->name('admin.bookPanduan.edit');
+    Route::put('/admin/book-panduan/update', [PanduanBumdesController::class, 'update'])->name('admin.bookPanduan.update');
 
-// --- Layanan
-Route::get('/admin/layanan', [Layanan::class, 'index'])->name('admin.layanan.index');
-Route::delete('/admin/layanan/{id}', [Layanan::class, 'destroy'])->name('admin.layanan.destroy');
-// --- Testimonial
-Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
-Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
-Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
-Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
-<<<<<<< HEAD
-// --- Contact
-Route::get('/admin/contact', [InformasiKontak::class, 'index'])->name('admin.contact.index');
-Route::get('/admin/contact/edit', [InformasiKontak::class, 'edit'])->name('admin.contact.edit');
-Route::put('/admin/contact', [InformasiKontak::class, 'update'])->name('admin.contact.update');
-// --- Kenapa BUMDes
-Route::get('/admin/alasan', [Alasan::class, 'index'])->name('admin.alasan.index');
-Route::get('/admin/alasan/edit/{id}', [Alasan::class, 'edit'])->name('admin.alasan.edit');
-Route::put('/admin/alasan/{id}', [Alasan::class, 'update'])->name('admin.alasan.update');
-=======
-
-
+    // --- Layanan
+    Route::get('/admin/layanan', [Layanan::class, 'index'])->name('admin.layanan.index');
+    Route::delete('/admin/layanan/{id}', [Layanan::class, 'destroy'])->name('admin.layanan.destroy');
+    // --- Testimonial
+    Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
+    Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
+    Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
+    Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
+    // --- Contact
+    Route::get('/admin/contact', [InformasiKontak::class, 'index'])->name('admin.contact.index');
+    Route::get('/admin/contact/edit', [InformasiKontak::class, 'edit'])->name('admin.contact.edit');
+    Route::put('/admin/contact', [InformasiKontak::class, 'update'])->name('admin.contact.update');
+    // --- Kenapa BUMDes
+    Route::get('/admin/alasan', [Alasan::class, 'index'])->name('admin.alasan.index');
+    Route::get('/admin/alasan/edit/{id}', [Alasan::class, 'edit'])->name('admin.alasan.edit');
+    Route::put('/admin/alasan/{id}', [Alasan::class, 'update'])->name('admin.alasan.update');
 });
->>>>>>> 54e769913aad6f1671280e54c31eab33a993cf6f

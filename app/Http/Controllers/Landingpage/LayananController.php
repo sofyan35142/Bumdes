@@ -115,7 +115,7 @@ class LayananController extends Controller
             // 9. Cek data yang disimpan
             // dd($pengajuan);
 
-            return redirect()->back()->with('success', 'Pengajuan berhasil dikirim!');
+            return redirect('/testimoni/sukses')->with('success', 'Pengajuan berhasil dikirim!');
         } catch (\Exception $e) {
             dd($e->getMessage());
             return back()->withErrors(['error' => 'Terjadi kesalahan saat membuat surat: ' . $e->getMessage()]);

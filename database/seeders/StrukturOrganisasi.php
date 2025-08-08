@@ -16,7 +16,7 @@ class StrukturOrganisasi extends Seeder
             [
                 'nama' => 'Ahmad Ramdhan',
                 'jabatan' => 'Direktur Utama',
-                'foto' => 'struktur/avatar-6.jpg',
+                'foto' => 'struktur/avatar-7.jpg',
                 'urutan' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
