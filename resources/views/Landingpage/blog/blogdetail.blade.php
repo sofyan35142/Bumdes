@@ -221,18 +221,18 @@
                                         </ul>
                                     </div>
                                     <div class="text-box pt_25 mb_50">
-                                        <p class="mb_30">{!! $detailblog->deskripsi_kegiatan !!}</p>
+                                        <p class="mb_30">{!! nl2br(e($detailblog->deskripsi_kegiatan)) !!}</p>
                                         {{-- <p class="mb_40">tips for tailoring responses to align with the company's
                                             values and expectations, this blog series can become an essential resource
                                             for candidates aiming to succeed in their interviews and secure their
                                             desired positions.</p> --}}
-                                        <blockquote>
+                                        {{-- <blockquote>
                                             <div class="icon-box"><i class="icon-36"></i></div>
                                             <h4>That's why we adhere to strict quality standards and regulations to
                                                 ensure that all our products meet the highest levels of safety and
                                                 efficacy.</h4>
                                             <h3>Hemandi Kaur</h3>
-                                        </blockquote>
+                                        </blockquote> --}}
                                     </div>
                                 </div>
                             </div>

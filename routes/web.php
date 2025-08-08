@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\StrukturOrganisasi;
+use App\Http\Controllers\Admin\Alasan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Beranda;
 use App\Http\Controllers\Admin\dasarHukumController;
@@ -21,6 +21,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MediaPartnerController;
 use App\Models\MediaPartner;
 use App\Http\Controllers\Admin\Testimonial;
+use App\Http\Controllers\Admin\informasiKontak;
+use App\Models\StrukturOrganisasi;
 use App\Http\Controllers\LowonganPekerjaan;
 
 /*
@@ -60,6 +62,7 @@ Route::get('/galeri', [Pages::class, 'galeri'])->name('galeri');
 Route::get('/lowongan', [Pages::class, 'lowongan'])->name('lowongan');
 Route::get('/pages/galeri', [Pages::class, 'galeri'])->name('pages.galeri');
 Route::get('/pages/lowongan', [Pages::class, 'lowongan'])->name('pages.lowongan');
+Route::get('/pages/lowongan/detail/{id}', [Pages::class, 'lowongandetail'])->name('pages.lowongandetail');
 Route::get('/pages/keuangan', [Pages::class, 'keuangan'])->name('pages.keuangan');
 
 // --- Kontak
@@ -196,6 +199,14 @@ Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('a
 Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
 Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
 Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
+// --- Contact
+Route::get('/admin/contact', [InformasiKontak::class, 'index'])->name('admin.contact.index');
+Route::get('/admin/contact/edit', [InformasiKontak::class, 'edit'])->name('admin.contact.edit');
+Route::put('/admin/contact', [InformasiKontak::class, 'update'])->name('admin.contact.update');
+// --- Kenapa BUMDes
+Route::get('/admin/alasan', [Alasan::class, 'index'])->name('admin.alasan.index');
+Route::get('/admin/alasan/edit/{id}', [Alasan::class, 'edit'])->name('admin.alasan.edit');
+Route::put('/admin/alasan/{id}', [Alasan::class, 'update'])->name('admin.alasan.update');
 
 
 });

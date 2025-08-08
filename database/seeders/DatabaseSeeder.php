@@ -21,20 +21,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Membuat satu user contoh
         // User::factory(10)->create();
 
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-        // $this->call(VisiMisiSeeder::class);
-    // $this->call([
-    //     SambutanDirek::class,
-    //     sliderseed::class,
-    //     VisiMisiSeeder::class,
-    //     statistik::class
-    // ]);
+        // Membuat user admin
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'pakukerto@gmail.com',
@@ -74,7 +68,11 @@ class DatabaseSeeder extends Seeder
             Kategori::class,
             LayananUnggulan::class,
             KegiatanSeeder::class,
+            InformasiKontakSeeder::class,
+            AlasanMemilihBumdesSeeder::class,
             Testimonial::class,
+            LowonganSeeder::class,
+            MediaPartnerSeeder::class,
         ]);
     }
 }

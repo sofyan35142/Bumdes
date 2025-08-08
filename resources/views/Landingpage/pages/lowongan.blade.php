@@ -137,7 +137,7 @@
     ">
                                             {{ \Illuminate\Support\Str::limit(strip_tags($lowongan->deskripsi), 500, '...') }}
                                         </div>
-                                        <div class="btn-box"><a href="service-details-2.html"
+                                        <div class="btn-box"><a href="/pages/lowongan/detail/{{ $lowongan->id }}"
                                                 class="theme-btn btn-one">View
                                                 Details</a></div>
                                     </div>

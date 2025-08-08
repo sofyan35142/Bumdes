@@ -87,8 +87,6 @@
     line-height: 60px;
 }
 
-.job-form-section .form-inner .form-group input:focus,
-.job-form-section .form-inner .form-group textarea:focus {}
 
 .job-form-section .form-inner .form-group textarea {
     height: 150px;

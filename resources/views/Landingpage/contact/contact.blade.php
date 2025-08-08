@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-@include('Landingpage.layout.head')
+    @include('Landingpage.layout.head')
 </head>
 
 
@@ -112,71 +112,46 @@
             <div class="auto-container">
                 <div class="inner-container">
                     <div class="row clearfix">
-                        <div class="col-lg-4 col-md-12 col-sm-12 info-column">
-                            <div class="info-box">
+                        <div class="col-lg-12 col-md-12 col-sm-12 info-column">
+                            <div class="info-box" style="padding: 3pc">
                                 <h3>Informasi Kontak</h3>
-                                <div class="single-item">
-                                    <div class="icon-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-27.png"
-                                            alt="">
+                                <div class="row">
+                                    <div class="col-md-4 mb-4">
+                                        <div class="single-item">
+                                            <div class="icon-box mb-2">
+                                                <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-27.png"
+                                                    alt="">
+                                            </div>
+                                            <h4>Kantor BUMDes</h4>
+                                            <p>{{$data->alamat}}</p>
+                                        </div>
                                     </div>
-                                    <h4>Kantor BUMDes</h4>
-                                    <p>Jl. Raya Dusun Janti, Desa Pakukerto, Kec. Sukodono, Kab. Sidoarjo</p>
-                                </div>
-                                <div class="single-item">
-                                    <div class="icon-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-28.png"
-                                            alt="">
+
+                                    <div class="col-md-4 mb-4">
+                                        <div class="single-item">
+                                            <div class="icon-box mb-2">
+                                                <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-28.png"
+                                                    alt="">
+                                            </div>
+                                            <h4>Email</h4>
+                                            <p><a href="mailto:{{$data->email}}">{{$data->email}}</a>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <h4>Email</h4>
-                                    <p><a href="mailto:bumdespakukerto@gmail.com">bumdespakukerto@gmail.com</a></p>
-                                </div>
-                                <div class="single-item">
-                                    <div class="icon-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-29.png"
-                                            alt="">
+
+                                    <div class="col-md-4 mb-4">
+                                        <div class="single-item">
+                                            <div class="icon-box mb-2">
+                                                <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-29.png"
+                                                    alt="">
+                                            </div>
+                                            <h4>Nomor Telepon</h4>
+                                            <p><a href="tel:+6281234567890">{{$data->telepon}}</a></p>
+                                        </div>
                                     </div>
-                                    <h4>Nomor Telepon</h4>
-                                    <p><a href="tel:+6281234567890">+62 812 3456 7890</a></p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-8 col-md-12 col-sm-12 content-column">
-                            <div class="form-inner">
-                                <form method="post" action="#" id="contact-form">
-                                    <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label>Nama Lengkap <span>*</span></label>
-                                            <input type="text" name="username" placeholder="Masukkan nama anda"
-                                                required>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                            <label>No. HP <span>*</span></label>
-                                            <input type="text" name="phone" placeholder="Contoh: 081234567890"
-                                                required>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                            <label>Email <span>*</span></label>
-                                            <input type="email" name="email" placeholder="Email aktif" required>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                            <label>Subjek Pesan <span>*</span></label>
-                                            <input type="text" name="subject" placeholder="Subjek" required>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                            <label>Pesan <span>*</span></label>
-                                            <textarea name="message" placeholder="Tuliskan pesan anda di sini..." required></textarea>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                            <button type="submit" class="theme-btn btn-one" name="submit-form">Kirim
-                                                Pesan</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -188,9 +163,9 @@
             <div class="auto-container">
                 <div class="inner-container">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d203.66428749450935!2d112.70299135493318!3d-7.726336328859577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spasar%20desa%20pakukerto!5e1!3m2!1sid!2sid!4v1753984336283!5m2!1sid!2sid"
-                        width="100%" height="500" frameborder="0" style="border:0; width: 100%"
-                        allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        src="{{$data->iframe_maps}}"
+                        width="100%" height="500" frameborder="0" style="border:0; width: 100%" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
         </section>
@@ -214,8 +189,6 @@
 
     @include('Landingpage.layout.scripts')
 
-</body><!-- End of .page_wrapper -->
-
-<!-- Mirrored from jobaway.pixcelsthemes.com/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:58 GMT -->
+</body>
 
 </html>

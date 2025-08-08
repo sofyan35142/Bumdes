@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Landingpage;
 
 use App\Http\Controllers\Controller;
+use App\Models\AlasanMemilihBumdes;
 use App\Models\kategorimodel;
 use App\Models\kegiatan;
 use App\Models\LayananUnggulan;
@@ -21,9 +22,13 @@ class home extends Controller
         $unggulan = LayananUnggulan::with('kategori')->latest()->take(3)->get();
         $kegiatan = kegiatan::latest()->take('3')->get();
         $mediaPartner = MediaPartner::all();
+        $alasan = AlasanMemilihBumdes::all();
 
-        return view('Landingpage.index', compact('data','book', 'unggulan', 'kegiatan', 'mediaPartner'));
-        // return view('Landingpage.index',compact('data', 'unggulan', 'kegiatan', 'mediaPartner'));
+        // return view('Landingpage.index',compact('data','book'));
+        // $unggulan = LayananUnggulan::with('kategori')->latest()->take(3)->get();
+        // $kegiatan = kegiatan::latest()->take('3')->get();
+        // $mediaPartner = MediaPartner::all();
+        return view('Landingpage.index',compact('data', 'unggulan', 'kegiatan', 'mediaPartner','book','alasan'));
     }
     public function detailunggulan($id)
     {

@@ -7,7 +7,7 @@ $(document).ready(function () {
         lengthChange: false,
         buttons: ["copy", "excel", "pdf", "colvis"],
         language: {
-            emptyTable: "Belum ada pengajuan."
+            emptyTable: "Belum ada data."
         }
     });
 

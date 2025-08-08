@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Landingpage;
 
 use App\Http\Controllers\Controller;
+use App\Models\LowonganPekerjaan;
 use Illuminate\Http\Request;
 
 class pages extends Controller
@@ -19,5 +20,10 @@ class pages extends Controller
     public function keuangan()
     {
         return view('Landingpage.pages.keuangan');
+    }
+    public function lowongandetail($id)
+    {
+        $lowongandetail = LowonganPekerjaan::findOrFail($id);
+        return view('Landingpage.pages.lowongandetail', compact('lowongandetail'));
     }
 }
