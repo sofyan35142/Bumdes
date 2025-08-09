@@ -20,7 +20,7 @@ class AlasanMemilihBumdesSeeder extends Seeder
                 'deskripsi' => 'Kami membantu pertumbuhan UMKM lokal melalui pelatihan dan dukungan akses pemasaran.',
             ],
             [
-                'judul' => 'Legal Dan Terpercaya',
+                'judul' => 'Legal Aman Resmi Terpercaya',
                 'ikon' => 'icon-5',
                 'deskripsi' => 'BUMDes beroperasi secara resmi dengan landasan hukum yang kuat dan diawasi oleh pemerintah desa pakukerto sendiri.',
             ],

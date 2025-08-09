@@ -21,13 +21,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Membuat satu user contoh
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
         // Membuat user admin
         User::factory()->create([
             'name' => 'Test User',
@@ -35,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'password' => 'pakukerto123',
         ]);
 
-        // Seed data untuk APBDes
+        // // Seed data untuk APBDes
         $jenisList = ['pendapatan', 'belanja', 'pembiayaan'];
         $kategoriList = [
             'Dana Desa', 'Alokasi Dana Desa', 'Pajak Daerah',
@@ -71,11 +64,10 @@ class DatabaseSeeder extends Seeder
             InformasiKontakSeeder::class,
             AlasanMemilihBumdesSeeder::class,
             Testimonial::class,
-<<<<<<< HEAD
-=======
             LowonganSeeder::class,
             MediaPartnerSeeder::class,
->>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
+            IndustrySeeder::class,
+            JenisLayananSeeder::class
         ]);
     }
 }

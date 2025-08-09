@@ -110,31 +110,6 @@
                 <div class="row clearfix">
                     <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                         <div class="blog-sidebar mr_40 mb_30">
-                            <div class="search-widget mb_60">
-                                <div class="search-form">
-                                    <form method="post" action="https://jobaway.pixcelsthemes.com/blog-2.html">
-                                        <div class="form-group">
-                                            <input type="search" name="search-field" placeholder="Search" required>
-                                            <button type="submit"><i class="icon-1"></i></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            {{-- <div class="sidebar-widget category-widget mb_50">
-                                <div class="widget-title mb_11">
-                                    <h3>Categories</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="category-list clearfix">
-                                        <li><a href="blog-details.html">Day Trading<span>(09)</span></a></li>
-                                        <li><a href="blog-details.html">Finance<span>(20)</span></a></li>
-                                        <li><a href="blog-details.html">Virtual Hiring<span>(25)</span></a></li>
-                                        <li><a href="blog-details.html">Headhunting<span>(06)</span></a></li>
-                                        <li><a href="blog-details.html">Promotions<span>(18)</span></a></li>
-                                        <li><a href="blog-details.html">Recruitment Agencies<span>(11)</span></a></li>
-                                    </ul>
-                                </div>
-                            </div> --}}
                             <div class="sidebar-widget post-widget mb_60">
                                 <div class="widget-title mb_20">
                                     <h3>Latest Posts</h3>
@@ -331,28 +306,7 @@
 
 
         <!-- subscribe-style-two -->
-        <section class="subscribe-style-two">
-            <div class="bg-color"></div>
-            <div class="auto-container">
-                <div class="inner-container">
-                    <div class="shape-box">
-                        <div class="shape-1" style="background-image: url({{ asset('/Landingpage/assets/images/shape/shape-8.png') }});"></div>
-                        <div class="shape-2" style="background-image: url({{ asset('/Landingpage/assets/images/shape/shape-9.png') }});"></div>
-                    </div>
-                    <div class="text-box">
-                        <h2>Subscribe for <span>latest update</span></h2>
-                    </div>
-                    <div class="form-inner">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/contact.html">
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Email Address" required>
-                                <button type="submit" class="theme-btn btn-one">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!-- subscribe-style-two end -->
 
 

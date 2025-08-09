@@ -11,9 +11,23 @@
                 <!-- LOGO -->
                 <figure class="logo-box" style="margin: 0; flex: 1;">
                     <a href="http://127.0.0.1:8000">
-                        <img src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png" alt="Logo">
+                        <img src="http://127.0.0.1:8000/LandingPage/assets/images/bumdes.png" alt="Logo">
                     </a>
                 </figure>
+{{-- <figure class="logo-box" style="margin:0; flex:1;">
+    <style>
+        figure.logo-box a img {
+            max-height: 150px !important;
+            width: auto !important;
+            height: auto !important;
+            display: block !important;
+        }
+    </style>
+    <a href="http://127.0.0.1:8000">
+        <img src="http://127.0.0.1:8000/LandingPage/assets/images/bumdes.png" alt="Logo">
+    </a>
+</figure> --}}
+
 
                 <!-- MENU DI TENGAH -->
                 <div class="menu-area"
@@ -47,7 +61,8 @@
                                     <ul>
                                         <li><a href="/pages/galeri">Galeri Foto & Video</a></li>
                                         <li><a href="/pages/lowongan">Lowongan Pekerjaan</a></li>
-                                        <li><a href="/pages/keuangan">Laporan Keuangan</a></li>
+                                        <li><a href="/pages/laporan">Laporan Keuangan</a></li>
+                                        <li><a href="/FormTestimonial">Form Testimoni</a></li>
                                     </ul>
                                     <div class="dropdown-btn"><span class="fas fa-angle-down"></span></div>
                                 </li>

@@ -53,7 +53,7 @@
 <script src="{{ asset('AdminPage/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
 
 <!-- Datatable init js -->
-<script src="{{ asset('AdminPage/assets/js/pages/datatables.init.js') }}"></script>
+{{-- <script src="{{ asset('AdminPage/assets/js/pages/datatables.init.js') }}"></script> --}}
 
 <!-- ========== Toastr Notifications ========== -->
 <script>

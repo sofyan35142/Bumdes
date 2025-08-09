@@ -129,7 +129,7 @@
                         <p>BUMDes adalah motor penggerak ekonomi desa. Bergabunglah bersama kami dalam membangun
                             usaha
                             mandiri dan berkelanjutan untuk kesejahteraan warga.</p>
-                        <a href="{{ asset('landingpage.contact') }}" class="theme-btn btn-one">Hubungi Kami</a>
+                        <a href="/contact" class="theme-btn btn-one">Hubungi Kami</a>
                     </div>
                 </div>
             </div>

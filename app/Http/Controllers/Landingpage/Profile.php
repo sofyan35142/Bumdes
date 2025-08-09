@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Landingpage;
 
 use App\Http\Controllers\Controller;
+use App\Models\DasarHukum;
 use App\Models\StrukturOrganisasi;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,14 @@ class Profile extends Controller
     }
     public function dasarhukum()
     {
-        return view('Landingpage.profile.dasarhukum');
+        $data = DasarHukum::first();
+
+        // Convert points (string JSON) jadi array
+        if ($data && is_string($data->points)) {
+            $data->points = json_decode($data->points, true);
+        }
+
+        // dd($data);
+        return view('Landingpage.profile.dasarhukum',compact('data'));
     }
 }

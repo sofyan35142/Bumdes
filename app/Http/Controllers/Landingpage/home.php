@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Landingpage;
 
 use App\Http\Controllers\Controller;
 use App\Models\AlasanMemilihBumdes;
+use App\Models\Industry;
 use App\Models\kategorimodel;
 use App\Models\kegiatan;
 use App\Models\LayananUnggulan;
@@ -19,26 +20,16 @@ class home extends Controller
     {
         $data = SambutanDirektur::first();
         $book = PanduanBumdes::first();
-<<<<<<< HEAD
-=======
-        // return view('Landingpage.index',compact('data','book'));
->>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
         $unggulan = LayananUnggulan::with('kategori')->latest()->take(3)->get();
         $kegiatan = kegiatan::latest()->take(3)->get();
         $mediaPartner = MediaPartner::all();
         $alasan = AlasanMemilihBumdes::all();
-<<<<<<< HEAD
         $team = StrukturOrganisasi::orderBy('urutan', 'asc')->take(4)->get();
-        // dd($team->map->getOriginal());
-        return view('Landingpage.index', compact('data', 'book', 'unggulan', 'kegiatan', 'mediaPartner', 'alasan','team'));
-=======
+        $industries = Industry::all();
+        // dd($industries->map->getOriginal());
+        return view('Landingpage.index', compact('data', 'book', 'unggulan', 'kegiatan', 'mediaPartner', 'alasan','team','industries'));
 
-        // return view('Landingpage.index',compact('data','book'));
-        // $unggulan = LayananUnggulan::with('kategori')->latest()->take(3)->get();
-        // $kegiatan = kegiatan::latest()->take('3')->get();
-        // $mediaPartner = MediaPartner::all();
-        return view('Landingpage.index',compact('data', 'unggulan', 'kegiatan', 'mediaPartner','book','alasan'));
->>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
+
     }
 
     public function detailunggulan($id)

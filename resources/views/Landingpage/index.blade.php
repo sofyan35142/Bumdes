@@ -435,12 +435,10 @@
                                         </div>
                                         <h3><a href="#">{{ $item->judul }}</a></h3>
                                         {{-- @foreach ($alasan as $item) --}}
-                                            <p class="overflow-auto" style="height: 9pc">
-                                                {{ $item->deskripsi }}
-                                            </p>
+                                        <p class="overflow-auto" style="height: 9pc">
+                                            {{ $item->deskripsi }}
+                                        </p>
                                         {{-- @endforeach --}}
-
-
                                         <div class="link"></div>
                                     </div>
                                 </div>
@@ -462,81 +460,17 @@
                     <h2 class="title-animation">Bidang Usaha BUMDes Kami</h2>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-9"></i></div>
-                                <h3><a href="{{ url('/') }}">Unit Perdagangan</a></h3>
-                                <p>2853 Staffs</p>
+                    @foreach ($industries as $industry)
+                        <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
+                            <div class="industries-block-two">
+                                <div class="inner-box">
+                                    <div class="icon-box"><i class="{{ $industry->icon }}"></i></div>
+                                    <h3>{{ $industry->name }}</h3>
+                                    <p>{{ $industry->staff_count }} Staffs</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-10"></i></div>
-                                <h3><a href="{{ url('/') }}">Air Bersih / PAM Desa</a></h3>
-                                <p>2256 Staffs</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-11"></i></div>
-                                <h3><a href="{{ url('/') }}">Transportasi Desa</a></h3>
-                                <p>1408 Staffs</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-12"></i></div>
-                                <h3><a href="{{ url('/') }}">Pariwisata Desa</a></h3>
-                                <p>1740 Staffs</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-13"></i></div>
-                                <h3><a href="{{ url('/') }}">Peternakan</a></h3>
-                                <p>3948 Staffs</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-14"></i></div>
-                                <h3><a href="{{ url('/') }}">Jasa Servis</a></h3>
-                                <p>2984 Staffs</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-15"></i></div>
-                                <h3><a href="{{ url('/') }}">sewa Aset</a></h3>
-                                <p>4509 Staffs</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-16"></i></div>
-                                <h3><a href="{{ url('/') }}">Pertanian</a></h3>
-                                <p>1039 Staffs</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="more-btn centred mt_30">
-                    <a href="{{ url('/kategori') }}" class="theme-btn btn-one">View All Categories</a>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -618,26 +552,6 @@
                                     <div class="lower-content">
                                         <h3><a href="#">{{ $item->nama_layanan }}</a></h3>
                                         <p
-<<<<<<< HEAD
-                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.5em; max-height: 4.5em; text-overflow: ellipsis;">
-                                            {{ $item->deskripsi }}
-                                            style="
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    line-height: 1.5em;
-    max-height: 4.5em;
-    text-overflow: ellipsis;
-">
-                                            {!! $item->deskripsi !!}
-                                        </p>
-                                        <div class="btn-box">
-                                            <a href="#" class="theme-btn btn-one">View Details</a>
-                                            <a href="/detailunggulan/{{ $item->id }}"
-                                                class="theme-btn btn-one">View
-                                                Details</a>
-=======
                                             style="
                                     overflow: hidden;
                                     display: -webkit-box;
@@ -652,7 +566,6 @@
                                             {{-- <a href="#" class="theme-btn btn-one">View Details</a> --}}
                                             <a href="/detailunggulan/{{ $item->id }}"
                                                 class="theme-btn btn-one">View Details</a>
->>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
                                         </div>
                                     </div>
                                 </div>
@@ -904,12 +817,10 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image">
-                                            <img src="{{ asset($member->foto) }}"
-                                                alt="">
+                                            <img src="{{ asset($member->foto) }}" alt="">
                                         </figure>
                                         <figure class="overlay-image">
-                                            <img src="{{ asset($member->foto) }}"
-                                                alt="">
+                                            <img src="{{ asset($member->foto) }}" alt="">
                                         </figure>
                                     </div>
                                     <div class="lower-content">
@@ -1010,74 +921,6 @@
                             </div>
                         </div>
                     @endforeach
-<<<<<<< HEAD
-
-
-                    <!-- News Block 2 -->
-                    {{-- <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-5.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <span class="category">Analytics</span>
-                                    <h3><a href="index-2.html">Explore the concept of personal branding and its impact
-                                            on</a></h3>
-                                    <ul class="post-info">
-                                        <li>By <a href="blog-details.html">Alex Beniwal</a></li>
-                                        <li><span>March 19, 2023</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                    <!-- News Block 3 -->
-                    {{-- <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                    <figure class="overlay-image">
-                                        <a href="blog-details.html">
-                                            <img src="{{ asset('landingpage/assets/images/news/news-6.jpg') }}"
-                                                alt="">
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="lower-content">
-                                    <span class="category">Business</span>
-                                    <h3><a href="index-2.html">Feature interviews with employees from top companies</a>
-                                    </h3>
-                                    <ul class="post-info">
-                                        <li>By <a href="blog-details.html">Alex Beniwal</a></li>
-                                        <li><span>March 18, 2023</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-=======
->>>>>>> 4ebdc79992c399544970c7d70baa61fd1907a198
                 </div>
             </div>
         </section>

@@ -99,64 +99,29 @@
                                     <h2 class="title-animation">Dasar Hukum Pembentukan BUMDes</h2>
                                 </div>
                                 <ul class="accordion-box">
-                                    <li class="accordion block active-block">
-                                        <div class="acc-btn active">
-                                            <div class="icon-box"><i class="icon-21"></i></div>
-                                            <h4>Undang-Undang Nomor 6 Tahun 2014 tentang Desa</h4>
-                                        </div>
-                                        <div class="acc-content current">
-                                            <div class="content">
-                                                <p>UU ini mengatur tentang pemerintahan desa dan memberikan dasar hukum
-                                                    pembentukan dan pengelolaan BUMDes sebagai lembaga ekonomi desa.</p>
+                                    @foreach ($data->points as $point)
+                                        <li class="accordion block {{ $loop->first ? 'active-block' : '' }}">
+                                            <div class="acc-btn {{ $loop->first ? 'active' : '' }}">
+                                                <div class="icon-box"><i class="icon-21"></i></div>
+                                                <h4>{{ $point['title'] }}</h4>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="accordion block">
-                                        <div class="acc-btn">
-                                            <div class="icon-box"><i class="icon-21"></i></div>
-                                            <h4>Peraturan Pemerintah Nomor 11 Tahun 2021</h4>
-                                        </div>
-                                        <div class="acc-content">
-                                            <div class="content">
-                                                <p>PP ini merupakan turunan dari UU Desa yang memperjelas peran dan
-                                                    kewenangan BUMDes dalam pembangunan dan pemberdayaan masyarakat
-                                                    desa.</p>
+                                            <div class="acc-content {{ $loop->first ? 'current' : '' }}">
+                                                <div class="content">
+                                                    <p>{{ $point['body'] }}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="accordion block">
-                                        <div class="acc-btn">
-                                            <div class="icon-box"><i class="icon-21"></i></div>
-                                            <h4>Permendesa PDTT Nomor 3 Tahun 2021</h4>
-                                        </div>
-                                        <div class="acc-content">
-                                            <div class="content">
-                                                <p>Mengatur prosedur pendirian, pengelolaan, dan pengembangan BUMDes
-                                                    termasuk pelaporan keuangan dan pengawasan.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="accordion block">
-                                        <div class="acc-btn">
-                                            <div class="icon-box"><i class="icon-21"></i></div>
-                                            <h4>Peraturan Menteri Dalam Negeri Nomor 1 Tahun 2017</h4>
-                                        </div>
-                                        <div class="acc-content">
-                                            <div class="content">
-                                                <p>Memberikan petunjuk teknis mengenai tata cara pengelolaan aset desa
-                                                    yang dapat digunakan BUMDes dalam operasionalnya.</p>
-                                            </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image-box ml_70">
-                            <figure class="image image-hov-one"><img
-                                    src="http://127.0.0.1:8000/LandingPage/assets/images/resource/faq-1.jpg"
-                                    alt=""></figure>
+                            <figure class="image image-hov-one">
+                                <img src="{{ asset($data->gambar_samping) }}" alt="Dasar Hukum">
+                            </figure>
                         </div>
                     </div>
                 </div>
@@ -173,23 +138,29 @@
                     <div class="row align-items-center">
                         <div class="col-lg-8 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h2>Sertifikat Badan Hukum <span>BUM Desa Mandiri Sejahtera Pakukerto</span></h2>
+                                @php
+                                    $kata = explode(' ', $data->judul);
+                                    $dua_kata_pertama = implode(' ', array_slice($kata, 0, 2));
+                                    $sisanya = implode(' ', array_slice($kata, 2));
+                                @endphp
+
+                                <h2>
+                                    {{ $dua_kata_pertama }}
+                                    @if ($sisanya)
+                                        <span>{{ $sisanya }}</span>
+                                    @endif
+                                </h2>
                                 <ul class="list-item mb_30">
-                                    <li>Nomor Sertifikat: AHU-01511.AH.01.33.TAHUN 2025</li>
-                                    <li>Tanggal Diterbitkan: 06 Maret 2025</li>
-                                    <li>Kedudukan: Desa Pakukerto, Kecamatan Sukorejo, Kabupaten
-                                        Pasuruan, Provinsi Jawa Timur</li>
-                                    <li>Status: Telah terdaftar sebagai badan hukum yang tercatat dalam
-                                        pangkalan data Direktorat Jenderal Administrasi Hukum Umum</li>
+                                    {!! $data->sertifikat_list !!}
                                 </ul>
-                                <button type="button" class="theme-btn btn-one">Unduh Sertifikat</button>
+                                <a type="button" href="{{ asset($data->sertifikat_file) }}" download
+                                    class="theme-btn btn-one">Download Sertifikat</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                             <div class="image-box">
                                 <figure class="image">
-                                    <img src="http://127.0.0.1:8000/LandingPage/assets/images/resource/book-2.png"
-                                        alt="">
+                                    <img src="{{ asset($data->gambar_buku) }}" alt="">
                                 </figure>
                             </div>
                         </div>

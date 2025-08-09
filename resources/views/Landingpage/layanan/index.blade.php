@@ -92,7 +92,7 @@
         <!-- End Mobile Menu -->
 
         <!-- page-title -->
-        <section class="page-title centred pt_110">
+        <section class="page-title centred pt_110 mb-5">
             <div class="auto-container">
                 <div class="content-box">
                     <h1>Form Pengajuan Layanan</h1>
@@ -106,19 +106,17 @@
         </section>
         <!-- page-title end -->
 
-        <!-- pengajuan-form-section -->
-        <section class="job-form-section dark-section pt_110 pb_90">
+        <!-- job-form-section -->
+        <section class="job-form-section pt_120 pb_120">
             <div class="auto-container">
-                <div class="sec-title centred pb_70 sec-title-animation animation-style2">
+                <div class="sec-title centred pb_70 light sec-title-animation animation-style2">
                     <span class="sub-title mb_10 title-animation">FORM PENGAJUAN</span>
                     <h2 class="title-animation">Ajukan Layanan BUMDes</h2>
                     <p class="title-animation">Silakan isi data Anda dengan benar untuk mengajukan layanan BUMDes.</p>
                 </div>
-
                 <!-- Form pengajuan layanan BUMDes -->
                 <form method="POST" action="{{ route('pengajuan.store') }}" enctype="multipart/form-data">
                     @csrf
-
                     <div class="row clearfix">
                         <!-- Kolom Kiri - Data Diri -->
                         <div class="col-lg-6 col-md-12 col-sm-12 form-column">
@@ -165,54 +163,87 @@
                             </div>
                         </div>
 
-                        <!-- Kolom Kanan - Data Pengajuan -->
+                        <!-- Bagian form (hanya bagian kanan Data Pengajuan) -->
                         <div class="col-lg-6 col-md-12 col-sm-12 form-column">
                             <div class="form-inner">
                                 <div class="title-box">
-                                    <div class="icon-box"><i class="icon-40"></i></div>
                                     <h3>Data Pengajuan</h3>
-                                    <p>Pilih jenis layanan dan lengkapi detailnya.</p>
                                 </div>
                                 <div class="row clearfix">
+                                    <!-- Pilih jenis layanan -->
                                     <div class="col-12 form-group">
                                         <div class="select-box">
                                             <select name="jenis_pengajuan" id="jenis_pengajuan" required>
                                                 <option value="" disabled selected>Pilih Jenis Layanan</option>
-                                                <option value="sewa_kios">Sewa Kios</option>
-                                                <option value="sewa_lahan">Sewa Lahan</option>
-                                                <option value="pemungutan_sampah">Pemungutan Sampah</option>
+                                                @foreach ($jenisLayanan as $layanan)
+                                                    <option value="{{ $layanan->nama }}"
+                                                        data-harga="{{ $layanan->harga_sewa }}"
+                                                        data-pajak="{{ $layanan->beban_perbulan }}">
+                                                        {{ $layanan->nama }}
+                                                    </option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
 
+                                    <!-- Keperluan -->
                                     <div class="col-12 form-group">
-                                        <textarea name="keperluan" placeholder="Keperluan / Deskripsi Pengajuan" rows="5" required></textarea>
+                                        <textarea name="keperluan" id="keperluan" placeholder="Keperluan / Deskripsi Pengajuan" rows="5" required></textarea>
                                     </div>
 
-                                    <!-- Bagian khusus untuk kios/lahan (disembunyikan jika bukan) -->
-                                    <div class="col-12 form-group form-layanan-opsional">
+                                    <!-- Form opsional untuk sewa kios/lahan -->
+                                    <div class="col-12 form-group form-layanan-opsional" style="display:none;">
                                         <input type="text" name="legalitas_usaha"
                                             placeholder="Nomor Legalitas Usaha (jika ada)">
                                     </div>
-                                    <div class="col-12 form-group form-layanan-opsional">
+                                    <div class="col-12 form-group form-layanan-opsional" style="display:none;">
                                         <input type="text" name="jenis_usaha" placeholder="Jenis Usaha">
                                     </div>
-                                    <div class="col-12 form-group form-layanan-opsional">
+                                    <div class="col-12 form-group form-layanan-opsional" style="display:none;">
                                         <input type="text" name="produk" placeholder="Produk yang Dijual">
                                     </div>
 
+                                    <!-- Pilih satuan sewa -->
+                                    <div class="col-12 form-group">
+                                        <label for="satuan_sewa">Satuan Sewa</label>
+                                        <select name="satuan_sewa" id="satuan_sewa" required>
+                                            <option value="bulan" selected>Bulan</option>
+                                            <option value="hari">Hari</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Durasi sewa -->
                                     <div class="col-12 form-group">
                                         <input type="number" name="durasi_sewa" id="durasi_sewa"
-                                            placeholder="Lama Sewa (hari)" required>
+                                            placeholder="Lama Sewa (bulan)" min="1" required>
                                     </div>
 
+                                    <!-- Harga per satuan -->
                                     <div class="col-12 form-group">
-                                        <input type="text" id="harga_per_hari" value="Rp -" readonly>
+                                        <label>Harga per Satuan</label>
+                                        <input type="text" id="harga_per_satuan" value="Rp -" readonly>
+                                        <small>Harga layanan per bulan atau per hari sesuai pilihan satuan.</small>
                                     </div>
 
+                                    <!-- Pajak per satuan -->
                                     <div class="col-12 form-group">
+                                        <label>Pajak / Beban per Satuan</label>
+                                        <input type="text" id="pajak_per_bulan" value="Rp -" readonly>
+                                        <small>Pajak atau beban lain per bulan atau hari sesuai pilihan satuan.</small>
+                                    </div>
+
+                                    <!-- Total pajak -->
+                                    <div class="col-12 form-group">
+                                        <label>Total Pajak</label>
+                                        <input type="text" id="total_pajak" value="Rp -" readonly>
+                                        <small>Total pajak selama masa sewa (pajak per satuan × lama sewa).</small>
+                                    </div>
+
+                                    <!-- Total harga -->
+                                    <div class="col-12 form-group">
+                                        <label>Total Harga</label>
                                         <input type="text" name="total_harga" id="total_harga"
-                                            placeholder="Total Harga" readonly>
+                                            placeholder="Total Harga" readonly required>
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +261,7 @@
                 </form>
             </div>
         </section>
-        <!-- pengajuan-form-section end -->
+        <!-- job-form-section end -->
 
         <!-- main-footer -->
         @include('Landingpage.layout.footer')
@@ -246,49 +277,86 @@
     </div>
 
     @include('Landingpage.layout.scripts')
+    <!-- Bagian form pengajuan layanan -->
+
+
     <script>
-        // Harga per layanan
-        const hargaPerLayanan = {
-            sewa_kios: 10000,
-            sewa_lahan: 8000,
-            pemungutan_sampah: 5000
-        };
-
-        // Update harga per hari dan total harga
-        function updateHarga() {
-            const jenis = $('#jenis_pengajuan').val();
-            const durasi = parseInt($('#durasi_sewa').val()) || 0;
-            const hargaPerHari = hargaPerLayanan[jenis] || 0;
-
-            $('#harga_per_hari').val('Rp ' + hargaPerHari.toLocaleString('id-ID'));
-            $('#total_harga').val('Rp ' + (hargaPerHari * durasi).toLocaleString('id-ID'));
-        }
-
         $(document).ready(function() {
-            // Inisialisasi NiceSelect
-            $('#jenis_pengajuan').niceSelect();
+            const hargaPerLayanan = {};
+            const pajakPerBulan = {};
 
-            // Saat jenis layanan dipilih
-            $('#jenis_pengajuan').on('change', function() {
-                const jenis = $(this).val();
+            $('#jenis_pengajuan option').each(function() {
+                const id = $(this).val();
+                const harga = parseInt($(this).data('harga')) || 0;
+                const pajak = parseInt($(this).data('pajak')) || 0;
+                if (id) {
+                    hargaPerLayanan[id] = harga;
+                    pajakPerBulan[id] = pajak;
+                }
+            });
+
+            function updateHarga() {
+                const jenisId = $('#jenis_pengajuan').val();
+                if (!jenisId) {
+                    // Jika belum pilih jenis layanan, reset semua field
+                    $('#harga_per_satuan').val('Rp -');
+                    $('#pajak_per_bulan').val('Rp -');
+                    $('#total_pajak').val('Rp -');
+                    $('#total_harga').val('Rp -');
+                    return;
+                }
+
+                const durasi = parseInt($('#durasi_sewa').val()) || 0;
+                const satuan = $('#satuan_sewa').val() || 'bulan';
+
+                const hargaBulan = hargaPerLayanan[jenisId] || 0;
+                const pajakBulan = pajakPerBulan[jenisId] || 0;
+
+                let hargaPerSatuan = hargaBulan;
+                let pajakPerSatuan = pajakBulan;
+                let keterangan = '';
+
+                if (satuan === 'hari') {
+                    hargaPerSatuan = Math.round(hargaBulan / 30);
+                    pajakPerSatuan = Math.round(pajakBulan / 30);
+                    keterangan = ' / hari';
+                    $('#durasi_sewa').attr('placeholder', 'Lama Sewa (hari)');
+                } else {
+                    keterangan = ' / bulan';
+                    $('#durasi_sewa').attr('placeholder', 'Lama Sewa (bulan)');
+                }
+
+                const totalHarga = hargaPerSatuan * durasi;
+                const totalPajak = pajakPerSatuan * durasi;
+                const grandTotal = totalHarga + totalPajak;
+
+                $('#harga_per_satuan').val('Rp ' + hargaPerSatuan.toLocaleString('id-ID') + keterangan);
+                $('#pajak_per_bulan').val('Rp ' + pajakPerSatuan.toLocaleString('id-ID') + keterangan);
+                $('#total_pajak').val('Rp ' + totalPajak.toLocaleString('id-ID'));
+                $('#total_harga').val('Rp ' + grandTotal.toLocaleString('id-ID'));
+            }
+
+            if ($.fn.niceSelect) {
+                $('#jenis_pengajuan').niceSelect();
+                $('#satuan_sewa').niceSelect();
+            }
+
+            $('#jenis_pengajuan, #durasi_sewa, #satuan_sewa').on('change input', function() {
                 updateHarga();
 
-                if (jenis === 'sewa_kios' || jenis === 'sewa_lahan') {
+                const selectedText = $('#jenis_pengajuan option:selected').text().toLowerCase();
+                if (selectedText.includes('sewa kios') || selectedText.includes('sewa lahan')) {
                     $('.form-layanan-opsional').show();
                 } else {
                     $('.form-layanan-opsional').hide();
                 }
             });
 
-            // Saat durasi diinput
-            $('#durasi_sewa').on('input', function() {
-                updateHarga();
-            });
-
-            // Trigger awal jika value default sudah ada
             updateHarga();
         });
     </script>
+
+
     <script>
         document.getElementById('filer_input').addEventListener('change', function(event) {
             const previewContainer = document.getElementById('preview-container');

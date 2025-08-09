@@ -157,6 +157,11 @@
                     </div>
                     <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                         <div class="job-details-content">
+                             <div class="image-box">
+                                  <div class="image-box">
+                                        <figure class="image"><img src="{{ asset('poster_lowongan/' . $lowongandetail->poster_lowongan) }}"
+                                                alt=""></figure>
+                                    </div>
                             <div class="text-box mb_60">
                                 <h3>Deskripsi Pekerjaan :</h3>
                                 <p>{!! nl2br(e($lowongandetail->deskripsi)) !!}</p>

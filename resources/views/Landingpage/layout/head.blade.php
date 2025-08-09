@@ -5,7 +5,7 @@
 <title>BUMDES - Badan Usaha Milik Desa Pakukerto</title>
 
 <!-- Favicon -->
-<link rel="icon" href="{{ asset('LandingPage/assets/images/favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ asset('LandingPage/assets/images/icon_logo.jpg') }}" type="image/x-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
