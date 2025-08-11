@@ -26,85 +26,71 @@
 
             <div class="page-content">
                 <div class="container-fluid">
-
-                    <!-- start page title -->
+                    {{-- Judul halaman --}}
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Datatables</h4>
-
-                                <div class="page-title-right">
+                                <h4 class="mb-0">Manajemen Foto Slider</h4>
+                                <div class="page-title-right d-flex align-items-center">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Datatables</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pengaturan
+                                                Tampilan</a></li>
+                                        <li class="breadcrumb-item active">Foto Slider</li>
                                     </ol>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
 
+                    {{-- Konten utama --}}
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA Foto Slider</h4>
-                                    {{-- <p class="card-title-desc">DataTables has most features enabled by
-                                        default, so all you need to do to use it with your own tables is to call
-                                        the construction function: <code>$().DataTable();</code>. --}}
-                                    </p>
+                                    <h4 class="card-title">Data Foto Slider</h4>
+
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>NO</th>
                                                 <th>Foto Slider 1</th>
                                                 <th>Foto Slider 2</th>
                                                 <th>Foto Slider 3</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <?php $no = 1; ?>
-                                        @foreach ($slider as $slider)
-                                            <tr>
-                                                <td>{{ $no }}</td>
-                                                <td>
-                                                    <img src="{{ asset('Foto Slider/' . $slider->foto_slider1) }}" alt=""
-                                                        style="width: 120px; height:80px;">
-                                                </td>
-                                                <td>
-                                                    <img src="{{ asset('Foto Slider/' . $slider->foto_slider2) }}" alt=""
-                                                        style="width: 120px; height:80px;">
-                                                </td>
-                                                <td>
-                                                    <img src="{{ asset('Foto Slider/' . $slider->foto_slider3) }}" alt=""
-                                                        style="width: 120px; height:80px;">
-                                                </td>
-
-
-                                                <td>
-                                                    <a href="/admin/editslider/{{ $slider->id }}"
-                                                        class="btn btn-warning"><i
-                                                            class="fa-solid fa-pen-to-square"></i></a>
-                                                    {{-- <a href="#" class="btn btn-danger delete" data-id="{{ $sambutan->id }}" data-sambutan="{{ $sambutan->nama }}"><i class="fa-solid fa-trash"></i></a> --}}
-                                                </td>
-                                            </tr>
-
-
-                                            </tbody>
-                                            <?php $no++; ?>
-                                        @endforeach
+                                        <tbody>
+                                            @foreach ($slider as $slider)
+                                                <tr>
+                                                    <td>
+                                                        <img src="{{ asset('Foto Slider/' . $slider->foto_slider1) }}"
+                                                            alt="Foto Slider 1" style="width: 120px; height:80px;">
+                                                    </td>
+                                                    <td>
+                                                        <img src="{{ asset('Foto Slider/' . $slider->foto_slider2) }}"
+                                                            alt="Foto Slider 2" style="width: 120px; height:80px;">
+                                                    </td>
+                                                    <td>
+                                                        <img src="{{ asset('Foto Slider/' . $slider->foto_slider3) }}"
+                                                            alt="Foto Slider 3" style="width: 120px; height:80px;">
+                                                    </td>
+                                                    <td>
+                                                        <a href="/admin/editslider/{{ $slider->id }}"
+                                                            class="btn btn-warning">
+                                                            <i class="fa-solid fa-pen-to-square"></i> Edit
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
                                     </table>
 
                                 </div>
                             </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
-
-
-
-                </div> <!-- container-fluid -->
+                        </div>
+                    </div>
+                </div>
+                <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
 

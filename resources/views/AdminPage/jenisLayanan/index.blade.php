@@ -26,17 +26,20 @@
 
             <div class="page-content">
                 <div class="container-fluid">
+
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Data Media Partner</h4>
+                                <h4 class="mb-0">Manajemen Jenis Layanan BUMDes Pakukerto</h4>
+
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Media Partner</a></li>
-                                        <li class="breadcrumb-item active">Daftar</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Jenis Layanan</li>
                                     </ol>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -46,62 +49,61 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-3">Data Layanan Unggulan BUMDes Pakukerto</h4>
+                                    <h4 class="card-title">Daftar Jenis Layanan BUMDes Pakukerto</h4>
 
-                                    <!-- Tombol Tambah Data -->
-                                    <div class="mb-3">
-                                        <a href="/admin/tambahmediapartner" class="btn btn-primary">
-                                            <i class="fa-solid fa-plus me-1"></i> Tambah Media Partner
-                                        </a>
-                                    </div>
+                                    <!-- Tombol Tambah -->
+                                    <a href="{{ route('admin.jenisLayanan.create') }}" class="btn btn-primary mb-3">
+                                        <i class="fa fa-plus"></i> Tambah Jenis Layanan Baru
+                                    </a>
 
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
-                                        style="width: 100%;">
+                                    <table id="tableku" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Nama Media Partner</th>
-                                                <th>Logo</th>
+                                                <th>Nama Layanan</th>
+                                                <th>Harga Sewa</th>
+                                                <th>Satuan Sewa</th>
+                                                <th>Beban Perbulan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @php $no = 1; @endphp
-                                            @foreach ($mediapartners as $item)
+                                            @foreach ($layanan as $item)
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
-                                                    <td>{{ $item->Nama_Media }}</td>
+                                                    <td>{{ $item->nama }}</td>
+                                                    <td>Rp {{ number_format($item->harga_sewa, 0, ',', '.') }}</td>
+                                                    <td>{{ $item->satuan_sewa }}</td>
+                                                    <td>Rp {{ number_format($item->beban_perbulan, 0, ',', '.') }}</td>
                                                     <td>
-                                                        @if ($item->Logo_Media)
-                                                            <img src="{{ asset('Media Partner/' . $item->Logo_Media) }}"
-                                                                alt="Logo Media Partner"
-                                                                style="width: 80px; height: 80px; object-fit: cover;">
-                                                        @else
-                                                            <span>-</span>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        <!-- Tombol Edit -->
-                                                        <a href="/admin/editmediapartner/{{ $item->id }}"
-                                                            class="btn btn-warning">
-                                                            <i class="fa-solid fa-pen-to-square"></i>
+                                                        <a href="{{ route('admin.jenisLayanan.edit', $item->id) }}"
+                                                            class="btn btn-warning" title="Edit Jenis Layanan">
+                                                            <i class="fa fa-pencil"></i>
                                                         </a>
-                                                        <!-- Tombol Hapus -->
-                                                        <a href="#" class="btn btn-danger btn-delete"
-                                                            data-id="{{ $item->id }}">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </a>
+                                                        <form
+                                                            action="{{ route('admin.jenisLayanan.destroy', $item->id) }}"
+                                                            method="POST" style="display:inline-block;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-delete"
+                                                                title="Hapus Jenis Layanan"
+                                                                data-id="{{ $item->id }}">
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </form>
+
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
+
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
                 </div>
-
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
@@ -267,9 +269,10 @@
                 buttonsStyling: false
             });
 
+            // Tangkap semua tombol hapus
             document.querySelectorAll('.btn-delete').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
+                button.addEventListener('click', function(e) {
+                    e.preventDefault(); // cegah form submit otomatis
 
                     swalWithBootstrapButtons.fire({
                         title: "Yakin mau hapus?",
@@ -281,8 +284,8 @@
                         reverseButtons: true
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            // Lakukan penghapusan, misalnya redirect ke route destroy
-                            window.location.href = "/admin/hapusmediapartner/" + id;
+                            // Submit form yang berisi tombol ini
+                            this.closest('form').submit();
                         } else if (result.dismiss === Swal.DismissReason.cancel) {
                             swalWithBootstrapButtons.fire(
                                 "Dibatalkan",

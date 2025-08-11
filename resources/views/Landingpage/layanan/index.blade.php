@@ -167,7 +167,9 @@
                         <div class="col-lg-6 col-md-12 col-sm-12 form-column">
                             <div class="form-inner">
                                 <div class="title-box">
+                                    <div class="icon-box"><i class="icon-40"></i></div>
                                     <h3>Data Pengajuan</h3>
+                                    <p>Masukkan data pengajuan anda.</p>
                                 </div>
                                 <div class="row clearfix">
                                     <!-- Pilih jenis layanan -->

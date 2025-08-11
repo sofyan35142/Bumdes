@@ -27,13 +27,11 @@
 
             <div class="page-content">
                 <div class="container-fluid">
-
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
                                 <h4 class="mb-0">Panduan BUMDes</h4>
-
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -48,17 +46,20 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="card">
-                                <div class="card-body position-relative">
+                                <div class="card-body">
 
                                     <!-- Tombol Edit -->
-                                    <a href="{{ route('admin.bookPanduan.edit') }}"
-                                        class="btn btn-warning btn-sm position-absolute top-0 end-0 m-3">
-                                        <i class="fas fa-edit"></i> Edit
-                                    </a>
+                                    <div class="mb-3">
+                                        <a href="{{ route('admin.bookPanduan.edit') }}" class="btn btn-warning">
+                                            <i class="fa fa-pencil"></i> Edit Panduan
+                                        </a>
+                                    </div>
 
                                     <h4 class="card-title">{{ $data->judul }}</h4>
-                                    <p class="card-title-desc">Berikut adalah panduan lengkap untuk pengelolaan dan
-                                        pengembangan BUMDes tahun 2025.</p>
+                                    <p class="card-title-desc">
+                                        Berikut adalah panduan lengkap untuk pengelolaan dan pengembangan BUMDes tahun
+                                        2025.
+                                    </p>
 
                                     <!-- Gambar Buku -->
                                     <div class="text-center mb-4">
@@ -78,13 +79,13 @@
                                             <i class="fas fa-download"></i> Unduh Panduan (PDF)
                                         </a>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-                </div> <!-- container-fluid -->
+                </div>
+                <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
 

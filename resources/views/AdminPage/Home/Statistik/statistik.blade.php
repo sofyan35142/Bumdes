@@ -31,15 +31,15 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Datatables</h4>
+                                <h4 class="mb-0">Manajemen Statistik BUMDes</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Datatables</li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Pengaturan Data</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Statistik BUMDes</li>
                                     </ol>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -49,16 +49,13 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA STATISTIK SINGKAT BUMDES</h4>
-                                    {{-- <p class="card-title-desc">DataTables has most features enabled by
-                                        default, so all you need to do to use it with your own tables is to call
-                                        the construction function: <code>$().DataTable();</code>. --}}
-                                    </p>
+                                    <h4 class="card-title">Data Statistik Singkat BUMDes</h4>
+
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>NO</th>
+                                                <th>No</th>
                                                 <th>Warga Terlibat Aktif</th>
                                                 <th>Tingkat Kepuasan Mitra</th>
                                                 <th>Unit Usaha Aktif</th>
@@ -66,35 +63,33 @@
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <?php $no = 1; ?>
-                                        @foreach ($statistik as $statistik)
-                                            <tr>
-                                                <td>{{ $no }}</td>
-                                                <td>{{ $statistik->Warga_aktif }}</td>
-                                                <td>{{ $statistik->Kepuasan_Mitra }}</td>
-                                                <td>{{ $statistik->Unit_Usaha }}</td>
-                                                <td>{{ $statistik->Produk_Desa }}</td>
-
-                                                <td>
-                                                    <a href="/admin/editstatistik/{{ $statistik->id }}"
-                                                        class="btn btn-warning"><i
-                                                            class="fa-solid fa-pen-to-square"></i></a>
-                                                    {{-- <a href="#" class="btn btn-danger delete" data-id="{{ $sambutan->id }}" data-sambutan="{{ $sambutan->nama }}"><i class="fa-solid fa-trash"></i></a> --}}
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                            <?php $no++; ?>
-                                        @endforeach
+                                        <tbody>
+                                            @php $no = 1; @endphp
+                                            @foreach ($statistik as $item)
+                                                <tr>
+                                                    <td>{{ $no++ }}</td>
+                                                    <td>{{ $item->Warga_aktif }}</td>
+                                                    <td>{{ $item->Kepuasan_Mitra }}</td>
+                                                    <td>{{ $item->Unit_Usaha }}</td>
+                                                    <td>{{ $item->Produk_Desa }}</td>
+                                                    <td>
+                                                        <a href="{{ url('/admin/editstatistik/' . $item->id) }}"
+                                                            class="btn btn-warning">
+                                                            <i class="fa-solid fa-pen-to-square"></i> Edit
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
                                     </table>
 
                                 </div>
                             </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
+                        </div>
+                    </div>
+                </div>
 
-
-
-                </div> <!-- container-fluid -->
+                <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
 

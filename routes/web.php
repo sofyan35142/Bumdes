@@ -25,6 +25,8 @@ use App\Http\Controllers\Admin\informasiKontak;
 use App\Http\Controllers\LowonganPekerjaan;
 use App\Http\Controllers\Admin\IndustryAdmin as IndustryController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\Admin\JenisLayananController;
+use App\Http\Controllers\Admin\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +43,9 @@ use App\Http\Controllers\TestimonialController;
 // ==========================================================
 // =============== 1. LANDING PAGE / PUBLIK =================
 // ==========================================================
-
+Route::get('/p', function () {
+    return view('p');
+});
 // --- Beranda
 Route::get('/', [Home::class, 'home'])->name('home');
 Route::get('/FormTestimonial', [Home::class, 'FormTestimonial'])->name('FormTestimonial');
@@ -94,6 +98,10 @@ Route::middleware(['auth'])->group(function () {
     // Dashboard Admin
     Route::get('/admin', [Beranda::class, 'beranda'])->name('admin.beranda');
 
+    // profile admin
+    Route::get('/admin/profile', [ProfileController::class, 'index'])->name('admin.profile');
+    Route::get('/admin/profile/edit', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::put('/admin/profile/update', [ProfileController::class, 'update'])->name('admin.profile.update');
     // Visi Misi
     Route::get('/admin/visi-misi', [VisiMisi::class, 'index'])->name('admin.visiMisi');
     Route::get('/admin/visi-misi/edit', [VisiMisi::class, 'editForm'])->name('admin.visi_misi.edit');
@@ -211,6 +219,18 @@ Route::middleware(['auth'])->group(function () {
     // --- Layanan
     Route::get('/admin/layanan', [Layanan::class, 'index'])->name('admin.layanan.index');
     Route::delete('/admin/layanan/{id}', [Layanan::class, 'destroy'])->name('admin.layanan.destroy');
+
+    // --- Layanan
+    Route::get('/admin/layanan', [Layanan::class, 'index'])->name('admin.layanan.index');
+    Route::delete('/admin/layanan/{id}', [Layanan::class, 'destroy'])->name('admin.layanan.destroy');
+    // --- Jenis layanan
+    Route::get('admin/jenis-layanan', [JenisLayananController::class, 'index'])->name('admin.jenisLayanan.index');
+    Route::get('admin/jenis-layanan/create', [JenisLayananController::class, 'create'])->name('admin.jenisLayanan.create');
+    Route::post('admin/jenis-layanan', [JenisLayananController::class, 'store'])->name('admin.jenisLayanan.store');
+    Route::get('admin/jenis-layanan/{id}/edit', [JenisLayananController::class, 'edit'])->name('admin.jenisLayanan.edit');
+    Route::put('admin/jenis-layanan/{id}', [JenisLayananController::class, 'update'])->name('admin.jenisLayanan.update');
+    Route::delete('admin/jenis-layanan/{id}', [JenisLayananController::class, 'destroy'])->name('admin.jenisLayanan.destroy');
+
     // --- Testimonial
     Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('admin.testimonial.create');
     Route::post('/admin/testimonial/store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');

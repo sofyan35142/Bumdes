@@ -31,15 +31,15 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Datatables</h4>
+                                <h4 class="mb-0">Manajemen Sambutan Direktur BUMDes</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Datatables</li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Pengaturan Data</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Sambutan Direktur</li>
                                     </ol>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -49,60 +49,46 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA SAMBUTAN KEPALA DESA</h4>
-                                    {{-- <p class="card-title-desc">DataTables has most features enabled by
-                                        default, so all you need to do to use it with your own tables is to call
-                                        the construction function: <code>$().DataTable();</code>. --}}
-                                    </p>
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>NO</th>
-                                                <th>Nama Direktur BumDes</th>
-                                                <th>Sambutan Direktur BumDes</th>
-                                                <th>FOTO Direktur BumDes</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <?php $no = 1; ?>
-                                        @foreach ($data as $sambutan)
-                                            <tr>
-                                                <td>{{ $no }}</td>
-                                                <td>{{ $sambutan->Nama_Direktur }}</td>
-                                                <td style="word-break: break-all;">{!! $sambutan->sambutan !!}</td>
-                                                <td>
-                                                    <img src="{{ asset('direktur/' . $sambutan->foto_direktur) }}" alt=""
-                                                        style="width: 80px; height:80px;">
-                                                </td>
 
+                                    @if ($data)
+                                        {{-- Tombol Edit --}}
+                                        <a href="{{ url('/admin/editsambutan/' . $data->id) }}">
+                                            <button class="btn btn-primary mb-3">
+                                                <i class="fa-solid fa-pen-to-square"></i> Edit Sambutan
+                                            </button>
+                                        </a>
 
-                                                <td>
-                                                    <a href="/admin/editsambutan/{{ $sambutan->id }}"
-                                                        class="btn btn-warning"><i
-                                                            class="fa-solid fa-pen-to-square"></i></a>
-                                                    {{-- <a href="#" class="btn btn-danger delete" data-id="{{ $sambutan->id }}" data-sambutan="{{ $sambutan->nama }}"><i class="fa-solid fa-trash"></i></a> --}}
-                                                </td>
-                                            </tr>
+                                        {{-- Nama Direktur --}}
+                                        <h5 class="mt-3">Nama Direktur</h5>
+                                        <p>{{ $data->Nama_Direktur }}</p>
 
+                                        {{-- Foto Direktur --}}
+                                        @if ($data->foto_direktur)
+                                            <div class="mt-4">
+                                                <h5>Foto Direktur</h5>
+                                                <img src="{{ asset('direktur/' . $data->foto_direktur) }}"
+                                                    alt="Foto Direktur" class="img-fluid rounded border"
+                                                    style="max-height: 300px;">
+                                            </div>
+                                        @endif
 
-                                            </tbody>
-                                            <?php $no++; ?>
-                                        @endforeach
-                                    </table>
+                                        {{-- Sambutan --}}
+                                        <div class="mt-4">
+                                            <h5>Sambutan</h5>
+                                            <div style="white-space: pre-line;">{!! $data->sambutan !!}</div>
+                                        </div>
+                                    @else
+                                        <p class="text-muted">Belum ada data sambutan direktur yang tersedia.</p>
+                                    @endif
 
                                 </div>
                             </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
-
-
-
-                </div> <!-- container-fluid -->
+                        </div>
+                    </div>
+                </div>
+                <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
-
-
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
@@ -122,12 +108,8 @@
             </footer>
         </div>
         <!-- end main content-->
-
     </div>
     <!-- END layout-wrapper -->
-
-
-
     <!-- Right Sidebar -->
     <div class="right-bar">
         <div data-simplebar class="h-100">

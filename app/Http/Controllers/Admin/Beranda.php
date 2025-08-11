@@ -92,7 +92,8 @@ class Beranda extends Controller
     ////////////////////////////SAMBUTAN DIREKTUR/////////////////////////////////////
     public function sambutan()
     {
-        $data = SambutanDirektur::all();
+        $data = SambutanDirektur::first();
+        // dd($data);
         return view('AdminPage.Home.Sambutan.sambutandirektur', compact('data'));
     }
     public function editsambutan($id)
@@ -316,4 +317,6 @@ class Beranda extends Controller
 
         return redirect()->route('admin.unggulan')->with('success', 'Layanan Unggulan berhasil dihapus');
     }
+
+
 }
