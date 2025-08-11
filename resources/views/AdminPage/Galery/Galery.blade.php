@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="en">
 
-
-<!-- Mirrored from themesbrand.com/minible/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 07:29:48 GMT -->
-
 @include('AdminPage.layouts.head')
+
 
 <body>
 
@@ -20,6 +18,7 @@
         <!-- Left Sidebar End -->
 
 
+
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
@@ -28,103 +27,103 @@
             <div class="page-content">
                 <div class="container-fluid">
 
+                    <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Form Tambah Data Kegiatan</h4>
+                                <h4 class="mb-0">Datatables</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Blog</a></li>
-                                        <li class="breadcrumb-item active">Tambah Data</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
+                                        <li class="breadcrumb-item active">Datatables</li>
                                     </ol>
                                 </div>
 
                             </div>
                         </div>
                     </div>
+                    <!-- end page title -->
+
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
+                                    <h4 class="card-title">DATA GALERY BUMDES PAKUKERTO</h4>
+                                    {{-- <p class="card-title-desc">DataTables has most features enabled by
+                                        default, so all you need to do to use it with your own tables is to call
+                                        the construction function: <code>$().DataTable();</code>. --}}
+                                    {{-- </p> --}}
+                                    <a href="/admin/tambahgalery"><button class="btn btn-primary"> Tambah Data
+                                            GALERY</button></a>
+                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>NO</th>
+                                                <th>Tipe</th>
+                                                <th>Nama Kegiatan</th>
+                                                <th>Foto</th>
+                                                <th>Link Video</th>
+                                                <th>Tanggal Dibuat</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($galerys as $item)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ ucfirst($item->tipe) }}</td>
+                                                    <td>
+                                                        @if (!empty($item->nama_kegiatan_foto))
+                                                            {{ $item->nama_kegiatan_foto }}
+                                                        @elseif(!empty($item->nama_kegiatan_video))
+                                                            {{ $item->nama_kegiatan_video }}
+                                                        @else
+                                                            <em>Tidak ada nama kegiatan</em>
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @if ($item->tipe === 'foto' && $item->foto_path)
+                                                            <img src="{{ asset('Galery/' . $item->foto_path) }}"
+                                                                alt="Foto Kegiatan" style="width: 80px; height: 80px;">
+                                                        @else
+                                                            -
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @if ($item->tipe === 'video' && $item->link_video)
+                                                            <a href="{{ $item->link_video }}" target="_blank">Tonton
+                                                                Video</a>
+                                                        @else
+                                                            -
+                                                        @endif
+                                                    </td>
+                                                    <td>{{ $item->created_at->format('d-m-Y') }}</td>
+                                                    <td>
+                                                        <a href="{{ route('admin.editgalery', $item->id) }}"
+                                                            class="btn btn-warning">
+                                                            <i class="fa-solid fa-pen-to-square"></i>
+                                                        </a>
+                                                        <a href="#" class="btn btn-danger btn-delete"
+                                                            data-id="{{ $item->id }}">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
 
-                                    <h4 class="card-title">Edit Layanan Unggulan</h4> <br>
-                                    {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
-                                        baru.</p> --}}
-
-                             <form method="POST" action="{{ route('admin.updateunggulan', $unggulan->id) }}" enctype="multipart/form-data">
-    @csrf
-    @method('PUT')
-
-    <div class="mb-3 row">
-        <label for="blog-title-input" class="col-md-2 col-form-label">Nama Layanan</label>
-        <div class="col-md-10">
-            <input class="form-control" type="text" id="blog-title-input"
-                placeholder="Masukkan judul layanan" name="nama_layanan"
-                value="{{ old('nama_layanan', $unggulan->nama_layanan) }}">
-            @error('nama_layanan')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
-
-    <h4 class="card-title">Deskripsi</h4>
-    <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">{{ old('deskripsi', $unggulan->deskripsi) }}</textarea>
-    @error('deskripsi')
-        <small class="text-danger">{{ $message }}</small>
-    @enderror
-
-    <div class="mb-3 row">
-        <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
-        <div class="col-md-10">
-            <select class="form-select" name="kategori_id" id="kategori_id" required>
-                <option value="" disabled>Pilih Kategori</option>
-                @foreach ($kategoris as $kat)
-                    <option value="{{ $kat->id }}" {{ old('kategori_id', $unggulan->kategori_id) == $kat->id ? 'selected' : '' }}>
-                        {{ $kat->nama_kategori }}
-                    </option>
-                @endforeach
-            </select>
-            @error('kategori_id')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
-
-    <div class="mb-3 row">
-        <label for="foto_layanan" class="col-md-2 col-form-label">Poster Layanan</label>
-        <div class="col-md-10">
-            <input class="form-control" type="file" id="foto_layanan"
-                accept="image/*" name="foto_layanan" onchange="previewImage(event)">
-            <div class="form-text">Unggah gambar baru jika ingin mengganti</div>
-
-            @if ($unggulan->foto_layanan)
-                <div class="mt-2">
-                    <img id="image-preview"
-                        src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
-                        alt="Gambar Layanan" width="200">
-                </div>
-            @else
-                <img id="image-preview" class="mt-2" style="max-height: 200px; display: none;">
-            @endif
-
-            @error('foto_layanan')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
-
-    <div class="d-flex flex-wrap gap-3 mt-3">
-        <button type="submit" class="btn btn-primary waves-effect waves-light w-md">Simpan</button>
-        <button type="reset" class="btn btn-outline-secondary waves-effect waves-light w-md">Reset</button>
-    </div>
-</form>
 
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </div> <!-- end col -->
+                    </div> <!-- end row -->
+
+
+
+                </div> <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
 
@@ -278,34 +277,45 @@
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
-    <!-- JAVASCRIPT -->
     @include('AdminPage.layouts.scripts')
-    
     <script>
-        ClassicEditor
-            .create(document.querySelector('#classic-editor'))
-            .catch(error => {
-                console.error(error);
+        document.addEventListener('DOMContentLoaded', function() {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: "btn btn-success",
+                    cancelButton: "btn btn-danger"
+                },
+                buttonsStyling: false
             });
+
+            document.querySelectorAll('.btn-delete').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const id = this.getAttribute('data-id');
+
+                    swalWithBootstrapButtons.fire({
+                        title: "Yakin mau hapus?",
+                        text: "Data yang dihapus tidak bisa dikembalikan!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonText: "Ya, hapus!",
+                        cancelButtonText: "Batal",
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Lakukan penghapusan, misalnya redirect ke route destroy
+                            window.location.href = "/admin/deletegalery/" + id;
+                        } else if (result.dismiss === Swal.DismissReason.cancel) {
+                            swalWithBootstrapButtons.fire(
+                                "Dibatalkan",
+                                "Data tidak jadi dihapus :)",
+                                "error"
+                            );
+                        }
+                    });
+                });
+            });
+        });
     </script>
-    <script>
-        function previewImage(event) {
-            const input = event.target;
-            const preview = document.getElementById('image-preview');
-
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-    </script>
-
 
 </body>
 

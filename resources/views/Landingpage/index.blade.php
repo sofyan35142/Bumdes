@@ -911,7 +911,7 @@
                                         <ul class="post-info">
                                             <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Sekertaris
                                                     BumDes</a></li>
-                                            <li><span>{{ $kegiatan->tanggal_kegiatan }}</span></li>
+                                            <li><span>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</span></li>
                                         </ul>
                                     </div>
                                 </div>

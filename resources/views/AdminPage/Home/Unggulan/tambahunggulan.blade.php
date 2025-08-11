@@ -54,32 +54,69 @@
 
                                     <form method="post" action="/admin/insertunggulan" enctype="multipart/form-data">
                                         @csrf
+
+                                        {{-- Alert Error --}}
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger alert-dismissible fade show">
+                                                <strong>Terjadi Kesalahan!</strong>
+                                                <ul class="mb-0 mt-2">
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="alert"></button>
+                                            </div>
+                                        @endif
+
+                                        {{-- Alert Sukses --}}
+                                        @if (session('success'))
+                                            <div class="alert alert-success alert-dismissible fade show">
+                                                <strong>Berhasil!</strong> {{ session('success') }}
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="alert"></button>
+                                            </div>
+                                        @endif
+
                                         <div class="mb-3 row">
                                             <label for="blog-title-input" class="col-md-2 col-form-label">Nama
                                                 Layanan</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="text" id="blog-title-input"
-                                                    placeholder="Masukkan judul Kegiatan" name="Nama_Layanan">
+                                                <input class="form-control @error('Nama_Layanan') is-invalid @enderror"
+                                                    type="text" id="blog-title-input"
+                                                    placeholder="Masukkan Nama Layanan" name="Nama_Layanan"
+                                                    value="{{ old('Nama_Layanan') }}">
+                                                @error('Nama_Layanan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
                                         <h4 class="card-title">Deskripsi</h4>
+                                        <textarea id="classic-editor" name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror"
+                                            rows="10">{{ old('deskripsi') }}</textarea>
+                                        @error('deskripsi')
+                                            <div class="text-danger small mt-1">{{ $message }}</div>
+                                        @enderror
 
-                                        <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">
-                                        </textarea>
-
-                                        <div class="mb-3 row">
+                                        <div class="mb-3 row mt-3">
                                             <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
                                             <div class="col-md-10">
-                                                <select class="form-select" name="kategori_id" id="kategori_id"
-                                                    required>
-
-                                                    <option value="" disabled selected>Pilih Kategori</option>
+                                                <select class="form-select @error('kategori_id') is-invalid @enderror"
+                                                    name="kategori_id" id="kategori_id" required>
+                                                    <option value="" disabled
+                                                        {{ old('kategori_id') ? '' : 'selected' }}>Pilih Kategori
+                                                    </option>
                                                     @foreach ($kategoris as $kat)
-                                                        <option value="{{ $kat->id }}">{{ $kat->nama_kategori }}
+                                                        <option value="{{ $kat->id }}"
+                                                            {{ old('kategori_id') == $kat->id ? 'selected' : '' }}>
+                                                            {{ $kat->nama_kategori }}
                                                         </option>
                                                     @endforeach
                                                 </select>
+                                                @error('kategori_id')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -87,11 +124,15 @@
                                             <label for="blog-image-input" class="col-md-2 col-form-label">Poster
                                                 Layanan</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="file" id="blog-image-input"
-                                                    accept="image/*" name="foto_layanan" onchange="previewImage(event)">
+                                                <input class="form-control @error('foto_layanan') is-invalid @enderror"
+                                                    type="file" id="blog-image-input" accept="image/*"
+                                                    name="foto_layanan" onchange="previewImage(event)">
                                                 <div class="form-text">Unggah gambar poster Layanan</div>
+                                                @error('foto_layanan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
 
-                                                <!-- Preview akan muncul di bawah input -->
+                                                <!-- Preview -->
                                                 <img id="image-preview" class="mt-2"
                                                     style="max-height: 200px; display: none;">
                                             </div>
@@ -100,13 +141,12 @@
                                         <div class="d-flex flex-wrap gap-3 mt-3">
                                             <button type="submit"
                                                 class="btn btn-primary waves-effect waves-light w-md">Simpan
-                                                Blog</button>
+                                                Layanan</button>
                                             <button type="reset"
                                                 class="btn btn-outline-secondary waves-effect waves-light w-md">Reset
                                                 Form</button>
                                         </div>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
@@ -159,7 +199,8 @@
             <div class="p-4">
                 <h6 class="mb-3">Layout</h6>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical" value="vertical">
+                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical"
+                        value="vertical">
                     <label class="form-check-label" for="layout-vertical">Vertical</label>
                 </div>
                 <div class="form-check form-check-inline">

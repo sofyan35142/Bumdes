@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Beranda;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\Admin\dasarHukumController;
+use App\Http\Controllers\admin\GaleryController;
 use App\Http\Controllers\Admin\StrukturOrganisasiController;
 use App\Http\Controllers\Admin\VisiMisi;
 use App\Http\Controllers\Landingpage\Blog;
@@ -23,6 +24,7 @@ use App\Http\Controllers\Admin\Testimonial;
 use App\Http\Controllers\Admin\informasiKontak;
 use App\Http\Controllers\LowonganPekerjaan;
 use App\Http\Controllers\Admin\IndustryAdmin as IndustryController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\Admin\JenisLayananController;
 use App\Http\Controllers\Admin\ProfileController;
 
@@ -53,6 +55,8 @@ Route::get('/sukses', [Home::class, 'testimoni'])->name('home.testimoni');
 // --- Blog
 Route::get('/blog', [Blog::class, 'blog'])->name('blog');
 Route::get('/blogdetail/{id}', [Blog::class, 'blogdetail'])->name('blogdetail');
+// Route::get('/blog/search', [Blog::class, 'search'])->name('blog.search');
+
 
 // --- Profil BUMDes
 Route::get('/profile/tentangBumdes', [Profile::class, 'tentangBumdes'])->name('profile.tentangBumdes');
@@ -67,6 +71,7 @@ Route::get('/pages/galeri', [Pages::class, 'galeri'])->name('pages.galeri');
 Route::get('/pages/lowongan', [Pages::class, 'lowongan'])->name('pages.lowongan');
 Route::get('/pages/lowongan/detail/{id}', [Pages::class, 'lowongandetail'])->name('pages.lowongandetail');
 Route::get('/pages/keuangan', [Pages::class, 'keuangan'])->name('pages.keuangan');
+Route::get('/pages/umkm', [Pages::class, 'umkm'])->name('pages.umkm');
 
 // --- Kontak
 Route::get('/contact', [Contact::class, 'contact'])->name('landingpage.contact');
@@ -121,11 +126,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/struktur-organisasi/update/{id}', [StrukturOrganisasiController::class, 'update'])->name('admin.struktur.update');
     Route::delete('/admin/struktur-organisasi/delete/{id}', [StrukturOrganisasiController::class, 'destroy'])->name('admin.struktur.delete');
 
-    // // Dasar Hukum
-    // Route::get('/admin/dasar-hukum', [dasarHukumController::class, 'index'])->name('admin.dasarhukum');
-    // Route::get('/admin/dasar-hukum/edit', [dasarHukumController::class, 'editForm'])->name('admin.dasarhukum.edit');
-    // Route::put('/admin/dasar-hukum/update', [dasarHukumController::class, 'update'])->name('admin.dasarhukum.update');
-
     // Slider
     Route::get('/admin/slider', [Beranda::class, 'slider'])->name('admin.slider');
     Route::get('/admin/editslider/{id}', [Beranda::class, 'editslider']);
@@ -151,7 +151,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/tambahunggulan', [Beranda::class, 'tambahunggulan'])->name('admin.tambahunggulan');
     Route::post('/admin/insertunggulan', [Beranda::class, 'insertunggulan'])->name('admin.insertunggulan');
     Route::get('/admin/editunggulan/{id}', [Beranda::class, 'editunggulan']);
-    Route::post('/admin/updateunggulan/{id}', [Beranda::class, 'updateunggulan'])->name('admin.updateunggulan');
+    Route::put('/admin/updateunggulan/{id}', [Beranda::class, 'updateunggulan'])->name('admin.updateunggulan');
     Route::get('/admin/hapusunggulan/{id}', [Beranda::class, 'hapusunggulan'])->name('admin.hapusunggulan');
 
     // Kegiatan (duplikat fix)
@@ -159,7 +159,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/tambahkegiatan', [KegiatanController::class, 'tambahkegiatan'])->name('admin.tambahkegiatan');
     Route::post('/admin/insertkegiatan', [KegiatanController::class, 'insertkegiatan'])->name('admin.insertkegiatan');
     Route::get('/admin/editkegiatan/{id}', [KegiatanController::class, 'editkegiatan']);
-    Route::post('/admin/updatekegiatan/{id}', [KegiatanController::class, 'updatekegiatan'])->name('admin.updatekegiatan');
+    Route::put('/admin/updatekegiatan/{id}', [KegiatanController::class, 'updatekegiatan'])->name('admin.updatekegiatan');
     Route::get('/admin/hapuskegiatan/{id}', [KegiatanController::class, 'hapuskegiatan'])->name('admin.hapuskegiatan');
 
     // Kategori
@@ -179,19 +179,19 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/hapusmediapartner/{id}', [MediaPartnerController::class, 'hapusmediapartner'])->name('admin.hapusmediapartner');
 
     // Testimonial
-    Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
-    Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
-    Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
-    Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
-    Route::get('/admin/testimonial/reject/{id}', [Testimonial::class, 'reject'])->name('admin.testimonial.reject');
-    Route::get('/admin/testimonial/delete/{id}', [Testimonial::class, 'delete'])->name('admin.testimonial.delete');
+    Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('admin.testimonial.create');
+    Route::post('/admin/testimonial/store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
+    Route::get('/admin/testimonial', [TestimonialController::class, 'testimonial'])->name('admin.testimonial.testimonial');
+    Route::get('/admin/testimonial/accept/{id}', [TestimonialController::class, 'accept'])->name('admin.testimonial.accept');
+    Route::get('/admin/testimonial/reject/{id}', [TestimonialController::class, 'reject'])->name('admin.testimonial.reject');
+    Route::get('/admin/testimonial/delete/{id}', [TestimonialController::class, 'delete'])->name('admin.testimonial.delete');
 
     // Lowongan Pekerjaan
     Route::get('/admin/lowongan', [LowonganPekerjaan::class, 'lowongan'])->name('admin.lowongan');
     Route::get('/admin/tambahlowongan', [LowonganPekerjaan::class, 'tambahlowongan'])->name('admin.tambahlowongan');
     Route::post('/admin/insertlowongan', [LowonganPekerjaan::class, 'insertlowongan'])->name('admin.insertlowongan');
     Route::get('/admin/editlowongan/{id}', [LowonganPekerjaan::class, 'editlowongan']);
-    Route::post('/admin/updatelowongan/{id}', [LowonganPekerjaan::class, 'updatelowongan'])->name('admin.updatelowongan');
+    Route::put('/admin/updatelowongan/{id}', [LowonganPekerjaan::class, 'updatelowongan'])->name('admin.updatelowongan');
     Route::get('/admin/hapuslowongan/{id}', [LowonganPekerjaan::class, 'hapuslowongan'])->name('admin.hapuslowongan');
     // --- Book Panduan BUMDes
     Route::get('/admin/book-panduan', [PanduanBumdesController::class, 'index'])->name('admin.bookPanduan.index');
@@ -202,10 +202,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/layanan', [Layanan::class, 'index'])->name('admin.layanan.index');
     Route::delete('/admin/layanan/{id}', [Layanan::class, 'destroy'])->name('admin.layanan.destroy');
     // --- Testimonial
-    Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
-    Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
-    Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
-    Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
+    Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('admin.testimonial.create');
+    Route::post('/admin/testimonial/store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
+    Route::get('/admin/testimonial', [TestimonialController::class, 'testimonial'])->name('admin.testimonial.testimonial');
+    Route::get('/admin/testimonial/accept/{id}', [TestimonialController::class, 'accept'])->name('admin.testimonial.accept');
     // --- Contact
     Route::get('/admin/contact', [InformasiKontak::class, 'index'])->name('admin.contact.index');
     Route::get('/admin/contact/edit', [InformasiKontak::class, 'edit'])->name('admin.contact.edit');
@@ -232,10 +232,10 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('admin/jenis-layanan/{id}', [JenisLayananController::class, 'destroy'])->name('admin.jenisLayanan.destroy');
 
     // --- Testimonial
-    Route::get('/admin/testimonial/create', [Testimonial::class, 'create'])->name('admin.testimonial.create');
-    Route::post('/admin/testimonial/store', [Testimonial::class, 'store'])->name('admin.testimonial.store');
-    Route::get('/admin/testimonial', [Testimonial::class, 'testimonial'])->name('admin.testimonial.testimonial');
-    Route::get('/admin/testimonial/accept/{id}', [Testimonial::class, 'accept'])->name('admin.testimonial.accept');
+    Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('admin.testimonial.create');
+    Route::post('/admin/testimonial/store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
+    Route::get('/admin/testimonial', [TestimonialController::class, 'testimonial'])->name('admin.testimonial.testimonial');
+    Route::get('/admin/testimonial/accept/{id}', [TestimonialController::class, 'accept'])->name('admin.testimonial.accept');
     // --- Contact
     Route::get('/admin/contact', [InformasiKontak::class, 'index'])->name('admin.contact.index');
     Route::get('/admin/contact/edit', [InformasiKontak::class, 'edit'])->name('admin.contact.edit');
@@ -252,4 +252,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/industries/edit/{id}', [IndustryController::class, 'edit'])->name('admin.industries.edit');
     Route::put('/admin/industries/update/{id}', [IndustryController::class, 'update'])->name('admin.industries.update');
     Route::delete('/admin/industries/delete/{id}', [IndustryController::class, 'destroy'])->name('admin.industries.delete');
+
+    // GALLERY | FOTO & VIDEO |
+    Route::get('/admin/galery', [GaleryController::class, 'galery'])->name('admin.galery');
+    Route::get('/admin/tambahgalery', [GaleryController::class, 'tambahgalery'])->name('admin.tambahgalery');
+    Route::post('/admin/insertgalery', [GaleryController::class, 'insertgalery'])->name('admin.insertgalery');
+    Route::get('/admin/editgalery/{id}', [GaleryController::class, 'editgalery'])->name('admin.editgalery');
+    Route::put('/admin/updategalery/{id}', [GaleryController::class, 'updategalery'])->name('admin.updategalery');
+    Route::get('/admin/deletegalery/{id}', [GaleryController::class, 'deletegalery'])->name('admin.deletegalery');
 });

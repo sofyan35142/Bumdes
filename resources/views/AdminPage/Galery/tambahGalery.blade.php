@@ -48,78 +48,92 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="card-title">Edit Layanan Unggulan</h4> <br>
+                                    <h4 class="card-title">Input Data Kegiatan Baru</h4> <br>
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                             <form method="POST" action="{{ route('admin.updateunggulan', $unggulan->id) }}" enctype="multipart/form-data">
-    @csrf
-    @method('PUT')
+                                    <form method="post" action="/admin/insertgalery" enctype="multipart/form-data">
+                                        @csrf
 
-    <div class="mb-3 row">
-        <label for="blog-title-input" class="col-md-2 col-form-label">Nama Layanan</label>
-        <div class="col-md-10">
-            <input class="form-control" type="text" id="blog-title-input"
-                placeholder="Masukkan judul layanan" name="nama_layanan"
-                value="{{ old('nama_layanan', $unggulan->nama_layanan) }}">
-            @error('nama_layanan')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
+                                        {{-- Pilih tipe --}}
+                                        <div class="mb-3 row">
+                                            <label for="tipe_lowongan" class="col-md-2 col-form-label">Pilih
+                                                Tipe</label>
+                                            <div class="col-md-10">
+                                                <select id="tipe_lowongan" name="tipe" class="form-select"
+                                                    onchange="showForm()">
+                                                    <option value="" selected disabled>-- Pilih tipe --</option>
+                                                    <option value="foto">Foto</option>
+                                                    <option value="video">Video</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
-    <h4 class="card-title">Deskripsi</h4>
-    <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">{{ old('deskripsi', $unggulan->deskripsi) }}</textarea>
-    @error('deskripsi')
-        <small class="text-danger">{{ $message }}</small>
-    @enderror
+                                        <br>
 
-    <div class="mb-3 row">
-        <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
-        <div class="col-md-10">
-            <select class="form-select" name="kategori_id" id="kategori_id" required>
-                <option value="" disabled>Pilih Kategori</option>
-                @foreach ($kategoris as $kat)
-                    <option value="{{ $kat->id }}" {{ old('kategori_id', $unggulan->kategori_id) == $kat->id ? 'selected' : '' }}>
-                        {{ $kat->nama_kategori }}
-                    </option>
-                @endforeach
-            </select>
-            @error('kategori_id')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
+                                        {{-- Form Foto --}}
+                                        <div id="form-foto" style="display:none;">
+                                            <div class="mb-3 row">
+                                                <label for="nama_kegiatan_foto" class="col-md-2 col-form-label">Nama
+                                                    Kegiatan</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="text" id="nama_kegiatan_foto"
+                                                        name="nama_kegiatan_foto"
+                                                        placeholder="Masukkan nama kegiatan untuk foto">
+                                                </div>
+                                            </div>
 
-    <div class="mb-3 row">
-        <label for="foto_layanan" class="col-md-2 col-form-label">Poster Layanan</label>
-        <div class="col-md-10">
-            <input class="form-control" type="file" id="foto_layanan"
-                accept="image/*" name="foto_layanan" onchange="previewImage(event)">
-            <div class="form-text">Unggah gambar baru jika ingin mengganti</div>
+                                            <div class="mb-3 row">
+                                                <label class="col-md-2 col-form-label">Foto</label>
+                                                <div id="foto-repeater">
+                                                    <div class="foto-input mb-2 d-flex align-items-center gap-2">
+                                                        <input type="file" name="foto_path[]" accept="image/*"
+                                                            class="form-control" onchange="previewFoto(this)">
+                                                        <button type="button" class="btn btn-danger btn-sm"
+                                                            onclick="removeFotoInput(this)">Hapus</button>
+                                                        <!-- Tempat preview gambar -->
+                                                        <img src="" alt="Preview Foto"
+                                                            style="max-height: 100px; margin-left: 10px; display: none;">
+                                                    </div>
+                                                </div>
 
-            @if ($unggulan->foto_layanan)
-                <div class="mt-2">
-                    <img id="image-preview"
-                        src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
-                        alt="Gambar Layanan" width="200">
-                </div>
-            @else
-                <img id="image-preview" class="mt-2" style="max-height: 200px; display: none;">
-            @endif
+                                                <div class="col-md-10 offset-md-2">
+                                                    <button type="button" class="btn btn-success btn-sm"
+                                                        onclick="addFotoInput()">Tambah Foto</button>
+                                                </div>
+                                            </div>
+                                        </div>
 
-            @error('foto_layanan')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
+                                        {{-- Form Video --}}
+                                        <div id="form-video" style="display:none;">
+                                            <div class="mb-3 row">
+                                                <label for="nama_kegiatan_video" class="col-md-2 col-form-label">Nama
+                                                    Kegiatan</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="text" id="nama_kegiatan_video"
+                                                        name="nama_kegiatan_video"
+                                                        placeholder="Masukkan nama kegiatan untuk video">
+                                                </div>
+                                            </div>
 
-    <div class="d-flex flex-wrap gap-3 mt-3">
-        <button type="submit" class="btn btn-primary waves-effect waves-light w-md">Simpan</button>
-        <button type="reset" class="btn btn-outline-secondary waves-effect waves-light w-md">Reset</button>
-    </div>
-</form>
+                                            <div class="mb-3 row">
+                                                <label for="link_video" class="col-md-2 col-form-label">Link
+                                                    Video</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="url" id="link_video"
+                                                        name="link_video" placeholder="Masukkan link video">
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <div class="d-flex flex-wrap gap-3 mt-3">
+                                            <button type="submit"
+                                                class="btn btn-primary waves-effect waves-light w-md">Simpan</button>
+                                            <button type="reset"
+                                                class="btn btn-outline-secondary waves-effect waves-light w-md"
+                                                onclick="resetForm()">Reset Form</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -172,7 +186,8 @@
             <div class="p-4">
                 <h6 class="mb-3">Layout</h6>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical" value="vertical">
+                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical"
+                        value="vertical">
                     <label class="form-check-label" for="layout-vertical">Vertical</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -280,7 +295,6 @@
 
     <!-- JAVASCRIPT -->
     @include('AdminPage.layouts.scripts')
-    
     <script>
         ClassicEditor
             .create(document.querySelector('#classic-editor'))
@@ -305,8 +319,130 @@
             }
         }
     </script>
+    <script>
+        function showForm() {
+            const tipe = document.getElementById('tipe_lowongan').value;
+            const formFoto = document.getElementById('form-foto');
+            const formVideo = document.getElementById('form-video');
 
+            if (tipe === 'foto') {
+                formFoto.style.display = 'block';
+                formVideo.style.display = 'none';
+            } else if (tipe === 'video') {
+                formFoto.style.display = 'none';
+                formVideo.style.display = 'block';
+            } else {
+                formFoto.style.display = 'none';
+                formVideo.style.display = 'none';
+            }
+        }
 
+        function addFotoInput() {
+            const repeater = document.getElementById('foto-repeater');
+            const div = document.createElement('div');
+            div.className = 'foto-input mb-2 d-flex align-items-center gap-2';
+
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.name = 'foto_path[]';
+            input.accept = 'image/*';
+            input.className = 'form-control';
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'btn btn-danger btn-sm';
+            btn.innerText = 'Hapus';
+            btn.onclick = function() {
+                removeFotoInput(btn);
+            };
+
+            div.appendChild(input);
+            div.appendChild(btn);
+            repeater.appendChild(div);
+        }
+
+        function removeFotoInput(button) {
+            const div = button.parentElement;
+            div.remove();
+        }
+
+        function resetForm() {
+            document.getElementById('form-foto').style.display = 'none';
+            document.getElementById('form-video').style.display = 'none';
+            document.getElementById('tipe_lowongan').value = '';
+
+            // Reset foto repeater: hapus semua kecuali satu
+            const repeater = document.getElementById('foto-repeater');
+            while (repeater.children.length > 1) {
+                repeater.removeChild(repeater.lastChild);
+            }
+            // Kosongkan input file pertama
+            repeater.children[0].querySelector('input').value = '';
+
+            // Reset input lain juga kalau mau
+            document.getElementById('nama_kegiatan_foto').value = '';
+            document.getElementById('nama_kegiatan_video').value = '';
+            document.getElementById('link_video').value = '';
+        }
+    </script>
+
+    <script>
+        function addFotoInput() {
+            const repeater = document.getElementById('foto-repeater');
+            const div = document.createElement('div');
+            div.className = 'foto-input mb-2 d-flex align-items-center gap-2';
+
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.name = 'foto_path[]';
+            input.accept = 'image/*';
+            input.className = 'form-control';
+            input.onchange = function() {
+                previewFoto(this);
+            };
+
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'btn btn-danger btn-sm';
+            btn.innerText = 'Hapus';
+            btn.onclick = function() {
+                removeFotoInput(btn);
+            };
+
+            const imgPreview = document.createElement('img');
+            imgPreview.style.maxHeight = '100px';
+            imgPreview.style.marginLeft = '10px';
+            imgPreview.style.display = 'none';
+            imgPreview.alt = 'Preview Foto';
+
+            div.appendChild(input);
+            div.appendChild(btn);
+            div.appendChild(imgPreview);
+            repeater.appendChild(div);
+        }
+
+        function previewFoto(input) {
+            const file = input.files[0];
+            const img = input.parentElement.querySelector('img');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                    img.style.display = 'inline-block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                img.src = '';
+                img.style.display = 'none';
+            }
+        }
+
+        function removeFotoInput(button) {
+            const div = button.parentElement;
+            div.remove();
+        }
+    </script>
 </body>
 
 </html>

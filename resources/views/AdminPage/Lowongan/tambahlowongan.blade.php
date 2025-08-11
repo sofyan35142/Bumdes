@@ -54,63 +54,110 @@
 
                                     <form method="post" action="/admin/insertlowongan" enctype="multipart/form-data">
                                         @csrf
+
+                                        {{-- Judul Lowongan --}}
                                         <div class="mb-3 row">
                                             <label for="judul_lowongan" class="col-md-2 col-form-label">Judul
                                                 Lowongan</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="text" id="judul_lowongan"
-                                                    placeholder="Masukkan judul lowongan" name="judul_lowongan">
+                                                <input
+                                                    class="form-control @error('judul_lowongan') is-invalid @enderror"
+                                                    type="text" id="judul_lowongan"
+                                                    placeholder="Masukkan judul lowongan" name="judul_lowongan"
+                                                    value="{{ old('judul_lowongan') }}">
+                                                @error('judul_lowongan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
+
                                         <br>
+
+                                        {{-- Deskripsi Lowongan --}}
                                         <h4 class="card-title">Deskripsi Lowongan :</h4>
+                                        <textarea id="classic-editor" name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror"
+                                            rows="10">{{ old('deskripsi') }}</textarea>
+                                        @error('deskripsi')
+                                            <div class="text-danger small">{{ $message }}</div>
+                                        @enderror
 
-                                        <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">
-                                        </textarea>
                                         <br>
+
+                                        {{-- Tugas Yang Ditawarkan --}}
                                         <h4 class="card-title">Tugas Yang Ditawarkan :</h4>
+                                        <textarea id="kualifikasi-editor" name="tugas" class="form-control @error('tugas') is-invalid @enderror"
+                                            rows="10">{{ old('tugas') }}</textarea>
+                                        @error('tugas')
+                                            <div class="text-danger small">{{ $message }}</div>
+                                        @enderror
 
-                                        <textarea id="kualifikasi-editor" name="tugas" class="form-control" rows="10">
-                                        </textarea>
                                         <br>
-                                        <h4 class="card-title">Kualifikasi Lowongan :</h4>
 
-                                        <textarea id="tugas-editor" name="kualifikasi" class="form-control" rows="10">
-                                        </textarea>
+                                        {{-- Kualifikasi Lowongan --}}
+                                        <h4 class="card-title">Kualifikasi Lowongan :</h4>
+                                        <textarea id="tugas-editor" name="kualifikasi" class="form-control @error('kualifikasi') is-invalid @enderror"
+                                            rows="10">{{ old('kualifikasi') }}</textarea>
+                                        @error('kualifikasi')
+                                            <div class="text-danger small">{{ $message }}</div>
+                                        @enderror
+
+                                        {{-- Tanggal Dibuka --}}
                                         <div class="mb-3 row">
                                             <label for="tanggal_dibuka" class="col-md-2 col-form-label">Tanggal
                                                 Dibuka</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="date" id="tanggal_dibuka"
-                                                    name="tanggal_dibuka">
+                                                <input
+                                                    class="form-control @error('tanggal_dibuka') is-invalid @enderror"
+                                                    type="date" id="tanggal_dibuka" name="tanggal_dibuka"
+                                                    value="{{ old('tanggal_dibuka') }}">
+                                                @error('tanggal_dibuka')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
+                                        {{-- Tanggal Ditutup --}}
                                         <div class="mb-3 row">
                                             <label for="tanggal_ditutup" class="col-md-2 col-form-label">Tanggal
                                                 Ditutup</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="date" id="tanggal_ditutup"
-                                                    name="tanggal_ditutup">
+                                                <input
+                                                    class="form-control @error('tanggal_ditutup') is-invalid @enderror"
+                                                    type="date" id="tanggal_ditutup" name="tanggal_ditutup"
+                                                    value="{{ old('tanggal_ditutup') }}">
+                                                @error('tanggal_ditutup')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
+                                        {{-- Lokasi Lowongan --}}
                                         <div class="mb-3 row">
-                                            <label for="judul_lowongan" class="col-md-2 col-form-label">Lokasi
+                                            <label for="lokasi" class="col-md-2 col-form-label">Lokasi
                                                 Lowongan</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="text" id="judul_lowongan"
-                                                    placeholder="Masukkan Lokasi lowongan" name="lokasi">
+                                                <input class="form-control @error('lokasi') is-invalid @enderror"
+                                                    type="text" id="lokasi" placeholder="Masukkan Lokasi lowongan"
+                                                    name="lokasi" value="{{ old('lokasi') }}">
+                                                @error('lokasi')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
+
+                                        {{-- Poster Lowongan --}}
                                         <div class="mb-3 row">
                                             <label for="blog-image-input" class="col-md-2 col-form-label">Poster
                                                 Lowongan</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="file" id="blog-image-input"
-                                                    accept="image/*" name="poster_lowongan"
-                                                    onchange="previewImage(event)">
+                                                <input
+                                                    class="form-control @error('poster_lowongan') is-invalid @enderror"
+                                                    type="file" id="blog-image-input" accept="image/*"
+                                                    name="poster_lowongan" onchange="previewImage(event)">
                                                 <div class="form-text">Unggah gambar poster Layanan</div>
+                                                @error('poster_lowongan')
+                                                    <div class="text-danger small">{{ $message }}</div>
+                                                @enderror
 
                                                 <!-- Preview akan muncul di bawah input -->
                                                 <img id="image-preview" class="mt-2"
@@ -127,7 +174,6 @@
                                                 Form</button>
                                         </div>
                                     </form>
-
                                 </div>
                             </div>
                         </div>
@@ -148,7 +194,8 @@
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
                                 Crafted with <i class="mdi mdi-heart text-danger"></i> by <a
-                                    href="https://themesbrand.com/" target="_blank" class="text-reset">Themesbrand</a>
+                                    href="https://themesbrand.com/" target="_blank"
+                                    class="text-reset">Themesbrand</a>
                             </div>
                         </div>
                     </div>

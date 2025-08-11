@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,13 +6,14 @@
 
 
 <!-- page wrapper -->
+
 <body>
 
     <div class="boxed_wrapper ltr">
 
 
         <!-- preloader -->
-@include('LandingPage.layout.preloader')
+        @include('LandingPage.layout.preloader')
         <!-- preloader end -->
 
 
@@ -26,7 +26,8 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img src="{{ asset('LandingPage/') }}assets/images/logo.png" alt=""></a></figure>
+                    <figure class="logo-box"><a href="index.html"><img
+                                src="{{ asset('LandingPage/') }}assets/images/logo.png" alt=""></a></figure>
                     <div class="close-search"><span class="icon-27"></span></div>
                 </div>
                 <div class="overlay-layer"></div>
@@ -35,7 +36,8 @@
                         <form method="post" action="https://jobaway.pixcelsthemes.com/index.html">
                             <div class="form-group">
                                 <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value="" placeholder="Type your keyword and hit" required >
+                                    <input type="search" class="form-control" name="search-input" value=""
+                                        placeholder="Type your keyword and hit" required>
                                     <button type="submit"><i class="icon-1"></i></button>
                                 </fieldset>
                             </div>
@@ -47,7 +49,7 @@
 
 
         <!-- main header -->
-@include('LandingPage.layout.header')
+        @include('LandingPage.layout.header')
         <!-- main-header end -->
 
 
@@ -56,8 +58,11 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="{{ asset('LandingPage/assets/images/logo-2.png') }}" alt="" title=""></a></div>
-                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                <div class="nav-logo"><a href="index.html"><img
+                            src="{{ asset('LandingPage/assets/images/logo-2.png') }}" alt="" title=""></a>
+                </div>
+                <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
                     <ul>
@@ -104,15 +109,17 @@
                         <div class="blog-sidebar mr_40 mb_30">
                             <div class="search-widget mb_60">
                                 <div class="search-form">
-                                    <form method="post" action="https://jobaway.pixcelsthemes.com/blog.html">
+                                    <form method="GET" action="{{ route('blog') }}">
                                         <div class="form-group">
-                                            <input type="search" name="search-field" placeholder="Search" required>
+                                            <input type="search" name="keyword" placeholder="Search"
+                                                value="{{ request('keyword') }}" required>
                                             <button type="submit"><i class="icon-1"></i></button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
-                            <div class="sidebar-widget category-widget mb_50">
+
+                            {{-- <div class="sidebar-widget category-widget mb_50">
                                 <div class="widget-title mb_11">
                                     <h3>Categories</h3>
                                 </div>
@@ -126,30 +133,35 @@
                                         <li><a href="blog-details.html">Recruitment Agencies<span>(11)</span></a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="sidebar-widget post-widget mb_60">
                                 <div class="widget-title mb_20">
                                     <h3>Latest Posts</h3>
                                 </div>
                                 <div class="post-inner">
-                                    <div class="post">
-                                        <figure class="post-thumb"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/post-1.jpg') }}" alt=""></a></figure>
-                                        <h6><a href="blog-details.html">Provide guidance on crafting effective</a></h6>
-                                        <span class="post-date">1 May 2024</span>
-                                    </div>
-                                    <div class="post">
-                                        <figure class="post-thumb"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/post-2.jpg') }}" alt=""></a></figure>
-                                        <h6><a href="blog-details.html">Explore the concept of personal branding</a></h6>
-                                        <span class="post-date">1 May 2024</span>
-                                    </div>
-                                    <div class="post">
-                                        <figure class="post-thumb"><a href="blog-details.html"><img src="{{ asset('LandingPage/assets/images/news/post-3.jpg') }}" alt=""></a></figure>
-                                        <h6><a href="blog-details.html">Use relevant keywords to improve</a></h6>
-                                        <span class="post-date">1 May 2024</span>
-                                    </div>
+                                    @foreach ($latestKegiatan as $post)
+                                        <div class="post">
+                                            <figure class="post-thumb">
+                                                <a href="{{ route('blogdetail', $post->id) }}">
+                                                    <img src="{{ asset('foto kegiatan BumDes/' . $post->foto_kegiatan) }}"
+                                                        alt="{{ $post->Judul_Kegiatan }}"
+                                                        style="width: 100px; height: 70px; object-fit: cover;">
+                                                </a>
+                                            </figure>
+                                            <h6>
+                                                <a href="{{ route('blogdetail', $post->id) }}">
+                                                    {{ Str::limit($post->Judul_Kegiatan, 40) }}
+                                                </a>
+                                            </h6>
+                                            <span class="post-date">
+                                                {{ \Carbon\Carbon::parse($post->tanggal_kegiatan)->format('d M Y') }}
+                                            </span>
+                                        </div>
+                                    @endforeach
                                 </div>
+
                             </div>
-                            <div class="sidebar-widget tags-widget mb_45">
+                            {{-- <div class="sidebar-widget tags-widget mb_45">
                                 <div class="widget-title mb_20">
                                     <h3>Popular tag</h3>
                                 </div>
@@ -169,18 +181,26 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="archives-list clearfix">
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 20, 2022<span>(09)</span></a></li>
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26, 2022<span>(20)</span></a></li>
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26, 2022<span>(25)</span></a></li>
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26, 2022<span>(06)</span></a></li>
+                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 20,
+                                                2022<span>(09)</span></a></li>
+                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26,
+                                                2022<span>(20)</span></a></li>
+                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26,
+                                                2022<span>(25)</span></a></li>
+                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26,
+                                                2022<span>(06)</span></a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="download-widget mr_40">
-                            <div class="shape" style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-24.png') }});"></div>
+                            <div class="shape"
+                                style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-24.png') }});">
+                            </div>
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{ asset('LandingPage/assets/images/resource/book-3.png') }}" alt=""></figure>
+                                <figure class="image-box"><img
+                                        src="{{ asset('LandingPage/assets/images/resource/book-3.png') }}"
+                                        alt=""></figure>
                                 <h4>The 2024 guide for Optimal Content <span>Management</span></h4>
                                 <button type="button" class="theme-btn btn-one">Download E-book</button>
                             </div>
@@ -190,26 +210,35 @@
                         <div class="blog-grid-content">
                             <div class="row clearfix">
                                 @foreach ($kegiatan as $kegiatan)
-
-
-                                <div class="col-lg-6 col-md-6 col-sm-12 news-block">
-                                    <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                                        <div class="inner-box">
-                                            <div class="image-box">
-                                                <figure class="image"><a href="{{ route('blogdetail', $kegiatan->id) }}"><img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}" alt=""></a></figure>
-                                                <figure class="overlay-image"><a href="{{ route('blogdetail', $kegiatan->id) }}"><img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}" alt=""></a></figure>
-                                            </div>
-                                            <div class="lower-content">
-                                                <span class="category">{{ $kegiatan->kategori->nama_kategori ?? '-' }}</span>
-                                                <h3><a href="{{ route('blogdetail', $kegiatan->id) }}">{{ $kegiatan->Judul_Kegiatan }}</a></h3>
-                                                <ul class="post-info">
-                                                    <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Alex Beniwal</a></li>
-                                                    <li><span>{{ $kegiatan->tanggal_kegiatan }}</span></li>
-                                                </ul>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 news-block">
+                                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
+                                            data-wow-duration="1500ms">
+                                            <div class="inner-box">
+                                                <div class="image-box">
+                                                    <figure class="image"><a
+                                                            href="{{ route('blogdetail', $kegiatan->id) }}"><img
+                                                                src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
+                                                                alt=""></a></figure>
+                                                    <figure class="overlay-image"><a
+                                                            href="{{ route('blogdetail', $kegiatan->id) }}"><img
+                                                                src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
+                                                                alt=""></a></figure>
+                                                </div>
+                                                <div class="lower-content">
+                                                    <span
+                                                        class="category">{{ $kegiatan->kategori->nama_kategori ?? '-' }}</span>
+                                                    <h3><a
+                                                            href="{{ route('blogdetail', $kegiatan->id) }}">{{ $kegiatan->Judul_Kegiatan }}</a>
+                                                    </h3>
+                                                    <ul class="post-info">
+                                                        <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Alex
+                                                                Beniwal</a></li>
+                                                        <li><span>{{ $kegiatan->tanggal_kegiatan }}</span></li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endforeach
                                 {{-- <div class="col-lg-6 col-md-6 col-sm-12 news-block">
                                     <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -361,8 +390,12 @@
             <div class="auto-container">
                 <div class="inner-container">
                     <div class="shape-box">
-                        <div class="shape-1" style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-8.png') }});"></div>
-                        <div class="shape-2" style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-9.png ') }});"></div>
+                        <div class="shape-1"
+                            style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-8.png') }});">
+                        </div>
+                        <div class="shape-2"
+                            style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-9.png ') }});">
+                        </div>
                     </div>
                     <div class="text-box">
                         <h2>Subscribe for <span>latest update</span></h2>
@@ -396,9 +429,10 @@
 
     </div>
 
-@include('LandingPage.layout.scripts')
+    @include('LandingPage.layout.scripts')
 
 </body><!-- End of .page_wrapper -->
 
 <!-- Mirrored from jobaway.pixcelsthemes.com/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:56 GMT -->
+
 </html>

@@ -21,7 +21,7 @@ class LowonganPekerjaan extends Controller
 
     public function insertlowongan(Request $request)
     {
-         $request->validate([
+        $request->validate([
             'judul_lowongan' => 'required|string|max:255',
             'deskripsi' => 'required',
             'tugas' => 'required',
@@ -30,19 +30,41 @@ class LowonganPekerjaan extends Controller
             'tanggal_ditutup' => 'required|date|after_or_equal:tanggal_dibuka',
             'lokasi' => 'nullable|string',
             'poster_lowongan' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ], [
+            'judul_lowongan.required' => 'Judul lowongan wajib diisi.',
+            'judul_lowongan.string' => 'Judul lowongan harus berupa teks.',
+            'judul_lowongan.max' => 'Judul lowongan tidak boleh lebih dari 255 karakter.',
+
+            'deskripsi.required' => 'Deskripsi wajib diisi.',
+            'tugas.required' => 'Tugas wajib diisi.',
+            'kualifikasi.required' => 'Kualifikasi wajib diisi.',
+
+            'tanggal_dibuka.required' => 'Tanggal dibuka wajib diisi.',
+            'tanggal_dibuka.date' => 'Format tanggal dibuka tidak valid.',
+
+            'tanggal_ditutup.required' => 'Tanggal ditutup wajib diisi.',
+            'tanggal_ditutup.date' => 'Format tanggal ditutup tidak valid.',
+            'tanggal_ditutup.after_or_equal' => 'Tanggal ditutup tidak boleh sebelum tanggal dibuka.',
+
+            'lokasi.string' => 'Lokasi harus berupa teks.',
+
+            'poster_lowongan.image' => 'File poster harus berupa gambar.',
+            'poster_lowongan.mimes' => 'Poster harus berformat jpeg, png, atau jpg.',
+            'poster_lowongan.max' => 'Ukuran poster tidak boleh lebih dari 2MB.',
         ]);
 
-        $data = $request->all();
+        $data = $request->except('poster_lowongan');
 
-        // upload gambar jika ada
         if ($request->hasFile('poster_lowongan')) {
             $file = $request->file('poster_lowongan');
-            $filename = time().'_'.$file->getClientOriginalName();
+            $filename = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('poster_lowongan'), $filename);
+
             $data['poster_lowongan'] = $filename;
         }
 
         ModelsLowonganPekerjaan::create($data);
+
 
         return redirect()->route('admin.lowongan')->with('success', 'Lowongan berhasil ditambahkan.');
     }
@@ -55,7 +77,7 @@ class LowonganPekerjaan extends Controller
 
     public function updatelowongan(Request $request, $id)
     {
-         $lowongan = ModelsLowonganPekerjaan::findOrFail($id);
+        $lowongan = ModelsLowonganPekerjaan::findOrFail($id);
 
         $request->validate([
             'judul_lowongan' => 'required|string|max:255',
@@ -64,16 +86,45 @@ class LowonganPekerjaan extends Controller
             'kualifikasi' => 'required',
             'tanggal_dibuka' => 'required|date',
             'tanggal_ditutup' => 'required|date|after_or_equal:tanggal_dibuka',
-            'lokasi' => 'nullable|string',
+            'lokasi' => 'required|string',
             'poster_lowongan' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ], [
+            'judul_lowongan.required' => 'Judul lowongan wajib diisi.',
+            'judul_lowongan.string' => 'Judul lowongan harus berupa teks.',
+            'judul_lowongan.max' => 'Judul lowongan tidak boleh lebih dari 255 karakter.',
+
+            'deskripsi.required' => 'Deskripsi wajib diisi.',
+            'tugas.required' => 'Tugas wajib diisi.',
+            'kualifikasi.required' => 'Kualifikasi wajib diisi.',
+
+            'tanggal_dibuka.required' => 'Tanggal dibuka wajib diisi.',
+            'tanggal_dibuka.date' => 'Format tanggal dibuka tidak valid.',
+
+            'tanggal_ditutup.required' => 'Tanggal ditutup wajib diisi.',
+            'tanggal_ditutup.date' => 'Format tanggal ditutup tidak valid.',
+            'tanggal_ditutup.after_or_equal' => 'Tanggal ditutup tidak boleh sebelum tanggal dibuka.',
+
+            'lokasi.required' => 'Lokasi wajib diisi.',
+            'lokasi.string' => 'Lokasi harus berupa teks.',
+
+            // 'poster_lowongan.required' => 'Poster Lowongan wajib diisi.',
+            'poster_lowongan.image' => 'File poster harus berupa gambar.',
+            'poster_lowongan.mimes' => 'Poster harus berformat jpeg, png, atau jpg.',
+            'poster_lowongan.max' => 'Ukuran poster tidak boleh lebih dari 2MB.',
         ]);
 
-        $data = $request->all();
+        $data = $request->except('poster_lowongan');
 
         if ($request->hasFile('poster_lowongan')) {
+            // Hapus file lama jika ada
+            if ($lowongan->poster_lowongan && file_exists(public_path('poster_lowongan/' . $lowongan->poster_lowongan))) {
+                unlink(public_path('poster_lowongan/' . $lowongan->poster_lowongan));
+            }
+
             $file = $request->file('poster_lowongan');
-            $filename = time().'_'.$file->getClientOriginalName();
+            $filename = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('poster_lowongan'), $filename);
+
             $data['poster_lowongan'] = $filename;
         }
 
