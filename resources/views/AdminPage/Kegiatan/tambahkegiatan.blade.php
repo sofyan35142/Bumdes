@@ -51,67 +51,116 @@
                                     <h4 class="card-title">Input Data Kegiatan Baru</h4> <br>
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
-
                                     <form method="post" action="/admin/insertkegiatan" enctype="multipart/form-data">
                                         @csrf
-                                        <div class="mb-3 row">
-                                            <label for="blog-title-input" class="col-md-2 col-form-label">Nama
-                                                kegiatan</label>
-                                            <div class="col-md-10">
-                                                <input class="form-control" type="text" id="blog-title-input"
-                                                    placeholder="Masukkan judul Kegiatan" name="Judul_Kegiatan">
+
+                                        {{-- ALERT GLOBAL ERROR --}}
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger alert-dismissible fade show shadow-sm"
+                                                role="alert">
+                                                <strong><i class="bi bi-exclamation-triangle-fill"></i> Terjadi
+                                                    Kesalahan!</strong>
+                                                <ul class="mb-0 ps-3">
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
                                             </div>
-                                        </div>
+                                        @endif
+
+                                        {{-- ALERT SUKSES --}}
+                                        @if (session('success'))
+                                            <div class="alert alert-success alert-dismissible fade show shadow-sm"
+                                                role="alert">
+                                                <strong><i class="bi bi-check-circle-fill"></i> Berhasil!</strong>
+                                                {{ session('success') }}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                        @endif
+
                                         <div class="mb-3 row">
-                                            <label for="blog-title-input" class="col-md-2 col-form-label">Tanggal
+                                            <label for="blog-title-input" class="col-md-2 col-form-label fw-bold">Nama
                                                 Kegiatan</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="date" id="blog-title-input"
-                                                    placeholder="Masukkan tanggal Kegiatan" name="tanggal_kegiatan">
+                                                <input
+                                                    class="form-control @error('Judul_Kegiatan') is-invalid @enderror"
+                                                    type="text" id="blog-title-input"
+                                                    placeholder="Masukkan judul Kegiatan" name="Judul_Kegiatan"
+                                                    value="{{ old('Judul_Kegiatan') }}">
+                                                @error('Judul_Kegiatan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
-                                        <h4 class="card-title">Deskripsi</h4>
-
-                                        <textarea id="classic-editor" name="deskripsi_kegiatan" class="form-control" rows="10">
-                                        </textarea>
 
                                         <div class="mb-3 row">
-                                            <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
+                                            <label for="tanggal_kegiatan"
+                                                class="col-md-2 col-form-label fw-bold">Tanggal Kegiatan</label>
                                             <div class="col-md-10">
-                                                <select class="form-select" name="kategori_id" id="kategori_id"
-                                                    required>
+                                                <input
+                                                    class="form-control @error('tanggal_kegiatan') is-invalid @enderror"
+                                                    type="date" id="tanggal_kegiatan" name="tanggal_kegiatan"
+                                                    value="{{ old('tanggal_kegiatan') }}">
+                                                @error('tanggal_kegiatan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
 
+                                        <h4 class="card-title">Deskripsi</h4>
+                                        <textarea id="classic-editor" name="deskripsi_kegiatan"
+                                            class="form-control @error('deskripsi_kegiatan') is-invalid @enderror" rows="10">{{ old('deskripsi_kegiatan') }}</textarea>
+                                        @error('deskripsi_kegiatan')
+                                            <div class="invalid-feedback d-block">{{ $message }}</div>
+                                        @enderror
+
+                                        <div class="mb-3 row mt-3">
+                                            <label for="kategori_id"
+                                                class="col-md-2 col-form-label fw-bold">Kategori</label>
+                                            <div class="col-md-10">
+                                                <select class="form-select @error('kategori_id') is-invalid @enderror"
+                                                    name="kategori_id" id="kategori_id" required>
                                                     <option value="" disabled selected>Pilih Kategori</option>
                                                     @foreach ($kategoris as $kat)
-                                                        <option value="{{ $kat->id }}">{{ $kat->nama_kategori }}
+                                                        <option value="{{ $kat->id }}"
+                                                            {{ old('kategori_id') == $kat->id ? 'selected' : '' }}>
+                                                            {{ $kat->nama_kategori }}
                                                         </option>
                                                     @endforeach
                                                 </select>
+                                                @error('kategori_id')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label for="blog-image-input" class="col-md-2 col-form-label">Poster
+                                            <label for="blog-image-input" class="col-md-2 col-form-label fw-bold">Poster
                                                 Kegiatan</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="file" id="blog-image-input"
-                                                    accept="image/*" name="foto_kegiatan"
-                                                    onchange="previewImage(event)">
+                                                <input class="form-control @error('foto_kegiatan') is-invalid @enderror"
+                                                    type="file" id="blog-image-input" accept="image/*"
+                                                    name="foto_kegiatan" onchange="previewImage(event)">
                                                 <div class="form-text">Unggah gambar poster Kegiatan</div>
+                                                @error('foto_kegiatan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
 
-                                                <!-- Preview akan muncul di bawah input -->
-                                                <img id="image-preview" class="mt-2"
+                                                <img id="image-preview" class="mt-2 rounded border shadow-sm"
                                                     style="max-height: 200px; display: none;">
                                             </div>
                                         </div>
 
                                         <div class="d-flex flex-wrap gap-3 mt-3">
-                                            <button type="submit"
-                                                class="btn btn-primary waves-effect waves-light w-md">Simpan
-                                                Blog</button>
-                                            <button type="reset"
-                                                class="btn btn-outline-secondary waves-effect waves-light w-md">Reset
-                                                Form</button>
+                                            <button type="submit" class="btn btn-primary shadow-sm">
+                                                <i class="bi bi-save"></i> Simpan Kegiatan
+                                            </button>
+                                            <button type="reset" class="btn btn-outline-secondary shadow-sm">
+                                                <i class="bi bi-arrow-counterclockwise"></i> Reset Form
+                                            </button>
                                         </div>
                                     </form>
 
@@ -135,7 +184,8 @@
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
                                 Crafted with <i class="mdi mdi-heart text-danger"></i> by <a
-                                    href="https://themesbrand.com/" target="_blank" class="text-reset">Themesbrand</a>
+                                    href="https://themesbrand.com/" target="_blank"
+                                    class="text-reset">Themesbrand</a>
                             </div>
                         </div>
                     </div>

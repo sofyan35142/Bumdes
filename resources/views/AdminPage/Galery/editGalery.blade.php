@@ -48,77 +48,110 @@
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h4 class="card-title">Edit Layanan Unggulan</h4> <br>
+                                    <h4 class="card-title">Edit Lowongan </h4> <br>
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                             <form method="POST" action="{{ route('admin.updateunggulan', $unggulan->id) }}" enctype="multipart/form-data">
-    @csrf
-    @method('PUT')
+                                    <form method="post" action="{{ route('admin.updategalery', $item->id) }}"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PUT')
 
-    <div class="mb-3 row">
-        <label for="blog-title-input" class="col-md-2 col-form-label">Nama Layanan</label>
-        <div class="col-md-10">
-            <input class="form-control" type="text" id="blog-title-input"
-                placeholder="Masukkan judul layanan" name="nama_layanan"
-                value="{{ old('nama_layanan', $unggulan->nama_layanan) }}">
-            @error('nama_layanan')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
+                                        {{-- Pilih tipe --}}
+                                        <div class="mb-3 row">
+                                            <label for="tipe_lowongan" class="col-md-2 col-form-label">Pilih
+                                                Tipe</label>
+                                            <div class="col-md-10">
+                                                <select id="tipe_lowongan" name="tipe" class="form-select"
+                                                    onchange="showForm()">
+                                                    <option value="" disabled>-- Pilih tipe --</option>
+                                                    <option value="foto"
+                                                        {{ old('tipe', $item->tipe) === 'foto' ? 'selected' : '' }}>Foto
+                                                    </option>
+                                                    <option value="video"
+                                                        {{ old('tipe', $item->tipe) === 'video' ? 'selected' : '' }}>
+                                                        Video</option>
+                                                </select>
+                                            </div>
+                                        </div>
 
-    <h4 class="card-title">Deskripsi</h4>
-    <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">{{ old('deskripsi', $unggulan->deskripsi) }}</textarea>
-    @error('deskripsi')
-        <small class="text-danger">{{ $message }}</small>
-    @enderror
+                                        {{-- Form Foto --}}
+                                        <div id="form-foto"
+                                            style="{{ old('tipe', $item->tipe) === 'foto' ? '' : 'display:none;' }}">
+                                            <div class="mb-3 row">
+                                                <label for="nama_kegiatan_foto" class="col-md-2 col-form-label">Nama
+                                                    Kegiatan</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="text" id="nama_kegiatan_foto"
+                                                        name="nama_kegiatan_foto"
+                                                        value="{{ old('nama_kegiatan_foto', $item->nama_kegiatan_foto) }}"
+                                                        placeholder="Masukkan nama kegiatan untuk foto">
+                                                </div>
+                                            </div>
 
-    <div class="mb-3 row">
-        <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
-        <div class="col-md-10">
-            <select class="form-select" name="kategori_id" id="kategori_id" required>
-                <option value="" disabled>Pilih Kategori</option>
-                @foreach ($kategoris as $kat)
-                    <option value="{{ $kat->id }}" {{ old('kategori_id', $unggulan->kategori_id) == $kat->id ? 'selected' : '' }}>
-                        {{ $kat->nama_kategori }}
-                    </option>
-                @endforeach
-            </select>
-            @error('kategori_id')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
+                                            {{-- Foto Lama --}}
+                                            @if ($item->tipe === 'foto' && $item->foto_path)
+                                                <div class="mb-3 row">
+                                                    <label class="col-md-2 col-form-label">Foto Lama</label>
+                                                    <div class="col-md-10">
+                                                        <img src="{{ asset('Galery/' . $item->foto_path) }}"
+                                                            alt="Foto Kegiatan" style="max-height: 100px;">
+                                                    </div>
+                                                </div>
+                                            @endif
 
-    <div class="mb-3 row">
-        <label for="foto_layanan" class="col-md-2 col-form-label">Poster Layanan</label>
-        <div class="col-md-10">
-            <input class="form-control" type="file" id="foto_layanan"
-                accept="image/*" name="foto_layanan" onchange="previewImage(event)">
-            <div class="form-text">Unggah gambar baru jika ingin mengganti</div>
+                                            <div class="mb-3 row">
+                                                <label class="col-md-2 col-form-label">Foto Baru</label>
+                                                <div id="foto-repeater">
+                                                    <div class="foto-input mb-2 d-flex align-items-center gap-2">
+                                                        <input type="file" name="foto_path[]" accept="image/*"
+                                                            class="form-control" onchange="previewFoto(this)">
+                                                        <button type="button" class="btn btn-danger btn-sm"
+                                                            onclick="removeFotoInput(this)">Hapus</button>
+                                                        <img src="" alt="Preview Foto"
+                                                            style="max-height: 100px; margin-left: 10px; display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10 offset-md-2">
+                                                    <button type="button" class="btn btn-success btn-sm"
+                                                        onclick="addFotoInput()">Tambah Foto</button>
+                                                </div>
+                                            </div>
+                                        </div>
 
-            @if ($unggulan->foto_layanan)
-                <div class="mt-2">
-                    <img id="image-preview"
-                        src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
-                        alt="Gambar Layanan" width="200">
-                </div>
-            @else
-                <img id="image-preview" class="mt-2" style="max-height: 200px; display: none;">
-            @endif
+                                        {{-- Form Video --}}
+                                        <div id="form-video"
+                                            style="{{ old('tipe', $item->tipe) === 'video' ? '' : 'display:none;' }}">
+                                            <div class="mb-3 row">
+                                                <label for="nama_kegiatan_video" class="col-md-2 col-form-label">Nama
+                                                    Kegiatan</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="text" id="nama_kegiatan_video"
+                                                        name="nama_kegiatan_video"
+                                                        value="{{ old('nama_kegiatan_video', $item->nama_kegiatan_video) }}"
+                                                        placeholder="Masukkan nama kegiatan untuk video">
+                                                </div>
+                                            </div>
 
-            @error('foto_layanan')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
+                                            <div class="mb-3 row">
+                                                <label for="link_video" class="col-md-2 col-form-label">Link
+                                                    Video</label>
+                                                <div class="col-md-10">
+                                                    <input class="form-control" type="url" id="link_video"
+                                                        name="link_video"
+                                                        value="{{ old('link_video', $item->link_video) }}"
+                                                        placeholder="Masukkan link video">
+                                                </div>
+                                            </div>
+                                        </div>
 
-    <div class="d-flex flex-wrap gap-3 mt-3">
-        <button type="submit" class="btn btn-primary waves-effect waves-light w-md">Simpan</button>
-        <button type="reset" class="btn btn-outline-secondary waves-effect waves-light w-md">Reset</button>
-    </div>
-</form>
+                                        <div class="d-flex flex-wrap gap-3 mt-3">
+                                            <button type="submit"
+                                                class="btn btn-primary waves-effect waves-light w-md">Update</button>
+                                            <a href="{{ route('admin.galery') }}"
+                                                class="btn btn-outline-secondary waves-effect waves-light w-md">Batal</a>
+                                        </div>
+                                    </form>
 
                                 </div>
                             </div>
@@ -140,7 +173,8 @@
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
                                 Crafted with <i class="mdi mdi-heart text-danger"></i> by <a
-                                    href="https://themesbrand.com/" target="_blank" class="text-reset">Themesbrand</a>
+                                    href="https://themesbrand.com/" target="_blank"
+                                    class="text-reset">Themesbrand</a>
                             </div>
                         </div>
                     </div>
@@ -172,7 +206,8 @@
             <div class="p-4">
                 <h6 class="mb-3">Layout</h6>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical" value="vertical">
+                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical"
+                        value="vertical">
                     <label class="form-check-label" for="layout-vertical">Vertical</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -280,7 +315,25 @@
 
     <!-- JAVASCRIPT -->
     @include('AdminPage.layouts.scripts')
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tanggalDibuka = document.getElementById("tanggal_dibuka");
+            const tanggalDitutup = document.getElementById("tanggal_ditutup");
+
+            // Set minimal tanggal dibuka = hari ini
+            const today = new Date().toISOString().split('T')[0];
+            tanggalDibuka.min = today;
+            tanggalDibuka.value = today;
+
+            // Update min tanggal ditutup setiap kali tanggal dibuka diubah
+            tanggalDibuka.addEventListener("change", function() {
+                tanggalDitutup.min = tanggalDibuka.value;
+            });
+
+            // Inisialisasi awal min tanggal ditutup
+            tanggalDitutup.min = tanggalDibuka.value;
+        });
+    </script>
     <script>
         ClassicEditor
             .create(document.querySelector('#classic-editor'))
@@ -305,7 +358,19 @@
             }
         }
     </script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#kualifikasi-editor'))
+            .catch(error => {
+                console.error(error);
+            });
 
+        ClassicEditor
+            .create(document.querySelector('#tugas-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 
 </body>
 

@@ -55,7 +55,19 @@
                                     <form method="post" action="/admin/updatelowongan/{{ $lowongan->id }}"
                                         enctype="multipart/form-data">
                                         @csrf
-                                        {{-- @method('PUT') --}}
+                                        @method('PUT')
+
+                                        {{-- Tampilkan error validasi --}}
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <strong>Terjadi kesalahan:</strong>
+                                                <ul class="mb-0">
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>- {{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
 
                                         <div class="mb-3 row">
                                             <label for="judul_lowongan" class="col-md-2 col-form-label">Judul
@@ -63,34 +75,29 @@
                                             <div class="col-md-10">
                                                 <input class="form-control" type="text" id="judul_lowongan"
                                                     placeholder="Masukkan judul lowongan" name="judul_lowongan"
-                                                    value="{{ $lowongan->judul_lowongan }}">
+                                                    value="{{ old('judul_lowongan', $lowongan->judul_lowongan) }}">
                                             </div>
                                         </div>
 
                                         <br>
                                         <h4 class="card-title">Deskripsi Lowongan :</h4>
-                                        <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">
-        {{ $lowongan->deskripsi }}
-    </textarea>
+                                        <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">{{ old('deskripsi', $lowongan->deskripsi) }}</textarea>
 
                                         <br>
                                         <h4 class="card-title">Tugas Yang Ditawarkan :</h4>
-                                        <textarea id="kualifikasi-editor" name="tugas" class="form-control" rows="10">
-        {{ $lowongan->tugas }}
-    </textarea>
+                                        <textarea id="kualifikasi-editor" name="tugas" class="form-control" rows="10">{{ old('tugas', $lowongan->tugas) }}</textarea>
 
                                         <br>
                                         <h4 class="card-title">Kualifikasi Lowongan :</h4>
-                                        <textarea id="tugas-editor" name="kualifikasi" class="form-control" rows="10">
-        {{ $lowongan->kualifikasi }}
-    </textarea>
+                                        <textarea id="tugas-editor" name="kualifikasi" class="form-control" rows="10">{{ old('kualifikasi', $lowongan->kualifikasi) }}</textarea>
 
                                         <div class="mb-3 row">
                                             <label for="tanggal_dibuka" class="col-md-2 col-form-label">Tanggal
                                                 Dibuka</label>
                                             <div class="col-md-10">
                                                 <input class="form-control" type="date" id="tanggal_dibuka"
-                                                    name="tanggal_dibuka" value="{{ $lowongan->tanggal_dibuka }}">
+                                                    name="tanggal_dibuka"
+                                                    value="{{ old('tanggal_dibuka', $lowongan->tanggal_dibuka) }}">
                                             </div>
                                         </div>
 
@@ -99,7 +106,8 @@
                                                 Ditutup</label>
                                             <div class="col-md-10">
                                                 <input class="form-control" type="date" id="tanggal_ditutup"
-                                                    name="tanggal_ditutup" value="{{ $lowongan->tanggal_ditutup }}">
+                                                    name="tanggal_ditutup"
+                                                    value="{{ old('tanggal_ditutup', $lowongan->tanggal_ditutup) }}">
                                             </div>
                                         </div>
 
@@ -109,7 +117,7 @@
                                             <div class="col-md-10">
                                                 <input class="form-control" type="text" id="lokasi"
                                                     placeholder="Masukkan lokasi lowongan" name="lokasi"
-                                                    value="{{ $lowongan->lokasi }}">
+                                                    value="{{ old('lokasi', $lowongan->lokasi) }}">
                                             </div>
                                         </div>
 
@@ -123,7 +131,6 @@
                                                 <div class="form-text">Unggah gambar poster baru jika ingin mengganti
                                                 </div>
 
-                                                {{-- Tampilkan preview jika poster sudah ada --}}
                                                 @if ($lowongan->poster_lowongan)
                                                     <img id="image-preview"
                                                         src="{{ asset('poster_lowongan/' . $lowongan->poster_lowongan) }}"
@@ -134,20 +141,6 @@
                                                 @endif
                                             </div>
                                         </div>
-
-                                        {{-- <div class="mb-3 row">
-                                            <label for="status" class="col-md-2 col-form-label">Status</label>
-                                            <div class="col-md-10">
-                                                <select name="status" id="status" class="form-control">
-                                                    <option value="dibuka"
-                                                        {{ $lowongan->status == 'dibuka' ? 'selected' : '' }}>Dibuka
-                                                    </option>
-                                                    <option value="ditutup"
-                                                        {{ $lowongan->status == 'ditutup' ? 'selected' : '' }}>Ditutup
-                                                    </option>
-                                                </select>
-                                            </div>
-                                        </div> --}}
 
                                         <div class="d-flex flex-wrap gap-3 mt-3">
                                             <button type="submit"

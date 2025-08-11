@@ -14,7 +14,7 @@
 
 
         <!-- preloader -->
-@include('Landingpage.layout.preloader')
+        @include('Landingpage.layout.preloader')
         <!-- preloader end -->
 
 
@@ -27,33 +27,10 @@
 
 
         <!--Search Popup-->
-        <div id="search-popup" class="search-popup">
-            <div class="popup-inner">
-                <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img src="{{ asset('/Landingpage/assets/images/logo.png') }}" alt=""></a>
-                    </figure>
-                    <div class="close-search"><span class="icon-27"></span></div>
-                </div>
-                <div class="overlay-layer"></div>
-                <div class="auto-container">
-                    <div class="search-form">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/index.html">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value=""
-                                        placeholder="Type your keyword and hit" required>
-                                    <button type="submit"><i class="icon-1"></i></button>
-                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         <!-- main header -->
-@include('Landingpage.layout.header')
+        @include('Landingpage.layout.header')
         <!-- main-header end -->
 
 
@@ -62,10 +39,12 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="{{ asset('/Landingpage/assets/images/logo-2.png') }}" alt=""
+                <div class="nav-logo"><a href="index.html"><img
+                            src="{{ asset('/Landingpage/assets/images/logo-2.png') }}" alt=""
                             title=""></a></div>
                 <div class="menu-outer">
-                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
                     <ul>
@@ -115,27 +94,28 @@
                                     <h3>Latest Posts</h3>
                                 </div>
                                 <div class="post-inner">
-                                    <div class="post">
-                                        <figure class="post-thumb"><a href="blog-details.html"><img
-                                                    src="{{ asset('/Landingpage/assets/images/news/post-1.jpg') }}" alt=""></a></figure>
-                                        <h6><a href="blog-details.html">Provide guidance on crafting effective</a></h6>
-                                        <span class="post-date">1 May 2024</span>
-                                    </div>
-                                    <div class="post">
-                                        <figure class="post-thumb"><a href="blog-details.html"><img
-                                                    src="{{ asset('/Landingpage/assets/images/news/post-2.jpg') }}" alt=""></a></figure>
-                                        <h6><a href="blog-details.html">Explore the concept of personal branding</a>
-                                        </h6>
-                                        <span class="post-date">1 May 2024</span>
-                                    </div>
-                                    <div class="post">
-                                        <figure class="post-thumb"><a href="blog-details.html"><img
-                                                    src="{{ asset('/Landingpage/assets/images/news/post-3.jpg') }}" alt=""></a></figure>
-                                        <h6><a href="blog-details.html">Use relevant keywords to improve</a></h6>
-                                        <span class="post-date">1 May 2024</span>
-                                    </div>
+                                    @foreach ($latestKegiatan as $k)
+                                        <div class="post">
+                                            <figure class="post-thumb">
+                                                <a href="{{ route('blogdetail', $k->id) }}">
+                                                    <img src="{{ asset('foto kegiatan BumDes/' . $k->foto_kegiatan) }}"
+                                                        alt="{{ $k->Judul_Kegiatan }}"
+                                                        style="width: 100px; height: 70px; object-fit: cover;">
+                                                </a>
+                                            </figure>
+                                            <h6>
+                                                <a href="{{ route('blogdetail', $k->id) }}">
+                                                    {{ Str::limit($k->Judul_Kegiatan, 40) }}
+                                                </a>
+                                            </h6>
+                                            <span class="post-date">
+                                                {{ \Carbon\Carbon::parse($k->tanggal_kegiatan)->format('d M Y') }}
+                                            </span>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
+
                             {{-- <div class="sidebar-widget tags-widget mb_45">
                                 <div class="widget-title mb_20">
                                     <h3>Popular tag</h3>
@@ -169,10 +149,12 @@
                             </div>
                         </div>
                         <div class="download-widget mr_40">
-                            <div class="shape" style="background-image: url({{ asset('/Landingpage/assets/images/shape/shape-24.png') }});">
+                            <div class="shape"
+                                style="background-image: url({{ asset('/Landingpage/assets/images/shape/shape-24.png') }});">
                             </div>
                             <div class="inner-box">
-                                <figure class="image-box"><img src="{{ asset('/Landingpage/assets/images/resource/book-3.png') }}"
+                                <figure class="image-box"><img
+                                        src="{{ asset('/Landingpage/assets/images/resource/book-3.png') }}"
                                         alt=""></figure>
                                 <h4>The 2024 guide for Optimal Content <span>Management</span></h4>
                                 <button type="button" class="theme-btn btn-one">Download E-book</button>
@@ -184,41 +166,33 @@
                             <div class="news-block-two">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><img src="{{ asset('foto kegiatan BumDes/' . $detailblog->foto_kegiatan) }}"
+                                        <figure class="image"><img
+                                                src="{{ asset('foto kegiatan BumDes/' . $detailblog->foto_kegiatan) }}"
                                                 alt=""></figure>
                                     </div>
                                     <div class="lower-content">
                                         <span class="category">Business</span>
-                                        <h3>{{$detailblog->Judul_Kegiatan}}</h3>
+                                        <h3>{{ $detailblog->Judul_Kegiatan }}</h3>
                                         <ul class="post-info">
                                             <li>By <a href="blog-details.html">Ema Chawal</a></li>
-                                            <li><span>{{ $detailblog->tanggal_kegiatan }}</span></li>
+                                            <li><span>{{ \Carbon\Carbon::parse($detailblog->tanggal_kegiatan)->format('d M Y') }}</span></li>
                                         </ul>
                                     </div>
                                     <div class="text-box pt_25 mb_50">
                                         <p class="mb_30">{!! nl2br(e($detailblog->deskripsi_kegiatan)) !!}</p>
-                                        {{-- <p class="mb_40">tips for tailoring responses to align with the company's
-                                            values and expectations, this blog series can become an essential resource
-                                            for candidates aiming to succeed in their interviews and secure their
-                                            desired positions.</p> --}}
-                                        {{-- <blockquote>
-                                            <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h4>That's why we adhere to strict quality standards and regulations to
-                                                ensure that all our products meet the highest levels of safety and
-                                                efficacy.</h4>
-                                            <h3>Hemandi Kaur</h3>
-                                        </blockquote> --}}
                                     </div>
                                 </div>
                             </div>
                             <div class="two-column">
                                 <div class="row clearfix">
                                     <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image-box mb_25"><img src="{{ asset('/Landingpage/assets/images/news/news-17.jpg') }}"
+                                        <figure class="image-box mb_25"><img
+                                                src="{{ asset('/Landingpage/assets/images/news/news-17.jpg') }}"
                                                 alt=""></figure>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image-box mb_25"><img src="{{ asset('/Landingpage/assets/images/news/news-18.jpg') }}"
+                                        <figure class="image-box mb_25"><img
+                                                src="{{ asset('/Landingpage/assets/images/news/news-18.jpg') }}"
                                                 alt=""></figure>
                                     </div>
                                 </div>

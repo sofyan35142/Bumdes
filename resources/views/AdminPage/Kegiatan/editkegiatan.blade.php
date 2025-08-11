@@ -52,21 +52,26 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="{{ route('admin.updatekegiatan', $kegiatan->id) }}"
+                                    <form method="POST" action="{{ route('admin.updatekegiatan', $kegiatan->id) }}"
                                         enctype="multipart/form-data">
                                         @csrf
-                                        {{-- @method('PUT') --}}
+                                        @method('PUT')
 
+                                        {{-- Judul Kegiatan --}}
                                         <div class="mb-3 row">
                                             <label for="blog-title-input" class="col-md-2 col-form-label">Nama
-                                                kegiatan</label>
+                                                Kegiatan</label>
                                             <div class="col-md-10">
                                                 <input class="form-control" type="text" id="blog-title-input"
-                                                    placeholder="Masukkan judul Kegiatan" name="Judul_Kegiatan"
+                                                    placeholder="Masukkan judul kegiatan" name="Judul_Kegiatan"
                                                     value="{{ old('Judul_Kegiatan', $kegiatan->Judul_Kegiatan) }}">
+                                                @error('Judul_Kegiatan')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </div>
 
+                                        {{-- Tanggal Kegiatan --}}
                                         <div class="mb-3 row">
                                             <label for="tanggal-kegiatan-input" class="col-md-2 col-form-label">Tanggal
                                                 Kegiatan</label>
@@ -74,25 +79,40 @@
                                                 <input class="form-control" type="date" id="tanggal-kegiatan-input"
                                                     name="tanggal_kegiatan"
                                                     value="{{ old('tanggal_kegiatan', $kegiatan->tanggal_kegiatan) }}">
+                                                @error('tanggal_kegiatan')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </div>
 
+                                        {{-- Deskripsi --}}
                                         <h4 class="card-title">Deskripsi</h4>
                                         <textarea id="classic-editor" name="deskripsi_kegiatan" class="form-control" rows="10">{{ old('deskripsi_kegiatan', $kegiatan->deskripsi_kegiatan) }}</textarea>
+                                        @error('deskripsi_kegiatan')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
 
-<div class="mb-3 row">
-        <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
-        <div class="col-md-10">
-            <select class="form-select" name="kategori_id" id="kategori_id" required>
-                <option value="" disabled>Pilih Kategori</option>
-                @foreach ($kategoris as $kat)
-                    <option value="{{ $kat->id }}" {{ $kegiatan->kategori_id == $kat->id ? 'selected' : '' }}>
-                        {{ $kat->nama_kategori }}
-                    </option>
-                @endforeach
-            </select>
-        </div>
-    </div>
+                                        {{-- Kategori --}}
+                                        <div class="mb-3 row mt-3">
+                                            <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
+                                            <div class="col-md-10">
+                                                <select class="form-select" name="kategori_id" id="kategori_id"
+                                                    required>
+                                                    <option value="" disabled>Pilih Kategori</option>
+                                                    @foreach ($kategoris as $kat)
+                                                        <option value="{{ $kat->id }}"
+                                                            {{ old('kategori_id', $kegiatan->kategori_id) == $kat->id ? 'selected' : '' }}>
+                                                            {{ $kat->nama_kategori }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                                @error('kategori_id')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        {{-- Foto Kegiatan --}}
                                         <div class="mb-3 row">
                                             <label for="blog-image-input" class="col-md-2 col-form-label">Poster
                                                 Kegiatan</label>
@@ -102,8 +122,11 @@
                                                     onchange="previewImage(event)">
                                                 <div class="form-text">Unggah gambar baru jika ingin mengganti poster
                                                     kegiatan</div>
+                                                @error('foto_kegiatan')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
 
-                                                <!-- Preview gambar lama -->
+                                                {{-- Gambar saat ini --}}
                                                 @if ($kegiatan->foto_kegiatan)
                                                     <p class="mt-2">Gambar saat ini:</p>
                                                     <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
@@ -111,19 +134,22 @@
                                                         style="max-height: 200px;">
                                                 @endif
 
-                                                <!-- Preview baru -->
+                                                {{-- Preview gambar baru --}}
                                                 <img id="image-preview" class="mt-2"
                                                     style="max-height: 200px; display: none;">
                                             </div>
                                         </div>
 
-
+                                        {{-- Tombol --}}
                                         <div class="d-flex flex-wrap gap-3 mt-3">
                                             <button type="submit"
-                                                class="btn btn-primary waves-effect waves-light w-md">Update
-                                                Kegiatan</button>
+                                                class="btn btn-primary waves-effect waves-light w-md">
+                                                Update Kegiatan
+                                            </button>
                                             <a href="{{ route('admin.kegiatan') }}"
-                                                class="btn btn-outline-secondary waves-effect waves-light w-md">Batal</a>
+                                                class="btn btn-outline-secondary waves-effect waves-light w-md">
+                                                Batal
+                                            </a>
                                         </div>
                                     </form>
 

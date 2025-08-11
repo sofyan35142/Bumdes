@@ -14,7 +14,7 @@ class pages extends Controller
     }
     public function lowongan()
     {
-        $Lowongan = \App\Models\LowonganPekerjaan::where('status', 'dibuka')->get();
+        $Lowongan = \App\Models\LowonganPekerjaan::where('status', 'dibuka')->latest()->get();
         return view('Landingpage.pages.lowongan', compact('Lowongan'));
     }
     public function keuangan()
@@ -25,5 +25,9 @@ class pages extends Controller
     {
         $lowongandetail = LowonganPekerjaan::findOrFail($id);
         return view('Landingpage.pages.lowongandetail', compact('lowongandetail'));
+    }
+    public function umkm()
+    {
+        return view('Landingpage.pages.umkm');
     }
 }

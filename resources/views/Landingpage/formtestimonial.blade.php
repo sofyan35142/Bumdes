@@ -97,7 +97,7 @@
                         kegiatan kami. <br />Testimoni Anda akan membantu kami untuk terus berkembang dan memberikan
                         yang terbaik.</p>
                 </div>
-                <form id="testimonialForm" method="post" action="{{ route('admin.testimonial.store') }}"
+                <form id="testimonialForm" method="post" action="/admin/testimonial/store"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row clearfix">
@@ -113,7 +113,7 @@
                                         <input type="text" name="nama" placeholder="Masukkan Nama Anda" required>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="text" name="nomor_telepone" placeholder="Nomor Telepone"
+                                        <input type="number" name="nomor_telepone" placeholder="Nomor Telepone"
                                             required>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
@@ -150,68 +150,123 @@
 
 
         <!-- clients-style-two -->
-        <section class="clients-style-two centred pt_110 pb_120">
-            <div class="auto-container">
-                <div class="title-text">
-                    <h3>Trusted by the next-gen industry leaders</h3>
-                </div>
-                <div class="clients-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                    <figure class="clients-logo"><a href="index-2.html"><img src="assets/images/clients/clients-6.png"
-                                alt=""></a></figure>
-                    <figure class="clients-logo"><a href="index-2.html"><img src="assets/images/clients/clients-7.png"
-                                alt=""></a></figure>
-                    <figure class="clients-logo"><a href="index-2.html"><img
-                                src="assets/images/clients/clients-8.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="index-2.html"><img
-                                src="assets/images/clients/clients-9.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="index-2.html"><img
-                                src="assets/images/clients/clients-10.png" alt=""></a></figure>
-                </div>
-            </div>
-        </section>
         <!-- clients-style-two end -->
 
 
         <!-- testimonial-style-three -->
-        <section class="testimonial-style-three pb_120">
+        <section class="testimonial-section pt_120 pb_90">
+            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-3.png);"></div>
             <div class="auto-container">
-                <div class="inner-container">
-                    <div class="shape">
-                        <div class="shape-1"></div>
-                        <div class="shape-2"></div>
+                <div class="sec-title light centred pb_60 sec-title-animation animation-style2">
+                    <span class="sub-title mb_10 title-animation">Testimonials</span>
+                    <h2 class="title-animation">Apa Kata Mereka Tentang Kita?</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
+                        <div class="testimonial-block-one">
+                            <div class="inner-box">
+                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
+                                </div>
+                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
+                                </div>
+                                <div class="author-box">
+                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-1.png"
+                                            alt=""></figure>
+                                    <h4>Ashitaka Dai</h4>
+                                    <span class="designation">Art Director</span>
+                                </div>
+                                <p>Company and was impressed by the main personalized approach of their recruitment
+                                    team. They kept me informed at every stage and ensured that I had all</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
-                        <div class="testimonial-block">
-                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-5.png"
-                                    alt=""></figure>
-                            <div class="content-box">
-                                <div class="icon-box"><i class="icon-36"></i></div>
-                                <h2>Company was impressed by the personal approach of their recruitment team for the
-                                    improvement. They kept informed at every stage of the task.</h2>
-                                <h3>Franklin Bailey</h3>
-                                <span class="designation">CEO, JobAway</span>
+                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
+                        <div class="testimonial-block-one">
+                            <div class="inner-box">
+                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
+                                </div>
+                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
+                                </div>
+                                <div class="author-box">
+                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-2.png"
+                                            alt=""></figure>
+                                    <h4>Franklin Bailey</h4>
+                                    <span class="designation">Sale Manager</span>
+                                </div>
+                                <p>Recently I went through their recruitment process with Jobaway Company, and I was
+                                    impressed by how the smooth and efficient these were.</p>
                             </div>
                         </div>
-                        <div class="testimonial-block">
-                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-5.png"
-                                    alt=""></figure>
-                            <div class="content-box">
-                                <div class="icon-box"><i class="icon-36"></i></div>
-                                <h2>Company was impressed by the personal approach of their recruitment team for the
-                                    improvement. They kept informed at every stage of the task.</h2>
-                                <h3>Franklin Bailey</h3>
-                                <span class="designation">CEO, JobAway</span>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
+                        <div class="testimonial-block-one">
+                            <div class="inner-box">
+                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
+                                </div>
+                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
+                                </div>
+                                <div class="author-box">
+                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-3.png"
+                                            alt=""></figure>
+                                    <h4>Evan Clement</h4>
+                                    <span class="designation">Mahager, Cypertech</span>
+                                </div>
+                                <p>I had a fantastic experience throughout the recruitment process with Jobaway team.
+                                    The communication was clear, interview process was well-organized</p>
                             </div>
                         </div>
-                        <div class="testimonial-block">
-                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-5.png"
-                                    alt=""></figure>
-                            <div class="content-box">
-                                <div class="icon-box"><i class="icon-36"></i></div>
-                                <h2>Company was impressed by the personal approach of their recruitment team for the
-                                    improvement. They kept informed at every stage of the task.</h2>
-                                <h3>Franklin Bailey</h3>
-                                <span class="designation">CEO, JobAway</span>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
+                        <div class="testimonial-block-one">
+                            <div class="inner-box">
+                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
+                                </div>
+                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
+                                </div>
+                                <div class="author-box">
+                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-6.png"
+                                            alt=""></figure>
+                                    <h4>Ashitaka Dai</h4>
+                                    <span class="designation">Art Director</span>
+                                </div>
+                                <p>The quality of candidates we've received has significantly improved, and the
+                                    time-to-hire has reduced dramatically. It's a must-have tool for any company</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
+                        <div class="testimonial-block-one">
+                            <div class="inner-box">
+                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
+                                </div>
+                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
+                                </div>
+                                <div class="author-box">
+                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-7.png"
+                                            alt=""></figure>
+                                    <h4>Diarmuid Eoin</h4>
+                                    <span class="designation">Art Director</span>
+                                </div>
+                                <p>The targeted advertising options and comprehensive candidate profiles have allowed us
+                                    to connect with highly qualified professionals</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
+                        <div class="testimonial-block-one">
+                            <div class="inner-box">
+                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
+                                </div>
+                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
+                                </div>
+                                <div class="author-box">
+                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-8.png"
+                                            alt=""></figure>
+                                    <h4>Antonio Alex</h4>
+                                    <span class="designation">Mahager, Cypertech</span>
+                                </div>
+                                <p>We’ve seen a significant increase in the quality of applicants since using this
+                                    recruitment site. The detailed profiles and easy-to-use dashboard make managing</p>
                             </div>
                         </div>
                     </div>
@@ -219,6 +274,47 @@
             </div>
         </section>
         <!-- testimonial-style-three end -->
+        <!-- clients-section -->
+        <section class="clients-section pt_110 pb_120 centred">
+            <div class="auto-container">
+                <div class="title-text pb_60 sec-title-animation animation-style2">
+                    <h3 class="title-animation">Trusted by the next-gen industry leaders</h3>
+                </div>
+                <div class="inner-box">
+                    <div class="clients-box">
+                        <figure class="clients-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-1.png" alt=""></a></figure>
+                        <figure class="overlay-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-1.png" alt=""></a></figure>
+                    </div>
+                    <div class="clients-box">
+                        <figure class="clients-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-2.png" alt=""></a></figure>
+                        <figure class="overlay-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-2.png" alt=""></a></figure>
+                    </div>
+                    <div class="clients-box">
+                        <figure class="clients-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-3.png" alt=""></a></figure>
+                        <figure class="overlay-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-3.png" alt=""></a></figure>
+                    </div>
+                    <div class="clients-box">
+                        <figure class="clients-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-4.png" alt=""></a></figure>
+                        <figure class="overlay-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-4.png" alt=""></a></figure>
+                    </div>
+                    <div class="clients-box">
+                        <figure class="clients-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-5.png" alt=""></a></figure>
+                        <figure class="overlay-logo"><a href="index.html"><img
+                                    src="assets/images/clients/clients-5.png" alt=""></a></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- clients-section end -->
 
 
         <!-- main-footer -->

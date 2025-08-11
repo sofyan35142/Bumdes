@@ -14,9 +14,9 @@
     <div id="layout-wrapper">
 
 
-@include('AdminPage.layouts.header')
+        @include('AdminPage.layouts.header')
         <!-- ========== Left Sidebar Start ========== -->
-@include('AdminPage.layouts.sidebar')
+        @include('AdminPage.layouts.sidebar')
         <!-- Left Sidebar End -->
 
 
@@ -52,33 +52,84 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="{{ route('admin.updatestatistik',$statistik->id) }}"  enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('admin.updatestatistik', $statistik->id) }}"
+                                        enctype="multipart/form-data">
                                         @csrf
-                                         <div class="mb-3">
+
+                                        {{-- Alert Error --}}
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger alert-dismissible fade show">
+                                                <strong>Terjadi Kesalahan!</strong>
+                                                <ul class="mb-0 mt-2">
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="alert"></button>
+                                            </div>
+                                        @endif
+
+                                        {{-- Alert Sukses --}}
+                                        @if (session('success'))
+                                            <div class="alert alert-success alert-dismissible fade show">
+                                                <strong>Berhasil!</strong> {{ session('success') }}
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="alert"></button>
+                                            </div>
+                                        @endif
+
+                                        <div class="mb-3">
                                             <label class="form-label">Warga Aktif</label>
-                                            <input type="text" name="Warga_aktif" class="form-control"  value="{{ $statistik->Warga_aktif }}" >
+                                            <input type="text" name="Warga_aktif"
+                                                class="form-control @error('Warga_aktif') is-invalid @enderror"
+                                                value="{{ old('Warga_aktif', $statistik->Warga_aktif) }}">
+                                            @error('Warga_aktif')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
-                                         <div class="mb-3">
-                                            <label class="form-label">Warga Aktif</label>
-                                            <input type="text" name="Kepuasan_Mitra" class="form-control"  value="{{ $statistik->Kepuasan_Mitra }}" >
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Kepuasan Mitra (%)</label>
+                                            <input type="text" name="Kepuasan_Mitra"
+                                                class="form-control @error('Kepuasan_Mitra') is-invalid @enderror"
+                                                value="{{ old('Kepuasan_Mitra', $statistik->Kepuasan_Mitra) }}">
+                                            @error('Kepuasan_Mitra')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
-                                         <div class="mb-3">
-                                            <label class="form-label">Warga Aktif</label>
-                                            <input type="text" name="Unit_Usaha" class="form-control"  value="{{ $statistik->Unit_Usaha }}" >
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Unit Usaha</label>
+                                            <input type="text" name="Unit_Usaha"
+                                                class="form-control @error('Unit_Usaha') is-invalid @enderror"
+                                                value="{{ old('Unit_Usaha', $statistik->Unit_Usaha) }}">
+                                            @error('Unit_Usaha')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
-                                         <div class="mb-3">
-                                            <label class="form-label">Warga Aktif</label>
-                                            <input type="text" name="Produk_Desa" class="form-control"  value="{{ $statistik->Produk_Desa }}" >
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Produk Desa</label>
+                                            <input type="text" name="Produk_Desa"
+                                                class="form-control @error('Produk_Desa') is-invalid @enderror"
+                                                value="{{ old('Produk_Desa', $statistik->Produk_Desa) }}">
+                                            @error('Produk_Desa')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
+
                                         <div class="d-flex flex-wrap gap-3 mt-3">
                                             <button type="submit"
-                                                class="btn btn-primary waves-effect waves-light w-md">Simpan
-                                                Data Statistik</button>
+                                                class="btn btn-primary waves-effect waves-light w-md">
+                                                Simpan Data Statistik
+                                            </button>
                                             <button type="reset"
-                                                class="btn btn-outline-secondary waves-effect waves-light w-md">Reset
-                                                Form</button>
+                                                class="btn btn-outline-secondary waves-effect waves-light w-md">
+                                                Reset Form
+                                            </button>
                                         </div>
-                                    </form>
+                                    </form> 
 
                                 </div>
                             </div>
@@ -132,8 +183,7 @@
             <div class="p-4">
                 <h6 class="mb-3">Layout</h6>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical"
-                        value="vertical">
+                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical" value="vertical">
                     <label class="form-check-label" for="layout-vertical">Vertical</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -240,7 +290,7 @@
     <div class="rightbar-overlay"></div>
 
     <!-- JAVASCRIPT -->
-@include('AdminPage.layouts.scripts')
+    @include('AdminPage.layouts.scripts')
 
 </body>
 
