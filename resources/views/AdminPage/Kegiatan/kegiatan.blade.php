@@ -26,20 +26,17 @@
 
             <div class="page-content">
                 <div class="container-fluid">
-
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Datatables</h4>
-
+                                <h4 class="mb-0">Data Layanan Kegiatan</h4>
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Datatables</li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Kegiatan</a></li>
+                                        <li class="breadcrumb-item active">Daftar</li>
                                     </ol>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -49,67 +46,64 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA LAYANAN kegiatan BUMDES PAKUKERTO</h4>
-                                    {{-- <p class="card-title-desc">DataTables has most features enabled by
-                                        default, so all you need to do to use it with your own tables is to call
-                                        the construction function: <code>$().DataTable();</code>. --}}
-                                    {{-- </p> --}}
-                                     <a href="/admin/tambahkegiatan"><button class="btn btn-primary"> Tambah Data
-                                            Kegiatan</button></a>
+                                    <h4 class="card-title mb-3">Data Layanan Kegiatan BUMDes Pakukerto</h4>
+
+                                    <!-- Tombol Tambah Data -->
+                                    <div class="mb-3">
+                                        <a href="/admin/tambahkegiatan" class="btn btn-primary">
+                                            <i class="fa-solid fa-plus me-1"></i> Tambah Kegiatan
+                                        </a>
+                                    </div>
+
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                        style="width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>NO</th>
-                                                <th>Judul kegiatan BumDes</th>
+                                                <th>No</th>
+                                                <th>Judul Kegiatan</th>
                                                 <th>Tanggal Kegiatan</th>
-                                                <th>Kategori Kegiatan</th>
-                                                <th>Deskripsi Kegiatan</th>
-                                                <th>Foto Kegiatan</th>
+                                                <th>Kategori</th>
+                                                <th>Deskripsi</th>
+                                                <th>Foto</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <?php $no = 1; ?>
-                                        @foreach ($kegiatan as $kegiatan)
+                                        @foreach ($kegiatan as $item)
                                             <tr>
                                                 <td>{{ $no }}</td>
-                                                <td>{{ $kegiatan->Judul_Kegiatan }}</td>
-                                                <td>{{ $kegiatan->tanggal_kegiatan }}</td>
-                                                <td>{{ $kegiatan->kategori->nama_kategori ?? '-' }}</td>
-                                                <td style="word-break: break-all;">{!! $kegiatan->deskripsi_kegiatan !!}</td>
-                                                {{-- <td>{{ $kegiatan->kategori }}</td> --}}
+                                                <td>{{ $item->Judul_Kegiatan }}</td>
+                                                <td>{{ $item->tanggal_kegiatan }}</td>
+                                                <td>{{ $item->kategori->nama_kategori ?? '-' }}</td>
+                                                <td style="word-break: break-all;">{!! $item->deskripsi_kegiatan !!}</td>
                                                 <td>
-                                                    <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
-                                                        alt="" style="width: 80px; height:80px;">
+                                                    <img src="{{ asset('foto kegiatan BumDes/' . $item->foto_kegiatan) }}"
+                                                        alt="Foto Kegiatan"
+                                                        style="width: 80px; height: 80px; object-fit: cover;">
                                                 </td>
-
-
                                                 <td>
-                                                    <a href="/admin/editkegiatan/{{ $kegiatan->id }}"
-                                                        class="btn btn-warning"><i
-                                                            class="fa-solid fa-pen-to-square"></i></a>
+                                                    <!-- Tombol Edit -->
+                                                    <a href="/admin/editkegiatan/{{ $item->id }}"
+                                                        class="btn btn-warning">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                    </a>
+                                                    <!-- Tombol Hapus -->
                                                     <a href="#" class="btn btn-danger btn-delete"
-                                                        data-id="{{ $kegiatan->id }}">
+                                                        data-id="{{ $item->id }}">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </a>
                                                 </td>
-
                                             </tr>
-
-
-                                            </tbody>
                                             <?php $no++; ?>
                                         @endforeach
                                     </table>
-
                                 </div>
                             </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
+                        </div>
+                    </div>
+                </div>
 
-
-
-                </div> <!-- container-fluid -->
+                <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
 
@@ -264,7 +258,7 @@
     <div class="rightbar-overlay"></div>
 
     @include('AdminPage.layouts.scripts')
-<script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {

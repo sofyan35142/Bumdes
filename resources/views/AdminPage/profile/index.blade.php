@@ -26,82 +26,69 @@
 
             <div class="page-content">
                 <div class="container-fluid">
+
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Data Media Partner</h4>
+                                <h4 class="mb-0">Profile</h4>
+
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Media Partner</a></li>
-                                        <li class="breadcrumb-item active">Daftar</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Contacts</a></li>
+                                        <li class="breadcrumb-item active">Profile</li>
                                     </ol>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
+                    <div class="row mb-4">
+                        <div class="col-xl-12">
+                            <div class="card h-100">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-3">Data Layanan Unggulan BUMDes Pakukerto</h4>
-
-                                    <!-- Tombol Tambah Data -->
-                                    <div class="mb-3">
-                                        <a href="/admin/tambahmediapartner" class="btn btn-primary">
-                                            <i class="fa-solid fa-plus me-1"></i> Tambah Media Partner
-                                        </a>
+                                    <div class="text-center">
+                                        <div>
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png"
+                                                alt="avatar" class="avatar-lg rounded-circle img-thumbnail">
+                                        </div>
+                                        <h5 class="mt-3 mb-1">{{ $user->name }}</h5>
+                                        <p class="text-muted">Admin</p>
                                     </div>
 
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
-                                        style="width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Nama Media Partner</th>
-                                                <th>Logo</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php $no = 1; @endphp
-                                            @foreach ($mediapartners as $item)
-                                                <tr>
-                                                    <td>{{ $no++ }}</td>
-                                                    <td>{{ $item->Nama_Media }}</td>
-                                                    <td>
-                                                        @if ($item->Logo_Media)
-                                                            <img src="{{ asset('Media Partner/' . $item->Logo_Media) }}"
-                                                                alt="Logo Media Partner"
-                                                                style="width: 80px; height: 80px; object-fit: cover;">
-                                                        @else
-                                                            <span>-</span>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        <!-- Tombol Edit -->
-                                                        <a href="/admin/editmediapartner/{{ $item->id }}"
-                                                            class="btn btn-warning">
-                                                            <i class="fa-solid fa-pen-to-square"></i>
-                                                        </a>
-                                                        <!-- Tombol Hapus -->
-                                                        <a href="#" class="btn btn-danger btn-delete"
-                                                            data-id="{{ $item->id }}">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                    <hr class="my-4">
+
+                                    <div class="text-muted">
+                                        <h5 class="font-size-16">About</h5>
+                                        <p>Hi, I'm {{ $user->name }}, welcome to my profile.</p>
+                                        <div class="table-responsive mt-4">
+                                            <div>
+                                                <p class="mb-1">Name :</p>
+                                                <h5 class="font-size-16">{{ $user->name }}</h5>
+                                            </div>
+                                            <div class="mt-4">
+                                                <p class="mb-1">Email :</p>
+                                                <h5 class="font-size-16">{{ $user->email }}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tombol di pojok kanan bawah -->
+                                    <div class="d-flex justify-content-end mt-4 gap-2">
+                                        <a href="{{ route('admin.profile.edit') }}" class="btn btn-primary btn-sm"
+                                            title="Edit Profile">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            Edit Profile
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- end row -->
                 </div>
-
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
@@ -282,7 +269,7 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Lakukan penghapusan, misalnya redirect ke route destroy
-                            window.location.href = "/admin/hapusmediapartner/" + id;
+                            window.location.href = "/admin/testimonial/delete/" + id;
                         } else if (result.dismiss === Swal.DismissReason.cancel) {
                             swalWithBootstrapButtons.fire(
                                 "Dibatalkan",

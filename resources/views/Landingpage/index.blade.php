@@ -283,13 +283,13 @@
                             @foreach ($mediaPartner->take(5) as $MediaPartner)
                                 <div class="clients-box">
                                     <figure class="clients-logo">
-                                        <a href="index.html">
+                                        <a href="#">
                                             <img src="{{ asset('Media Partner/' . $MediaPartner->Logo_Media) }}"
                                                 alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-logo">
-                                        <a href="index.html">
+                                        <a href="#">
                                             <img src="{{ asset('Media Partner/' . $MediaPartner->Logo_Media) }}"
                                                 alt="">
                                         </a>
@@ -301,13 +301,13 @@
                             @foreach ($mediaPartner->take(5) as $MediaPartner)
                                 <div class="clients-box">
                                     <figure class="clients-logo">
-                                        <a href="index.html">
+                                        <a href="#">
                                             <img src="{{ asset('Media Partner/' . $MediaPartner->Logo_Media) }}"
                                                 alt="">
                                         </a>
                                     </figure>
                                     <figure class="overlay-logo">
-                                        <a href="index.html">
+                                        <a href="#">
                                             <img src="{{ asset('Media Partner/' . $MediaPartner->Logo_Media) }}"
                                                 alt="">
                                         </a>
@@ -351,7 +351,7 @@
 
                                 <div class="lower-content">
                                     <center>
-                                        <h3><a href="index.html">{{ $data->Nama_Direktur }}</a></h3>
+                                        <h3><a href="#">{{ $data->Nama_Direktur }}</a></h3>
                                     </center>
                                     <center><span class="designation">Direktur Bumdes</span></center>
                                 </div>
@@ -368,7 +368,7 @@
                                 </div>
                                 <div class="lower-content">
                                     <center>
-                                        <h3><a href="index.html">{{ $data->Nama_Direktur }}</a></h3>
+                                        <h3><a href="#">{{ $data->Nama_Direktur }}</a></h3>
                                     </center>
                                     <center><span class="designation">Direktur Bumdes</span></center>
                                 </div>

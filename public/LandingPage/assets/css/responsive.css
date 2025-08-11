@@ -39,7 +39,7 @@
   }
 
   .menu-area .mobile-nav-toggler {
-    display: block;
+    display: block !important;
     padding: 10px;
   }
 

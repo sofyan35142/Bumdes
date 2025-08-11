@@ -26,20 +26,17 @@
 
             <div class="page-content">
                 <div class="container-fluid">
-
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Datatables</h4>
-
+                                <h4 class="mb-0">Data Layanan Unggulan</h4>
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Datatables</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Layanan</a></li>
+                                        <li class="breadcrumb-item active">Unggulan</li>
                                     </ol>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -49,64 +46,62 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">DATA LAYANAN UNGGULAN BUMDES PAKUKERTO</h4>
-                                    {{-- <p class="card-title-desc">DataTables has most features enabled by
-                                        default, so all you need to do to use it with your own tables is to call
-                                        the construction function: <code>$().DataTable();</code>. --}}
-                                    {{-- </p> --}}
-                                     <a href="/admin/tambahunggulan"><button class="btn btn-primary"> Tambah Data
-                                            Kegiatan</button></a>
+                                    <h4 class="card-title">Data Layanan Unggulan BUMDes Pakukerto</h4>
+
+                                    <!-- Tombol Tambah Data -->
+                                    <a href="/admin/tambahunggulan">
+                                        <button class="btn btn-primary mb-3">Tambah Layanan Unggulan</button>
+                                    </a>
+
                                     <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
-                                                <th>NO</th>
-                                                <th>Nama Layanan Unggulan</th>
+                                                <th>No</th>
+                                                <th>Nama Layanan</th>
                                                 <th>Deskripsi</th>
-                                                <th>Kategori Layanan</th>
-                                                <th>Foto Layanan Unggulan</th>
+                                                <th>Kategori</th>
+                                                <th>Foto</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <?php $no = 1; ?>
-                                        @foreach ($unggulan as $unggulan)
+                                        @foreach ($unggulan as $item)
                                             <tr>
                                                 <td>{{ $no }}</td>
-                                                <td>{{ $unggulan->nama_layanan }}</td>
-                                                <td style="word-break: break-all;">{!! $unggulan->deskripsi !!}</td>
-                                                <td>{{ $unggulan->kategori->nama_kategori ?? '-' }}</td>
+                                                <td>{{ $item->nama_layanan }}</td>
+                                                <td style="word-break: break-all;">{!! $item->deskripsi !!}</td>
+                                                <td>{{ $item->kategori->nama_kategori ?? '-' }}</td>
                                                 <td>
-                                                    <img src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
-                                                        alt="" style="width: 80px; height:80px;">
+                                                    @if ($item->foto_layanan)
+                                                        <img src="{{ asset('foto layanan unggulan/' . $item->foto_layanan) }}"
+                                                            alt="Foto Layanan" style="width: 80px; height:80px;">
+                                                    @else
+                                                        <span class="text-muted">Tidak ada foto</span>
+                                                    @endif
                                                 </td>
-
-
                                                 <td>
-                                                    <a href="/admin/editunggulan/{{ $unggulan->id }}"
-                                                        class="btn btn-warning"><i
-                                                            class="fa-solid fa-pen-to-square"></i></a>
+                                                    <!-- Tombol Edit -->
+                                                    <a href="/admin/editunggulan/{{ $item->id }}"
+                                                        class="btn btn-warning">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                    </a>
+                                                    <!-- Tombol Hapus -->
                                                     <a href="#" class="btn btn-danger btn-delete"
-                                                        data-id="{{ $unggulan->id }}">
+                                                        data-id="{{ $item->id }}">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </a>
                                                 </td>
-
                                             </tr>
-
-
-                                            </tbody>
                                             <?php $no++; ?>
                                         @endforeach
                                     </table>
-
                                 </div>
                             </div>
-                        </div> <!-- end col -->
-                    </div> <!-- end row -->
-
-
-
-                </div> <!-- container-fluid -->
+                        </div>
+                    </div>
+                </div>
+                <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
 
@@ -261,7 +256,7 @@
     <div class="rightbar-overlay"></div>
 
     @include('AdminPage.layouts.scripts')
-<script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {

@@ -26,76 +26,110 @@
 
             <div class="page-content">
                 <div class="container-fluid">
-                    <!-- start page title -->
+
+                    {{-- Judul halaman --}}
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Data Media Partner</h4>
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Media Partner</a></li>
-                                        <li class="breadcrumb-item active">Daftar</li>
-                                    </ol>
-                                </div>
+                                <h4 class="mb-0">Edit Profile</h4>
+
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Admin</a></li>
+                                    <li class="breadcrumb-item active">Edit Profile</li>
+                                </ol>
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
 
+                    {{-- Konten utama --}}
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-3">Data Layanan Unggulan BUMDes Pakukerto</h4>
 
-                                    <!-- Tombol Tambah Data -->
-                                    <div class="mb-3">
-                                        <a href="/admin/tambahmediapartner" class="btn btn-primary">
-                                            <i class="fa-solid fa-plus me-1"></i> Tambah Media Partner
-                                        </a>
-                                    </div>
+                                    <h4 class="card-title">Form Edit Profile Admin</h4>
+                                    <p class="card-title-desc">Perbarui data profil Anda di bawah ini.</p>
 
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
-                                        style="width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Nama Media Partner</th>
-                                                <th>Logo</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php $no = 1; @endphp
-                                            @foreach ($mediapartners as $item)
-                                                <tr>
-                                                    <td>{{ $no++ }}</td>
-                                                    <td>{{ $item->Nama_Media }}</td>
-                                                    <td>
-                                                        @if ($item->Logo_Media)
-                                                            <img src="{{ asset('Media Partner/' . $item->Logo_Media) }}"
-                                                                alt="Logo Media Partner"
-                                                                style="width: 80px; height: 80px; object-fit: cover;">
-                                                        @else
-                                                            <span>-</span>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        <!-- Tombol Edit -->
-                                                        <a href="/admin/editmediapartner/{{ $item->id }}"
-                                                            class="btn btn-warning">
-                                                            <i class="fa-solid fa-pen-to-square"></i>
-                                                        </a>
-                                                        <!-- Tombol Hapus -->
-                                                        <a href="#" class="btn btn-danger btn-delete"
-                                                            data-id="{{ $item->id }}">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                    <form action="{{ route('admin.profile.update') }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+
+                                        {{-- Nama --}}
+                                        <div class="mb-3 row">
+                                            <label for="name" class="col-md-2 col-form-label">Nama</label>
+                                            <div class="col-md-10">
+                                                <input type="text" name="name" id="name"
+                                                    class="form-control @error('name') is-invalid @enderror"
+                                                    value="{{ old('name', $user->name) }}" required>
+                                                @error('name')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        {{-- Email --}}
+                                        <div class="mb-3 row">
+                                            <label for="email" class="col-md-2 col-form-label">Email</label>
+                                            <div class="col-md-10">
+                                                <input type="email" name="email" id="email"
+                                                    class="form-control @error('email') is-invalid @enderror"
+                                                    value="{{ old('email', $user->email) }}" required>
+                                                @error('email')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        {{-- Password --}}
+                                        <div class="mb-3 row">
+                                            <label for="password" class="col-md-2 col-form-label">Password Baru</label>
+                                            <div class="col-md-10">
+                                                <input type="password" name="password" id="password"
+                                                    class="form-control @error('password') is-invalid @enderror"
+                                                    placeholder="Kosongkan jika tidak ingin ganti"
+                                                    autocomplete="new-password">
+                                                @error('password')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox" id="showPassword">
+                                                    <label class="form-check-label" for="showPassword">
+                                                        Tampilkan Password
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {{-- Konfirmasi Password --}}
+                                        <div class="mb-3 row">
+                                            <label for="password_confirmation"
+                                                class="col-md-2 col-form-label">Konfirmasi Password</label>
+                                            <div class="col-md-10">
+                                                <input type="password" name="password_confirmation"
+                                                    id="password_confirmation" class="form-control"
+                                                    placeholder="Ulangi password baru" autocomplete="new-password">
+
+                                                <div class="form-check mt-2">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="showPasswordConfirm">
+                                                    <label class="form-check-label" for="showPasswordConfirm">
+                                                        Tampilkan Password Konfirmasi
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- Tombol Submit --}}
+                                        <div class="row">
+                                            <div class="col-md-10 offset-md-2">
+                                                <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light w-md">Simpan</button>
+                                                <a href="{{ route('admin.profile') }}"
+                                                    class="btn btn-outline-secondary waves-effect waves-light w-md">Batal</a>
+                                            </div>
+                                        </div>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -150,7 +184,8 @@
             <div class="p-4">
                 <h6 class="mb-3">Layout</h6>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical" value="vertical">
+                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical"
+                        value="vertical">
                     <label class="form-check-label" for="layout-vertical">Vertical</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -258,44 +293,16 @@
 
     @include('AdminPage.layouts.scripts')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                    confirmButton: "btn btn-success",
-                    cancelButton: "btn btn-danger"
-                },
-                buttonsStyling: false
-            });
+        document.getElementById('showPassword').addEventListener('change', function() {
+            const pwd = document.getElementById('password');
+            pwd.type = this.checked ? 'text' : 'password';
+        });
 
-            document.querySelectorAll('.btn-delete').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-
-                    swalWithBootstrapButtons.fire({
-                        title: "Yakin mau hapus?",
-                        text: "Data yang dihapus tidak bisa dikembalikan!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonText: "Ya, hapus!",
-                        cancelButtonText: "Batal",
-                        reverseButtons: true
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            // Lakukan penghapusan, misalnya redirect ke route destroy
-                            window.location.href = "/admin/hapusmediapartner/" + id;
-                        } else if (result.dismiss === Swal.DismissReason.cancel) {
-                            swalWithBootstrapButtons.fire(
-                                "Dibatalkan",
-                                "Data tidak jadi dihapus :)",
-                                "error"
-                            );
-                        }
-                    });
-                });
-            });
+        document.getElementById('showPasswordConfirm').addEventListener('change', function() {
+            const pwdConf = document.getElementById('password_confirmation');
+            pwdConf.type = this.checked ? 'text' : 'password';
         });
     </script>
-
 </body>
 
 </html>

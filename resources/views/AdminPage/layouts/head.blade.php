@@ -3,27 +3,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta content="Premium Multipurpose Adminori & Dashboard Template" name="description" />
 <meta content="Themesbrand" name="author" />
+
 <!-- App favicon -->
 <link rel="shortcut icon" href="{{ asset('AdminPage/assets/images/favicon.ico') }}">
 
 <!-- Bootstrap Css -->
-<link href="{{ asset('AdminPage/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet"
-    type="text/css" />
+<link href="{{ asset('AdminPage/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+
 <!-- Icons Css -->
 <link href="{{ asset('AdminPage/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-<!-- App Css-->
+
+<!-- App Css -->
 <link href="{{ asset('AdminPage/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
-<!-- Toastr CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+<!-- Font Awesome (CDN) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-<!-- DataTables -->
-<link href="{{ asset('AdminPage/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
-    type="text/css" />
-<link href="{{ asset('AdminPage/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}"
-    rel="stylesheet" type="text/css" />v
+<!-- Toastr CSS (CDN) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
-<!-- Responsive datatable examples -->
-<link href="{{asset('assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}" rel="stylesheet"
-    type="text/css" />
+<!-- DataTables CSS (CDN) -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
