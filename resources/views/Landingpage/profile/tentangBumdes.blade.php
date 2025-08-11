@@ -10,10 +10,7 @@
 
     <div class="boxed_wrapper ltr">
         @include('Landingpage.layout.preloader')
-        <div class="page_direction">
-            <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-            <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
-        </div>
+        
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">

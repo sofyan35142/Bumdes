@@ -17,10 +17,7 @@
 
 
         <!-- page-direction -->
-        <div class="page_direction">
-            <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-            <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
-        </div>
+        
         <!-- page-direction end -->
 
 
@@ -133,7 +130,7 @@
                                     <div class="content-box">
                                         <span>Consulting</span>
                                         <h3><a href="portfolio.html">Consulting Excellence Portfolio</a></h3>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +144,7 @@
                                     <div class="content-box">
                                         <span>Consulting</span>
                                         <h3><a href="portfolio.html">Create a series of blog posts discussing</a></h3>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +159,7 @@
                                     <div class="content-box">
                                         <span>Consulting</span>
                                         <h3><a href="portfolio.html">Explore the concept of personal</a></h3>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +174,7 @@
                                     <div class="content-box">
                                         <span>Consulting</span>
                                         <h3><a href="portfolio.html">Share stories of employees who have</a></h3>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +188,7 @@
                                     <div class="content-box">
                                         <span>Consulting</span>
                                         <h3><a href="portfolio.html">Provide guidance on crafting effective</a></h3>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -206,7 +203,7 @@
                                     <div class="content-box">
                                         <span>Consulting</span>
                                         <h3><a href="portfolio.html">Detail any internship or graduate</a></h3>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -221,7 +218,7 @@
                                     <div class="content-box">
                                         <span>Consulting</span>
                                         <h3><a href="portfolio.html">Use relevant keywords to improve</a></h3>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -235,7 +232,7 @@
                                     <div class="content-box">
                                         <span>Consulting</span>
                                         <h3><a href="portfolio.html">Explore the concept of personal branding</a></h3>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -250,7 +247,7 @@
                                     <div class="content-box">
                                         <span>Consulting</span>
                                         <h3><a href="portfolio.html">Share stories of employees who have</a></h3>
-                                        
+
                                     </div>
                                 </div>
                             </div>

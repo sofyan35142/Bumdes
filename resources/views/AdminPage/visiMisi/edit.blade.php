@@ -117,62 +117,6 @@
                                             <input type="file" name="gambar_visi_misi" class="form-control">
                                         </div>
 
-                                        {{-- JUDUL PANDUAN --}}
-                                        <div class="mb-3">
-                                            <label class="form-label">Judul Panduan</label>
-                                            <input type="text" name="judul_panduan" class="form-control"
-                                                value="{{ old('judul_panduan', $data->judul_panduan) }}">
-                                        </div>
-
-                                        {{-- POIN PANDUAN --}}
-                                        <div class="mb-3">
-                                            <label class="form-label">Poin Panduan</label>
-                                            <div class="repeater">
-                                                <div data-repeater-list="poin_panduan_raw">
-                                                    @if (!empty($data->poin_panduan))
-                                                        @foreach ($data->poin_panduan as $item)
-                                                            <div data-repeater-item class="mb-2 d-flex gap-2">
-                                                                <input type="text" name="value"
-                                                                    class="form-control" value="{{ $item }}">
-                                                                <input data-repeater-delete type="button"
-                                                                    class="btn btn-danger" value="Hapus">
-                                                            </div>
-                                                        @endforeach
-                                                    @else
-                                                        <div data-repeater-item class="mb-2 d-flex gap-2">
-                                                            <input type="text" name="poin_panduan"
-                                                                class="form-control"
-                                                                placeholder="Tulis poin panduan...">
-                                                            <input data-repeater-delete type="button"
-                                                                class="btn btn-danger" value="Hapus">
-                                                        </div>
-                                                    @endif
-                                                </div>
-                                                <input data-repeater-create type="button"
-                                                    class="btn btn-primary mt-2" value="Tambah Poin">
-                                            </div>
-                                        </div>
-
-                                        {{-- GAMBAR PANDUAN --}}
-                                        <div class="mb-3">
-                                            <label class="form-label">Gambar Panduan</label><br>
-                                            @if ($data->gambar_panduan)
-                                                <img src="{{ asset($data->gambar_panduan) }}" width="200"
-                                                    class="mb-2"><br>
-                                            @endif
-                                            <input type="file" name="gambar_panduan" class="form-control">
-                                        </div>
-
-                                        {{-- FILE PANDUAN --}}
-                                        <div class="mb-3">
-                                            <label class="form-label">File Panduan (PDF/DOC)</label>
-                                            @if ($data->file_panduan)
-                                                <p><a href="{{ asset($data->file_panduan) }}" target="_blank">Lihat
-                                                        File Saat Ini</a></p>
-                                            @endif
-                                            <input type="file" name="file_panduan" class="form-control">
-                                        </div>
-
                                         {{-- BUTTON --}}
                                         <button type="submit" class="btn btn-success">Simpan Perubahan</button>
                                     </form>
