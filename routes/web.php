@@ -50,6 +50,7 @@ Route::get('/p', function () {
 Route::get('/', [Home::class, 'home'])->name('home');
 Route::get('/FormTestimonial', [Home::class, 'FormTestimonial'])->name('FormTestimonial');
 Route::get('/detailunggulan/{id}', [Home::class, 'detailunggulan'])->name('home.detailunggulan');
+Route::get('/listunggulan', [Home::class, 'listunggulan'])->name('home.listunggulan');
 Route::get('/sukses', [Home::class, 'testimoni'])->name('home.testimoni');
 
 // --- Blog
