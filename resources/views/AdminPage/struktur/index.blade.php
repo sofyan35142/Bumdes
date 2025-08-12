@@ -56,14 +56,16 @@
 
                                         {{-- Tombol Edit & Hapus --}}
                                         <div class="d-flex justify-content-center gap-2 mt-3">
-                                            <a href="{{ route('admin.struktur.edit', $person->id) }}" class="btn btn-sm btn-warning">
+                                            <a href="{{ route('admin.struktur.edit', $person->id) }}"
+                                                class="btn btn-sm btn-warning">
                                                 <i class="fas fa-edit"></i> Edit
                                             </a>
-                                            <form action="{{ route('admin.struktur.delete', $person->id) }}" method="POST"
-                                                onsubmit="return confirm('Yakin ingin menghapus?')">
+                                            <form action="{{ route('admin.struktur.delete', $person->id) }}"
+                                                method="POST" class="form-delete d-inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger">
+                                                <button type="button" class="btn btn-sm btn-danger btn-delete"
+                                                    data-id="{{ $person->id }}">
                                                     <i class="fas fa-trash"></i> Hapus
                                                 </button>
                                             </form>
@@ -87,6 +89,43 @@
 
     <div class="rightbar-overlay"></div>
     @include('AdminPage.layouts.scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: "btn btn-success ms-2",
+                    cancelButton: "btn btn-danger"
+                },
+                buttonsStyling: false
+            });
+
+            document.querySelectorAll('.btn-delete').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const form = this.closest('form'); // ambil form terdekat
+                    swalWithBootstrapButtons.fire({
+                        title: "Yakin mau hapus?",
+                        text: "Data yang dihapus tidak bisa dikembalikan!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonText: "Ya, hapus!",
+                        cancelButtonText: "Batal",
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit(); // submit form kalau konfirmasi
+                        } else if (result.dismiss === Swal.DismissReason.cancel) {
+                            swalWithBootstrapButtons.fire(
+                                "Dibatalkan",
+                                "Data tidak jadi dihapus :)",
+                                "error"
+                            );
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>

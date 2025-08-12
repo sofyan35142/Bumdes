@@ -67,7 +67,8 @@ class DatabaseSeeder extends Seeder
             LowonganSeeder::class,
             MediaPartnerSeeder::class,
             IndustrySeeder::class,
-            JenisLayananSeeder::class
+            JenisLayananSeeder::class,
+            tentangBumdes::class
         ]);
     }
 }

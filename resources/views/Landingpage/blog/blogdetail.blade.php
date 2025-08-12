@@ -32,35 +32,7 @@
 
 
         <!-- Mobile Menu  -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><i class="fas fa-times"></i></div>
-            <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img
-                            src="{{ asset('/Landingpage/assets/images/logo-2.png') }}" alt=""
-                            title=""></a></div>
-                <div class="menu-outer">
-                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-                </div>
-                <div class="contact-info">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>Chicago 12, Melborne City, USA</li>
-                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
-                    </ul>
-                </div>
-                <div class="social-links">
-                    <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        @include('Landingpage.layout.mobilemenu')
         <!-- End Mobile Menu -->
 
 
@@ -151,10 +123,19 @@
                             </div>
                             <div class="inner-box">
                                 <figure class="image-box"><img
-                                        src="{{ asset('/Landingpage/assets/images/resource/book-3.png') }}"
+                                        src="{{ asset($book->gambar) }}"
                                         alt=""></figure>
-                                <h4>The 2024 guide for Optimal Content <span>Management</span></h4>
-                                <button type="button" class="theme-btn btn-one">Download E-book</button>
+                                @php
+                                    $judul = explode(' ', $book->judul, 2);
+                                @endphp
+                                <h4>{{ $judul[0] }}
+                                    @if (isset($judul[1]))
+                                        <span>{{ $judul[1] }}</span>
+                                    @endif
+                                </h4>
+                                <a href="{{ $book->file_ebook }}" class="theme-btn btn-one" download>
+                                    Download E-book
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -172,7 +153,8 @@
                                         <h3>{{ $detailblog->Judul_Kegiatan }}</h3>
                                         <ul class="post-info">
                                             <li>By <a href="blog-details.html">Ema Chawal</a></li>
-                                            <li><span>{{ \Carbon\Carbon::parse($detailblog->tanggal_kegiatan)->format('d M Y') }}</span></li>
+                                            <li><span>{{ \Carbon\Carbon::parse($detailblog->tanggal_kegiatan)->format('d M Y') }}</span>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="text-box pt_25 mb_50">

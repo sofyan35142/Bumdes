@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Landingpage;
 
-use App\Http\Controllers\Controller;
 use App\Models\JenisLayanan;
 use Illuminate\Http\Request;
-use PhpOffice\PhpWord\TemplateProcessor;
 use Carbon\Carbon;
 use App\Models\PengajuanLayanan;
+use App\Http\Controllers\Controller;
+use PhpOffice\PhpWord\TemplateProcessor;
 
 class LayananController extends Controller
 {

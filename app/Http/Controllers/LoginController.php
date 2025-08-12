@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -11,16 +12,13 @@ class LoginController extends Controller
     {
         return view('Landingpage.login');
     }
-        public function postsignin(Request $request)
+    public function postsignin(Request $request)
     {
         // dd($request->all());
-        // $this->validate($request, [
-        //     'email' => 'required',
-        //     'password' => 'required'
-        // ], [
-        //     'email.required' => 'Email Wajib Diisi',
-        //     'password.required' => 'Password Wajib Diisi'
-        // ]);
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
         if (Auth::attempt($request->only('email', 'password'))) {
             return redirect('/admin')->with('success', 'Berhasil Login');
         }

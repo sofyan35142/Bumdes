@@ -87,7 +87,6 @@ class DasarHukumController extends Controller
             'gambar_buku' => $data->gambar_buku,
             'sertifikat_file' => $data->sertifikat_file,
         ]);
-
-        return redirect()->route('admin.dasarHukum')->with('success', 'Dasar Hukum berhasil diperbarui!');
+        return redirect('/admin/dasar-hukum')->with('success', 'Dasar Hukum berhasil diperbarui!');
     }
 }

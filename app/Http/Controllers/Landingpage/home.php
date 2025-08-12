@@ -28,8 +28,6 @@ class home extends Controller
         $industries = Industry::all();
         // dd($industries->map->getOriginal());
         return view('Landingpage.index', compact('data', 'book', 'unggulan', 'kegiatan', 'mediaPartner', 'alasan','team','industries'));
-
-
     }
 
     public function detailunggulan($id)
