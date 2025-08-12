@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Landingpage;
 
 use App\Http\Controllers\Controller;
+use App\Models\GaleryModel;
 use App\Models\LowonganPekerjaan;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,8 @@ class pages extends Controller
 {
     public function galeri()
     {
-        return view('Landingpage.pages.galeri');
+        $galeri = GaleryModel::all();
+        return view('Landingpage.pages.galeri', compact('galeri'));
     }
     public function lowongan()
     {
