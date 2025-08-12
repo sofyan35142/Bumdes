@@ -32,9 +32,16 @@
                         enctype="multipart/form-data">
                         @csrf
 
-                        {{-- Foto Slider 1 --}}
+                        {{-- Slider 1 --}}
                         <div class="mb-4">
-                            <label class="form-label fw-bold">Foto Slider 1</label>
+                            <label class="form-label fw-bold">Title Slider 1</label>
+                            <input type="text" name="title_slider1" class="form-control"
+                                placeholder="Masukkan title slider 1" value="{{ $data->title_slider1 ?? '' }}">
+
+                            <label class="form-label mt-2">Deskripsi Slider 1</label>
+                            <textarea name="deskripsi_slider1" class="form-control" rows="3" placeholder="Masukkan deskripsi slider 1">{{ $data->deskripsi_slider1 ?? '' }}</textarea>
+
+                            <label class="form-label mt-2">Foto Slider 1</label>
                             <center>
                                 <img id="preview-slider1"
                                     src="{{ $data->foto_slider1 ? asset('foto slider/' . $data->foto_slider1) : 'https://via.placeholder.com/200x150?text=Belum+Ada+Gambar' }}"
@@ -44,9 +51,16 @@
                                 onchange="previewImage(this, 'preview-slider1')">
                         </div>
 
-                        {{-- Foto Slider 2 --}}
+                        {{-- Slider 2 --}}
                         <div class="mb-4">
-                            <label class="form-label fw-bold">Foto Slider 2</label>
+                            <label class="form-label fw-bold">Title Slider 2</label>
+                            <input type="text" name="title_slider2" class="form-control"
+                                placeholder="Masukkan title slider 2" value="{{ $data->title_slider2 ?? '' }}">
+
+                            <label class="form-label mt-2">Deskripsi Slider 2</label>
+                            <textarea name="deskripsi_slider2" class="form-control" rows="3" placeholder="Masukkan deskripsi slider 2">{{ $data->deskripsi_slider2 ?? '' }}</textarea>
+
+                            <label class="form-label mt-2">Foto Slider 2</label>
                             <center>
                                 <img id="preview-slider2"
                                     src="{{ $data->foto_slider2 ? asset('foto slider/' . $data->foto_slider2) : 'https://via.placeholder.com/200x150?text=Belum+Ada+Gambar' }}"
@@ -56,9 +70,16 @@
                                 onchange="previewImage(this, 'preview-slider2')">
                         </div>
 
-                        {{-- Foto Slider 3 --}}
+                        {{-- Slider 3 --}}
                         <div class="mb-4">
-                            <label class="form-label fw-bold">Foto Slider 3</label>
+                            <label class="form-label fw-bold">Title Slider 3</label>
+                            <input type="text" name="title_slider3" class="form-control"
+                                placeholder="Masukkan title slider 3" value="{{ $data->title_slider3 ?? '' }}">
+
+                            <label class="form-label mt-2">Deskripsi Slider 3</label>
+                            <textarea name="deskripsi_slider3" class="form-control" rows="3" placeholder="Masukkan deskripsi slider 3">{{ $data->deskripsi_slider3 ?? '' }}</textarea>
+
+                            <label class="form-label mt-2">Foto Slider 3</label>
                             <center>
                                 <img id="preview-slider3"
                                     src="{{ $data->foto_slider3 ? asset('foto slider/' . $data->foto_slider3) : 'https://via.placeholder.com/200x150?text=Belum+Ada+Gambar' }}"
@@ -72,6 +93,7 @@
                             <button type="submit" class="btn btn-primary px-4">Simpan Perubahan</button>
                         </div>
                     </form>
+
 
 
 

@@ -79,34 +79,62 @@
                                     <p>Silahkan Isi Form Testimoni dengan jujur sesuai pengalaman kalian.</p>
                                 </div>
                                 <div class="row clearfix">
+                                    {{-- Nama --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="text" name="nama" placeholder="Masukkan Nama Anda" required>
+                                        <input type="text" name="nama" placeholder="Masukkan Nama Anda"
+                                            value="{{ old('nama') }}">
+                                        @error('nama')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
+
+                                    {{-- Nomor Telepon --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="number" name="nomor_telepone" placeholder="Nomor Telepone"
-                                            required>
+                                        <input type="number" name="nomor_telepone" placeholder="Nomor Telepon"
+                                            value="{{ old('nomor_telepone') }}">
+                                        @error('nomor_telepone')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
+
+                                    {{-- Keterangan --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <input type="text" name="keterangan"
-                                            placeholder="Keterangan (Contoh: Konsumen BumDes) " required>
+                                            placeholder="Keterangan (Contoh: Konsumen BumDes)"
+                                            value="{{ old('keterangan') }}">
+                                        @error('keterangan')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
+
+                                    {{-- Foto Testimonial --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <div class="upload-box">
                                             <div class="icon-box">
                                                 <img src="{{ asset('LandingPage/assets/images/icons/icon-24.png') }}"
                                                     alt="">
                                             </div>
-                                            <input name="foto_testimonial" id="filer_input" multiple="multiple"
-                                                type="file" accept="image/*" onchange="previewImages(event)">
+                                            <input name="foto_testimonial" id="filer_input" type="file"
+                                                accept="image/*" onchange="previewImages(event)">
                                             <button type="button">Upload Photo</button>
                                         </div>
                                         <div id="image-preview"
                                             style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;"></div>
+                                        @error('foto_testimonial')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
+
+                                {{-- Deskripsi Testimonial --}}
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <textarea type="text" name="deskripsi_testimonial" placeholder="Deskripsi Testimonial" required></textarea>
+                                    <textarea name="deskripsi_testimonial" placeholder="Deskripsi Testimonial">{{ old('deskripsi_testimonial') }}</textarea>
+                                    @error('deskripsi_testimonial')
+                                        <small class="text-danger">{{ $message }}</small>
+                                    @enderror
                                 </div>
+
+                                {{-- Tombol Submit --}}
                                 <div class="form-group message-btn">
                                     <button type="submit" class="theme-btn btn-one">Kirim Testimonial Anda</button>
                                 </div>
@@ -114,6 +142,7 @@
                         </div>
                     </div>
                 </form>
+
             </div>
         </section>
         <!-- job-form-section end -->
@@ -132,114 +161,27 @@
                     <h2 class="title-animation">Apa Kata Mereka Tentang Kita?</h2>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
-                        <div class="testimonial-block-one">
-                            <div class="inner-box">
-                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
+                    @foreach ($form as $form)
+                        <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
+                            <div class="testimonial-block-one">
+                                <div class="inner-box">
+                                    <div class="shape"
+                                        style="background-image: url(assets/images/shape/shape-7.png);">
+                                    </div>
+                                    <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
+                                    </div>
+                                    <div class="author-box">
+                                        <figure class="thumb-box"><img
+                                                src="{{ asset('Testimonial/' . $form->foto_testimonial) }}"
+                                                alt=""></figure>
+                                        <h4>{{ $form->nama }}</h4>
+                                        <span class="designation">{{ $form->keterangan }}</span>
+                                    </div>
+                                    <p>{{ $form->deskripsi_testimonial }}</p>
                                 </div>
-                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
-                                </div>
-                                <div class="author-box">
-                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-1.png"
-                                            alt=""></figure>
-                                    <h4>Ashitaka Dai</h4>
-                                    <span class="designation">Art Director</span>
-                                </div>
-                                <p>Company and was impressed by the main personalized approach of their recruitment
-                                    team. They kept me informed at every stage and ensured that I had all</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
-                        <div class="testimonial-block-one">
-                            <div class="inner-box">
-                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
-                                </div>
-                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
-                                </div>
-                                <div class="author-box">
-                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-2.png"
-                                            alt=""></figure>
-                                    <h4>Franklin Bailey</h4>
-                                    <span class="designation">Sale Manager</span>
-                                </div>
-                                <p>Recently I went through their recruitment process with Jobaway Company, and I was
-                                    impressed by how the smooth and efficient these were.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
-                        <div class="testimonial-block-one">
-                            <div class="inner-box">
-                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
-                                </div>
-                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
-                                </div>
-                                <div class="author-box">
-                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-3.png"
-                                            alt=""></figure>
-                                    <h4>Evan Clement</h4>
-                                    <span class="designation">Mahager, Cypertech</span>
-                                </div>
-                                <p>I had a fantastic experience throughout the recruitment process with Jobaway team.
-                                    The communication was clear, interview process was well-organized</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
-                        <div class="testimonial-block-one">
-                            <div class="inner-box">
-                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
-                                </div>
-                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
-                                </div>
-                                <div class="author-box">
-                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-6.png"
-                                            alt=""></figure>
-                                    <h4>Ashitaka Dai</h4>
-                                    <span class="designation">Art Director</span>
-                                </div>
-                                <p>The quality of candidates we've received has significantly improved, and the
-                                    time-to-hire has reduced dramatically. It's a must-have tool for any company</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
-                        <div class="testimonial-block-one">
-                            <div class="inner-box">
-                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
-                                </div>
-                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
-                                </div>
-                                <div class="author-box">
-                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-7.png"
-                                            alt=""></figure>
-                                    <h4>Diarmuid Eoin</h4>
-                                    <span class="designation">Art Director</span>
-                                </div>
-                                <p>The targeted advertising options and comprehensive candidate profiles have allowed us
-                                    to connect with highly qualified professionals</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
-                        <div class="testimonial-block-one">
-                            <div class="inner-box">
-                                <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
-                                </div>
-                                <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
-                                </div>
-                                <div class="author-box">
-                                    <figure class="thumb-box"><img src="assets/images/resource/testimonial-8.png"
-                                            alt=""></figure>
-                                    <h4>Antonio Alex</h4>
-                                    <span class="designation">Mahager, Cypertech</span>
-                                </div>
-                                <p>We’ve seen a significant increase in the quality of applicants since using this
-                                    recruitment site. The detailed profiles and easy-to-use dashboard make managing</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -248,40 +190,112 @@
         <section class="clients-section pt_110 pb_120 centred">
             <div class="auto-container">
                 <div class="title-text pb_60 sec-title-animation animation-style2">
-                    <h3 class="title-animation">Trusted by the next-gen industry leaders</h3>
+                    <h3 class="title-animation">Supported By</h3>
                 </div>
-                <div class="inner-box">
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-1.png" alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-1.png" alt=""></a></figure>
-                    </div>
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-2.png" alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-2.png" alt=""></a></figure>
-                    </div>
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-3.png" alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-3.png" alt=""></a></figure>
-                    </div>
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-4.png" alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-4.png" alt=""></a></figure>
-                    </div>
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-5.png" alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="assets/images/clients/clients-5.png" alt=""></a></figure>
-                    </div>
-                </div>
+                {{-- @foreach ($support as $support) --}}
+                    <div class="inner-box">
+                        <div class="clients-slider-wrapper">
+                            <style>
+                                .clients-slider-wrapper {
+                                    overflow: hidden;
+                                    width: 100%;
+                                    position: relative;
+                                }
+
+                                .clients-slider {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 40px;
+                                    animation: scrollLeft 30s linear infinite;
+                                }
+
+                                .clients-box {
+                                    flex: 0 0 auto;
+                                    width: 220px;
+                                    height: 130px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-color: #fff;
+                                    border-radius: 12px;
+                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                                    padding: 10px;
+                                }
+
+                                .clients-logo img,
+                                .overlay-logo img {
+                                    max-width: 100%;
+                                    max-height: 100px;
+                                    object-fit: contain;
+                                    transition: transform 0.3s ease;
+                                }
+
+                                .clients-box:hover img {
+                                    transform: scale(1.1);
+                                }
+
+                                @keyframes scrollLeft {
+                                    0% {
+                                        transform: translateX(0);
+                                    }
+
+                                    100% {
+                                        transform: translateX(-50%);
+                                    }
+                                }
+
+                                @media (max-width: 768px) {
+                                    .clients-box {
+                                        width: 160px;
+                                        height: 100px;
+                                    }
+
+                                    .clients-logo img,
+                                    .overlay-logo img {
+                                        max-height: 80px;
+                                    }
+                                }
+                            </style>
+
+                            <div class="clients-slider">
+                                {{-- @foreach ($support->take(5) as $support)
+                                    <div class="clients-box">
+                                        <figure class="clients-logo">
+                                            <a href="#">
+                                                <img src="{{ asset('Media Partner/' . $support->Logo_Media) }}"
+                                                    alt="">
+                                            </a>
+                                        </figure>
+                                        <figure class="overlay-logo">
+                                            <a href="#">
+                                                <img src="{{ asset('Media Partner/' . $support->Logo_Media) }}"
+                                                    alt="">
+                                            </a>
+                                        </figure>
+                                    </div>
+                                @endforeach --}}
+
+                                {{-- Duplikat isi agar animasi tidak putus --}}
+                                @foreach ($support->take(5) as $support)
+                                    <div class="clients-box">
+                                        <figure class="clients-logo">
+                                            <a href="#">
+                                                <img src="{{ asset('Media Partner/' . $support->Logo_Media) }}"
+                                                    alt="">
+                                            </a>
+                                        </figure>
+                                        <figure class="overlay-logo">
+                                            <a href="#">
+                                                <img src="{{ asset('Media Partner/' . $support->Logo_Media) }}"
+                                                    alt="">
+                                            </a>
+                                        </figure>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                {{-- @endforeach --}}
             </div>
         </section>
         <!-- clients-section end -->
@@ -335,31 +349,50 @@
         document.getElementById("testimonialForm").addEventListener("submit", function(e) {
             e.preventDefault();
 
-            const formData = new FormData(this);
+            const form = this;
+            const formData = new FormData(form);
 
-            fetch(this.action, {
+            // Bersihkan pesan error sebelumnya
+            document.querySelectorAll('.text-danger').forEach(el => el.innerText = '');
+
+            fetch(form.action, {
                     method: 'POST',
                     body: formData,
                     headers: {
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Accept': 'application/json' // PENTING supaya Laravel balikin JSON 422
                     }
                 })
                 .then(async response => {
-                    if (response.ok) {
-                        // ✅ SUKSES: pindah ke halaman sukses
+                    if (response.status === 422) {
+                        const data = await response.json();
+                        for (const field in data.errors) {
+                            const inputField = form.querySelector(`[name="${field}"]`);
+                            if (inputField) {
+                                let errorElement = inputField.parentElement.querySelector('.text-danger');
+                                if (!errorElement) {
+                                    errorElement = document.createElement('small');
+                                    errorElement.classList.add('text-danger');
+                                    inputField.parentElement.appendChild(errorElement);
+                                }
+                                errorElement.innerText = data.errors[field][0];
+                            }
+                        }
+                    } else if (response.ok) {
+                        // Sukses → pindah ke halaman sukses
                         window.location.href = '/sukses';
                     } else {
-                        const err = await response.text();
-                        console.error("Gagal mengirim data:", err);
-                        alert('Gagal mengirim data. Server menolak permintaan.');
+                        alert('Gagal mengirim data.');
                     }
                 })
                 .catch(error => {
-                    console.error("Terjadi error:", error);
-                    alert('Terjadi kesalahan saat mengirim (fetch gagal).');
+                    console.error("Error:", error);
+                    alert('Terjadi kesalahan koneksi.');
                 });
         });
     </script>
+
+
 
 
 </body><!-- End of .page_wrapper -->

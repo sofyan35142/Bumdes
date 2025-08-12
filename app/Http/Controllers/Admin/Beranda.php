@@ -34,24 +34,36 @@ class Beranda extends Controller
     {
         // Validasi input
         $request->validate([
+            // Title & Deskripsi wajib diisi, tapi bisa nullable kalau opsional
+            'title_slider1' => 'nullable|string|max:255',
+            'deskripsi_slider1' => 'nullable|string',
+            'title_slider2' => 'nullable|string|max:255',
+            'deskripsi_slider2' => 'nullable|string',
+            'title_slider3' => 'nullable|string|max:255',
+            'deskripsi_slider3' => 'nullable|string',
+
+            // Foto
             'foto_slider1' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'foto_slider2' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'foto_slider3' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ], [
+            // Foto Slider 1
             'foto_slider1.image' => 'Foto slider 1 harus berupa gambar.',
             'foto_slider1.mimes' => 'Foto slider 1 hanya boleh berformat JPG, JPEG, atau PNG.',
             'foto_slider1.max' => 'Ukuran foto slider 1 maksimal 2MB.',
 
+            // Foto Slider 2
             'foto_slider2.image' => 'Foto slider 2 harus berupa gambar.',
             'foto_slider2.mimes' => 'Foto slider 2 hanya boleh berformat JPG, JPEG, atau PNG.',
             'foto_slider2.max' => 'Ukuran foto slider 2 maksimal 2MB.',
 
+            // Foto Slider 3
             'foto_slider3.image' => 'Foto slider 3 harus berupa gambar.',
             'foto_slider3.mimes' => 'Foto slider 3 hanya boleh berformat JPG, JPEG, atau PNG.',
             'foto_slider3.max' => 'Ukuran foto slider 3 maksimal 2MB.',
         ]);
 
-        $data = slider::findOrFail($id);
+        $data = Slider::findOrFail($id);
 
         // Ambil nama file lama
         $foto1 = $data->foto_slider1;
@@ -79,10 +91,22 @@ class Beranda extends Controller
 
         // Simpan update ke database
         $data->update([
+            // Slider 1
+            'title_slider1' => $request->title_slider1,
+            'deskripsi_slider1' => $request->deskripsi_slider1,
             'foto_slider1' => $foto1,
+
+            // Slider 2
+            'title_slider2' => $request->title_slider2,
+            'deskripsi_slider2' => $request->deskripsi_slider2,
             'foto_slider2' => $foto2,
+
+            // Slider 3
+            'title_slider3' => $request->title_slider3,
+            'deskripsi_slider3' => $request->deskripsi_slider3,
             'foto_slider3' => $foto3,
         ]);
+
 
         return redirect()->route('admin.slider')->with('success', 'Foto berhasil diperbarui.');
     }
@@ -268,45 +292,45 @@ class Beranda extends Controller
     public function updateunggulan(Request $request, $id)
     {
         // Validasi data
-    $request->validate([
-        'nama_layanan'   => 'required|string|max:255',
-        'deskripsi'      => 'required|string',
-        // 'kategori'       => 'required|exists:kategorimodels,id',
-        'foto_layanan'   => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-    ], [
-        'nama_layanan.required' => 'Nama layanan wajib diisi.',
-        'deskripsi.required'    => 'Deskripsi wajib diisi.',
-        // 'kategori.required'     => 'Kategori wajib dipilih.',
-        // 'kategori.exists'       => 'Kategori yang dipilih tidak valid.',
-        'foto_layanan.image'    => 'File harus berupa gambar.',
-        'foto_layanan.mimes'    => 'Format gambar harus jpeg, png, atau jpg.',
-        'foto_layanan.max'      => 'Ukuran gambar maksimal 2MB.',
-    ]);
+        $request->validate([
+            'nama_layanan'   => 'required|string|max:255',
+            'deskripsi'      => 'required|string',
+            // 'kategori'       => 'required|exists:kategorimodels,id',
+            'foto_layanan'   => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ], [
+            'nama_layanan.required' => 'Nama layanan wajib diisi.',
+            'deskripsi.required'    => 'Deskripsi wajib diisi.',
+            // 'kategori.required'     => 'Kategori wajib dipilih.',
+            // 'kategori.exists'       => 'Kategori yang dipilih tidak valid.',
+            'foto_layanan.image'    => 'File harus berupa gambar.',
+            'foto_layanan.mimes'    => 'Format gambar harus jpeg, png, atau jpg.',
+            'foto_layanan.max'      => 'Ukuran gambar maksimal 2MB.',
+        ]);
 
-    // Ambil data lama
-    $unggulan = LayananUnggulan::findOrFail($id);
-    $foto_layanan = $unggulan->foto_layanan;
+        // Ambil data lama
+        $unggulan = LayananUnggulan::findOrFail($id);
+        $foto_layanan = $unggulan->foto_layanan;
 
-    // Upload foto baru jika ada
-    if ($request->hasFile('foto_layanan')) {
-        // Hapus foto lama kalau ada
-        if ($unggulan->foto_layanan && file_exists(public_path('Foto Layanan Unggulan/' . $unggulan->foto_layanan))) {
-            unlink(public_path('Foto Layanan Unggulan/' . $unggulan->foto_layanan));
+        // Upload foto baru jika ada
+        if ($request->hasFile('foto_layanan')) {
+            // Hapus foto lama kalau ada
+            if ($unggulan->foto_layanan && file_exists(public_path('Foto Layanan Unggulan/' . $unggulan->foto_layanan))) {
+                unlink(public_path('Foto Layanan Unggulan/' . $unggulan->foto_layanan));
+            }
+
+            // Simpan foto baru
+            $file = $request->file('foto_layanan');
+            $foto_layanan = $file->hashName();
+            $file->move(public_path('Foto Layanan Unggulan'), $foto_layanan);
         }
 
-        // Simpan foto baru
-        $file = $request->file('foto_layanan');
-        $foto_layanan = $file->hashName();
-        $file->move(public_path('Foto Layanan Unggulan'), $foto_layanan);
-    }
-
-    // Update data
-    $unggulan->update([
-        'nama_layanan'  => $request->input('nama_layanan'),
-        'deskripsi'     => $request->input('deskripsi'),
-        'kategori_id'   => $request->input('kategori'),
-        'foto_layanan'  => $foto_layanan,
-    ]);
+        // Update data
+        $unggulan->update([
+            'nama_layanan'  => $request->input('nama_layanan'),
+            'deskripsi'     => $request->input('deskripsi'),
+            'kategori_id'   => $request->input('kategori'),
+            'foto_layanan'  => $foto_layanan,
+        ]);
 
         return redirect()->route('admin.unggulan')->with('success', 'Layanan Unggulan berhasil diperbarui');
     }
@@ -317,6 +341,4 @@ class Beranda extends Controller
 
         return redirect()->route('admin.unggulan')->with('success', 'Layanan Unggulan berhasil dihapus');
     }
-
-
 }

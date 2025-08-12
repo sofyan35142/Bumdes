@@ -62,6 +62,13 @@
                                         <h5 class="mt-3">Nama Direktur</h5>
                                         <p>{{ $data->Nama_Direktur }}</p>
 
+
+
+                                        {{-- Sambutan --}}
+                                        <div class="mt-4">
+                                            <h5>Sambutan</h5>
+                                            <div style="white-space: pre-line;">{!! $data->sambutan !!}</div>
+                                        </div>
                                         {{-- Foto Direktur --}}
                                         @if ($data->foto_direktur)
                                             <div class="mt-4">
@@ -71,12 +78,6 @@
                                                     style="max-height: 300px;">
                                             </div>
                                         @endif
-
-                                        {{-- Sambutan --}}
-                                        <div class="mt-4">
-                                            <h5>Sambutan</h5>
-                                            <div style="white-space: pre-line;">{!! $data->sambutan !!}</div>
-                                        </div>
                                     @else
                                         <p class="text-muted">Belum ada data sambutan direktur yang tersedia.</p>
                                     @endif

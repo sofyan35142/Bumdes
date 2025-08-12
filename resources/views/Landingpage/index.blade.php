@@ -19,7 +19,14 @@
 
 
         <!-- page-direction -->
+<<<<<<< HEAD
 
+=======
+        {{-- <div class="page_direction">
+            <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
+            <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
+        </div> --}}
+>>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
         <!-- page-direction end -->
 
 
@@ -83,7 +90,7 @@
                 <!-- Slide 1 -->
                 <div class="slide-item p_relative">
                     <div class="bg-layer"
-                        style="background-image: url('{{ asset('Landingpage/assets/images/banner/banner-2.jpg') }}');">
+                        style="background-image: url('{{ asset('Foto Slider/' . $slider->foto_slider1) }}');">
                     </div>
                     <div class="shape-box">
                         <div class="shape-1"></div>
@@ -92,9 +99,13 @@
                     <div class="auto-container">
                         <div class="content-box">
                             <span class="upper-text">Tentang BumDes</span>
-                            <h2>Bangun Masa Depan Desa Lebih Baik <span>Bersama BUMDes</span></h2>
-                            <p>Pemberdayaan ekonomi lokal dimulai dari desa. BUMDes hadir untuk mengelola potensi,
-                                membuka lapangan kerja, dan membangun kemandirian masyarakat secara berkelanjutan.</p>
+                            @php
+                                $titleWords = explode(' ', $slider->title_slider1);
+                                $firstThree = implode(' ', array_slice($titleWords, 0, 3));
+                                $restWords = implode(' ', array_slice($titleWords, 3));
+                                @endphp
+                                <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
+                            <p>{{ $slider->deskripsi_slider1}}</p>
                             <div class="btn-box">
                                 <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
                                 <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
@@ -103,11 +114,10 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Slide 2 -->
                 <div class="slide-item p_relative">
                     <div class="bg-layer"
-                        style="background-image: url('{{ asset('Landingpage/assets/images/banner/banner-5.jpg') }}');">
+                        style="background-image: url('{{ asset('Foto Slider/' . $slider->foto_slider2) }}');">
                     </div>
                     <div class="shape-box">
                         <div class="shape-1"></div>
@@ -115,24 +125,26 @@
                     </div>
                     <div class="auto-container">
                         <div class="content-box">
-                            <span class="upper-text">Top Agency</span>
-                            <h2>Dukung Produk Lokal & UMKM Desa <span>Bersama BUMDes</span></h2>
-                            <p>BUMDes mendorong pertumbuhan ekonomi desa melalui pengembangan UMKM, pemasaran produk
-                                lokal, dan kolaborasi dengan masyarakat untuk meningkatkan kesejahteraan.</p>
+                            <span class="upper-text">Tentang BumDes</span>
+                            @php
+                                $titleWords = explode(' ', $slider->title_slider2);
+                                $firstThree = implode(' ', array_slice($titleWords, 0, 3));
+                                $restWords = implode(' ', array_slice($titleWords, 3));
+                                @endphp
+                                <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
+                            <p>{{ $slider->deskripsi_slider2}}</p>
                             <div class="btn-box">
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Produk
-                                    Unggulan</a>
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Gabung Mitra
-                                        UMKM</span></a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
+                                        Warga</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Slide 3 -->
                 <div class="slide-item p_relative">
                     <div class="bg-layer"
-                        style="background-image: url('{{ asset('Landingpage/assets/images/banner/banner-6.jpg') }}');">
+                        style="background-image: url('{{ asset('Foto Slider/' . $slider->foto_slider3) }}');">
                     </div>
                     <div class="shape-box">
                         <div class="shape-1"></div>
@@ -140,15 +152,18 @@
                     </div>
                     <div class="auto-container">
                         <div class="content-box">
-                            <span class="upper-text">Top Agency</span>
-                            <h2>Wujudkan Desa Cerdas Melalui<span>Inovasi dan Kolaborasi</span></h2>
-                            <p>Dengan semangat kolaborasi dan digitalisasi, BUMDes menjadi jembatan inovasi dan solusi
-                                bagi masyarakat desa menuju masa depan yang mandiri dan modern.</p>
+                            <span class="upper-text">Tentang BumDes</span>
+                            @php
+                                $titleWords = explode(' ', $slider->title_slider3);
+                                $firstThree = implode(' ', array_slice($titleWords, 0, 3));
+                                $restWords = implode(' ', array_slice($titleWords, 3));
+                                @endphp
+                                <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
+                            <p>{{ $slider->deskripsi_slider3}}</p>
                             <div class="btn-box">
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Layanan
-                                    Digital</a>
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span> Bangun
-                                        Kemitraan</span></a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
+                                        Warga</span></a>
                             </div>
                         </div>
                     </div>
@@ -166,7 +181,7 @@
             <div class="auto-container">
                 <div class="title-text pb_60 sec-title-animation animation-style2">
                     {{-- <span class="sub-title mb_10 title-animation">Mintra</span> --}}
-                    <h3 class="title-animation">Mitra BumDes Pakukerto</h3>
+                    <h3 class="title-animation">Supported By</h3>
                 </div>
                 <div class="inner-box">
                     <div class="clients-slider-wrapper">
@@ -646,26 +661,27 @@
                             <div class="testimonial-content ml_130">
                                 <div
                                     class="single-item-carousel owl-carousel owl-theme owl-nav-none dots-style-one owl-loaded owl-drag">
-                                    <div class="testimonial-block-three">
-                                        <div class="inner-box">
-                                            <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h2>“BUMDes membantu saya menyewa alat pertanian dengan harga murah. Panen
-                                                tahun ini lebih cepat dan hasilnya meningkat!”</h2>
-                                            <figure class="signature mb_30">
-                                                <img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/signature-1.png"
-                                                    alt="">
-                                            </figure>
-                                            <div class="author-box">
-                                                <figure class="author-thumb">
-                                                    <img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-4.png"
+                                    @foreach ($testi as $testi)
+                                        <div class="testimonial-block-three">
+                                            <div class="inner-box">
+                                                <div class="icon-box"><i class="icon-36"></i></div>
+                                                <h2>{{ $testi->deskripsi_testimonial }}</h2>
+                                                {{-- <figure class="signature mb_30">
+                                                    <img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/signature-1.png"
                                                         alt="">
-                                                </figure>
-                                                <h3>Pak Darto</h3>
-                                                <span class="designation">Petani Desa</span>
+                                                </figure> --}}
+                                                <div class="author-box">
+                                                    <figure class="author-thumb">
+                                                        <img src="{{ asset('Testimonial/' . $testi->foto_testimonial) }}"
+                                                            alt="">
+                                                    </figure>
+                                                    <h3>{{ $testi->nama }}</h3>
+                                                    <span class="designation">{{ $testi->keterangan }}</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="testimonial-block-three">
+                                    @endforeach
+                                    {{-- <div class="testimonial-block-three">
                                         <div class="inner-box">
                                             <div class="icon-box"><i class="icon-36"></i></div>
                                             <h2>“Layanan logistik dari BUMDes sangat membantu pengiriman produk lokal ke
@@ -703,7 +719,7 @@
                                                 <span class="designation">Pemilik Usaha Keripik Singkong</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="owl-nav">
                                     <button type="button" role="presentation" class="owl-prev"><span
@@ -740,13 +756,28 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image"
+<<<<<<< HEAD
                                             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
+=======
+                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto;">
+                                            <img src="{{ asset($member->foto) }}" alt=""
+                                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                        </figure>
+
+                                        <!-- Gambar overlay -->
+                                        <figure class="overlay-image"
+                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
+                                            <img src="{{ asset($member->foto) }}" alt=""
+                                                style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.5;">
+                                        </figure>
+                                        {{-- <figure class="image">
+>>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
                                             <img src="{{ asset($member->foto) }}" alt="">
                                         </figure>
                                         <figure class="overlay-image"
                                             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
                                             <img src="{{ asset($member->foto) }}" alt="">
-                                        </figure>
+                                        </figure> --}}
                                     </div>
                                     <div class="lower-content">
                                         <h3><a href="#">{{ $member->nama }}</a></h3>

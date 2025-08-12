@@ -26,7 +26,7 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img
+                    <figure class="logo-box"><a href="/"><img
                                 src="{{ asset('LandingPage/assets/images/logo.png') }}" alt=""></a>
                     </figure>
                     <div class="close-search"><span class="icon-27"></span></div>
@@ -34,7 +34,7 @@
                 <div class="overlay-layer"></div>
                 <div class="auto-container">
                     <div class="search-form">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/index.html">
+                        <form method="post" action="https://jobaway.pixcelsthemes.com//">
                             <div class="form-group">
                                 <fieldset>
                                     <input type="search" class="form-control" name="search-input" value=""
@@ -55,7 +55,39 @@
 
 
         <!-- Mobile Menu  -->
+<<<<<<< HEAD
         @include('Landingpage.layout.mobilemenu')
+=======
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><i class="fas fa-times"></i></div>
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="/"><img
+                            src="{{ asset('LandingPage/assets/images/logo-2.png') }}" alt="" title=""></a>
+                </div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+                <div class="contact-info">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>Chicago 12, Melborne City, USA</li>
+                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
+                        <li><a href="mailto:info@example.com">info@example.com</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="/"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="/"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="/"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="/"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="/"><span class="fab fa-youtube"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+>>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
         <!-- End Mobile Menu -->
 
 
@@ -65,7 +97,7 @@
                 <div class="content-box">
                     <h1>Detail Layanan Unggulan</h1>
                     <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li>-</li>
                         <li>Detail Layanan Unggulan</li>
                     </ul>
@@ -79,6 +111,23 @@
         <section class="service-details pt_110 pb_120">
             <div class="auto-container">
                 <div class="row clearfix">
+                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                        <div class="service-details-content">
+                            <div class="sec-title mb_70">
+                                <span class="sub-title mb_10">{{ $detailunggulan->kategori->nama_kategori ?? '-' }}</span>
+                                <h2>{{ $detailunggulan->nama_layanan }}</h2>
+                                {{-- <p class="mt_20">The executive search process is meticulously designed to identify and
+                                    attract top-tier leadership talent that aligns with an organization’s strategic
+                                    goals.</p> --}}
+                            </div>
+                            <figure class="image-box mb_30"><img
+                                    src="{{ asset('foto layanan unggulan/' . $detailunggulan->foto_layanan) }}"
+                                    alt=""></figure>
+                            <div class="text-box mb_110">
+                                <p class="mb_25">{!! nl2br(e($detailunggulan->deskripsi)) !!}</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                         <div class="service-sidebar mr_40">
                             <div class="category-widget mb_40">
@@ -107,23 +156,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
-                        <div class="service-details-content">
-                            <div class="sec-title mb_70">
-                                <span class="sub-title mb_10">{{ $detailunggulan->kategori->nama_kategori ?? '-' }}</span>
-                                <h2>{{ $detailunggulan->nama_layanan }}</h2>
-                                {{-- <p class="mt_20">The executive search process is meticulously designed to identify and
-                                    attract top-tier leadership talent that aligns with an organization’s strategic
-                                    goals.</p> --}}
-                            </div>
-                            <figure class="image-box mb_30"><img
-                                    src="{{ asset('foto layanan unggulan/' . $detailunggulan->foto_layanan) }}"
-                                    alt=""></figure>
-                            <div class="text-box mb_110">
-                                <p class="mb_25">{!! nl2br(e($detailunggulan->deskripsi)) !!}</p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>

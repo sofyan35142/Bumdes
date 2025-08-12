@@ -53,29 +53,54 @@
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>
+                                                <th>Title Slider 1</th>
+                                                <th>Deskripsi Slider 1</th>
                                                 <th>Foto Slider 1</th>
+
+                                                <th>Title Slider 2</th>
+                                                <th>Deskripsi Slider 2</th>
                                                 <th>Foto Slider 2</th>
+
+                                                <th>Title Slider 3</th>
+                                                <th>Deskripsi Slider 3</th>
                                                 <th>Foto Slider 3</th>
+
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($slider as $slider)
+                                            @foreach ($slider as $item)
                                                 <tr>
+                                                    {{-- Slider 1 --}}
+                                                    <td>{{ $item->title_slider1 ?? '-' }}</td>
+                                                    <td>{{ $item->deskripsi_slider1 ?? '-' }}</td>
                                                     <td>
-                                                        <img src="{{ asset('Foto Slider/' . $slider->foto_slider1) }}"
-                                                            alt="Foto Slider 1" style="width: 120px; height:80px;">
+                                                        <img src="{{ asset('Foto Slider/' . $item->foto_slider1) }}"
+                                                            alt="Foto Slider 1"
+                                                            style="width: 120px; height:80px; object-fit:cover;">
                                                     </td>
+
+                                                    {{-- Slider 2 --}}
+                                                    <td>{{ $item->title_slider2 ?? '-' }}</td>
+                                                    <td>{{ $item->deskripsi_slider2 ?? '-' }}</td>
                                                     <td>
-                                                        <img src="{{ asset('Foto Slider/' . $slider->foto_slider2) }}"
-                                                            alt="Foto Slider 2" style="width: 120px; height:80px;">
+                                                        <img src="{{ asset('Foto Slider/' . $item->foto_slider2) }}"
+                                                            alt="Foto Slider 2"
+                                                            style="width: 120px; height:80px; object-fit:cover;">
                                                     </td>
+
+                                                    {{-- Slider 3 --}}
+                                                    <td>{{ $item->title_slider3 ?? '-' }}</td>
+                                                    <td>{{ $item->deskripsi_slider3 ?? '-' }}</td>
                                                     <td>
-                                                        <img src="{{ asset('Foto Slider/' . $slider->foto_slider3) }}"
-                                                            alt="Foto Slider 3" style="width: 120px; height:80px;">
+                                                        <img src="{{ asset('Foto Slider/' . $item->foto_slider3) }}"
+                                                            alt="Foto Slider 3"
+                                                            style="width: 120px; height:80px; object-fit:cover;">
                                                     </td>
+
+                                                    {{-- Aksi --}}
                                                     <td>
-                                                        <a href="/admin/editslider/{{ $slider->id }}"
+                                                        <a href="/admin/editslider/{{ $item->id }}"
                                                             class="btn btn-warning">
                                                             <i class="fa-solid fa-pen-to-square"></i> Edit
                                                         </a>
@@ -84,7 +109,6 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-
                                 </div>
                             </div>
                         </div>

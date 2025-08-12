@@ -133,6 +133,10 @@
                                     @endforeach
                                 </div>
                             </div>
+<<<<<<< HEAD
+=======
+                           
+>>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
                         </div>
                         <div class="download-widget mr_40">
                             <div class="shape"

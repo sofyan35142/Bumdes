@@ -12,7 +12,9 @@ use App\Models\MediaPartner;
 use App\Models\SambutanDirektur;
 use Illuminate\Http\Request;
 use App\Models\PanduanBumdes;
+use App\Models\slider;
 use App\Models\StrukturOrganisasi;
+use App\Models\Testimonial;
 
 class home extends Controller
 {
@@ -26,8 +28,15 @@ class home extends Controller
         $alasan = AlasanMemilihBumdes::all();
         $team = StrukturOrganisasi::orderBy('urutan', 'asc')->take(4)->get();
         $industries = Industry::all();
+        $testi = Testimonial::where('status', 1)->latest()->get();
+        $slider = Slider::first();
+        
         // dd($industries->map->getOriginal());
+<<<<<<< HEAD
         return view('Landingpage.index', compact('data', 'book', 'unggulan', 'kegiatan', 'mediaPartner', 'alasan','team','industries'));
+=======
+        return view('Landingpage.index', compact('slider','data', 'book', 'unggulan', 'kegiatan', 'mediaPartner', 'alasan', 'team', 'industries','testi'));
+>>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
     }
 
     public function detailunggulan($id)
@@ -42,10 +51,19 @@ class home extends Controller
     }
     public function FormTestimonial()
     {
-        return view('Landingpage.formtestimonial');
+        $form = Testimonial::where('status', 1)->latest()->get();
+        $support = MediaPartner::all();
+        return view('Landingpage.formtestimonial', compact('form', 'support'));
     }
     public function testimoni()
     {
         return view('Landingpage.aftertestimonial');
+    }
+    public function listunggulan()
+    {
+        // $Lowongan = LayananUnggulan::with('kategori')->latest()->paginate(6);
+        // $kategoriList = kategorimodel::get();
+        $unggulanlist = LayananUnggulan::with('kategori')->latest()->paginate(6);
+        return view('Landingpage.pages.listunggulan', compact( 'unggulanlist'));
     }
 }
