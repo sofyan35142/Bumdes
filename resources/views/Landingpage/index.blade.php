@@ -100,9 +100,9 @@
                                 $titleWords = explode(' ', $slider->title_slider1);
                                 $firstThree = implode(' ', array_slice($titleWords, 0, 3));
                                 $restWords = implode(' ', array_slice($titleWords, 3));
-                                @endphp
-                                <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
-                            <p>{{ $slider->deskripsi_slider1}}</p>
+                            @endphp
+                            <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
+                            <p>{{ $slider->deskripsi_slider1 }}</p>
                             <div class="btn-box">
                                 <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
                                 <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
@@ -127,11 +127,12 @@
                                 $titleWords = explode(' ', $slider->title_slider2);
                                 $firstThree = implode(' ', array_slice($titleWords, 0, 3));
                                 $restWords = implode(' ', array_slice($titleWords, 3));
-                                @endphp
-                                <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
-                            <p>{{ $slider->deskripsi_slider2}}</p>
+                            @endphp
+                            <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
+                            <p>{{ $slider->deskripsi_slider2 }}</p>
                             <div class="btn-box">
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program
+                                    Kami</a>
                                 <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
                                         Warga</span></a>
                             </div>
@@ -154,11 +155,12 @@
                                 $titleWords = explode(' ', $slider->title_slider3);
                                 $firstThree = implode(' ', array_slice($titleWords, 0, 3));
                                 $restWords = implode(' ', array_slice($titleWords, 3));
-                                @endphp
-                                <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
-                            <p>{{ $slider->deskripsi_slider3}}</p>
+                            @endphp
+                            <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
+                            <p>{{ $slider->deskripsi_slider3 }}</p>
                             <div class="btn-box">
-                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
+                                <a href="{{ url('index-4') }}" class="theme-btn banner-btn mr_20">Lihat Program
+                                    Kami</a>
                                 <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
                                         Warga</span></a>
                             </div>
@@ -472,7 +474,7 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image">
-                                            <a href="#">
+                                            <a href="{{ route('home.detailunggulan', ['id' => $item->id]) }}">
                                                 <img src="{{ asset('foto layanan unggulan/' . $item->foto_layanan) }}"
                                                     alt="">
                                             </a>
@@ -485,7 +487,7 @@
                                         </figure>
                                     </div>
                                     <div class="lower-content">
-                                        <h3><a href="#">{{ $item->nama_layanan }}</a></h3>
+                                        <h3><a href="{{ route('home.detailunggulan', ['id' => $item->id]) }}">{{ $item->nama_layanan }}</a></h3>
                                         <p
                                             style="
                                     overflow: hidden;
@@ -499,8 +501,11 @@
                                         </p>
                                         <div class="btn-box">
                                             {{-- <a href="#" class="theme-btn btn-one">View Details</a> --}}
-                                            <a href="/detailunggulan/{{ $item->id }}"
-                                                class="theme-btn btn-one">View Details</a>
+                                            <a href="{{ route('home.detailunggulan', ['id' => $item->id]) }}"
+                                                class="theme-btn btn-one">
+                                                View Details
+                                            </a>
+
                                         </div>
                                     </div>
                                 </div>
