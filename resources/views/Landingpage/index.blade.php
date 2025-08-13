@@ -19,14 +19,11 @@
 
 
         <!-- page-direction -->
-<<<<<<< HEAD
 
-=======
         {{-- <div class="page_direction">
             <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
             <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
         </div> --}}
->>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
         <!-- page-direction end -->
 
 
@@ -756,9 +753,6 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image"
-<<<<<<< HEAD
-                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
-=======
                                             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto;">
                                             <img src="{{ asset($member->foto) }}" alt=""
                                                 style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -771,7 +765,6 @@
                                                 style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.5;">
                                         </figure>
                                         {{-- <figure class="image">
->>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
                                             <img src="{{ asset($member->foto) }}" alt="">
                                         </figure>
                                         <figure class="overlay-image"

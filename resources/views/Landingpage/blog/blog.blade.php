@@ -13,7 +13,7 @@
 
 
         <!-- preloader -->
-        @include('LandingPage.layout.preloader')
+        @include('Landingpage.layout.preloader')
         <!-- preloader end -->
 
 
@@ -49,7 +49,7 @@
 
 
         <!-- main header -->
-        @include('LandingPage.layout.header')
+        @include('Landingpage.layout.header')
         <!-- main-header end -->
 
 
@@ -133,10 +133,7 @@
                                     @endforeach
                                 </div>
                             </div>
-<<<<<<< HEAD
-=======
-                           
->>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
+
                         </div>
                         <div class="download-widget mr_40">
                             <div class="shape"
