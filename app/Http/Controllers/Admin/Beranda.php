@@ -32,7 +32,8 @@ class Beranda extends Controller
 
     public function updateslider(Request $request, $id)
     {
-        $uploadPath = public_path('Foto_Slider');
+        // Tentukan folder upload di public_html
+        $uploadPath = base_path('../public_html/Foto_Slider');
         if (!file_exists($uploadPath)) {
             mkdir($uploadPath, 0755, true);
         }
@@ -93,7 +94,6 @@ class Beranda extends Controller
             'deskripsi_slider3' => $request->deskripsi_slider3,
             'foto_slider3' => $foto3,
         ]);
-
 
 
         return redirect()->route('admin.slider')->with('success', 'Foto berhasil diperbarui.');
