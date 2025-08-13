@@ -67,7 +67,7 @@
                         kegiatan kami. <br />Testimoni Anda akan membantu kami untuk terus berkembang dan memberikan
                         yang terbaik.</p>
                 </div>
-                <form id="testimonialForm" method="post" action="/admin/testimonial/store"
+                <form id="testimonialForm" method="post" action="{{ route('admin.testimonial.store') }}"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row clearfix">
