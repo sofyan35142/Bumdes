@@ -190,120 +190,46 @@
             </style>
 
             <div class="success-icon">✅</div>
-            <h1>Permohonan Berhasil Dikirim!</h1>
-            <p class="subtitle">Terima kasih telah mengajukan permohonan surat layanan desa</p>
+            <h1>Testimoni Berhasil Dikirim!</h1>
+            <p class="subtitle">Terima kasih telah memberikan testimoni dan kepercayaan Anda kepada layanan kami</p>
 
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <strong>Verifikasi Data</strong>
-                        Petugas desa akan memverifikasi kelengkapan dan keakuratan data yang Anda kirimkan
+                        <strong>Verifikasi Testimoni</strong>
+                        Tim kami akan memeriksa isi testimoni Anda untuk memastikan sesuai dengan ketentuan
                     </div>
                 </div>
 
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <strong>Pembuatan Surat</strong>
-                        Jika data sudah lengkap dan benar, surat akan dibuatkan
+                        <strong>Publikasi</strong>
+                        Jika sudah lolos verifikasi, testimoni Anda akan dipublikasikan di halaman website kami
                     </div>
                 </div>
 
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <strong>Pengiriman Surat</strong>
-                        Surat yang sudah jadi akan dikirim ke nomor WhatsApp yang Anda berikan
+                        <strong>Apresiasi</strong>
+                        Masukan dan dukungan Anda membantu kami terus meningkatkan kualitas layanan
                     </div>
                 </div>
             </div>
 
             <div class="notes">
                 <h3>📘 Catatan Penting</h3>
-                <p><strong>Waktu Pemrosesan:</strong> Biasanya membutuhkan waktu 1-3 hari kerja</p>
-                <p><strong>Notifikasi:</strong> Anda akan dihubungi melalui WhatsApp jika ada informasi tambahan yang
-                    diperlukan</p>
-                <p><strong>Pengiriman:</strong> Surat akan dikirim dalam format PDF melalui WhatsApp</p>
+                <p><strong>Waktu Proses:</strong> Biasanya membutuhkan waktu 1–2 hari kerja</p>
+                <p><strong>Notifikasi:</strong> Kami akan menghubungi Anda jika ada hal yang perlu dikonfirmasi</p>
+                <p><strong>Kerahasiaan:</strong> Data pribadi Anda akan tetap aman dan tidak disebarkan</p>
             </div>
 
             <div class="btn-box">
-                <center><a href="{{ url('/') }}" class="theme-btn btn-one">Kembali Keberanda</a></center>
+                <center><a href="{{ url('/') }}" class="theme-btn btn-one">Kembali ke Beranda</a></center>
             </div>
         </div>
-
-
-        <!-- clients-style-two -->
-        {{-- <section class="clients-style-two centred pt_110 pb_120">
-            <div class="auto-container">
-                <div class="title-text">
-                    <h3>Trusted by the next-gen industry leaders</h3>
-                </div>
-                <div class="clients-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
-                    <figure class="clients-logo"><a href="index-2.html"><img src="assets/images/clients/clients-6.png"
-                                alt=""></a></figure>
-                    <figure class="clients-logo"><a href="index-2.html"><img src="assets/images/clients/clients-7.png"
-                                alt=""></a></figure>
-                    <figure class="clients-logo"><a href="index-2.html"><img
-                                src="assets/images/clients/clients-8.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="index-2.html"><img
-                                src="assets/images/clients/clients-9.png" alt=""></a></figure>
-                    <figure class="clients-logo"><a href="index-2.html"><img
-                                src="assets/images/clients/clients-10.png" alt=""></a></figure>
-                </div>
-            </div>
-        </section> --}}
-        <!-- clients-style-two end -->
-
-
-        <!-- testimonial-style-three -->
-        {{-- <section class="testimonial-style-three pb_120">
-            <div class="auto-container">
-                <div class="inner-container">
-                    <div class="shape">
-                        <div class="shape-1"></div>
-                        <div class="shape-2"></div>
-                    </div>
-                    <div class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
-                        <div class="testimonial-block">
-                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-5.png"
-                                    alt=""></figure>
-                            <div class="content-box">
-                                <div class="icon-box"><i class="icon-36"></i></div>
-                                <h2>Company was impressed by the personal approach of their recruitment team for the
-                                    improvement. They kept informed at every stage of the task.</h2>
-                                <h3>Franklin Bailey</h3>
-                                <span class="designation">CEO, JobAway</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-block">
-                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-5.png"
-                                    alt=""></figure>
-                            <div class="content-box">
-                                <div class="icon-box"><i class="icon-36"></i></div>
-                                <h2>Company was impressed by the personal approach of their recruitment team for the
-                                    improvement. They kept informed at every stage of the task.</h2>
-                                <h3>Franklin Bailey</h3>
-                                <span class="designation">CEO, JobAway</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-block">
-                            <figure class="thumb-box"><img src="assets/images/resource/testimonial-5.png"
-                                    alt=""></figure>
-                            <div class="content-box">
-                                <div class="icon-box"><i class="icon-36"></i></div>
-                                <h2>Company was impressed by the personal approach of their recruitment team for the
-                                    improvement. They kept informed at every stage of the task.</h2>
-                                <h3>Franklin Bailey</h3>
-                                <span class="designation">CEO, JobAway</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-        <!-- testimonial-style-three end -->
-
 
         <!-- subscribe-style-two -->
 

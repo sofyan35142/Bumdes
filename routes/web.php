@@ -53,7 +53,7 @@ Route::get('/FormTestimonial', [home::class, 'FormTestimonial'])->name('FormTest
 Route::get('/detailunggulan/{id}', [home::class, 'detailunggulan'])->name('home.detailunggulan');
 Route::get('/listunggulan', [home::class, 'listunggulan'])->name('home.listunggulan');
 Route::post('/admin/testimonial/store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
-Route::get('/sukses', [home::class, 'testimoni'])->name('home.testimoni');
+Route::get('/testimonialsukses', [home::class, 'testimoni'])->name('home.testimoni');
 
 // --- Blog
 Route::get('/blog', [Blog::class, 'blog'])->name('blog');
