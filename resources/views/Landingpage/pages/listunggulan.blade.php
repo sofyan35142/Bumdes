@@ -90,15 +90,15 @@
                                 data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="/detailunggulan/{{ $unggulan->id }}"><img
+                                        <figure class="image"><a href="{{ route('home.detailunggulan', $unggulan->id) }}"><img
                                                     src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
                                                     alt=""></a></figure>
-                                        <figure class="overlay-image"><a href="/detailunggulan/{{ $unggulan->id }}"><img
+                                        <figure class="overlay-image"><a href="{{ route('home.detailunggulan', $unggulan->id) }}"><img
                                                     src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
                                                     alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
-                                        <h3><a href="/detailunggulan/{{ $unggulan->id }}">{{ $unggulan->nama_layanan }}</a></h3>
+                                        <h3><a href="{{ route('home.detailunggulan', $unggulan->id) }}">{{ $unggulan->nama_layanan }}</a></h3>
                                         <div
                                             style="
         display: -webkit-box;
@@ -109,7 +109,7 @@
     ">
                                             {{ \Illuminate\Support\Str::limit(strip_tags($unggulan->deskripsi), 500, '...') }}
                                         </div>
-                                        <div class="btn-box"><a href="/detailunggulan/{{ $unggulan->id }}"
+                                        <div class="btn-box"><a href="{{ route('home.detailunggulan', $unggulan->id) }}"
                                                 class="theme-btn btn-one">View
                                                 Details</a></div>
                                     </div>

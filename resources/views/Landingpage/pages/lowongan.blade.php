@@ -88,15 +88,15 @@
                                 data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="/pages/lowongan/detail/{{ $lowongan->id }}"><img
+                                        <figure class="image"><a href="{{ route('pages.lowongandetail', $lowongan->id) }}"><img
                                                     src="{{ asset('poster_lowongan/' . $lowongan->poster_lowongan) }}"
                                                     alt="" ></a></figure>
-                                        <figure class="overlay-image"><a href="/pages/lowongan/detail/{{ $lowongan->id }}"><img
+                                        <figure class="overlay-image"><a href="{{ route('pages.lowongandetail', $lowongan->id) }}"><img
                                                     src="{{ asset('poster_lowongan/' . $lowongan->poster_lowongan) }}"
                                                     alt="" ></a></figure>
                                     </div>
                                     <div class="lower-content">
-                                        <h3><a href="/pages/lowongan/detail/{{ $lowongan->id }}">{{ $lowongan->judul_lowongan }}</a></h3>
+                                        <h3><a href="{{ route('pages.lowongandetail', $lowongan->id) }}">{{ $lowongan->judul_lowongan }}</a></h3>
                                         <div
                                             style="
         display: -webkit-box;
@@ -107,7 +107,7 @@
     ">
                                             {{ \Illuminate\Support\Str::limit(strip_tags($lowongan->deskripsi), 500, '...') }}
                                         </div>
-                                        <div class="btn-box"><a href="/pages/lowongan/detail/{{ $lowongan->id }}"
+                                        <div class="btn-box"><a href="{{ route('pages.lowongandetail', $lowongan->id) }}"
                                                 class="theme-btn btn-one">View
                                                 Details</a></div>
                                     </div>

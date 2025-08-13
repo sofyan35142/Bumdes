@@ -6,9 +6,9 @@ use App\Http\Controllers\Admin\Beranda;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\Admin\dasarHukumController;
-use App\Http\Controllers\admin\GaleryController;
+use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\Admin\StrukturOrganisasiController;
-use App\Http\Controllers\Admin\VisiMisi;
+use App\Http\Controllers\Admin\visiMisi;
 use App\Http\Controllers\Landingpage\Blog;
 use App\Http\Controllers\Landingpage\home;
 use App\Http\Controllers\Landingpage\Apdes;
@@ -21,7 +21,7 @@ use App\Http\Controllers\Landingpage\LayananController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MediaPartnerController;
 use App\Http\Controllers\Admin\Testimonial;
-use App\Http\Controllers\Admin\InformasiKontak;
+use App\Http\Controllers\Admin\informasiKontak;
 use App\Http\Controllers\LowonganPekerjaan;
 use App\Http\Controllers\Admin\IndustryAdmin as IndustryController;
 use App\Http\Controllers\TestimonialController;
@@ -103,9 +103,9 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/profile/update', [ProfileController::class, 'update'])->name('admin.profile.update');
 
     // Visi Misi
-    Route::get('/admin/visi-misi', [VisiMisi::class, 'index'])->name('admin.visiMisi');
-    Route::get('/admin/visi-misi/edit', [VisiMisi::class, 'editForm'])->name('admin.visi_misi.edit');
-    Route::put('/admin/visi-misi/update', [VisiMisi::class, 'update'])->name('admin.visi_misi.update');
+    Route::get('/admin/visi-misi', [visiMisi::class, 'index'])->name('admin.visiMisi');
+    Route::get('/admin/visi-misi/edit', [visiMisi::class, 'editForm'])->name('admin.visi_misi.edit');
+    Route::put('/admin/visi-misi/update', [visiMisi::class, 'update'])->name('admin.visi_misi.update');
 
     // Struktur Organisasi
     Route::get('/admin/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('admin.struktur.index');
@@ -206,9 +206,9 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('admin/jenis-layanan/{id}', [JenisLayananController::class, 'destroy'])->name('admin.jenisLayanan.destroy');
 
     // Contact
-    Route::get('/admin/contact', [InformasiKontak::class, 'index'])->name('admin.contact.index');
-    Route::get('/admin/contact/edit', [InformasiKontak::class, 'edit'])->name('admin.contact.edit');
-    Route::put('/admin/contact', [InformasiKontak::class, 'update'])->name('admin.contact.update');
+    Route::get('/admin/contact', [informasiKontak::class, 'index'])->name('admin.contact.index');
+    Route::get('/admin/contact/edit', [informasiKontak::class, 'edit'])->name('admin.contact.edit');
+    Route::put('/admin/contact', [informasiKontak::class, 'update'])->name('admin.contact.update');
 
     // Alasan
     Route::get('/admin/alasan', [Alasan::class, 'index'])->name('admin.alasan.index');

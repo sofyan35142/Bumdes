@@ -51,7 +51,7 @@
                                     <h4 class="card-title">Input Data Kegiatan Baru</h4> <br>
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
-                                    <form method="post" action="/admin/insertkegiatan" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('admin.insertkegiatan') }}" enctype="multipart/form-data">
                                         @csrf
 
                                         {{-- ALERT GLOBAL ERROR --}}

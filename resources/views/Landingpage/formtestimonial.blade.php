@@ -67,7 +67,7 @@
                         kegiatan kami. <br />Testimoni Anda akan membantu kami untuk terus berkembang dan memberikan
                         yang terbaik.</p>
                 </div>
-                <form id="testimonialForm" method="post" action="/admin/testimonial/store"
+                <form id="testimonialForm" method="post" action="{{ route('admin.testimonial.store') }}"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="row clearfix">
@@ -89,13 +89,19 @@
                                     </div>
 
                                     {{-- Nomor Telepon --}}
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="number" name="nomor_telepone" placeholder="Nomor Telepon"
-                                            value="{{ old('nomor_telepone') }}">
-                                        @error('nomor_telepone')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
+                                   <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+    <input type="tel"
+           name="nomor_telepone"
+           placeholder="Nomor Telepon"
+           value="{{ old('nomor_telepone') }}"
+           oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,13)"
+           pattern="[0-9]{10,13}"
+           required>
+    @error('nomor_telepone')
+        <small class="text-danger">{{ $message }}</small>
+    @enderror
+</div>
+
 
                                     {{-- Keterangan --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
@@ -165,8 +171,7 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
                             <div class="testimonial-block-one">
                                 <div class="inner-box">
-                                    <div class="shape"
-                                        style="background-image: url(assets/images/shape/shape-7.png);">
+                                    <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
                                     </div>
                                     <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
                                     </div>
@@ -193,73 +198,73 @@
                     <h3 class="title-animation">Supported By</h3>
                 </div>
                 {{-- @foreach ($support as $support) --}}
-                    <div class="inner-box">
-                        <div class="clients-slider-wrapper">
-                            <style>
-                                .clients-slider-wrapper {
-                                    overflow: hidden;
-                                    width: 100%;
-                                    position: relative;
+                <div class="inner-box">
+                    <div class="clients-slider-wrapper">
+                        <style>
+                            .clients-slider-wrapper {
+                                overflow: hidden;
+                                width: 100%;
+                                position: relative;
+                            }
+
+                            .clients-slider {
+                                display: flex;
+                                align-items: center;
+                                gap: 40px;
+                                animation: scrollLeft 30s linear infinite;
+                            }
+
+                            .clients-box {
+                                flex: 0 0 auto;
+                                width: 220px;
+                                height: 130px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: #fff;
+                                border-radius: 12px;
+                                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                                padding: 10px;
+                            }
+
+                            .clients-logo img,
+                            .overlay-logo img {
+                                max-width: 100%;
+                                max-height: 100px;
+                                object-fit: contain;
+                                transition: transform 0.3s ease;
+                            }
+
+                            .clients-box:hover img {
+                                transform: scale(1.1);
+                            }
+
+                            @keyframes scrollLeft {
+                                0% {
+                                    transform: translateX(0);
                                 }
 
-                                .clients-slider {
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 40px;
-                                    animation: scrollLeft 30s linear infinite;
+                                100% {
+                                    transform: translateX(-50%);
                                 }
+                            }
 
+                            @media (max-width: 768px) {
                                 .clients-box {
-                                    flex: 0 0 auto;
-                                    width: 220px;
-                                    height: 130px;
-                                    display: flex;
-                                    flex-direction: column;
-                                    justify-content: center;
-                                    align-items: center;
-                                    background-color: #fff;
-                                    border-radius: 12px;
-                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                                    padding: 10px;
+                                    width: 160px;
+                                    height: 100px;
                                 }
 
                                 .clients-logo img,
                                 .overlay-logo img {
-                                    max-width: 100%;
-                                    max-height: 100px;
-                                    object-fit: contain;
-                                    transition: transform 0.3s ease;
+                                    max-height: 80px;
                                 }
+                            }
+                        </style>
 
-                                .clients-box:hover img {
-                                    transform: scale(1.1);
-                                }
-
-                                @keyframes scrollLeft {
-                                    0% {
-                                        transform: translateX(0);
-                                    }
-
-                                    100% {
-                                        transform: translateX(-50%);
-                                    }
-                                }
-
-                                @media (max-width: 768px) {
-                                    .clients-box {
-                                        width: 160px;
-                                        height: 100px;
-                                    }
-
-                                    .clients-logo img,
-                                    .overlay-logo img {
-                                        max-height: 80px;
-                                    }
-                                }
-                            </style>
-
-                            <div class="clients-slider">
-                                {{-- @foreach ($support->take(5) as $support)
+                        <div class="clients-slider">
+                            {{-- @foreach ($support->take(5) as $support)
                                     <div class="clients-box">
                                         <figure class="clients-logo">
                                             <a href="#">
@@ -276,27 +281,27 @@
                                     </div>
                                 @endforeach --}}
 
-                                {{-- Duplikat isi agar animasi tidak putus --}}
-                                @foreach ($support->take(5) as $support)
-                                    <div class="clients-box">
-                                        <figure class="clients-logo">
-                                            <a href="#">
-                                                <img src="{{ asset('Media Partner/' . $support->Logo_Media) }}"
-                                                    alt="">
-                                            </a>
-                                        </figure>
-                                        <figure class="overlay-logo">
-                                            <a href="#">
-                                                <img src="{{ asset('Media Partner/' . $support->Logo_Media) }}"
-                                                    alt="">
-                                            </a>
-                                        </figure>
-                                    </div>
-                                @endforeach
-                            </div>
+                            {{-- Duplikat isi agar animasi tidak putus --}}
+                            @foreach ($support->take(5) as $support)
+                                <div class="clients-box">
+                                    <figure class="clients-logo">
+                                        <a href="#">
+                                            <img src="{{ asset('Media Partner/' . $support->Logo_Media) }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                    <figure class="overlay-logo">
+                                        <a href="#">
+                                            <img src="{{ asset('Media Partner/' . $support->Logo_Media) }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                            @endforeach
                         </div>
-                {{-- @endforeach --}}
-            </div>
+                    </div>
+                    {{-- @endforeach --}}
+                </div>
         </section>
         <!-- clients-section end -->
 
@@ -380,7 +385,7 @@
                         }
                     } else if (response.ok) {
                         // Sukses → pindah ke halaman sukses
-                        window.location.href = '/sukses';
+                        window.location.href = "{{ route('home.testimoni') }}";
                     } else {
                         alert('Gagal mengirim data.');
                     }
