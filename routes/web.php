@@ -52,6 +52,7 @@ Route::get('/', [home::class, 'home'])->name('home');
 Route::get('/FormTestimonial', [home::class, 'FormTestimonial'])->name('FormTestimonial');
 Route::get('/detailunggulan/{id}', [home::class, 'detailunggulan'])->name('home.detailunggulan');
 Route::get('/listunggulan', [home::class, 'listunggulan'])->name('home.listunggulan');
+Route::post('/admin/testimonial/store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
 Route::get('/sukses', [home::class, 'testimoni'])->name('home.testimoni');
 
 // --- Blog
@@ -174,7 +175,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Testimonial
     Route::get('/admin/testimonial/create', [TestimonialController::class, 'create'])->name('admin.testimonial.create');
-    Route::post('/admin/testimonial/store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
+
     Route::get('/admin/testimonial', [TestimonialController::class, 'testimonial'])->name('admin.testimonial.testimonial');
     Route::get('/admin/testimonial/accept/{id}', [TestimonialController::class, 'accept'])->name('admin.testimonial.accept');
     Route::get('/admin/testimonial/reject/{id}', [TestimonialController::class, 'reject'])->name('admin.testimonial.reject');
