@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
             statistik::class,
             StrukturOrganisasi::class,
             DasarHukumSeeder::class,
-            bookPanduanSeeder::class,
+            // bookPanduanSeeder::class,
             kategori::class,
             LayananUnggulan::class,
             kegiatanseeder::class,
