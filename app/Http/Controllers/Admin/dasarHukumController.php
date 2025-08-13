@@ -33,32 +33,39 @@ class DasarHukumController extends Controller
         return view('AdminPage.dasarHukum.edit', compact('data'));
     }
 
-
     public function update(Request $request)
     {
-
-        // dd($request->all());
         $request->validate([
             'points' => 'nullable|array',
             'points.*.title' => 'nullable|string',
             'points.*.body' => 'nullable|string',
 
             'gambar_samping' => 'nullable|image|max:2048',
-
             'judul' => 'nullable|string',
             'sertifikat_list' => 'nullable|string',
-
             'gambar_buku' => 'nullable|image|max:2048',
             'sertifikat_file' => 'nullable|file|mimes:pdf|max:5120',
         ]);
 
         $data = DasarHukum::first();
 
+        // Tentukan path dinamis (lokal vs hosting)
+        if (app()->environment('local')) {
+            $destinationPath = public_path('dasarhukum');
+        } else {
+            $destinationPath = base_path('../public_html/dasarhukum');
+        }
+
+        // Pastikan folder ada
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0755, true);
+        }
+
         // Upload gambar_samping
         if ($request->hasFile('gambar_samping')) {
             $file = $request->file('gambar_samping');
             $filename = $file->getClientOriginalName();
-            $file->move(public_path('dasarhukum'), $filename);
+            $file->move($destinationPath, $filename);
             $data->gambar_samping = 'dasarhukum/' . $filename;
         }
 
@@ -66,7 +73,7 @@ class DasarHukumController extends Controller
         if ($request->hasFile('gambar_buku')) {
             $file = $request->file('gambar_buku');
             $filename = $file->getClientOriginalName();
-            $file->move(public_path('dasarhukum'), $filename);
+            $file->move($destinationPath, $filename);
             $data->gambar_buku = 'dasarhukum/' . $filename;
         }
 
@@ -74,7 +81,7 @@ class DasarHukumController extends Controller
         if ($request->hasFile('sertifikat_file')) {
             $file = $request->file('sertifikat_file');
             $filename = $file->getClientOriginalName();
-            $file->move(public_path('dasarhukum'), $filename);
+            $file->move($destinationPath, $filename);
             $data->sertifikat_file = 'dasarhukum/' . $filename;
         }
 
@@ -87,6 +94,7 @@ class DasarHukumController extends Controller
             'gambar_buku' => $data->gambar_buku,
             'sertifikat_file' => $data->sertifikat_file,
         ]);
+
         return redirect('/admin/dasar-hukum')->with('success', 'Dasar Hukum berhasil diperbarui!');
     }
 }

@@ -5,14 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\StrukturOrganisasi;
-use Illuminate\Support\Facades\File; // Atau use Storage jika pakai Storage facade
+use Illuminate\Support\Facades\File;
 
 class StrukturOrganisasiController extends Controller
 {
     public function index()
     {
         $data = StrukturOrganisasi::orderBy('urutan')->get();
-        // dd($data);
         return view('AdminPage.struktur.index', compact('data'));
     }
 
@@ -33,17 +32,25 @@ class StrukturOrganisasiController extends Controller
         $path = null;
 
         if ($request->hasFile('foto')) {
-            $file = $request->file('foto');
-            $filename = $file->getClientOriginalName(); // tidak di-hash
-            $destinationPath = public_path('struktur');
+            // Path dinamis
+            if (app()->environment('local')) {
+                $destinationPath = public_path('struktur');
+                $publicBasePath = public_path();
+            } else {
+                $destinationPath = base_path('../public_html/struktur');
+                $publicBasePath = base_path('../public_html');
+            }
 
-            // pastikan folder public/struktur ada
+            // Pastikan folder ada
             if (!file_exists($destinationPath)) {
                 mkdir($destinationPath, 0755, true);
             }
 
+            $file = $request->file('foto');
+            $filename = $file->getClientOriginalName();
             $file->move($destinationPath, $filename);
-            $path = 'struktur/' . $filename; // ini akan disimpan di database
+
+            $path = 'struktur/' . $filename;
         }
 
         StrukturOrganisasi::create([
@@ -55,7 +62,6 @@ class StrukturOrganisasiController extends Controller
 
         return redirect()->route('admin.struktur.index')->with('success', 'Data berhasil ditambahkan');
     }
-
 
     public function edit($id)
     {
@@ -76,16 +82,25 @@ class StrukturOrganisasiController extends Controller
 
         $fotoLama = $data->foto;
 
+        // Path dinamis
+        if (app()->environment('local')) {
+            $destinationPath = public_path('struktur');
+            $publicBasePath = public_path();
+        } else {
+            $destinationPath = base_path('../public_html/struktur');
+            $publicBasePath = base_path('../public_html');
+        }
+
         if ($request->hasFile('foto')) {
-            // Hapus foto lama kalau ada
-            if ($fotoLama && file_exists(public_path($fotoLama))) {
-                unlink(public_path($fotoLama));
+            // Hapus foto lama
+            if ($fotoLama && file_exists($publicBasePath . '/' . $fotoLama)) {
+                unlink($publicBasePath . '/' . $fotoLama);
             }
 
-            // Simpan foto baru ke public/struktur
+            // Simpan foto baru
             $file = $request->file('foto');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('struktur'), $filename);
+            $file->move($destinationPath, $filename);
             $pathBaru = 'struktur/' . $filename;
         } else {
             $pathBaru = $fotoLama;
@@ -106,9 +121,16 @@ class StrukturOrganisasiController extends Controller
         try {
             $data = StrukturOrganisasi::findOrFail($id);
 
+            // Path dinamis
+            if (app()->environment('local')) {
+                $publicBasePath = public_path();
+            } else {
+                $publicBasePath = base_path('../public_html');
+            }
+
             // Hapus file jika ada
-            if ($data->foto && File::exists(public_path($data->foto))) {
-                File::delete(public_path($data->foto));
+            if ($data->foto && file_exists($publicBasePath . '/' . $data->foto)) {
+                unlink($publicBasePath . '/' . $data->foto);
             }
 
             // Hapus dari database

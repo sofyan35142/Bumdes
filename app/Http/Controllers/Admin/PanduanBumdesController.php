@@ -36,6 +36,8 @@ class PanduanBumdesController extends Controller
             'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
+        
+
         $fileEbook = $data->file_ebook;
         $gambar = $data->gambar;
 

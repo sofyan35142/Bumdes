@@ -36,8 +36,14 @@ class visiMisi extends Controller
 
         $data = VisiMisiModel::first();
 
-        // Lokasi folder upload di luar Laravel
-        $uploadPath = base_path('../public_html/visimisi');
+        // Tentukan lokasi upload berdasarkan environment
+        if (app()->environment('local')) {
+            $uploadPath = public_path('visimisi'); // Lokal → public Laravel
+            $publicBasePath = public_path(); // Base path untuk unlink
+        } else {
+            $uploadPath = base_path('../public_html/visimisi'); // Hosting → public_html
+            $publicBasePath = base_path('../public_html'); // Base path untuk unlink
+        }
 
         // Buat folder jika belum ada
         if (!file_exists($uploadPath)) {
@@ -46,11 +52,9 @@ class visiMisi extends Controller
 
         // Upload gambar visi misi
         if ($request->hasFile('gambar_visi_misi')) {
-            // Hapus file lama jika ada
-            if (!empty($data->gambar_visi_misi) && file_exists(base_path('../public_html/' . $data->gambar_visi_misi))) {
-                unlink(base_path('../public_html/' . $data->gambar_visi_misi));
+            if (!empty($data->gambar_visi_misi) && file_exists($publicBasePath . '/' . $data->gambar_visi_misi)) {
+                unlink($publicBasePath . '/' . $data->gambar_visi_misi);
             }
-
             $file = $request->file('gambar_visi_misi');
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move($uploadPath, $filename);
@@ -59,10 +63,9 @@ class visiMisi extends Controller
 
         // Upload gambar panduan
         if ($request->hasFile('gambar_panduan')) {
-            if (!empty($data->gambar_panduan) && file_exists(base_path('../public_html/' . $data->gambar_panduan))) {
-                unlink(base_path('../public_html/' . $data->gambar_panduan));
+            if (!empty($data->gambar_panduan) && file_exists($publicBasePath . '/' . $data->gambar_panduan)) {
+                unlink($publicBasePath . '/' . $data->gambar_panduan);
             }
-
             $file = $request->file('gambar_panduan');
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move($uploadPath, $filename);
@@ -71,10 +74,9 @@ class visiMisi extends Controller
 
         // Upload file panduan
         if ($request->hasFile('file_panduan')) {
-            if (!empty($data->file_panduan) && file_exists(base_path('../public_html/' . $data->file_panduan))) {
-                unlink(base_path('../public_html/' . $data->file_panduan));
+            if (!empty($data->file_panduan) && file_exists($publicBasePath . '/' . $data->file_panduan)) {
+                unlink($publicBasePath . '/' . $data->file_panduan);
             }
-
             $file = $request->file('file_panduan');
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move($uploadPath, $filename);
