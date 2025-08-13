@@ -17,42 +17,10 @@
 
 
         <!-- page-direction -->
-<<<<<<< HEAD
-
-=======
->>>>>>> 3849ea63a9e180d074c01ce62fd0f38b6af3f63a
         <!-- page-direction end -->
 
 
         <!--Search Popup-->
-<<<<<<< HEAD
-
-=======
-        {{-- <div id="search-popup" class="search-popup">
-            <div class="popup-inner">
-                <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img
-                                src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png" alt=""></a>
-                    </figure>
-                    <div class="close-search"><span class="icon-27"></span></div>
-                </div>
-                <div class="overlay-layer"></div>
-                <div class="auto-container">
-                    <div class="search-form">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/index.html">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value=""
-                                        placeholder="Type your keyword and hit" required>
-                                    <button type="submit"><i class="icon-1"></i></button>
-                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
->>>>>>> 3849ea63a9e180d074c01ce62fd0f38b6af3f63a
 
 
         <!-- main header -->
