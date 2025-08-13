@@ -26,7 +26,7 @@
 
         <!--Search Popup-->
 <<<<<<< HEAD
-        
+
 =======
         {{-- <div id="search-popup" class="search-popup">
             <div class="popup-inner">
@@ -97,140 +97,6 @@
                         </ul>
                     </div>
                     <div class="items-container row clearfix">
-<<<<<<< HEAD
-                        <div
-                            class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all consulting presentation technology">
-                            <div class="portfolio-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/portfolio/portfolio-1.jpg"
-                                            alt=""></figure>
-                                    <div class="content-box">
-                                        <span>Consulting</span>
-                                        <h3><a href="portfolio.html">Consulting Excellence Portfolio</a></h3>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all market recruitment">
-                            <div class="portfolio-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/portfolio/portfolio-2.jpg"
-                                            alt=""></figure>
-                                    <div class="content-box">
-                                        <span>Consulting</span>
-                                        <h3><a href="portfolio.html">Create a series of blog posts discussing</a></h3>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all consulting presentation technology">
-                            <div class="portfolio-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/portfolio/portfolio-3.jpg"
-                                            alt=""></figure>
-                                    <div class="content-box">
-                                        <span>Consulting</span>
-                                        <h3><a href="portfolio.html">Explore the concept of personal</a></h3>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all market recruitment technology">
-                            <div class="portfolio-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/portfolio/portfolio-4.jpg"
-                                            alt=""></figure>
-                                    <div class="content-box">
-                                        <span>Consulting</span>
-                                        <h3><a href="portfolio.html">Share stories of employees who have</a></h3>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all consulting presentation">
-                            <div class="portfolio-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/portfolio/portfolio-5.jpg"
-                                            alt=""></figure>
-                                    <div class="content-box">
-                                        <span>Consulting</span>
-                                        <h3><a href="portfolio.html">Provide guidance on crafting effective</a></h3>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all market recruitment technology">
-                            <div class="portfolio-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/portfolio/portfolio-6.jpg"
-                                            alt=""></figure>
-                                    <div class="content-box">
-                                        <span>Consulting</span>
-                                        <h3><a href="portfolio.html">Detail any internship or graduate</a></h3>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all consulting presentation technology">
-                            <div class="portfolio-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/portfolio/portfolio-7.jpg"
-                                            alt=""></figure>
-                                    <div class="content-box">
-                                        <span>Consulting</span>
-                                        <h3><a href="portfolio.html">Use relevant keywords to improve</a></h3>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all market recruitment">
-                            <div class="portfolio-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/portfolio/portfolio-8.jpg"
-                                            alt=""></figure>
-                                    <div class="content-box">
-                                        <span>Consulting</span>
-                                        <h3><a href="portfolio.html">Explore the concept of personal branding</a></h3>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all consulting presentation technology">
-                            <div class="portfolio-block-one">
-                                <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="http://127.0.0.1:8000/LandingPage/assets/images/portfolio/portfolio-9.jpg"
-                                            alt=""></figure>
-                                    <div class="content-box">
-                                        <span>Consulting</span>
-                                        <h3><a href="portfolio.html">Share stories of employees who have</a></h3>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-=======
                         @foreach ($galeri as $item)
                             <div
                                 class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all
@@ -278,7 +144,6 @@
                                 </div>
                             </div>
                         @endforeach
->>>>>>> 3849ea63a9e180d074c01ce62fd0f38b6af3f63a
                     </div>
                 </div>
                 <div class="pagination-wrapper pt_20">
