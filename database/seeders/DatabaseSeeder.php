@@ -8,20 +8,20 @@ use App\Models\User;
 
 // Seeder lainnya
 use Database\Seeders\SambutanDirek;
-use Database\Seeders\SliderSeed;
+use Database\Seeders\sliderseed;
 use Database\Seeders\VisiMisiSeeder;
-use Database\Seeders\Statistik;
+use Database\Seeders\statistik;
 use Database\Seeders\StrukturOrganisasi;
 use Database\Seeders\DasarHukumSeeder;
 // Seeder tambahan yang dipanggil tapi belum diimport
 use Database\Seeders\BookPanduanSeeder;
-use Database\Seeders\Kategori;
+use Database\Seeders\kategori;
 use Database\Seeders\LayananUnggulan;
-use Database\Seeders\KegiatanSeeder;
+use Database\Seeders\kegiatanseeder;
 use Database\Seeders\InformasiKontakSeeder;
 use Database\Seeders\AlasanMemilihBumdesSeeder;
 use Database\Seeders\Testimonial;
-use Database\Seeders\LowonganSeeder;
+use Database\Seeders\lowonganseeder;
 use Database\Seeders\MediaPartnerSeeder;
 use Database\Seeders\IndustrySeeder;
 use Database\Seeders\JenisLayananSeeder;
@@ -65,19 +65,19 @@ class DatabaseSeeder extends Seeder
         // Memanggil seeder-seeder tambahan
         $this->call([
             SambutanDirek::class,
-            SliderSeed::class,
+            sliderseed::class,
             VisiMisiSeeder::class,
-            Statistik::class,
+            statistik::class,
             StrukturOrganisasi::class,
             DasarHukumSeeder::class,
             bookPanduanSeeder::class,
-            Kategori::class,
+            kategori::class,
             LayananUnggulan::class,
-            KegiatanSeeder::class,
+            kegiatanseeder::class,
             InformasiKontakSeeder::class,
             AlasanMemilihBumdesSeeder::class,
             Testimonial::class,
-            LowonganSeeder::class,
+            lowonganseeder::class,
             MediaPartnerSeeder::class,
             IndustrySeeder::class,
             JenisLayananSeeder::class,
