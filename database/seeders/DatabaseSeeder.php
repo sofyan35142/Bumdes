@@ -13,6 +13,19 @@ use Database\Seeders\VisiMisiSeeder;
 use Database\Seeders\Statistik;
 use Database\Seeders\StrukturOrganisasi;
 use Database\Seeders\DasarHukumSeeder;
+// Seeder tambahan yang dipanggil tapi belum diimport
+use Database\Seeders\BookPanduanSeeder;
+use Database\Seeders\Kategori;
+use Database\Seeders\LayananUnggulan;
+use Database\Seeders\KegiatanSeeder;
+use Database\Seeders\InformasiKontakSeeder;
+use Database\Seeders\AlasanMemilihBumdesSeeder;
+use Database\Seeders\Testimonial;
+use Database\Seeders\LowonganSeeder;
+use Database\Seeders\MediaPartnerSeeder;
+use Database\Seeders\IndustrySeeder;
+use Database\Seeders\JenisLayananSeeder;
+use Database\Seeders\TentangBumdes;
 
 class DatabaseSeeder extends Seeder
 {
@@ -52,9 +65,9 @@ class DatabaseSeeder extends Seeder
         // Memanggil seeder-seeder tambahan
         $this->call([
             SambutanDirek::class,
-            // SliderSeed::class,
+            SliderSeed::class,
             VisiMisiSeeder::class,
-            // Statistik::class,
+            Statistik::class,
             StrukturOrganisasi::class,
             DasarHukumSeeder::class,
             bookPanduanSeeder::class,
