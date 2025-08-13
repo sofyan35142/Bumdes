@@ -52,7 +52,7 @@
 
                                     @if ($data)
                                         {{-- Tombol Edit --}}
-                                        <a href="{{ url('/admin/editsambutan/' . $data->id) }}">
+                                        <a href="{{ route('admin.editsambutan', $data->id) }}">
                                             <button class="btn btn-primary mb-3">
                                                 <i class="fa-solid fa-pen-to-square"></i> Edit Sambutan
                                             </button>

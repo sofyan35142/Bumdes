@@ -52,7 +52,7 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="/admin/insertgalery" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('admin.insertgalery') }}" enctype="multipart/form-data">
                                         @csrf
 
                                         {{-- Pilih tipe --}}

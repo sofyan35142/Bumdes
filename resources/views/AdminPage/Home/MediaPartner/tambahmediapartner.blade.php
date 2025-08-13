@@ -49,7 +49,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Example</h4>
-                                    <form class="repeater" method="post" action="/admin/insertmediapartner"
+                                    <form class="repeater" method="post" action="{{ route('admin.insertmediapartner') }}"
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div data-repeater-list="group-a">

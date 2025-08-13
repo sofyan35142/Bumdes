@@ -49,7 +49,7 @@
                                     <h4 class="card-title">Data Layanan Unggulan BUMDes Pakukerto</h4>
 
                                     <!-- Tombol Tambah Data -->
-                                    <a href="/admin/tambahunggulan">
+                                    <a href="{{ route('admin.tambahunggulan') }}">
                                         <button class="btn btn-primary mb-3">Tambah Layanan Unggulan</button>
                                     </a>
 
@@ -82,7 +82,7 @@
                                                 </td>
                                                 <td>
                                                     <!-- Tombol Edit -->
-                                                    <a href="/admin/editunggulan/{{ $item->id }}"
+                                                    <a href="{{ route('admin.editunggulan', $item->id) }}"
                                                         class="btn btn-warning">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </a>

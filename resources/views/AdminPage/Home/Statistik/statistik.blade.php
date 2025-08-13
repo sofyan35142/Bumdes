@@ -73,7 +73,7 @@
                                                     <td>{{ $item->Unit_Usaha }}</td>
                                                     <td>{{ $item->Produk_Desa }}</td>
                                                     <td>
-                                                        <a href="{{ url('/admin/editstatistik/' . $item->id) }}"
+                                                        <a href="{{ route('admin.editstatistik', $item->id) }}"
                                                             class="btn btn-warning">
                                                             <i class="fa-solid fa-pen-to-square"></i> Edit
                                                         </a>

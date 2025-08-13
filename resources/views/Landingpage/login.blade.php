@@ -38,7 +38,7 @@
                 @endif
 
 
-                <form action="/admin/postsignin" method="POST">
+                <form action="{{ route('admin.postsignin') }}" method="POST">
                     @csrf
                     <!-- Email -->
                     <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #555;">Email *</label>

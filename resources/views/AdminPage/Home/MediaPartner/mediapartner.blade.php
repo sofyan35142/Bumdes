@@ -50,7 +50,7 @@
 
                                     <!-- Tombol Tambah Data -->
                                     <div class="mb-3">
-                                        <a href="/admin/tambahmediapartner" class="btn btn-primary">
+                                        <a href="{{ route('admin.tambahmediapartner') }}" class="btn btn-primary">
                                             <i class="fa-solid fa-plus me-1"></i> Tambah Media Partner
                                         </a>
                                     </div>
@@ -82,7 +82,7 @@
                                                     </td>
                                                     <td>
                                                         <!-- Tombol Edit -->
-                                                        <a href="/admin/editmediapartner/{{ $item->id }}"
+                                                        <a href="{{ route('admin.editmediapartner', $item->id) }}"
                                                             class="btn btn-warning">
                                                             <i class="fa-solid fa-pen-to-square"></i>
                                                         </a>
