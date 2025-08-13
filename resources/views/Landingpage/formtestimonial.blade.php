@@ -89,19 +89,18 @@
                                     </div>
 
                                     {{-- Nomor Telepon --}}
-<div class="col-lg-6 col-md-6 col-sm-12 form-group">
-    <input type="number"
+                                   <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+    <input type="tel"
            name="nomor_telepone"
            placeholder="Nomor Telepon"
            value="{{ old('nomor_telepone') }}"
-           oninput="this.value = this.value.replace(/[^0-9]/g,'').slice(0,13)"
-           onblur="if(this.value.length < 10){ alert('Nomor telepon minimal 10 digit'); this.focus(); }"
+           oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,13)"
+           pattern="[0-9]{10,13}"
            required>
     @error('nomor_telepone')
         <small class="text-danger">{{ $message }}</small>
     @enderror
 </div>
-
 
 
                                     {{-- Keterangan --}}
