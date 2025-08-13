@@ -32,6 +32,13 @@ class Beranda extends Controller
 
     public function updateslider(Request $request, $id)
     {
+        // Tentukan folder upload di public_html
+        $uploadPath = base_path('public_html/Foto Slider');
+
+        // Buat folder jika belum ada
+        if (!file_exists($uploadPath)) {
+            mkdir($uploadPath, 0755, true);
+        }
         // Validasi input
         $request->validate([
             // Title & Deskripsi wajib diisi, tapi bisa nullable kalau opsional
@@ -71,22 +78,23 @@ class Beranda extends Controller
         $foto3 = $data->foto_slider3;
 
         // Upload jika ada file baru (pakai hash)
+        // Upload jika ada file baru (pakai hash + simpan di public_html)
         if ($request->hasFile('foto_slider1')) {
             $file = $request->file('foto_slider1');
             $foto1 = md5(time() . '_1_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('Foto Slider'), $foto1);
+            $file->move($uploadPath, $foto1);
         }
 
         if ($request->hasFile('foto_slider2')) {
             $file = $request->file('foto_slider2');
             $foto2 = md5(time() . '_2_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('Foto Slider'), $foto2);
+            $file->move($uploadPath, $foto2);
         }
 
         if ($request->hasFile('foto_slider3')) {
             $file = $request->file('foto_slider3');
             $foto3 = md5(time() . '_3_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('Foto Slider'), $foto3);
+            $file->move($uploadPath, $foto3);
         }
 
         // Simpan update ke database
@@ -152,12 +160,13 @@ class Beranda extends Controller
         if ($request->hasFile('foto_direktur')) {
             // Hapus file lama jika ada
             if ($fotodirektur && file_exists(public_path('direktur/' . $fotodirektur))) {
-                unlink(public_path('direktur/' . $fotodirektur));
+                @unlink(public_path('direktur/' . $fotodirektur));
             }
 
-            $posterFile = $request->file('foto_direktur');
-            $fotodirektur = md5(time() . '_' . $posterFile->getClientOriginalName()) . '.' . $posterFile->getClientOriginalExtension();
-            $posterFile->move(public_path('direktur'), $fotodirektur);
+            // Simpan file baru
+            $file = $request->file('foto_direktur');
+            $fotodirektur = md5(uniqid() . '_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('direktur'), $fotodirektur);
         }
 
         // Update data
