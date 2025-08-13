@@ -12,14 +12,12 @@
 
 
         @include('Landingpage.layout.preloader')
-        <div class="page_direction">
-            <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-            <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
-        </div>
+
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img src="http://127.0.0.1:8000/Landingpage/assets/images/logo.png" alt=""></a>
+                    <figure class="logo-box"><a href="index.html"><img
+                                src="http://127.0.0.1:8000/Landingpage/assets/images/logo.png" alt=""></a>
                     </figure>
                     <div class="close-search"><span class="icon-27"></span></div>
                 </div>
@@ -46,7 +44,8 @@
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="http://127.0.0.1:8000/Landingpage/assets/images/logo-2.png" alt=""
+                <div class="nav-logo"><a href="index.html"><img
+                            src="http://127.0.0.1:8000/Landingpage/assets/images/logo-2.png" alt=""
                             title=""></a></div>
                 <div class="menu-outer"></div>
                 <div class="contact-info">
@@ -91,6 +90,7 @@
                                     <h2 class="title-animation">Visi, Misi dan Tujuan BUMDes</h2>
                                 </div>
                                 <ul class="accordion-box">
+                                    <!-- Visi -->
                                     <li class="accordion block active-block">
                                         <div class="acc-btn active">
                                             <div class="icon-box"><i class="icon-21"></i></div>
@@ -98,10 +98,12 @@
                                         </div>
                                         <div class="acc-content current">
                                             <div class="content">
-                                                <p>Menjadi pendorong utama pertumbuhan ekonomi desa dan kesejahteraan masyarakat melalui pengelolaan potensi desa secara profesional, transparan, dan berkelanjutan.</p>
+                                                <p>{{ $data->visi }}</p>
                                             </div>
                                         </div>
                                     </li>
+
+                                    <!-- Misi -->
                                     <li class="accordion block">
                                         <div class="acc-btn">
                                             <div class="icon-box"><i class="icon-21"></i></div>
@@ -109,14 +111,14 @@
                                         </div>
                                         <div class="acc-content">
                                             <div class="content">
-                                                <p>1. Menggali, mengelola, dan mengoptimalkan potensi sumber daya alam dan sumber daya manusia desa untuk kesejahteraan bersama.</p>
-                                                <p>2. Menciptakan dan mengembangkan unit-unit usaha yang inovatif dan relevan dengan kebutuhan masyarakat desa.</p>
-                                                <p>3. Meningkatkan pendapatan asli desa (PADes) untuk mendukung pembangunan desa secara mandiri.</p>
-                                                <p>4. Membuka lapangan pekerjaan baru bagi masyarakat desa guna mengurangi tingkat pengangguran.</p>
-                                                <p>5. Menjadi jembatan antara masyarakat desa dan pasar, serta menjalin kemitraan yang strategis dengan berbagai pihak.</p>
+                                                @foreach ($data->misi as $index => $misi)
+                                                    <p>{{ $index + 1 }}. {{ $misi }}</p>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </li>
+
+                                    <!-- Tujuan -->
                                     <li class="accordion block">
                                         <div class="acc-btn">
                                             <div class="icon-box"><i class="icon-21"></i></div>
@@ -124,10 +126,9 @@
                                         </div>
                                         <div class="acc-content">
                                             <div class="content">
-                                                <p>1. Meningkatkan perekonomian desa dan pendapatan masyarakat desa.</p>
-                                                <p>2. Menjadikan BUMDes sebagai lembaga ekonomi yang solid, profesional, dan berdaya saing.</p>
-                                                <p>3. Memperkuat kapasitas kelembagaan desa dalam mengelola aset dan potensi ekonomi.</p>
-                                                <p>4. Mendorong kemandirian ekonomi desa dan partisipasi aktif masyarakat dalam pembangunan.</p>
+                                                @foreach ($data->tujuan as $index => $tujuan)
+                                                    <p>{{ $index + 1 }}. {{ $tujuan }}</p>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </li>
@@ -135,34 +136,48 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Gambar -->
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image-box ml_70">
-                            <figure class="image image-hov-one"><img src="http://127.0.0.1:8000/visimisi/faq-1.jpg"
-                                    alt=""></figure>
+                            <figure class="image image-hov-one">
+                                <img src="{{ asset($data->gambar_visi_misi) }}" alt="">
+                            </figure>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- download-section -->
         <section class="download-section alternat-3 pb_120">
             <div class="auto-container">
                 <div class="inner-container">
-                    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-20.png);"></div>
+                    <div class="pattern-layer"
+                        style="background-image: url('{{ asset('landingpage/assets/images/shape/shape-20.png') }}');">
+                    </div>
                     <div class="row align-items-center">
                         <div class="col-lg-8 col-md-12 col-sm-12 content-column">
                             <div class="content-box">
-                                <h2>Panduan Praktis Pengelolaan BUMDes yang Sukses dan <span>Berkelanjutan</span></h2>
+                                @php
+                                    $judul = explode(' ', $book->judul, 2);
+                                @endphp
+                                <h2>{{ $judul[0] }}
+                                    @if (isset($judul[1]))
+                                        <span>{{ $judul[1] }}</span>
+                                    @endif
+                                </h2>
                                 <ul class="list-item mb_30">
-                                    <li>Mempelajari langkah-langkah pendirian dan legalitas BUMDes.</li>
-                                    <li>Memahami model bisnis yang efektif dan relevan dengan potensi desa.</li>
-                                    <li>Strategi pemasaran dan pengembangan produk unggulan BUMDes.</li>
+                                    {!! $book->points !!}
                                 </ul>
-                                <button type="button" class="theme-btn btn-one">Unduh Panduan</button>
+                                <a type="button" href="{{ asset($book->file_ebook) }}" download
+                                    class="theme-btn btn-one">Download E-book</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12 image-column">
                             <div class="image-box">
-                                <figure class="image"><img src="http://127.0.0.1:8000/visimisi/book-2.png" alt="">
+                                <figure class="image">
+                                    <img src="{{ asset($book->gambar) }}" alt="">
                                 </figure>
                             </div>
                         </div>
@@ -170,6 +185,7 @@
                 </div>
             </div>
         </section>
+        <!-- download-section end -->
         @include('Landingpage.layout.footer')
         <div class="scroll-to-top">
             <svg class="scroll-top-inner" viewBox="-1 -1 102 102">

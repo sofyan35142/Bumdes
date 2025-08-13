@@ -10,64 +10,10 @@
 
     <div class="boxed_wrapper ltr">
         @include('Landingpage.layout.preloader')
-        <div class="page_direction">
-            <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-            <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
-        </div>
-        <div id="search-popup" class="search-popup">
-            <div class="popup-inner">
-                <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img
-                                src="http://127.0.0.1:8000/Landingpage/assets/images/logo.png" alt=""></a>
-                    </figure>
-                    <div class="close-search"><span class="icon-27"></span></div>
-                </div>
-                <div class="overlay-layer"></div>
-                <div class="auto-container">
-                    <div class="search-form">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/index.html">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value=""
-                                        placeholder="Ketik kata kunci Anda dan tekan" required>
-                                    <button type="submit"><i class="icon-1"></i></button>
-                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         @include('Landingpage.layout.header')
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><i class="fas fa-times"></i></div>
-            <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img
-                            src="http://127.0.0.1:8000/Landingpage/assets/images/logo-2.png" alt=""
-                            title=""></a></div>
-                <div class="menu-outer"></div>
-                <div class="contact-info">
-                    <h4>Informasi Kontak</h4>
-                    <ul>
-                        <li>Chicago 12, Melborne City, USA</li>
-                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
-                    </ul>
-                </div>
-                <div class="social-links">
-                    <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        @include('Landingpage.layout.mobilemenu')
         <section class="page-title centred pt_110">
             <div class="auto-container">
                 <div class="content-box">
@@ -87,20 +33,24 @@
                         <div class="image_block_two">
                             <div class="image-inner">
                                 <div class="image-box mr_15">
-                                    <figure class="image image-1 mb_15"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-3.jpg"
-                                            alt=""></figure>
-                                    <figure class="image image-2"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-4.jpg"
-                                            alt=""></figure>
+                                    <figure class="image image-1 mb_15">
+                                        <img src="{{ asset($tentangbumdes->gambar_1 ?? 'Landingpage/assets/images/resource/about-3.jpg') }}"
+                                            alt="">
+                                    </figure>
+                                    <figure class="image image-2">
+                                        <img src="{{ asset($tentangbumdes->gambar_2 ?? 'Landingpage/assets/images/resource/about-4.jpg') }}"
+                                            alt="">
+                                    </figure>
                                 </div>
                                 <div class="image-box">
-                                    <figure class="image image-3 mb_15"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-5.jpg"
-                                            alt=""></figure>
-                                    <figure class="image image-4"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/resource/about-6.jpg"
-                                            alt=""></figure>
+                                    <figure class="image image-3 mb_15">
+                                        <img src="{{ asset($tentangbumdes->gambar_3 ?? 'Landingpage/assets/images/resource/about-5.jpg') }}"
+                                            alt="">
+                                    </figure>
+                                    <figure class="image image-4">
+                                        <img src="{{ asset($tentangbumdes->gambar_4 ?? 'Landingpage/assets/images/resource/about-6.jpg') }}"
+                                            alt="">
+                                    </figure>
                                 </div>
                             </div>
                         </div>
@@ -110,32 +60,44 @@
                             <div class="content-box">
                                 <div class="sec-title pb_40 sec-title-animation animation-style2">
                                     <span class="sub-title mb_10 title-animation">Tentang Kami</span>
-                                    <h2 class="title-animation">Bumdes <span>Terdepan</span></h2>
-                                    <p class="title-animation">Kami berkomitmen untuk menjadi penggerak ekonomi desa
-                                        yang paling dicintai, dengan menyediakan solusi terbaik untuk masyarakat dan
-                                        bisnis.</p>
+                                    <h2 class="title-animation">{{ $tentangbumdes->title ?? 'Bumdes Terdepan' }}</h2>
+                                    <p class="title-animation">
+                                        {{ $tentangbumdes->deskripsi_singkat ?? 'Kami berkomitmen untuk menjadi penggerak ekonomi desa yang paling dicintai, dengan menyediakan solusi terbaik untuk masyarakat dan bisnis.' }}
+                                    </p>
                                 </div>
                                 <div class="inner-box clearfix">
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="icon-29"></i></div>
-                                        <h4><a href="#">Administrasi Mudah</a></h4>
-                                        <span>Sepanjang 2023</span>
-                                    </div>
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="icon-30"></i></div>
-                                        <h4><a href="#">Dipercaya Masyarakat</a></h4>
-                                        <span>Sepanjang 2023</span>
-                                    </div>
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="icon-31"></i></div>
-                                        <h4><a href="#">Terdepan</a></h4>
-                                        <span>Sepanjang 2023</span>
-                                    </div>
-                                    <div class="single-item">
-                                        <div class="icon-box"><i class="icon-32"></i></div>
-                                        <h4><a href="#">Dukungan Terbaik</a></h4>
-                                        <span>Sepanjang 2023</span>
-                                    </div>
+                                    @if (!empty($tentangbumdes->points) && is_array($tentangbumdes->points))
+                                        @foreach ($tentangbumdes->points as $point)
+                                            <div class="single-item">
+                                                <div class="icon-box"><i class="{{ $point['icon'] ?? 'icon-29' }}"></i>
+                                                </div>
+                                                <h4><a href="#">{{ $point['title'] }}</a></h4>
+                                                <span>{{ $point['subtitle'] }}</span>
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        {{-- fallback static content jika points kosong --}}
+                                        <div class="single-item">
+                                            <div class="icon-box"><i class="icon-29"></i></div>
+                                            <h4><a href="#">Administrasi Mudah stat</a></h4>
+                                            <span>Sepanjang 2023</span>
+                                        </div>
+                                        <div class="single-item">
+                                            <div class="icon-box"><i class="icon-30"></i></div>
+                                            <h4><a href="#">Dipercaya Masyarakat</a></h4>
+                                            <span>Sepanjang 2023</span>
+                                        </div>
+                                        <div class="single-item">
+                                            <div class="icon-box"><i class="icon-31"></i></div>
+                                            <h4><a href="#">Terdepan</a></h4>
+                                            <span>Sepanjang 2023</span>
+                                        </div>
+                                        <div class="single-item">
+                                            <div class="icon-box"><i class="icon-32"></i></div>
+                                            <h4><a href="#">Dukungan Terbaik</a></h4>
+                                            <span>Sepanjang 2023</span>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -143,269 +105,207 @@
                 </div>
             </div>
         </section>
-        <section class="clients-section home-3">
-            <div class="bg-color"></div>
+
+        {{-- support by --}}
+        <section class="clients-section pt_110 centred pb_120">
             <div class="auto-container">
-                <div class="inner-container">
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-1.png"
-                                    alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-1.png"
-                                    alt=""></a></figure>
-                    </div>
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-2.png"
-                                    alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-2.png"
-                                    alt=""></a></figure>
-                    </div>
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-3.png"
-                                    alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-3.png"
-                                    alt=""></a></figure>
-                    </div>
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-4.png"
-                                    alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-4.png"
-                                    alt=""></a></figure>
-                    </div>
-                    <div class="clients-box">
-                        <figure class="clients-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-5.png"
-                                    alt=""></a></figure>
-                        <figure class="overlay-logo"><a href="index.html"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/clients/clients-5.png"
-                                    alt=""></a></figure>
+                <div class="title-text pb_60 sec-title-animation animation-style2">
+                    {{-- <span class="sub-title mb_10 title-animation">Mintra</span> --}}
+                    <h3 class="title-animation">Mitra BumDes Pakukerto</h3>
+                </div>
+                <div class="inner-box">
+                    <div class="clients-slider-wrapper">
+                        <style>
+                            .clients-slider-wrapper {
+                                overflow: hidden;
+                                width: 100%;
+                                position: relative;
+                            }
+
+                            .clients-slider {
+                                display: flex;
+                                align-items: center;
+                                gap: 40px;
+                                animation: scrollLeft 30s linear infinite;
+                            }
+
+                            .clients-box {
+                                flex: 0 0 auto;
+                                width: 220px;
+                                height: 130px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: #fff;
+                                border-radius: 12px;
+                                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                                padding: 10px;
+                            }
+
+                            .clients-logo img,
+                            .overlay-logo img {
+                                max-width: 100%;
+                                max-height: 100px;
+                                object-fit: contain;
+                                transition: transform 0.3s ease;
+                            }
+
+                            .clients-box:hover img {
+                                transform: scale(1.1);
+                            }
+
+                            @keyframes scrollLeft {
+                                0% {
+                                    transform: translateX(0);
+                                }
+
+                                100% {
+                                    transform: translateX(-50%);
+                                }
+                            }
+
+                            @media (max-width: 768px) {
+                                .clients-box {
+                                    width: 160px;
+                                    height: 100px;
+                                }
+
+                                .clients-logo img,
+                                .overlay-logo img {
+                                    max-height: 80px;
+                                }
+                            }
+                        </style>
+
+                        <div class="clients-slider">
+                            @foreach ($mediaPartner->take(5) as $MediaPartner)
+                                <div class="clients-box">
+                                    <figure class="clients-logo">
+                                        <a href="#">
+                                            <img src="{{ asset('Media Partner/' . $MediaPartner->Logo_Media) }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                    <figure class="overlay-logo">
+                                        <a href="#">
+                                            <img src="{{ asset('Media Partner/' . $MediaPartner->Logo_Media) }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                            @endforeach
+
+                            {{-- Duplikat isi agar animasi tidak putus --}}
+                            @foreach ($mediaPartner->take(5) as $MediaPartner)
+                                <div class="clients-box">
+                                    <figure class="clients-logo">
+                                        <a href="#">
+                                            <img src="{{ asset('Media Partner/' . $MediaPartner->Logo_Media) }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                    <figure class="overlay-logo">
+                                        <a href="#">
+                                            <img src="{{ asset('Media Partner/' . $MediaPartner->Logo_Media) }}"
+                                                alt="">
+                                        </a>
+                                    </figure>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="chooseus-section alternat-3 pt_120 pb_90">
-            <div class="pattern-layer"
-                style="background-image: url(http://127.0.0.1:8000/Landingpage/assets/images/shape/shape-23.png);">
-            </div>
-            <div class="auto-container">
-                <div class="sec-title light centred pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">Mengapa Kami</span>
-                    <h2 class="title-animation">Mengapa Memilih Bumdes Kami</h2>
+        <section class="chooseus-section light-section centred pl_100 pr_100">
+            <div class="outer-container p_relative pt_120 pb_90">
+                <div class="shape">
+                    <div class="shape-1"></div>
+                    <div class="shape-2"></div>
+                    <div class="shape-3"></div>
+                    <div class="shape-4"></div>
                 </div>
-                <div class="inner-container">
+                <div class="auto-container">
+                    <div class="sec-title light pb_60 sec-title-animation animation-style2">
+                        <span class="sub-title mb_10 title-animation">Menagapa Kami</span>
+                        <h2 class="title-animation">Kenapa Memilih BumDes Pakukerto ?</h2>
+                    </div>
                     <div class="row clearfix">
-                        <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
-                            <div class="chooseus-block-one">
-                                <div class="inner-box">
-                                    <div class="icon-box"><i class="icon-4"></i></div>
-                                    <h3><a href="index.html">Meningkatkan Perekonomian</a></h3>
-                                    <p>Kami fokus pada program yang meningkatkan pendapatan dan kesejahteraan masyarakat
-                                        desa.</p>
-
+                        @foreach ($alasan as $item)
+                            <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
+                                <div class="chooseus-block-one">
+                                    <div class="inner-box">
+                                        <div class="icon-box">
+                                            <i class="{{ $item->ikon }}"></i>
+                                        </div>
+                                        <h3><a href="#">{{ $item->judul }}</a></h3>
+                                        {{-- @foreach ($alasan as $item) --}}
+                                        <p class="overflow-auto" style="height: 9pc">
+                                            {{ $item->deskripsi }}
+                                        </p>
+                                        {{-- @endforeach --}}
+                                        <div class="link"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
-                            <div class="chooseus-block-one">
-                                <div class="inner-box">
-                                    <div class="icon-box"><i class="icon-5"></i></div>
-                                    <h3><a href="index.html">Tata Kelola Transparan</a></h3>
-                                    <p>Seluruh operasional kami dijalankan dengan prinsip transparansi dan akuntabilitas
-                                        untuk kepercayaan publik.</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 chooseus-block">
-                            <div class="chooseus-block-one">
-                                <div class="inner-box">
-                                    <div class="icon-box"><i class="icon-6"></i></div>
-                                    <h3><a href="index.html">Inovasi Berkelanjutan</a></h3>
-                                    <p>Kami selalu berinovasi untuk menciptakan produk dan layanan baru yang relevan
-                                        dengan kebutuhan desa.</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </section>
+        {{-- sektor usaha --}}
         <section class="industries-style-four pt_120 pb_90">
             <div class="auto-container">
                 <div class="sec-title centred pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">Sektor</span>
-                    <h2 class="title-animation">Sektor Usaha Kami</h2>
+                    <span class="sub-title mb_10 title-animation">Industries</span>
+                    <h2 class="title-animation">Bidang Usaha BUMDes Kami</h2>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-9"></i></div>
-                                <h3><a href="index.html">Pertanian</a></h3>
-                                <p>2853 Staf</p>
+                    @foreach ($industries as $industry)
+                        <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
+                            <div class="industries-block-two">
+                                <div class="inner-box">
+                                    <div class="icon-box"><i class="{{ $industry->icon }}"></i></div>
+                                    <h3>{{ $industry->name }}</h3>
+                                    <p>{{ $industry->staff_count }} Staffs</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-10"></i></div>
-                                <h3><a href="index.html">Pariwisata</a></h3>
-                                <p>2256 Staf</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-11"></i></div>
-                                <h3><a href="index.html">Kuliner</a></h3>
-                                <p>1408 Staf</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-12"></i></div>
-                                <h3><a href="index.html">Kerajinan</a></h3>
-                                <p>1740 Staf</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-13"></i></div>
-                                <h3><a href="index.html">Jasa</a></h3>
-                                <p>3948 Staf</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-14"></i></div>
-                                <h3><a href="index.html">Perdagangan</a></h3>
-                                <p>2984 Staf</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-15"></i></div>
-                                <h3><a href="index.html">Peternakan</a></h3>
-                                <p>4509 Staf</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 industries-block">
-                        <div class="industries-block-two">
-                            <div class="inner-box">
-                                <div class="icon-box"><i class="icon-16"></i></div>
-                                <h3><a href="index.html">Logistik</a></h3>
-                                <p>1039 Staf</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
-        <section class="team-section z_1 centred pt_0 pb_0">
+        <section class="team-section centred pt_120 pb_70">
             <div class="auto-container">
                 <div class="sec-title pb_60 sec-title-animation animation-style2">
-                    <span class="sub-title mb_10 title-animation">Tim Kami</span>
-                    <h2 class="title-animation">Kenali Pengurus Kami</h2>
+                    <span class="sub-title mb_10 title-animation">BumDes Pakukerto</span>
+                    <h2 class="title-animation">Struktur Organisasi BUMDes</h2>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-1.jpg"
-                                            alt="">
-                                    </figure>
-                                    <figure class="overlay-image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-1.jpg"
-                                            alt=""></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="index.html">Bapak Ahmad</a></h3>
-                                    <span class="designation">Kepala Bumdes</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="200ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-2.jpg"
-                                            alt="">
-                                    </figure>
-                                    <figure class="overlay-image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-2.jpg"
-                                            alt=""></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="index.html">Ibu Budiarti</a></h3>
-                                    <span class="designation">Sekretaris</span>
+                    @foreach ($team as $index => $member)
+                        <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                            <div class="team-block-one wow fadeInUp animated" data-wow-delay="{{ $index * 200 }}ms"
+                                data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="image-box">
+                                        <figure class="image"
+                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
+                                            <img src="{{ asset($member->foto) }}" alt="">
+                                        </figure>
+                                        <figure class="overlay-image"
+                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
+                                            <img src="{{ asset($member->foto) }}" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h3><a href="#">{{ $member->nama }}</a></h3>
+                                        <span class="designation">{{ $member->jabatan }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="400ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-3.jpg"
-                                            alt="">
-                                    </figure>
-                                    <figure class="overlay-image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-3.jpg"
-                                            alt=""></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="index.html">Pak Yanto</a></h3>
-                                    <span class="designation">Bendahara</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-one wow fadeInUp animated" data-wow-delay="600ms"
-                            data-wow-duration="1500ms">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-4.jpg"
-                                            alt="">
-                                    </figure>
-                                    <figure class="overlay-image"><img
-                                            src="http://127.0.0.1:8000/Landingpage/assets/images/team/team-4.jpg"
-                                            alt=""></figure>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="index.html">Ibu Susi</a></h3>
-                                    <span class="designation">Manajer Pemasaran</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

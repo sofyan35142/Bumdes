@@ -18,10 +18,7 @@
 
 
         <!-- page-direction -->
-        <div class="page_direction">
-            <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-            <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
-        </div>
+
         <!-- page-direction end -->
 
 
@@ -58,6 +55,9 @@
 
 
         <!-- Mobile Menu  -->
+<<<<<<< HEAD
+        @include('Landingpage.layout.mobilemenu')
+=======
         <div class="mobile-menu">
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
@@ -87,6 +87,7 @@
                 </div>
             </nav>
         </div>
+>>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
         <!-- End Mobile Menu -->
 
 

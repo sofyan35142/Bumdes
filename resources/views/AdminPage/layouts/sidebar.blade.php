@@ -6,7 +6,7 @@
                 <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="20">
+                <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="64px">
             </span>
         </a>
 
@@ -15,7 +15,7 @@
                 <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="20">
+                <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="64px">
             </span>
         </a>
     </div>

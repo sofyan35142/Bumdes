@@ -19,10 +19,14 @@
 
 
         <!-- page-direction -->
+<<<<<<< HEAD
+
+=======
         {{-- <div class="page_direction">
             <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
             <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
         </div> --}}
+>>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
         <!-- page-direction end -->
 
 
@@ -75,50 +79,7 @@
 
 
         <!-- Mobile Menu  -->
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-
-            <!-- Tombol Close -->
-            <div class="close-btn">
-                <i class="fas fa-times"></i>
-            </div>
-
-            <nav class="menu-box">
-                <!-- Logo -->
-                <div class="nav-logo">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('Landingpage/assets/images/logo-2.png') }}" alt="Logo" title="">
-                    </a>
-                </div>
-
-                <!-- Menu yang akan di-load dari JavaScript -->
-                <div class="menu-outer">
-                    <!-- Here Menu Will Come Automatically Via Javascript / Same Menu as in Header -->
-                </div>
-
-                <!-- Kontak -->
-                <div class="contact-info">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>Chicago 12, Melborne City, USA</li>
-                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
-                    </ul>
-                </div>
-
-                <!-- Media Sosial -->
-                <div class="social-links">
-                    <ul class="clearfix">
-                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
+        @include('Landingpage.layout.mobilemenu')
         <!-- End Mobile Menu -->
 
 
@@ -364,38 +325,8 @@
                                     <center><span class="designation">Direktur Bumdes</span></center>
                                 </div>
                             </div>
-
-                            {{-- <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="{{ asset('direktur/' . $data->foto_direktur) }}"
-                                            alt=""></figure>
-                                    <figure class="overlay-image"><img
-                                            src="{{ asset('direktur/' . $data->foto_direktur) }}" alt="">
-                                    </figure>
-
-                                </div>
-                                <div class="lower-content">
-                                    <center>
-                                        <h3><a href="#">{{ $data->Nama_Direktur }}</a></h3>
-                                    </center>
-                                    <center><span class="designation">Direktur Bumdes</span></center>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
-                    {{-- <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                        <div class="content_block_five">
-                            <div class="content-box">
-                                <div class="sec-title pb_40 sec-title-animation animation-style2">
-                                    <span class="sub-title mb_10 title-animation">SAMBUTAN</span>
-                                    <h2 class="title-animation">Sambutan Direktur BumDes <span>Pakukerto</span></h2>
-                                    <span class="title-animation">
-                                        {!! $data->sambutan !!}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                         <div class="content_block_five">
                             <div class="content-box">
@@ -456,7 +387,6 @@
                 </div>
             </div>
         </section>
-
         <!-- chooseus-section end -->
 
 
@@ -826,6 +756,9 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image"
+<<<<<<< HEAD
+                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
+=======
                                             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto;">
                                             <img src="{{ asset($member->foto) }}" alt=""
                                                 style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -838,9 +771,11 @@
                                                 style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.5;">
                                         </figure>
                                         {{-- <figure class="image">
+>>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
                                             <img src="{{ asset($member->foto) }}" alt="">
                                         </figure>
-                                        <figure class="overlay-image">
+                                        <figure class="overlay-image"
+                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
                                             <img src="{{ asset($member->foto) }}" alt="">
                                         </figure> --}}
                                     </div>
@@ -895,7 +830,6 @@
                 </div>
             </div>
         </section>
-
         <!-- download-section end -->
 
 
