@@ -66,7 +66,7 @@
                                         <div class="d-flex flex-wrap gap-3 mt-3">
                                             <button type="submit"
                                                 class="btn btn-primary waves-effect waves-light w-md">Simpan
-                                                Blog</button>
+                                                Perubahan</button>
                                             <button type="reset"
                                                 class="btn btn-outline-secondary waves-effect waves-light w-md">Reset
                                                 Form</button>
@@ -82,23 +82,7 @@
             <!-- End Page-content -->
 
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script> © Minible.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Crafted with <i class="mdi mdi-heart text-danger"></i> by <a
-                                    href="https://themesbrand.com/" target="_blank" class="text-reset">Themesbrand</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+@include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 
