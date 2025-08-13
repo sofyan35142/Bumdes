@@ -76,10 +76,9 @@
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </a>
                                                     <!-- Tombol Hapus -->
-                                                    <a href="#" class="btn btn-danger btn-delete"
-                                                        data-id="{{ $item->id }}">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </a>
+                                                    <button class="btn btn-danger btn-sm" data-id="{{ $item->id }}">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
                                                 </td>
                                             </tr>
                                             <?php $no++; ?>
@@ -95,7 +94,7 @@
             </div>
             <!-- End Page-content -->
 
-@include('AdminPage.layouts.footer')
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 
@@ -229,44 +228,32 @@
     <div class="rightbar-overlay"></div>
 
     @include('AdminPage.layouts.scripts')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                    confirmButton: "btn btn-success",
-                    cancelButton: "btn btn-danger"
-                },
-                buttonsStyling: false
-            });
+        document.querySelectorAll('button[data-id]').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = this.dataset.id;
 
-            document.querySelectorAll('.btn-delete').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    const id = this.getAttribute('data-id');
-
-                    swalWithBootstrapButtons.fire({
-                        title: "Yakin mau hapus?",
-                        text: "Data yang dihapus tidak bisa dikembalikan!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonText: "Ya, hapus!",
-                        cancelButtonText: "Batal",
-                        reverseButtons: true
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            // Lakukan penghapusan, misalnya redirect ke route destroy
-                            window.location.href = "/admin/hapuskategori/" + id;
-                        } else if (result.dismiss === Swal.DismissReason.cancel) {
-                            swalWithBootstrapButtons.fire(
-                                "Dibatalkan",
-                                "Data tidak jadi dihapus :)",
-                                "error"
-                            );
-                        }
-                    });
+                Swal.fire({
+                    title: 'Yakin ingin menghapus?',
+                    text: "Data kategori akan dihapus permanen!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        let url = "{{ route('admin.hapuskategori', ':id') }}";
+                        url = url.replace(':id', id);
+                        window.location.href = url;
+                    }
                 });
             });
         });
     </script>
+
 
 </body>
 

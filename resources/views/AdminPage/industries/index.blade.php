@@ -82,8 +82,7 @@
                                                             </a>
                                                             <form
                                                                 action="{{ route('admin.industries.delete', $industry->id) }}"
-                                                                method="POST" class="d-inline"
-                                                                onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                                                                method="POST" class="d-inline delete-form">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-sm btn-danger">
@@ -244,6 +243,33 @@
 
     <!-- JAVASCRIPT -->
     @include('AdminPage.layouts.scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pilih semua form dengan class delete-form
+            const deleteForms = document.querySelectorAll('.delete-form');
+
+            deleteForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); // hentikan submit default
+
+                    Swal.fire({
+                        title: 'Yakin ingin menghapus?',
+                        text: "Data akan dihapus secara permanen!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Ya, hapus!',
+                        cancelButtonText: 'Batal'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit(); // submit form jika dikonfirmasi
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

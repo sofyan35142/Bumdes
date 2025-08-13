@@ -270,7 +270,9 @@
                     }).then((result) => {
                         if (result.isConfirmed) {
                             // Lakukan penghapusan, misalnya redirect ke route destroy
-                            window.location.href = "/admin/hapusmediapartner/" + id;
+                            let url = "{{ route('admin.hapusmediapartner', ':id') }}";
+                            url = url.replace(':id', id);
+                            window.location.href = url;
                         } else if (result.dismiss === Swal.DismissReason.cancel) {
                             swalWithBootstrapButtons.fire(
                                 "Dibatalkan",
