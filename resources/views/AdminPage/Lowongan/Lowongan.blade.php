@@ -52,7 +52,7 @@
                                     <h4 class="card-title">Daftar Lowongan Kerja BUMDes Pakukerto</h4>
 
                                     <!-- Tombol Tambah -->
-                                    <a href="/admin/tambahlowongan" class="btn btn-primary mb-3">
+                                    <a href="{{ route('admin.tambahlowongan') }}" class="btn btn-primary mb-3">
                                         <i class="fa fa-plus"></i> Tambah Lowongan Baru
                                     </a>
 
@@ -97,7 +97,7 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        <a href="/admin/editlowongan/{{ $item->id }}"
+                                                        <a href="{{ route('admin.editlowongan', $item->id) }}"
                                                             class="btn btn-warning" title="Edit Lowongan">
                                                             <i class="fa fa-pencil"></i>
                                                         </a>

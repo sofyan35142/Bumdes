@@ -89,7 +89,7 @@ Route::post('/layanan/store', [LayananController::class, 'storePengajuan'])->nam
 
 // Login & Logout (tanpa middleware)
 Route::get('/admin/signin', [LoginController::class, 'login'])->name('login');
-Route::post('/admin/postsignin', [LoginController::class, 'postsignin']);
+Route::post('/admin/postsignin', [LoginController::class, 'postsignin'])->name('admin.postsignin');
 Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
 
 // Middleware Admin Panel
@@ -122,17 +122,17 @@ Route::middleware(['auth'])->group(function () {
 
     // Slider
     Route::get('/admin/slider', [Beranda::class, 'slider'])->name('admin.slider');
-    Route::get('/admin/editslider/{id}', [Beranda::class, 'editslider']);
+    Route::get('/admin/editslider/{id}', [Beranda::class, 'editslider'])->name('admin.editslider');
     Route::post('/admin/updateslider/{id}', [Beranda::class, 'updateslider'])->name('admin.updateslider');
 
     // Statistik
     Route::get('/admin/statistik', [Beranda::class, 'statistik'])->name('admin.statistik');
-    Route::get('/admin/editstatistik/{id}', [Beranda::class, 'editstatistik']);
+    Route::get('/admin/editstatistik/{id}', [Beranda::class, 'editstatistik'])->name('admin.editstatistik');
     Route::post('/admin/updatestatistik/{id}', [Beranda::class, 'updatestatistik'])->name('admin.updatestatistik');
 
     // Sambutan
     Route::get('/admin/sambutan', [Beranda::class, 'sambutan'])->name('admin.sambutan');
-    Route::get('/admin/editsambutan/{id}', [Beranda::class, 'editsambutan']);
+    Route::get('/admin/editsambutan/{id}', [Beranda::class, 'editsambutan'])->name('admin.editsambutan');
     Route::post('/admin/updatesambutan/{id}', [Beranda::class, 'updatesambutan'])->name('admin.updatesambutan');
 
     // ApDes
@@ -144,7 +144,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/unggulan', [Beranda::class, 'unggulan'])->name('admin.unggulan');
     Route::get('/admin/tambahunggulan', [Beranda::class, 'tambahunggulan'])->name('admin.tambahunggulan');
     Route::post('/admin/insertunggulan', [Beranda::class, 'insertunggulan'])->name('admin.insertunggulan');
-    Route::get('/admin/editunggulan/{id}', [Beranda::class, 'editunggulan']);
+    Route::get('/admin/editunggulan/{id}', [Beranda::class, 'editunggulan'])->name('admin.editunggulan');
     Route::put('/admin/updateunggulan/{id}', [Beranda::class, 'updateunggulan'])->name('admin.updateunggulan');
     Route::get('/admin/hapusunggulan/{id}', [Beranda::class, 'hapusunggulan'])->name('admin.hapusunggulan');
 
@@ -152,7 +152,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/kegiatan', [KegiatanController::class, 'kegiatan'])->name('admin.kegiatan');
     Route::get('/admin/tambahkegiatan', [KegiatanController::class, 'tambahkegiatan'])->name('admin.tambahkegiatan');
     Route::post('/admin/insertkegiatan', [KegiatanController::class, 'insertkegiatan'])->name('admin.insertkegiatan');
-    Route::get('/admin/editkegiatan/{id}', [KegiatanController::class, 'editkegiatan']);
+    Route::get('/admin/editkegiatan/{id}', [KegiatanController::class, 'editkegiatan'])->name('admin.editkegiatan');
     Route::put('/admin/updatekegiatan/{id}', [KegiatanController::class, 'updatekegiatan'])->name('admin.updatekegiatan');
     Route::get('/admin/hapuskegiatan/{id}', [KegiatanController::class, 'hapuskegiatan'])->name('admin.hapuskegiatan');
 
@@ -160,7 +160,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/kategori', [KategoriController::class, 'kategori'])->name('admin.kategori');
     Route::get('/admin/tambahkategori', [KategoriController::class, 'tambahkategori'])->name('admin.tambahkategori');
     Route::post('/admin/insertkategori', [KategoriController::class, 'insertkategori'])->name('admin.insertkategori');
-    Route::get('/admin/editkategori/{id}', [KategoriController::class, 'editkategori']);
+    Route::get('/admin/editkategori/{id}', [KategoriController::class, 'editkategori'])->name('admin.editkategori');
     Route::post('/admin/updatekategori/{id}', [KategoriController::class, 'updatekategori'])->name('admin.updatekategori');
     Route::get('/admin/hapuskategori/{id}', [KategoriController::class, 'hapuskategori'])->name('admin.hapuskategori');
 
@@ -168,7 +168,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/mediapartner', [MediaPartnerController::class, 'mediapartner'])->name('admin.mediapartner');
     Route::get('/admin/tambahmediapartner', [MediaPartnerController::class, 'tambahmediapartner'])->name('admin.tambahmediapartner');
     Route::post('/admin/insertmediapartner', [MediaPartnerController::class, 'insertmediapartner'])->name('admin.insertmediapartner');
-    Route::get('/admin/editmediapartner/{id}', [MediaPartnerController::class, 'editmediapartner']);
+    Route::get('/admin/editmediapartner/{id}', [MediaPartnerController::class, 'editmediapartner'])->name('admin.editmediapartner');
     Route::post('/admin/updatemediapartner/{id}', [MediaPartnerController::class, 'updatemediapartner'])->name('admin.updatemediapartner');
     Route::get('/admin/hapusmediapartner/{id}', [MediaPartnerController::class, 'hapusmediapartner'])->name('admin.hapusmediapartner');
 
@@ -184,7 +184,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/lowongan', [LowonganPekerjaan::class, 'lowongan'])->name('admin.lowongan');
     Route::get('/admin/tambahlowongan', [LowonganPekerjaan::class, 'tambahlowongan'])->name('admin.tambahlowongan');
     Route::post('/admin/insertlowongan', [LowonganPekerjaan::class, 'insertlowongan'])->name('admin.insertlowongan');
-    Route::get('/admin/editlowongan/{id}', [LowonganPekerjaan::class, 'editlowongan']);
+    Route::get('/admin/editlowongan/{id}', [LowonganPekerjaan::class, 'editlowongan'])->name('admin.editlowongan');
     Route::put('/admin/updatelowongan/{id}', [LowonganPekerjaan::class, 'updatelowongan'])->name('admin.updatelowongan');
     Route::get('/admin/hapuslowongan/{id}', [LowonganPekerjaan::class, 'hapuslowongan'])->name('admin.hapuslowongan');
 

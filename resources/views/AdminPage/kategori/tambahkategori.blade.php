@@ -52,7 +52,7 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="/admin/insertkategori" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('admin.insertkategori') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3 row">
                                             <label for="blog-title-input" class="col-md-2 col-form-label">Nama Kategori</label>

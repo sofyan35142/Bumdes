@@ -52,7 +52,7 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="/admin/updatelowongan/{{ $lowongan->id }}"
+                                    <form method="post" action="{{ route('admin.updatelowongan', $lowongan->id) }}"
                                         enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')

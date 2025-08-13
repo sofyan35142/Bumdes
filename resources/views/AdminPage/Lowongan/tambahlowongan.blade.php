@@ -52,7 +52,7 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="/admin/insertlowongan" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('admin.insertlowongan') }}" enctype="multipart/form-data">
                                         @csrf
 
                                         {{-- Judul Lowongan --}}

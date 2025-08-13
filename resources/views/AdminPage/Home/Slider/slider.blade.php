@@ -100,7 +100,7 @@
 
                                                     {{-- Aksi --}}
                                                     <td>
-                                                        <a href="/admin/editslider/{{ $item->id }}"
+                                                        <a href="{{ route('admin.editslider', $item->id) }}"
                                                             class="btn btn-warning">
                                                             <i class="fa-solid fa-pen-to-square"></i> Edit
                                                         </a>

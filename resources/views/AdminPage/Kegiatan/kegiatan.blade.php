@@ -50,7 +50,7 @@
 
                                     <!-- Tombol Tambah Data -->
                                     <div class="mb-3">
-                                        <a href="/admin/tambahkegiatan" class="btn btn-primary">
+                                        <a href="{{ route('admin.tambahkegiatan') }}" class="btn btn-primary">
                                             <i class="fa-solid fa-plus me-1"></i> Tambah Kegiatan
                                         </a>
                                     </div>
@@ -83,7 +83,7 @@
                                                 </td>
                                                 <td>
                                                     <!-- Tombol Edit -->
-                                                    <a href="/admin/editkegiatan/{{ $item->id }}"
+                                                    <a href="{{ route('admin.editkegiatan', $item->id) }}"
                                                         class="btn btn-warning">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </a>
