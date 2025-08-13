@@ -25,7 +25,7 @@ use Database\Seeders\lowonganseeder;
 use Database\Seeders\MediaPartnerSeeder;
 use Database\Seeders\IndustrySeeder;
 use Database\Seeders\JenisLayananSeeder;
-use Database\Seeders\TentangBumdes;
+use Database\Seeders\tentangBumdes;
 
 class DatabaseSeeder extends Seeder
 {
