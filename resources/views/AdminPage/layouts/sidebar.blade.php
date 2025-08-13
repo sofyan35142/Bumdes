@@ -115,15 +115,16 @@
                     </a>
                     <ul class="sub-menu mm-collapse mm-show" aria-expanded="false">
                         <li>
-                            <a href="http://127.0.0.1:8000/admin/kategori">
+                            <a href="{{ route('admin.kategori') }}">
                                 <i class="fas fa-list"></i> Kategori
                             </a>
                         </li>
                         <li>
-                            <a href="http://127.0.0.1:8000/admin/kegiatan">
+                            <a href="{{ route('admin.kegiatan') }}">
                                 <i class="fas fa-tasks"></i> Kegiatan
                             </a>
                         </li>
+
                         <li>
                             <a href="{{ route('admin.unggulan') }}">
                                 <i class="fas fa-tasks"></i> Layanan Unggulan
