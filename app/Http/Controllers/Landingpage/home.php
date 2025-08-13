@@ -30,13 +30,9 @@ class home extends Controller
         $industries = Industry::all();
         $testi = Testimonial::where('status', 1)->latest()->get();
         $slider = Slider::first();
-        
+
         // dd($industries->map->getOriginal());
-<<<<<<< HEAD
-        return view('Landingpage.index', compact('data', 'book', 'unggulan', 'kegiatan', 'mediaPartner', 'alasan','team','industries'));
-=======
-        return view('Landingpage.index', compact('slider','data', 'book', 'unggulan', 'kegiatan', 'mediaPartner', 'alasan', 'team', 'industries','testi'));
->>>>>>> 6b17bff2cdcf8fbe662fd2e4babc0b3049d24fbb
+        return view('Landingpage.index', compact('slider', 'data', 'book', 'unggulan', 'kegiatan', 'mediaPartner', 'alasan', 'team', 'industries', 'testi'));
     }
 
     public function detailunggulan($id)
@@ -64,6 +60,6 @@ class home extends Controller
         // $Lowongan = LayananUnggulan::with('kategori')->latest()->paginate(6);
         // $kategoriList = kategorimodel::get();
         $unggulanlist = LayananUnggulan::with('kategori')->latest()->paginate(6);
-        return view('Landingpage.pages.listunggulan', compact( 'unggulanlist'));
+        return view('Landingpage.pages.listunggulan', compact('unggulanlist'));
     }
 }
