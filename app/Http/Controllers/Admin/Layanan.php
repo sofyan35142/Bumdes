@@ -11,7 +11,7 @@ class Layanan extends Controller
     public function index()
     {
         $permohonan = PengajuanLayanan::latest()->get();
-        return view('Adminpage.Pengajuan.index', compact('permohonan'));
+        return view('Adminpage.pengajuan.index', compact('permohonan'));
     }
 
     public function destroy($id)

@@ -30,7 +30,7 @@ class DasarHukumController extends Controller
             $data->points = is_array($decoded) ? $decoded : [];
         }
 
-        return view('AdminPage.DasarHukum.edit', compact('data'));
+        return view('AdminPage.dasarHukum.edit', compact('data'));
     }
 
 
