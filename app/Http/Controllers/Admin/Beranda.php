@@ -32,7 +32,7 @@ class Beranda extends Controller
 
     public function updateslider(Request $request, $id)
     {
-        $uploadPath = public_path('Foto Slider');
+        $uploadPath = public_path('Foto_Slider');
         if (!file_exists($uploadPath)) {
             mkdir($uploadPath, 0755, true);
         }

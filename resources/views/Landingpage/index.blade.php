@@ -87,7 +87,8 @@
                 <!-- Slide 1 -->
                 <div class="slide-item p_relative">
                     <div class="bg-layer"
-                        style="background-image: url('{{ asset('Foto Slider/' . $slider->foto_slider1) }}');">
+                        style="background-image: url('{{ asset('foto_slider/' . $slider->foto_slider1) }}');">
+
                     </div>
                     <div class="shape-box">
                         <div class="shape-1"></div>
@@ -487,7 +488,9 @@
                                         </figure>
                                     </div>
                                     <div class="lower-content">
-                                        <h3><a href="{{ route('home.detailunggulan', ['id' => $item->id]) }}">{{ $item->nama_layanan }}</a></h3>
+                                        <h3><a
+                                                href="{{ route('home.detailunggulan', ['id' => $item->id]) }}">{{ $item->nama_layanan }}</a>
+                                        </h3>
                                         <p
                                             style="
                                     overflow: hidden;
