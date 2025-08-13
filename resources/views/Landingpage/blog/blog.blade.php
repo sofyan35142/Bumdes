@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Mirrored from jobaway.pixcelsthemes.com/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Jul 2025 14:03:53 GMT -->
-@include('LandingPage.layout.head')
+@include('Landingpage.layout.head')
 
 
 <!-- page wrapper -->
@@ -354,7 +354,7 @@
 
     </div>
 
-    @include('LandingPage.layout.scripts')
+    @include('Landingpage.layout.scripts')
 
 </body><!-- End of .page_wrapper -->
 
