@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\Beranda;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\Admin\dasarHukumController;
-use App\Http\Controllers\admin\GaleryController;
+use App\Http\Controllers\Admin\GaleryController;
 use App\Http\Controllers\Admin\StrukturOrganisasiController;
 use App\Http\Controllers\Admin\visiMisi;
 use App\Http\Controllers\Landingpage\Blog;
