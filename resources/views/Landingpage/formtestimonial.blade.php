@@ -90,14 +90,16 @@
 
                                     {{-- Nomor Telepon --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="number" name="nomor_telepone" placeholder="Nomor Telepon"
-                                            value="{{ old('nomor_telepone') }}"
-                                            oninput="this.value = this.value.replace(/[^0-9]/g, ''); if(this.value.length > 13) this.value = this.value.slice(0,13);"
+                                        <input type="tel" name="nomor_telepone" placeholder="Nomor Telepon"
+                                            value="{{ old('nomor_telepone') }}" inputmode="numeric"
+                                            pattern="[0-9]{10,13}"
+                                            oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,13);"
                                             minlength="10" maxlength="13" required>
                                         @error('nomor_telepone')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
+
 
 
                                     {{-- Keterangan --}}
