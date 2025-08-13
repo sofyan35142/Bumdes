@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             SambutanDirek::class,
             // SliderSeed::class,
             VisiMisiSeeder::class,
-            Statistik::class,
+            // Statistik::class,
             StrukturOrganisasi::class,
             DasarHukumSeeder::class,
             bookPanduanSeeder::class,
