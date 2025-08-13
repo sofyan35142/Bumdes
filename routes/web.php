@@ -1,33 +1,34 @@
 <?php
 
-use App\Http\Controllers\Admin\Alasan;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Alasan;
 use App\Http\Controllers\Admin\Beranda;
+use App\Http\Controllers\Admin\Layanan;
+use App\Http\Controllers\Admin\visiMisi;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Landingpage\Blog;
+use App\Http\Controllers\Landingpage\home;
+use App\Http\Controllers\Admin\Testimonial;
+use App\Http\Controllers\Landingpage\Apdes;
+use App\Http\Controllers\Landingpage\pages;
+use App\Http\Controllers\LowonganPekerjaan;
+use App\Http\Controllers\Landingpage\Contact;
+use App\Http\Controllers\Landingpage\Profile;
+use App\Http\Controllers\Admin\informasiKontak;
+use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\Admin\GaleryController;
+use App\Http\Controllers\MediaPartnerController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\Admin\dasarHukumController;
-use App\Http\Controllers\Admin\GaleryController;
-use App\Http\Controllers\Admin\StrukturOrganisasiController;
-use App\Http\Controllers\Admin\visiMisi;
-use App\Http\Controllers\Landingpage\Blog;
-use App\Http\Controllers\Landingpage\home;
-use App\Http\Controllers\Landingpage\Apdes;
-use App\Http\Controllers\Landingpage\pages;
-use App\Http\Controllers\Landingpage\Contact;
-use App\Http\Controllers\Landingpage\Profile;
-use App\Http\Controllers\Admin\Layanan;
-use App\Http\Controllers\Admin\PanduanBumdesController;
-use App\Http\Controllers\Landingpage\LayananController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MediaPartnerController;
-use App\Http\Controllers\Admin\Testimonial;
-use App\Http\Controllers\Admin\informasiKontak;
-use App\Http\Controllers\LowonganPekerjaan;
-use App\Http\Controllers\Admin\IndustryAdmin as IndustryController;
-use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\Admin\arsipdokumencontroller;
 use App\Http\Controllers\Admin\JenisLayananController;
-use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\PanduanBumdesController;
 use App\Http\Controllers\Admin\tentangBumdesController;
+use App\Http\Controllers\Landingpage\LayananController;
+use App\Http\Controllers\Admin\StrukturOrganisasiController;
+use App\Http\Controllers\Admin\IndustryAdmin as IndustryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -235,4 +236,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/tentangBumdes', [tentangBumdesController::class, 'index'])->name('admin.tentangbumdes.index');
     Route::get('/admin/tentangBumdes/edit', [tentangBumdesController::class, 'edit'])->name('admin.tentangbumdes.edit');
     Route::put('/admin/tentangBumdes', [tentangBumdesController::class, 'update'])->name('admin.tentangbumdes.update');
+
+    // Arsip Dokumen
+    Route::get('/admin/arsip-dokumen', [arsipdokumencontroller::class, 'index'])->name('admin.arsip-dokumen.index');
+    Route::get('/admin/arsip-dokumen/create', [arsipdokumencontroller::class, 'create'])->name('admin.arsip-dokumen.create');
+    Route::post('/admin/arsip-dokumen/store', [arsipdokumencontroller::class, 'store'])->name('admin.arsip-dokumen.store');
+    Route::get('/admin/arsip-dokumen/edit/{id}', [arsipdokumencontroller::class, 'edit'])->name('admin.arsip-dokumen.edit');
+    Route::put('/admin/arsip-dokumen/update/{id}', [arsipdokumencontroller::class, 'update'])->name('admin.arsip-dokumen.update');
+    Route::delete('/admin/arsip-dokumen/delete/{id}', [arsipdokumencontroller::class, 'destroy'])->name('admin.arsip-dokumen.delete');
 });

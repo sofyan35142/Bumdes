@@ -3,7 +3,7 @@
     <div class="navbar-brand-box">
         <a href="{{ route('admin.beranda') }}" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="22">
+                <img src="{{ asset('AdminPage/assets/images/logo-bumdessm.png') }}" alt="" height="32px">
             </span>
             <span class="logo-lg">
                 <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="64px">
@@ -12,7 +12,7 @@
 
         <a href="{{ route('admin.beranda') }}" class="logo logo-light">
             <span class="logo-sm">
-                <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="22">
+                <img src="{{ asset('AdminPage/assets/images/logo-bumdessm.png') }}" alt="" height="32px">
             </span>
             <span class="logo-lg">
                 <img src="{{ asset('AdminPage/assets/images/logo-bumdes.png') }}" alt="" height="64px">
@@ -46,8 +46,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('admin.visiMisi') }}"><i class="fas fa-bullseye"></i> Visi & Misi</a></li>
-                        <li><a href="{{ route('admin.struktur.index') }}"><i class="fas fa-sitemap"></i> Struktur
-                                Organisasi</a></li>
+                        <li><a href="{{ route('admin.struktur.index') }}"><i class="fas fa-sitemap"></i> Struktur Organisasi</a></li>
                         <li><a href="{{ route('admin.dasarhukum') }}"><i class="fas fa-gavel"></i> Dasar Hukum</a></li>
                     </ul>
                 </li>
@@ -91,6 +90,8 @@
                         <span>Testimoni</span>
                     </a>
                 </li>
+
+                <!-- Gallery -->
                 <li>
                     <a href="{{ route('admin.galery') }}">
                         <i class="fa-solid fa-image"></i>
@@ -98,41 +99,19 @@
                     </a>
                 </li>
 
-                <!-- Layanan Unggulan -->
-                {{-- <li>
-                    <a href="{{ route('admin.unggulan') }}">
-                        <i class="fas fa-star"></i>
-                        <span>Layanan Unggulan</span>
-                    </a>
-                </li> --}}
-
-                <!-- Kategori & Kegiatan BumDes -->
-                <li class="mm-active">
-                    <a href="javascript: void(0);" class="has-arrow" aria-expanded="true">
+                <!-- BumDes Dropdown -->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
                         <i class="fas fa-calendar-alt"></i>
                         <span>BumDes</span>
                         <i class="fas fa-angle-down" style="float:right;"></i>
                     </a>
-                    <ul class="sub-menu mm-collapse mm-show" aria-expanded="false">
-                        <li>
-                            <a href="{{ route('admin.kategori') }}">
-                                <i class="fas fa-list"></i> Kategori
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.kegiatan') }}">
-                                <i class="fas fa-tasks"></i> Kegiatan
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="{{ route('admin.unggulan') }}">
-                                <i class="fas fa-tasks"></i> Layanan Unggulan
-                            </a>
-                        </li>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('admin.kategori') }}"><i class="fas fa-list"></i> Kategori</a></li>
+                        <li><a href="{{ route('admin.kegiatan') }}"><i class="fas fa-tasks"></i> Kegiatan</a></li>
+                        <li><a href="{{ route('admin.unggulan') }}"><i class="fas fa-star"></i> Layanan Unggulan</a></li>
                     </ul>
                 </li>
-
 
                 <!-- Media Partner -->
                 <li>
@@ -180,6 +159,27 @@
                         <i class="fas fa-briefcase"></i>
                         <span>Lowongan Pekerjaan</span>
                     </a>
+                </li>
+
+                <!-- Arsip Dokumen -->
+                <li>
+                    <a href="{{ route('admin.arsip-dokumen.index') }}">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Arsip Dokumen</span>
+                    </a>
+                </li>
+
+                <!-- Industries -->
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i class="fas fa-industry"></i>
+                        <span>Industries</span>
+                        <i class="fas fa-angle-down" style="float:right;"></i>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('admin.industries.index') }}"><i class="fas fa-list"></i> Daftar Industries</a></li>
+                        <li><a href="{{ route('admin.industries.create') }}"><i class="fas fa-plus"></i> Tambah Industry</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
