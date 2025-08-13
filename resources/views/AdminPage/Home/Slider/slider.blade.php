@@ -84,7 +84,7 @@
                                                     <td>{{ $item->title_slider2 ?? '-' }}</td>
                                                     <td>{{ $item->deskripsi_slider2 ?? '-' }}</td>
                                                     <td>
-                                                        <img src="{{ asset('Foto Slider/' . $item->foto_slider2) }}"
+                                                        <img src="{{ asset('Foto_Slider/' . $item->foto_slider2) }}"
                                                             alt="Foto Slider 2"
                                                             style="width: 120px; height:80px; object-fit:cover;">
                                                     </td>

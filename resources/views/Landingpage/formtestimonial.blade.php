@@ -87,28 +87,23 @@
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="number" name="nomor_telepone" placeholder="Masukkan Nomor Telepone Anda"
+                                    {{-- <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                        <input type="number" name="nomor_telepone"
+                                            placeholder="Masukkan Nomor Telepone Anda"
                                             value="{{ old('nomor_telepone') }}">
                                         @error('nomor_telepone')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
-                                    </div>
-
-                                    {{-- Nomor Telepon
+                                    </div> --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="tel" name="nomor_telepone" placeholder="Masukkan Nomor Telepon"
-                                            value="{{ old('nomor_telepone') }}" inputmode="numeric"
-                                            pattern="[0-9]{10,13}"
-                                            oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,13);"
-                                            minlength="10" maxlength="13"
-                                            style="border-radius: 50px; padding: 10px 20px; width: 100%;" required>
+                                        <input type="number" name="nomor_telepone"
+                                            placeholder="Masukkan Nomor Telepone Anda"
+                                            value="{{ old('nomor_telepone') }}" min="1000000000" max="9999999999999"
+                                            oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13);">
                                         @error('nomor_telepone')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
-                                    </div> --}}
-
-
+                                    </div>
                                     {{-- Keterangan --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <input type="text" name="keterangan"
@@ -357,51 +352,53 @@
         }
     </script>
     <script>
-        document.getElementById("testimonialForm").addEventListener("submit", function(e) {
-            e.preventDefault();
+        document.getElementById('testimonialForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // biar tidak reload halaman
 
-            const form = this;
-            const formData = new FormData(form);
+            let form = this;
+            let formData = new FormData(form);
 
-            // Bersihkan pesan error sebelumnya
-            document.querySelectorAll('.text-danger').forEach(el => el.innerText = '');
-
-            fetch(form.action, {
+            try {
+                let response = await fetch(form.action, {
                     method: 'POST',
-                    body: formData,
                     headers: {
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                        'Accept': 'application/json' // PENTING supaya Laravel balikin JSON 422
-                    }
-                })
-                .then(async response => {
-                    if (response.status === 422) {
-                        const data = await response.json();
-                        for (const field in data.errors) {
-                            const inputField = form.querySelector(`[name="${field}"]`);
-                            if (inputField) {
-                                let errorElement = inputField.parentElement.querySelector('.text-danger');
-                                if (!errorElement) {
-                                    errorElement = document.createElement('small');
-                                    errorElement.classList.add('text-danger');
-                                    inputField.parentElement.appendChild(errorElement);
-                                }
-                                errorElement.innerText = data.errors[field][0];
-                            }
-                        }
-                    } else if (response.ok) {
-                        // Sukses → pindah ke halaman sukses
-                        window.location.href = "{{ route('home.testimoni') }}";
-                    } else {
-                        alert('Gagal mengirim data.');
-                    }
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                    alert('Terjadi kesalahan koneksi.');
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                            'content')
+                    },
+                    body: formData
                 });
+
+                if (!response.ok) {
+                    throw await response.json();
+                }
+
+                let data = await response.json();
+
+                if (data.message) {
+                    // kalau sukses, langsung redirect
+                    window.location.href = "{{ route('home.testimoni') }}";
+                }
+
+            } catch (error) {
+                console.error(error);
+
+                // kalau error validasi Laravel
+                if (error.errors) {
+                    let errorContainer = document.getElementById('errorMessages');
+                    errorContainer.innerHTML = ''; // hapus error lama
+                    for (let field in error.errors) {
+                        let msg = document.createElement('p');
+                        msg.classList.add('text-danger');
+                        msg.innerText = error.errors[field][0];
+                        errorContainer.appendChild(msg);
+                    }
+                } else {
+                    alert('Terjadi kesalahan. Silakan coba lagi.');
+                }
+            }
         });
     </script>
+
 
 
 

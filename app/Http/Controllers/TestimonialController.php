@@ -63,6 +63,7 @@ class TestimonialController extends Controller
         }
         $testimonial->save();
 
+        // return redirect()->route('home.testimoni');
         return response()->json(['message' => 'Testimonial berhasil disimpan']);
         // return redirect('/FormTestimonial')->with('success', 'Data berhasil ditambahkan');
     }
