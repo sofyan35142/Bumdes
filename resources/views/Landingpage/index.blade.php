@@ -87,7 +87,7 @@
                 <!-- Slide 1 -->
                 <div class="slide-item p_relative">
                     <div class="bg-layer"
-                        style="background-image: url('{{ asset('foto_slider/' . $slider->foto_slider1) }}');">
+                        style="background-image: url('{{ asset('Foto_Slider/' . $slider->foto_slider1) }}');">
 
                     </div>
                     <div class="shape-box">
