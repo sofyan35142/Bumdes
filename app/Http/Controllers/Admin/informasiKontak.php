@@ -11,13 +11,13 @@ class informasiKontak extends Controller
     public function index()
     {
         $kontak = InformasiKontakModel::first();
-        return view('Adminpage.contact.index', compact('kontak'));
+        return view('AdminPage.contact.index', compact('kontak'));
     }
 
     public function edit()
     {
         $kontak = InformasiKontakModel::first();
-        return view('Adminpage.contact.edit', compact('kontak'));
+        return view('AdminPage.contact.edit', compact('kontak'));
     }
 
     public function update(Request $request)
