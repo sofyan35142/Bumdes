@@ -91,14 +91,20 @@
                         <span>Testimoni</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.galery') }}">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Gallery</span>
+                    </a>
+                </li>
 
                 <!-- Layanan Unggulan -->
-                <li>
+                {{-- <li>
                     <a href="{{ route('admin.unggulan') }}">
                         <i class="fas fa-star"></i>
                         <span>Layanan Unggulan</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <!-- Kategori & Kegiatan BumDes -->
                 <li class="mm-active">
@@ -116,6 +122,11 @@
                         <li>
                             <a href="http://127.0.0.1:8000/admin/kegiatan">
                                 <i class="fas fa-tasks"></i> Kegiatan
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.unggulan') }}">
+                                <i class="fas fa-tasks"></i> Layanan Unggulan
                             </a>
                         </li>
                     </ul>
