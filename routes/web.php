@@ -10,9 +10,9 @@ use App\Http\Controllers\admin\GaleryController;
 use App\Http\Controllers\Admin\StrukturOrganisasiController;
 use App\Http\Controllers\Admin\VisiMisi;
 use App\Http\Controllers\Landingpage\Blog;
-use App\Http\Controllers\Landingpage\Home;
+use App\Http\Controllers\Landingpage\home;
 use App\Http\Controllers\Landingpage\Apdes;
-use App\Http\Controllers\Landingpage\Pages;
+use App\Http\Controllers\Landingpage\pages;
 use App\Http\Controllers\Landingpage\Contact;
 use App\Http\Controllers\Landingpage\Profile;
 use App\Http\Controllers\Admin\Layanan;
@@ -65,13 +65,13 @@ Route::get('/profile/strukturorganisasi', [Profile::class, 'strukturorganisasi']
 Route::get('/profile/dasarhukum', [Profile::class, 'dasarhukum'])->name('profile.dasarhukum');
 
 // --- Halaman Tambahan
-Route::get('/galeri', [Pages::class, 'galeri'])->name('galeri');
-Route::get('/lowongan', [Pages::class, 'lowongan'])->name('lowongan');
-Route::get('/pages/galeri', [Pages::class, 'galeri'])->name('pages.galeri');
-Route::get('/pages/lowongan', [Pages::class, 'lowongan'])->name('pages.lowongan');
-Route::get('/pages/lowongan/detail/{id}', [Pages::class, 'lowongandetail'])->name('pages.lowongandetail');
-Route::get('/pages/keuangan', [Pages::class, 'keuangan'])->name('pages.keuangan');
-Route::get('/pages/umkm', [Pages::class, 'umkm'])->name('pages.umkm');
+Route::get('/galeri', [pages::class, 'galeri'])->name('galeri');
+Route::get('/lowongan', [pages::class, 'lowongan'])->name('lowongan');
+Route::get('/pages/galeri', [pages::class, 'galeri'])->name('pages.galeri');
+Route::get('/pages/lowongan', [pages::class, 'lowongan'])->name('pages.lowongan');
+Route::get('/pages/lowongan/detail/{id}', [pages::class, 'lowongandetail'])->name('pages.lowongandetail');
+Route::get('/pages/keuangan', [pages::class, 'keuangan'])->name('pages.keuangan');
+Route::get('/pages/umkm', [pages::class, 'umkm'])->name('pages.umkm');
 
 // --- Kontak
 Route::get('/contact', [Contact::class, 'contact'])->name('landingpage.contact');

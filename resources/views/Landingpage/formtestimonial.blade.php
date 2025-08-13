@@ -302,7 +302,7 @@
 
 
         <!-- main-footer -->
-        @include('LandingPage.layout.footer')
+        @include('Landingpage.layout.footer')
         <!-- main-footer end -->
 
 
