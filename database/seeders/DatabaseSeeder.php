@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
         // Memanggil seeder-seeder tambahan
         $this->call([
             SambutanDirek::class,
-            SliderSeed::class,
+            // SliderSeed::class,
             VisiMisiSeeder::class,
             Statistik::class,
             StrukturOrganisasi::class,
