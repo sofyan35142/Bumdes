@@ -381,7 +381,7 @@
                         }
                     } else if (response.ok) {
                         // Sukses → pindah ke halaman sukses
-                        window.location.href = '/sukses';
+                        window.location.href = "{{ route('home.testimoni') }}";
                     } else {
                         alert('Gagal mengirim data.');
                     }
