@@ -14,7 +14,7 @@ use Database\Seeders\statistik;
 use Database\Seeders\StrukturOrganisasi;
 use Database\Seeders\DasarHukumSeeder;
 // Seeder tambahan yang dipanggil tapi belum diimport
-use Database\Seeders\BookPanduanSeeder;
+use Database\Seeders\bookPanduanSeeder;
 use Database\Seeders\kategori;
 use Database\Seeders\LayananUnggulan;
 use Database\Seeders\kegiatanseeder;
@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
             statistik::class,
             StrukturOrganisasi::class,
             DasarHukumSeeder::class,
-            // bookPanduanSeeder::class,
+            bookPanduanSeeder::class,
             kategori::class,
             LayananUnggulan::class,
             kegiatanseeder::class,
@@ -80,7 +80,7 @@ class DatabaseSeeder extends Seeder
             lowonganseeder::class,
             MediaPartnerSeeder::class,
             IndustrySeeder::class,
-            // JenisLayananSeeder::class,
+            JenisLayananSeeder::class,
             tentangBumdes::class
         ]);
     }
