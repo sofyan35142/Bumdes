@@ -87,8 +87,15 @@
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                        <input type="number" name="nomor_telepone" placeholder="Masukkan Nomor Telepone Anda"
+                                            value="{{ old('nomor_telepone') }}">
+                                        @error('nomor_telepone')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
 
-                                    {{-- Nomor Telepon --}}
+                                    {{-- Nomor Telepon
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <input type="tel" name="nomor_telepone" placeholder="Masukkan Nomor Telepon"
                                             value="{{ old('nomor_telepone') }}" inputmode="numeric"
@@ -99,7 +106,7 @@
                                         @error('nomor_telepone')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
-                                    </div>
+                                    </div> --}}
 
 
                                     {{-- Keterangan --}}
