@@ -11,12 +11,15 @@ class pages extends Controller
 {
     public function galeri()
     {
-        $galeri = GaleryModel::all();
+        $galeri = GaleryModel::orderBy('created_at', 'desc')->paginate(10);
         return view('Landingpage.pages.galeri', compact('galeri'));
     }
     public function lowongan()
     {
-        $Lowongan = \App\Models\LowonganPekerjaan::where('status', 'dibuka')->latest()->get();
+        $Lowongan = \App\Models\LowonganPekerjaan::where('status', 'dibuka')
+            ->latest()
+            ->paginate(10)
+            ->appends(request()->except('page'));
         return view('Landingpage.pages.lowongan', compact('Lowongan'));
     }
     public function keuangan()

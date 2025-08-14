@@ -36,23 +36,29 @@ class PanduanBumdesController extends Controller
             'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
-        
+
 
         $fileEbook = $data->file_ebook;
         $gambar = $data->gambar;
+
+        if (app()->environment('local')) {
+            $uploadPath = public_path('panduan_bumdes');
+        } else {
+            $uploadPath = base_path('../public_html/panduan_bumdes');
+        }
 
         // Handle upload e-book baru
         if ($request->hasFile('file_ebook')) {
             $file = $request->file('file_ebook');
             $fileEbook = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('ebook'), $fileEbook);
+            $file->move($uploadPath, $fileEbook);
         }
 
         // Handle upload gambar baru
         if ($request->hasFile('gambar')) {
             $img = $request->file('gambar');
             $gambar = time() . '_' . $img->getClientOriginalName();
-            $img->move(public_path('panduan'), $gambar);
+            $img->move($uploadPath, $gambar);
         }
 
         // Update ke database

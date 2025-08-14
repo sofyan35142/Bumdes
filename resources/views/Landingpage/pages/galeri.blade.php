@@ -114,14 +114,8 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="pagination-wrapper pt_20">
-                    <ul class="pagination clearfix">
-                        <li><a href="portfolio.html"><i class="icon-34"></i></a></li>
-                        <li><a href="portfolio.html" class="current">1</a></li>
-                        <li><a href="portfolio.html">2</a></li>
-                        <li><a href="portfolio.html">3</a></li>
-                        <li><a href="portfolio.html"><i class="icon-35"></i></a></li>
-                    </ul>
+                <div class="pt_20">
+                    {{ $galeri->links('vendor.pagination.custom') }}
                 </div>
             </div>
         </section>

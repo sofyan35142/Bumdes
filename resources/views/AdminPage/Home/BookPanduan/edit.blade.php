@@ -66,7 +66,7 @@
                                                     name="file_ebook">
                                                 @if ($data->file_ebook)
                                                     <div class="mt-2">
-                                                        <a href="{{ asset('ebook/' . $data->file_ebook) }}"
+                                                        <a href="{{ asset($data->file_ebook) }}"
                                                             target="_blank">Lihat File Saat Ini</a>
                                                     </div>
                                                 @endif

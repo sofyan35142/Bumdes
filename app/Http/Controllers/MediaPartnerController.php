@@ -11,7 +11,6 @@ class MediaPartnerController extends Controller
     public function mediapartner()
     {
         $mediapartners = MediaPartner::latest()->get();
-        dd(public_path('Media Partner'));
         return view('AdminPage.Home.MediaPartner.mediapartner', compact('mediapartners'));
     }
 
