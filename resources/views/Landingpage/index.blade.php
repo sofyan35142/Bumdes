@@ -850,13 +850,13 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image">
-                                            <a href="{{ route('kegiatan.detail', $kegiatan->id) }}">
+                                            <a href="{{ route('blogdetail', $kegiatan->id) }}">
                                                 <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
                                                     alt="">
                                             </a>
                                         </figure>
                                         <figure class="overlay-image">
-                                            <a href="{{ route('kegiatan.detail', $kegiatan->id) }}">
+                                            <a href="{{ route('blogdetail', $kegiatan->id) }}">
                                                 <img src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
                                                     alt="">
                                             </a>
@@ -865,10 +865,10 @@
                                     <div class="lower-content">
                                         <span class="category">{{ $kegiatan->kategori->nama_kategori ?? '-' }}</span>
                                         <h3><a
-                                                href="{{ route('kegiatan.detail', $kegiatan->id) }}">{{ $kegiatan->Judul_Kegiatan }}</a>
+                                                href="{{ route('blogdetail', $kegiatan->id) }}">{{ $kegiatan->Judul_Kegiatan }}</a>
                                         </h3>
                                         <ul class="post-info">
-                                            <li>By <a href="{{ route('kegiatan.detail', $kegiatan->id) }}">Sekertaris
+                                            <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Sekertaris
                                                     BumDes</a></li>
                                             <li><span>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</span>
                                             </li>
