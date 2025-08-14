@@ -55,6 +55,10 @@ class home extends Controller
     {
         return view('Landingpage.aftertestimonial');
     }
+    public function pengajuan()
+    {
+        return view('Landingpage.pengajuansukses');
+    }
     public function listunggulan()
     {
         // $Lowongan = LayananUnggulan::with('kategori')->latest()->paginate(6);

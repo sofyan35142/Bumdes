@@ -55,6 +55,7 @@ Route::get('/detailunggulan/{id}', [home::class, 'detailunggulan'])->name('home.
 Route::get('/listunggulan', [home::class, 'listunggulan'])->name('home.listunggulan');
 Route::post('/admin/testimonial/store', [TestimonialController::class, 'store'])->name('admin.testimonial.store');
 Route::get('/testimonialsukses', [home::class, 'testimoni'])->name('home.testimoni');
+Route::get('/pengajuansukses', [home::class, 'pengajuan'])->name('home.pengajuan');
 
 // --- Blog
 Route::get('/blog', [Blog::class, 'blog'])->name('blog');
