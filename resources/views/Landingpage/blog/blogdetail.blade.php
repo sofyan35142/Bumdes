@@ -84,38 +84,6 @@
                                     @endforeach
                                 </div>
                             </div>
-
-                            {{-- <div class="sidebar-widget tags-widget mb_45">
-                                <div class="widget-title mb_20">
-                                    <h3>Popular tag</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="tags-list clearfix">
-                                        <li><a href="blog-details.html">Account</a></li>
-                                        <li><a href="blog-details.html">Careers</a></li>
-                                        <li><a href="blog-details.html">Demo</a></li>
-                                        <li><a href="blog-details.html">Development</a></li>
-                                        <li><a href="blog-details.html">Technology</a></li>
-                                    </ul>
-                                </div>
-                            </div> --}}
-                            <div class="sidebar-widget archives-widget">
-                                <div class="widget-title mb_11">
-                                    <h3>Archives</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="archives-list clearfix">
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 20,
-                                                2022<span>(09)</span></a></li>
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26,
-                                                2022<span>(20)</span></a></li>
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26,
-                                                2022<span>(25)</span></a></li>
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26,
-                                                2022<span>(06)</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                         <div class="download-widget mr_40">
                             <div class="shape"
@@ -158,7 +126,7 @@
                                         </ul>
                                     </div>
                                     <div class="text-box pt_25 mb_50">
-                                        <p class="mb_30">{!! nl2br(e($detailblog->deskripsi_kegiatan)) !!}</p>
+                                        <p class="mb_30">{!! nl2br($detailblog->deskripsi_kegiatan) !!}</p>
                                     </div>
                                 </div>
                             </div>
