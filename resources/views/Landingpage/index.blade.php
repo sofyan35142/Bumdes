@@ -105,7 +105,7 @@
                             <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
                             <p>{{ $slider->deskripsi_slider1 }}</p>
                             <div class="btn-box">
-                                <a href="{{ url('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
+                                <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
                                 {{-- <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
                                         Warga</span></a> --}}
                             </div>
@@ -132,7 +132,7 @@
                             <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
                             <p>{{ $slider->deskripsi_slider2 }}</p>
                             <div class="btn-box">
-                                <a href="{{ url('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat Program
+                                <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat Program
                                     Kami</a>
                                 {{-- <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
                                         Warga</span></a> --}}
@@ -160,7 +160,7 @@
                             <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
                             <p>{{ $slider->deskripsi_slider3 }}</p>
                             <div class="btn-box">
-                                <a href="{{ url('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat Program
+                                <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat Program
                                     Kami</a>
                                 {{-- <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
                                         Warga</span></a> --}}
