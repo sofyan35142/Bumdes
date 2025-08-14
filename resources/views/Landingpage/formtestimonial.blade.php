@@ -126,8 +126,11 @@
                                                 accept="image/*" onchange="previewImages(event)" required>
                                             <button type="button">Upload Photo</button>
                                         </div>
+
+                                        <!-- Preview gambar -->
                                         <div id="image-preview"
                                             style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;"></div>
+
                                         @error('foto_testimonial')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -206,8 +209,7 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
                             <div class="testimonial-block-one">
                                 <div class="inner-box">
-                                    <div class="shape"
-                                        style="background-image: url(assets/images/shape/shape-7.png);">
+                                    <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
                                     </div>
                                     <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
                                     </div>
@@ -437,7 +439,34 @@
             }
         });
     </script>
+    <script>
+        function previewImages(event) {
+            const preview = document.getElementById('image-preview');
+            preview.innerHTML = ''; // Kosongkan preview sebelumnya
+            const files = event.target.files;
 
+            Array.from(files).forEach(file => {
+                // Pastikan hanya file gambar yang diproses
+                if (!file.type.startsWith('image/')) {
+                    alert(`File ${file.name} bukan gambar!`);
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '150px';
+                    img.style.maxHeight = '150px';
+                    img.style.objectFit = 'cover';
+                    img.style.borderRadius = '8px';
+                    img.style.border = '1px solid #ccc';
+                    preview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+    </script>
 
 
 
