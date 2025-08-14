@@ -126,7 +126,7 @@
                                         </ul>
                                     </div>
                                     <div class="text-box pt_25 mb_50">
-                                        <p class="mb_30">{!! nl2br($detailblog->deskripsi_kegiatan) !!}</p>
+                                        <p class="mb_30">{{ nl2br(strip_tags($detailblog->deskripsi_kegiatan)) }}</p>
                                     </div>
                                 </div>
                             </div>
