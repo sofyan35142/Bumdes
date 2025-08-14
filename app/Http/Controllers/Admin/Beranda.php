@@ -276,8 +276,14 @@ class Beranda extends Controller
         $unggulan->deskripsi    = $request->deskripsi;
         $unggulan->kategori_id  = $request->kategori_id;
 
-        // Tentukan folder upload di public_html
-        $uploadPath = base_path('../public_html/foto_layanan_unggulan');
+        // Tentukan path upload sesuai environment
+        if (app()->environment('local')) {
+            $uploadPath = public_path('foto_layanan_unggulan');
+        } else {
+            $uploadPath = base_path('../public_html/foto_layanan_unggulan');
+        }
+
+        // Pastikan folder ada
         if (!file_exists($uploadPath)) {
             mkdir($uploadPath, 0755, true);
         }
@@ -285,13 +291,14 @@ class Beranda extends Controller
         // Upload gambar jika ada
         if ($request->hasFile('foto_layanan')) {
             $file = $request->file('foto_layanan');
-            $filename = md5(time() . '_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
+            $filename = md5($file->getClientOriginalName() . microtime(true)) . '.' . $file->getClientOriginalExtension();
             $file->move($uploadPath, $filename);
             $unggulan->foto_layanan = $filename;
         }
 
         // Simpan ke database
         $unggulan->save();
+
 
         return redirect()->route('admin.unggulan')->with('success', 'Data unggulan berhasil ditambahkan!');
     }
@@ -310,13 +317,13 @@ class Beranda extends Controller
         $request->validate([
             'nama_layanan'   => 'required|string|max:255',
             'deskripsi'      => 'required|string',
-            // 'kategori'       => 'required|exists:kategorimodels,id',
+            // 'kategori'    => 'required|exists:kategorimodels,id',
             'foto_layanan'   => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ], [
             'nama_layanan.required' => 'Nama layanan wajib diisi.',
             'deskripsi.required'    => 'Deskripsi wajib diisi.',
-            // 'kategori.required'     => 'Kategori wajib dipilih.',
-            // 'kategori.exists'       => 'Kategori yang dipilih tidak valid.',
+            // 'kategori.required'  => 'Kategori wajib dipilih.',
+            // 'kategori.exists'    => 'Kategori yang dipilih tidak valid.',
             'foto_layanan.image'    => 'File harus berupa gambar.',
             'foto_layanan.mimes'    => 'Format gambar harus jpeg, png, atau jpg.',
             'foto_layanan.max'      => 'Ukuran gambar maksimal 2MB.',
@@ -326,8 +333,14 @@ class Beranda extends Controller
         $unggulan = LayananUnggulan::findOrFail($id);
         $foto_layanan = $unggulan->foto_layanan;
 
-        // Tentukan folder upload di public_html
-        $uploadPath = base_path('../public_html/Foto_Layanan_Unggulan');
+        // Tentukan folder upload sesuai environment
+        if (app()->environment('local')) {
+            $uploadPath = public_path('Foto_Layanan_Unggulan');
+        } else {
+            $uploadPath = base_path('../public_html/Foto_Layanan_Unggulan');
+        }
+
+        // Pastikan folder ada
         if (!file_exists($uploadPath)) {
             mkdir($uploadPath, 0755, true);
         }
@@ -339,9 +352,9 @@ class Beranda extends Controller
                 @unlink($uploadPath . '/' . $unggulan->foto_layanan);
             }
 
-            // Simpan foto baru
+            // Simpan foto baru dengan nama unik
             $file = $request->file('foto_layanan');
-            $foto_layanan = md5(uniqid() . '_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
+            $foto_layanan = md5($file->getClientOriginalName() . microtime(true)) . '.' . $file->getClientOriginalExtension();
             $file->move($uploadPath, $foto_layanan);
         }
 

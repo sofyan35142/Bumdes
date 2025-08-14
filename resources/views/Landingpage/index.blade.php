@@ -473,7 +473,7 @@
                             <div class="service-block-one wow fadeInUp animated" data-wow-delay="00ms"
                                 data-wow-duration="1500ms">
                                 <div class="inner-box">
-                                    <div class="image-box">
+                                    <div class="image-box" style="height: 13pc; width: 21pc; overflow: hidden;">
                                         <figure class="image">
                                             <a href="{{ route('home.detailunggulan', ['id' => $item->id]) }}">
                                                 <img src="{{ asset('foto layanan unggulan/' . $item->foto_layanan) }}"
