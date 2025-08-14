@@ -92,7 +92,7 @@
                                         <span class="category">Business</span>
                                         <h3>{{ $detailblog->Judul_Kegiatan }}</h3>
                                         <ul class="post-info">
-                                            <li>By <a href="blog-details.html">Ema Chawal</a></li>
+                                            <li>By <a href="#">Sekertaris</a></li>
                                             <li><span>{{ \Carbon\Carbon::parse($detailblog->tanggal_kegiatan)->format('d M Y') }}</span>
                                             </li>
                                         </ul>

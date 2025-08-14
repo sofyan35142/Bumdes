@@ -182,8 +182,7 @@
                                                             href="{{ route('blogdetail', $kegiatan->id) }}">{{ $kegiatan->Judul_Kegiatan }}</a>
                                                     </h3>
                                                     <ul class="post-info">
-                                                        <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Alex
-                                                                Beniwal</a></li>
+                                                        <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Sekertaris</a></li>
                                                         <li><span>{{ $kegiatan->tanggal_kegiatan }}</span></li>
                                                     </ul>
                                                 </div>

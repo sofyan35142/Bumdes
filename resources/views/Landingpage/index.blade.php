@@ -869,7 +869,7 @@
                                         </h3>
                                         <ul class="post-info">
                                             <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Sekertaris
-                                                    BumDes</a></li>
+                                                    </a></li>
                                             <li><span>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</span>
                                             </li>
                                         </ul>

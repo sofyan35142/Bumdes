@@ -99,7 +99,8 @@
                                         <input type="number" name="nomor_telepone"
                                             placeholder="Masukkan Nomor Telepone Anda"
                                             value="{{ old('nomor_telepone') }}" min="1000000000" max="9999999999999"
-                                            oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13);" required>
+                                            oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13);"
+                                            required>
                                         @error('nomor_telepone')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -142,44 +143,37 @@
                                 </div>
 
                                 {{-- Tombol Submit --}}
-                                <!-- Loading Overlay dengan inline style -->
-                                <div id="loadingOverlay"
-                                    style="
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.85);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-">
-                                    <div
-                                        style="
-        width: 50px;
-        height: 50px;
-        border: 5px solid #ccc;
-        border-top: 5px solid #007bff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: auto;
-    ">
-                                    </div>
-                                    <p style="margin-top: 10px; font-size: 18px; color: #333;">
-                                        Mengirim testimonial...
-                                    </p>
+                                <!-- Loading Overlay -->
+                                <div id="loadingOverlay" class="loader-wrap" style="display: none;">
+                                    <div class="preloader">
+                                        <!-- Tombol untuk menutup loader (opsional) -->
+                                        <div class="preloader-close">
+                                            <i class="icon-27"></i>
+                                        </div>
 
-                                    <style>
-                                        @keyframes spin {
-                                            to {
-                                                transform: rotate(360deg);
-                                            }
-                                        }
-                                    </style>
+                                        <!-- Isi animasi preloader -->
+                                        <div id="handle-preloader" class="handle-preloader">
+                                            <div class="animation-preloader">
+                                                <!-- Spinner -->
+                                                <div class="spinner"></div>
+
+                                                <!-- Teks animasi loading -->
+                                                <div class="txt-loading">
+                                                    <span data-text-preloader="b" class="letters-loading">b</span>
+                                                    <span data-text-preloader="u" class="letters-loading">u</span>
+                                                    <span data-text-preloader="m" class="letters-loading">m</span>
+                                                    <span data-text-preloader="d" class="letters-loading">d</span>
+                                                    <span data-text-preloader="e" class="letters-loading">e</span>
+                                                    <span data-text-preloader="s" class="letters-loading">s</span>
+                                                </div>
+
+                                                <!-- Pesan tambahan -->
+                                                <p style="margin-top: 15px; font-size: 18px; color: #333;">
+                                                    Mengirim testimonial...
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="form-group message-btn">
@@ -212,7 +206,8 @@
                         <div class="col-lg-4 col-md-6 col-sm-12 testimonial-block">
                             <div class="testimonial-block-one">
                                 <div class="inner-box">
-                                    <div class="shape" style="background-image: url(assets/images/shape/shape-7.png);">
+                                    <div class="shape"
+                                        style="background-image: url(assets/images/shape/shape-7.png);">
                                     </div>
                                     <div class="icon-box"><img src="assets/images/icons/icon-10.png" alt="">
                                     </div>
