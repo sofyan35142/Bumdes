@@ -1,135 +1,125 @@
 <!doctype html>
 <html lang="en">
 
+<!-- Mirrored from themesbrand.com/minible/layouts/form-editors.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jun 2025 07:29:51 GMT -->
+
 <head>
     @include('AdminPage.layouts.head')
 </head>
 
-
 <body>
-
+    <!-- <body data-layout="horizontal" data-topbar="colored"> -->
 
     <!-- Begin page -->
     <div id="layout-wrapper">
-        {{-- header --}}
+
         @include('AdminPage.layouts.header')
+
         <!-- ========== Left Sidebar Start ========== -->
         @include('AdminPage.layouts.sidebar')
         <!-- Left Sidebar End -->
-
-
 
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content">
-
             <div class="page-content">
                 <div class="container-fluid">
 
-                    <!-- start page title -->
+                    {{-- Judul halaman --}}
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Dashboard</h4>
-
-                                <div class="page-title-right">
+                                <h4 class="mb-0">Manajemen Arsip Dokumen</h4>
+                                <div class="page-title-right d-flex align-items-center">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Minible</a></li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
+                                        <li class="breadcrumb-item"><a href="javascript:void(0);">Profil</a></li>
+                                        <li class="breadcrumb-item active">Arsip Dokumen</li>
                                     </ol>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
 
+                    {{-- Konten utama --}}
                     <div class="row">
-                        <div class="col-md-6 col-xl-3">
+                        <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div>
-                                        <h4 class="mb-1 mt-1">$<span data-plugin="counterup">34,152</span></h4>
-                                        <p class="text-muted mb-0">Total Revenue</p>
+
+                                    {{-- Tombol tambah --}}
+                                    <div class="mb-3 text-end">
+                                        <a href="{{ route('admin.arsip-dokumen.create') }}" class="btn btn-primary">
+                                            <i class="fas fa-plus"></i> Tambah Arsip
+                                        </a>
                                     </div>
-                                    <p class="text-muted mt-3 mb-0"><span class="text-success me-1">
-                                    </p>
-                                </div>
-                            </div>
-                        </div> <!-- end col-->
 
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="float-end mt-2">
-                                        <div id="orders-chart" data-colors='["--bs-success"]'> </div>
+                                    {{-- Tabel data --}}
+                                    <div class="table-responsive">
+                                        <table id="tableku" class="table table-bordered table-striped">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th width="5%">#</th>
+                                                    <th>Nama</th>
+                                                    <th>NIK</th>
+                                                    <th>Gambar</th>
+                                                    <th width="15%">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @forelse ($arsip as $index => $item)
+                                                    <tr>
+                                                        <td>{{ $index + 1 }}</td>
+                                                        <td>{{ $item->nama }}</td>
+                                                        <td>{{ $item->nik }}</td>
+                                                        <td>
+                                                            @if ($item->gambar)
+                                                                <a href="{{ asset('storage/' . $item->gambar) }}"
+                                                                    target="_blank" class="btn btn-sm btn-info">
+                                                                    <i class="fas fa-eye"></i> Lihat Dokumen
+                                                                </a>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('admin.arsip-dokumen.edit', $item->id) }}"
+                                                                class="btn btn-sm btn-warning">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                            <form
+                                                                action="{{ route('admin.arsip-dokumen.delete', $item->id) }}"
+                                                                method="POST" class="d-inline delete-form">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-sm btn-danger">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                @empty
+                                                        
+                                                @endforelse
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <div>
-                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">5,643</span></h4>
-                                        <p class="text-muted mb-0">Orders</p>
-                                    </div>
-                                    <p class="text-muted mt-3 mb-0"><span class="text-danger me-1">
-                                    </p>
-                                </div>
-                            </div>
-                        </div> <!-- end col-->
+                                </div> <!-- end card-body -->
+                            </div> <!-- end card -->
+                        </div> <!-- end col-lg-12 -->
+                    </div> <!-- end row -->
 
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="float-end mt-2">
-                                        <div id="customers-chart" data-colors='["--bs-primary"]'> </div>
-                                    </div>
-                                    <div>
-                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">45,254</span></h4>
-                                        <p class="text-muted mb-0">Customers</p>
-                                    </div>
-                                    <p class="text-muted mt-3 mb-0"><span class="text-danger me-1">
-                                    </p>
-                                </div>
-                            </div>
-                        </div> <!-- end col-->
+                </div> <!-- end container-fluid -->
+            </div> <!-- end page-content -->
+        </div> <!-- end main-content -->
 
-                        <div class="col-md-6 col-xl-3">
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="float-end mt-2">
-                                        <div id="growth-chart" data-colors='["--bs-warning"]'></div>
-                                    </div>
-                                    <div>
-                                        <h4 class="mb-1 mt-1">+ <span data-plugin="counterup">12.58</span>%</h4>
-                                        <p class="text-muted mb-0">Growth</p>
-                                    </div>
-                                    <p class="text-muted mt-3 mb-0"><span class="text-success me-1">
-                                    </p>
-                                </div>
-                            </div>
-                        </div> <!-- end col-->
-                    </div> <!-- end row-->
-                </div> <!-- container-fluid -->
-            </div>
-            <!-- End Page-content -->
-
-
-            {{-- footer --}}
-            @include('AdminPage.layouts.footer')
-        </div>
-        <!-- end main content-->
-
-    </div>
-    <!-- END layout-wrapper -->
-
-
+    </div> <!-- end layout-wrapper -->
 
     <!-- Right Sidebar -->
     <div class="right-bar">
         <div data-simplebar class="h-100">
             <div class="rightbar-title d-flex align-items-center p-3">
-
                 <h5 class="m-0 me-2">Settings</h5>
-
                 <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
                     <i class="mdi mdi-close noti-icon"></i>
                 </a>
@@ -151,7 +141,6 @@
                 </div>
 
                 <h6 class="mt-4 mb-3 pt-2">Layout Mode</h6>
-
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="layout-mode" id="layout-mode-light"
                         value="light">
@@ -164,7 +153,6 @@
                 </div>
 
                 <h6 class="mt-4 mb-3 pt-2">Layout Width</h6>
-
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="layout-width" id="layout-width-fuild"
                         value="fuild" onchange="document.body.setAttribute('data-layout-size', 'fluid')">
@@ -177,7 +165,6 @@
                 </div>
 
                 <h6 class="mt-4 mb-3 pt-2">Topbar Color</h6>
-
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-light"
                         value="light" onchange="document.body.setAttribute('data-topbar', 'light')">
@@ -190,7 +177,6 @@
                 </div>
 
                 <h6 class="mt-4 mb-3 pt-2 sidebar-setting">Sidebar Size</h6>
-
                 <div class="form-check sidebar-setting">
                     <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-default"
                         value="default" onchange="document.body.setAttribute('data-sidebar-size', 'lg')">
@@ -208,7 +194,6 @@
                 </div>
 
                 <h6 class="mt-4 mb-3 pt-2 sidebar-setting">Sidebar Color</h6>
-
                 <div class="form-check sidebar-setting">
                     <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-light"
                         value="light" onchange="document.body.setAttribute('data-sidebar', 'light')">
@@ -226,7 +211,6 @@
                 </div>
 
                 <h6 class="mt-4 mb-3 pt-2">Direction</h6>
-
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-ltr"
                         value="ltr">
@@ -239,7 +223,6 @@
                 </div>
 
             </div>
-
         </div> <!-- end slimscroll-menu-->
     </div>
     <!-- /Right-bar -->
@@ -249,6 +232,32 @@
 
     <!-- JAVASCRIPT -->
     @include('AdminPage.layouts.scripts')
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteForms = document.querySelectorAll('.delete-form');
+            deleteForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    Swal.fire({
+                        title: 'Yakin ingin menghapus?',
+                        text: "Data akan dihapus secara permanen!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Ya, hapus!',
+                        cancelButtonText: 'Batal'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
