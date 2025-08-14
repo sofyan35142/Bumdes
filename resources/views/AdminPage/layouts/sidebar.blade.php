@@ -46,7 +46,8 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('admin.visiMisi') }}"><i class="fas fa-bullseye"></i> Visi & Misi</a></li>
-                        <li><a href="{{ route('admin.struktur.index') }}"><i class="fas fa-sitemap"></i> Struktur Organisasi</a></li>
+                        <li><a href="{{ route('admin.struktur.index') }}"><i class="fas fa-sitemap"></i> Struktur
+                                Organisasi</a></li>
                         <li><a href="{{ route('admin.dasarhukum') }}"><i class="fas fa-gavel"></i> Dasar Hukum</a></li>
                     </ul>
                 </li>
@@ -109,7 +110,8 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('admin.kategori') }}"><i class="fas fa-list"></i> Kategori</a></li>
                         <li><a href="{{ route('admin.kegiatan') }}"><i class="fas fa-tasks"></i> Kegiatan</a></li>
-                        <li><a href="{{ route('admin.unggulan') }}"><i class="fas fa-star"></i> Layanan Unggulan</a></li>
+                        <li><a href="{{ route('admin.unggulan') }}"><i class="fas fa-star"></i> Layanan Unggulan</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -177,10 +179,20 @@
                         <i class="fas fa-angle-down" style="float:right;"></i>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('admin.industries.index') }}"><i class="fas fa-list"></i> Daftar Industries</a></li>
-                        <li><a href="{{ route('admin.industries.create') }}"><i class="fas fa-plus"></i> Tambah Industry</a></li>
+                        <li><a href="{{ route('admin.industries.index') }}"><i class="fas fa-list"></i> Daftar
+                                Industries</a></li>
+                        <li><a href="{{ route('admin.industries.create') }}"><i class="fas fa-plus"></i> Tambah
+                                Industry</a></li>
                     </ul>
                 </li>
+                <!-- developer kontak -->
+                <li>
+                    <a href="{{ route('developer.kontak') }}">
+                        <i class="fas fa-user-phone"></i>
+                        <span>Developer Kontak</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>

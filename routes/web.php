@@ -246,4 +246,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/arsip-dokumen/edit/{id}', [arsipdokumencontroller::class, 'edit'])->name('admin.arsip-dokumen.edit');
     Route::put('/admin/arsip-dokumen/update/{id}', [arsipdokumencontroller::class, 'update'])->name('admin.arsip-dokumen.update');
     Route::delete('/admin/arsip-dokumen/delete/{id}', [arsipdokumencontroller::class, 'destroy'])->name('admin.arsip-dokumen.delete');
+
+    //developer
+    Route::get('/admin/developerpage', function () {
+        return view('AdminPage.developer.index');
+    })->name('developer.kontak');
 });

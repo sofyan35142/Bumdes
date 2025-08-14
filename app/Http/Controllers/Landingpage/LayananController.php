@@ -27,7 +27,7 @@ class LayananController extends Controller
             'nik'                => 'required|digits:16',
             'alamat'             => 'required|string|max:255',
             'no_wa'              => 'required|numeric|digits_between:10,13',
-            'jenis_pengajuan'    => 'required|exists:jenis_layanan,id',
+            'jenis_pengajuan' => 'required|exists:jenis_layanan,nama',
             'keperluan'          => 'required|string',
             'durasi_sewa'        => 'required|integer|min:1',
             'satuan_sewa'        => 'required|in:bulan,hari',
@@ -35,13 +35,15 @@ class LayananController extends Controller
             'legalitas_usaha'    => 'nullable|string|max:255',
             'jenis_usaha'        => 'nullable|string|max:255',
             'produk'             => 'nullable|string|max:255',
+            
+            'file_ktp' => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
 
-            'file_ktp'           => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
         ]);
 
         // Ambil data jenis layanan dari DB
-        $jenisLayanan = JenisLayanan::findOrFail($validatedData['jenis_pengajuan']);
-
+        $jenisLayanan = JenisLayanan::whereRaw('LOWER(nama) = ?', [strtolower($validatedData['jenis_pengajuan'])])
+            ->firstOrFail();
+        // dd($jenisLayanan);
         // Hitung harga ulang supaya aman
         $hargaPerSatuan = $jenisLayanan->harga_sewa;
         $pajakPerSatuan = $jenisLayanan->beban_perbulan;
@@ -88,11 +90,8 @@ class LayananController extends Controller
             }
             $templateProcessor->saveAs($fileSuratPath);
 
-            // Simpan file KTP jika ada
-            $ktpFileName = null;
-            if ($request->hasFile('file_ktp')) {
-                $ktpFileName = $request->file('file_ktp')->store('ktp', 'public');
-            }
+            // Simpan file KTP (wajib)
+            $ktpFileName = $request->file('file_ktp')->store('ktp', 'public');
 
             // Simpan data pengajuan ke DB
             PengajuanLayanan::create([
