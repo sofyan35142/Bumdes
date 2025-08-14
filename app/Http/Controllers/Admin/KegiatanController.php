@@ -82,12 +82,11 @@ class KegiatanController extends Controller
         // Tentukan path upload berdasarkan environment
         if (app()->environment('local')) {
             $uploadPath = public_path('foto kegiatan BumDes');
-            dd('Upload path lokal: ' . $uploadPath);
+            // dd('Upload path lokal: ' . $uploadPath);
         } else {
             $uploadPath = base_path('../public_html/foto kegiatan BumDes');
-            dd('Upload path hosting: ' . $uploadPath);
+            // dd('Upload path hosting: ' . $uploadPath);
         }
-        dd('p');
         // Update data
         $kegiatan->Judul_Kegiatan = $validatedData['Judul_Kegiatan'];
         $kegiatan->tanggal_kegiatan = $validatedData['tanggal_kegiatan'];
