@@ -115,7 +115,7 @@ class LayananController extends Controller
                 ],
             ]);
 
-            return redirect('/sukses')->with('success', 'Pengajuan berhasil dikirim!');
+            return redirect('/pengajuansukses')->with('success', 'Pengajuan berhasil dikirim!');
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'Terjadi kesalahan saat membuat surat: ' . $e->getMessage()]);
         }
