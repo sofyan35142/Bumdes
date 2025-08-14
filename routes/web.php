@@ -58,8 +58,8 @@ Route::get('/testimonialsukses', [home::class, 'testimoni'])->name('home.testimo
 Route::get('/pengajuansukses', [home::class, 'pengajuan'])->name('home.pengajuan');
 
 // --- Blog
-Route::get('/blog', [Blog::class, 'blog'])->name('blog');
-Route::get('/blogdetail/{id}', [Blog::class, 'blogdetail'])->name('blogdetail');
+Route::get('/Kegiatan', [Blog::class, 'blog'])->name('blog');
+Route::get('/Kegiatandetail/{id}', [Blog::class, 'blogdetail'])->name('blogdetail');
 
 // --- Profil BUMDes
 Route::get('/profile/tentangBumdes', [Profile::class, 'tentangBumdes'])->name('profile.tentangBumdes');
