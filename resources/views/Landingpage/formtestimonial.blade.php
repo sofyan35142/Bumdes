@@ -82,7 +82,7 @@
                                     {{-- Nama --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <input type="text" name="nama" placeholder="Masukkan Nama Anda"
-                                            value="{{ old('nama') }}">
+                                            value="{{ old('nama') }}" required>
                                         @error('nama')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -99,7 +99,7 @@
                                         <input type="number" name="nomor_telepone"
                                             placeholder="Masukkan Nomor Telepone Anda"
                                             value="{{ old('nomor_telepone') }}" min="1000000000" max="9999999999999"
-                                            oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13);">
+                                            oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13);" required>
                                         @error('nomor_telepone')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -108,7 +108,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <input type="text" name="keterangan"
                                             placeholder="Keterangan (Contoh: Konsumen BumDes)"
-                                            value="{{ old('keterangan') }}">
+                                            value="{{ old('keterangan') }}" required>
                                         @error('keterangan')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -122,7 +122,7 @@
                                                     alt="">
                                             </div>
                                             <input name="foto_testimonial" id="filer_input" type="file"
-                                                accept="image/*" onchange="previewImages(event)">
+                                                accept="image/*" onchange="previewImages(event)" required>
                                             <button type="button">Upload Photo</button>
                                         </div>
                                         <div id="image-preview"
@@ -135,7 +135,7 @@
 
                                 {{-- Deskripsi Testimonial --}}
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <textarea name="deskripsi_testimonial" placeholder="Deskripsi Testimonial">{{ old('deskripsi_testimonial') }}</textarea>
+                                    <textarea name="deskripsi_testimonial" placeholder="Deskripsi Testimonial" required>{{ old('deskripsi_testimonial') }}</textarea>
                                     @error('deskripsi_testimonial')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
