@@ -104,13 +104,14 @@
                                         <input type="date" name="tanggal_lahir" required>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <input type="text" name="nik" placeholder="NIK" required>
+                                        <input type="text" name="nik" placeholder="NIK" maxlength="16"
+                                            pattern="\d{16}" required>
                                     </div>
                                     <div class="col-12 form-group">
                                         <input type="text" name="alamat" placeholder="Alamat" required>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <input type="text" name="no_wa" placeholder="Nomor WhatsApp" required>
+                                        <input type="number" name="no_wa" placeholder="Nomor WhatsApp" maxlength="13" pattern="\d{10,13}" required>
                                     </div>
                                     <div class="col-12 form-group">
                                         <label>Upload KTP (PDF/JPG/PNG)</label>
@@ -119,8 +120,8 @@
                                                 <img src="{{ asset('Landingpage/assets/images/icons/icon-24.png') }}"
                                                     alt="">
                                             </div>
-                                            <input name="file_ktp" id="filer_input" multiple="multiple"
-                                                type="file" accept=".jpg,.jpeg,.png,.pdf">
+                                            <input name="file_ktp" id="filer_input" multiple="multiple" type="file"
+                                                accept=".jpg,.jpeg,.png,.pdf">
                                             <button type="button">Upload Photo</button>
                                         </div>
                                         <div id="preview-container" style="margin-top: 10px;"></div>
@@ -191,6 +192,7 @@
                                     <div class="col-12 form-group">
                                         <label>Harga per Satuan</label>
                                         <input type="text" id="harga_per_satuan" value="Rp -" readonly>
+                                        <input type="hidden" name="total_harga_raw" id="total_harga_raw">
                                         <small>Harga layanan per bulan atau per hari sesuai pilihan satuan.</small>
                                     </div>
 
@@ -266,11 +268,11 @@
             function updateHarga() {
                 const jenisId = $('#jenis_pengajuan').val();
                 if (!jenisId) {
-                    // Jika belum pilih jenis layanan, reset semua field
                     $('#harga_per_satuan').val('Rp -');
                     $('#pajak_per_bulan').val('Rp -');
                     $('#total_pajak').val('Rp -');
                     $('#total_harga').val('Rp -');
+                    $('#total_harga_raw').val(''); // reset hidden
                     return;
                 }
 
@@ -302,6 +304,9 @@
                 $('#pajak_per_bulan').val('Rp ' + pajakPerSatuan.toLocaleString('id-ID') + keterangan);
                 $('#total_pajak').val('Rp ' + totalPajak.toLocaleString('id-ID'));
                 $('#total_harga').val('Rp ' + grandTotal.toLocaleString('id-ID'));
+
+                // ✅ Tambahan baris ini untuk hidden input angka murni
+                $('#total_harga_raw').val(grandTotal);
             }
 
             if ($.fn.niceSelect) {
