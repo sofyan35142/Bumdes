@@ -82,7 +82,7 @@
                                     {{-- Nama --}}
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <input type="text" name="nama" placeholder="Masukkan Nama Anda"
-                                            value="{{ old('nama') }}">
+                                            value="{{ old('nama') }}" required>
                                         @error('nama')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -99,7 +99,7 @@
                                         <input type="number" name="nomor_telepone"
                                             placeholder="Masukkan Nomor Telepone Anda"
                                             value="{{ old('nomor_telepone') }}" min="1000000000" max="9999999999999"
-                                            oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13);">
+                                            oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13);" required>
                                         @error('nomor_telepone')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -108,7 +108,7 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                         <input type="text" name="keterangan"
                                             placeholder="Keterangan (Contoh: Konsumen BumDes)"
-                                            value="{{ old('keterangan') }}">
+                                            value="{{ old('keterangan') }}" required>
                                         @error('keterangan')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -122,7 +122,7 @@
                                                     alt="">
                                             </div>
                                             <input name="foto_testimonial" id="filer_input" type="file"
-                                                accept="image/*" onchange="previewImages(event)">
+                                                accept="image/*" onchange="previewImages(event)" required>
                                             <button type="button">Upload Photo</button>
                                         </div>
                                         <div id="image-preview"
@@ -135,13 +135,53 @@
 
                                 {{-- Deskripsi Testimonial --}}
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                    <textarea name="deskripsi_testimonial" placeholder="Deskripsi Testimonial">{{ old('deskripsi_testimonial') }}</textarea>
+                                    <textarea name="deskripsi_testimonial" placeholder="Deskripsi Testimonial" required>{{ old('deskripsi_testimonial') }}</textarea>
                                     @error('deskripsi_testimonial')
                                         <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
 
                                 {{-- Tombol Submit --}}
+                                <!-- Loading Overlay dengan inline style -->
+                                <div id="loadingOverlay"
+                                    style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+">
+                                    <div
+                                        style="
+        width: 50px;
+        height: 50px;
+        border: 5px solid #ccc;
+        border-top: 5px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: auto;
+    ">
+                                    </div>
+                                    <p style="margin-top: 10px; font-size: 18px; color: #333;">
+                                        Mengirim testimonial...
+                                    </p>
+
+                                    <style>
+                                        @keyframes spin {
+                                            to {
+                                                transform: rotate(360deg);
+                                            }
+                                        }
+                                    </style>
+                                </div>
+
                                 <div class="form-group message-btn">
                                     <button type="submit" class="theme-btn btn-one">Kirim Testimonial Anda</button>
                                 </div>
@@ -353,10 +393,13 @@
     </script>
     <script>
         document.getElementById('testimonialForm').addEventListener('submit', async function(event) {
-            event.preventDefault(); // biar tidak reload halaman
+            event.preventDefault();
 
             let form = this;
             let formData = new FormData(form);
+
+            // Tampilkan loading overlay
+            document.getElementById('loadingOverlay').style.display = 'flex';
 
             try {
                 let response = await fetch(form.action, {
@@ -368,33 +411,34 @@
                     body: formData
                 });
 
-                if (!response.ok) {
-                    throw await response.json();
-                }
+                let data = await response.json(); // baca body hanya sekali
 
-                let data = await response.json();
-
-                if (data.message) {
-                    // kalau sukses, langsung redirect
+                if (response.ok) {
+                    // sukses → redirect
                     window.location.href = "{{ route('home.testimoni') }}";
+                } else {
+                    // validasi gagal → tampilkan pesan
+                    if (data.errors) {
+                        let errorContainer = document.getElementById('errorMessages') || document.createElement(
+                            'div');
+                        errorContainer.innerHTML = '';
+                        for (let field in data.errors) {
+                            let msg = document.createElement('p');
+                            msg.classList.add('text-danger');
+                            msg.innerText = data.errors[field][0];
+                            errorContainer.appendChild(msg);
+                        }
+                        form.prepend(errorContainer);
+                    } else {
+                        alert('Terjadi kesalahan. Silakan coba lagi.');
+                    }
                 }
-
             } catch (error) {
                 console.error(error);
-
-                // kalau error validasi Laravel
-                if (error.errors) {
-                    let errorContainer = document.getElementById('errorMessages');
-                    errorContainer.innerHTML = ''; // hapus error lama
-                    for (let field in error.errors) {
-                        let msg = document.createElement('p');
-                        msg.classList.add('text-danger');
-                        msg.innerText = error.errors[field][0];
-                        errorContainer.appendChild(msg);
-                    }
-                } else {
-                    alert('Terjadi kesalahan. Silakan coba lagi.');
-                }
+                alert('Terjadi kesalahan jaringan.');
+            } finally {
+                // Sembunyikan loading
+                document.getElementById('loadingOverlay').style.display = 'none';
             }
         });
     </script>

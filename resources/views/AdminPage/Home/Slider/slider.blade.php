@@ -75,7 +75,7 @@
                                                     <td>{{ $item->title_slider1 ?? '-' }}</td>
                                                     <td>{{ $item->deskripsi_slider1 ?? '-' }}</td>
                                                     <td>
-                                                        <img src="{{ asset('Foto Slider/' . $item->foto_slider1) }}"
+                                                        <img src="{{ asset('Foto_Slider/' . $item->foto_slider1) }}"
                                                             alt="Foto Slider 1"
                                                             style="width: 120px; height:80px; object-fit:cover;">
                                                     </td>
@@ -93,7 +93,7 @@
                                                     <td>{{ $item->title_slider3 ?? '-' }}</td>
                                                     <td>{{ $item->deskripsi_slider3 ?? '-' }}</td>
                                                     <td>
-                                                        <img src="{{ asset('Foto Slider/' . $item->foto_slider3) }}"
+                                                        <img src="{{ asset('Foto_Slider/' . $item->foto_slider3) }}"
                                                             alt="Foto Slider 3"
                                                             style="width: 120px; height:80px; object-fit:cover;">
                                                     </td>

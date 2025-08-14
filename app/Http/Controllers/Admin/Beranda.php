@@ -36,7 +36,9 @@ class Beranda extends Controller
         $uploadPath = base_path('../public_html/Foto_Slider');
         if (!file_exists($uploadPath)) {
             mkdir($uploadPath, 0755, true);
+            // dd('p');
         }
+        // dd($uploadPath);
 
         $request->validate([
             'title_slider1' => 'nullable|string|max:255',
@@ -133,20 +135,26 @@ class Beranda extends Controller
 
         $sambutan = SambutanDirektur::findOrFail($id);
 
+        // Tentukan folder upload di public_html
+        $uploadPath = base_path('../public_html/direktur');
+        if (!file_exists($uploadPath)) {
+            mkdir($uploadPath, 0755, true);
+        }
+
         // Simpan nama file lama sebagai default
         $fotodirektur = $sambutan->foto_direktur;
 
         // Jika ada file baru di-upload
         if ($request->hasFile('foto_direktur')) {
             // Hapus file lama jika ada
-            if ($fotodirektur && file_exists(public_path('direktur/' . $fotodirektur))) {
-                @unlink(public_path('direktur/' . $fotodirektur));
+            if ($fotodirektur && file_exists($uploadPath . '/' . $fotodirektur)) {
+                @unlink($uploadPath . '/' . $fotodirektur);
             }
 
             // Simpan file baru
             $file = $request->file('foto_direktur');
             $fotodirektur = md5(uniqid() . '_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('direktur'), $fotodirektur);
+            $file->move($uploadPath, $fotodirektur);
         }
 
         // Update data

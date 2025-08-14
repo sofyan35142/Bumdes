@@ -115,7 +115,7 @@
                 <!-- Slide 2 -->
                 <div class="slide-item p_relative">
                     <div class="bg-layer"
-                        style="background-image: url('{{ asset('Foto Slider/' . $slider->foto_slider2) }}');">
+                        style="background-image: url('{{ asset('Foto_Slider/' . $slider->foto_slider2) }}');">
                     </div>
                     <div class="shape-box">
                         <div class="shape-1"></div>
@@ -143,7 +143,7 @@
                 <!-- Slide 3 -->
                 <div class="slide-item p_relative">
                     <div class="bg-layer"
-                        style="background-image: url('{{ asset('Foto Slider/' . $slider->foto_slider3) }}');">
+                        style="background-image: url('{{ asset('Foto_Slider/' . $slider->foto_slider3) }}');">
                     </div>
                     <div class="shape-box">
                         <div class="shape-1"></div>
