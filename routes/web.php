@@ -59,7 +59,7 @@ Route::get('/pengajuansukses', [home::class, 'pengajuan'])->name('home.pengajuan
 
 // --- Blog
 Route::get('/Kegiatan', [Blog::class, 'blog'])->name('blog');
-Route::get('/Kegiatandetail/{id}', [Blog::class, 'blogdetail'])->name('blogdetail');
+Route::get('/Kegiatandetail/{id}', [Blog::class, 'blogdetail'])->name('kegiatan.detail');
 
 // --- Profil BUMDes
 Route::get('/profile/tentangBumdes', [Profile::class, 'tentangBumdes'])->name('profile.tentangBumdes');
