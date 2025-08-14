@@ -56,35 +56,7 @@
         <section class="sidebar-page-container p_relative pt_110 pb_120">
             <div class="auto-container">
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                        <div class="blog-sidebar mr_40 mb_30">
-                            <div class="sidebar-widget post-widget mb_60">
-                                <div class="widget-title mb_20">
-                                    <h3>Latest Posts</h3>
-                                </div>
-                                <div class="post-inner">
-                                    @foreach ($latestKegiatan as $k)
-                                        <div class="post">
-                                            <figure class="post-thumb">
-                                                <a href="{{ route('blogdetail', $k->id) }}">
-                                                    <img src="{{ asset('foto kegiatan BumDes/' . $k->foto_kegiatan) }}"
-                                                        alt="{{ $k->Judul_Kegiatan }}"
-                                                        style="width: 100px; height: 70px; object-fit: cover;">
-                                                </a>
-                                            </figure>
-                                            <h6>
-                                                <a href="{{ route('blogdetail', $k->id) }}">
-                                                    {{ Str::limit($k->Judul_Kegiatan, 40) }}
-                                                </a>
-                                            </h6>
-                                            <span class="post-date">
-                                                {{ \Carbon\Carbon::parse($k->tanggal_kegiatan)->format('d M Y') }}
-                                            </span>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
+                    {{-- <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                         <div class="download-widget mr_40">
                             <div class="shape"
                                 style="background-image: url({{ asset('/Landingpage/assets/images/shape/shape-24.png') }});">
@@ -106,7 +78,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                         <div class="blog-details-content">
                             <div class="news-block-two">
@@ -181,14 +153,23 @@
                         </div>
                         <div class="download-widget mr_40">
                             <div class="shape"
-                                style="background-image: url({{ asset('/Landingpage/assets/images/shape/shape-24.png') }});">
+                                style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-24.png') }});">
                             </div>
-                            <div class="inner-box">
+                              <div class="inner-box">
                                 <figure class="image-box"><img
-                                        src="{{ asset('/Landingpage/assets/images/resource/book-3.png') }}"
+                                        src="{{ asset($book->gambar) }}"
                                         alt=""></figure>
-                                <h4>The 2024 guide for Optimal Content <span>Management</span></h4>
-                                <button type="button" class="theme-btn btn-one">Download E-book</button>
+                                @php
+                                    $judul = explode(' ', $book->judul, 2);
+                                @endphp
+                                <h4>{{ $judul[0] }}
+                                    @if (isset($judul[1]))
+                                        <span>{{ $judul[1] }}</span>
+                                    @endif
+                                </h4>
+                                <a href="{{ $book->file_ebook }}" class="theme-btn btn-one" download>
+                                    Download E-book
+                                </a>
                             </div>
                         </div>
                     </div>
