@@ -165,7 +165,7 @@
                                         <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms"
                                             data-wow-duration="1500ms">
                                             <div class="inner-box">
-                                                <div class="image-box">
+                                                <div class="image-box" style="height: 15pc; width: 25pc; overflow: hidden;">
                                                     <figure class="image"><a
                                                             href="{{ route('blogdetail', $kegiatan->id) }}"><img
                                                                 src="{{ asset('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan) }}"
