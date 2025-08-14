@@ -55,12 +55,19 @@ class TestimonialController extends Controller
         $testimonial->nomor_telepone = $request->nomor_telepone;
         $testimonial->status = 0; // default pending
 
+        // Tentukan folder upload di public_html
+        $uploadPath = base_path('../public_html/Testimonial');
+        if (!file_exists($uploadPath)) {
+            mkdir($uploadPath, 0755, true);
+        }
+
         if ($request->hasFile('foto_testimonial')) {
             $file = $request->file('foto_testimonial');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('Testimonial'), $filename);
+            $file->move($uploadPath, $filename);
             $testimonial->foto_testimonial = $filename;
         }
+
         $testimonial->save();
 
         // return redirect()->route('home.testimoni');

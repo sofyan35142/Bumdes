@@ -24,7 +24,6 @@ class GaleryController extends Controller
 
     public function insertgalery(Request $request)
     {
-        // dd($request->all());
         $request->validate([
             'tipe' => 'required|in:foto,video',
             // 'nama_kegiatan' => 'required|string|max:255',
@@ -44,12 +43,18 @@ class GaleryController extends Controller
             ]);
         } elseif ($request->tipe === 'foto') {
             if ($request->hasFile('foto_path')) {
+                // Tentukan folder upload di public_html
+                $uploadPath = base_path('../public_html/Galery');
+                if (!file_exists($uploadPath)) {
+                    mkdir($uploadPath, 0755, true);
+                }
+
                 foreach ($request->file('foto_path') as $file) {
                     // buat nama unik
                     $filename = time() . '_' . Str::uuid() . '.' . $file->getClientOriginalExtension();
 
-                    // simpan file ke public/Galery
-                    $file->move(public_path('Galery'), $filename);
+                    // simpan file ke folder upload
+                    $file->move($uploadPath, $filename);
 
                     GaleryModel::create([
                         'tipe' => 'foto',
@@ -64,6 +69,7 @@ class GaleryController extends Controller
                     ->withInput();
             }
         }
+        // Redirect ke halaman galeri dengan pesan sukses
         return redirect()->route('admin.galery')->with('success', 'Gallery item added successfully.');
     }
 
@@ -84,6 +90,12 @@ class GaleryController extends Controller
 
         $galery = GaleryModel::findOrFail($id);
 
+        // Tentukan folder upload di public_html
+        $uploadPath = base_path('../public_html/Galery');
+        if (!file_exists($uploadPath)) {
+            mkdir($uploadPath, 0755, true);
+        }
+
         if ($request->tipe === 'video') {
             $galery->update([
                 'tipe' => 'video',
@@ -101,20 +113,21 @@ class GaleryController extends Controller
             // Kalau ada file baru, ganti foto lama
             if ($request->hasFile('foto_path')) {
                 // Hapus foto lama jika ada
-                if ($galery->foto_path && file_exists(public_path('Galery/' . $galery->foto_path))) {
-                    unlink(public_path('Galery/' . $galery->foto_path));
+                if ($galery->foto_path && file_exists($uploadPath . '/' . $galery->foto_path)) {
+                    @unlink($uploadPath . '/' . $galery->foto_path);
                 }
 
                 $file = $request->file('foto_path')[0]; // ambil file pertama
                 $filename = time() . '_' . \Illuminate\Support\Str::uuid() . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('Galery'), $filename);
+                $file->move($uploadPath, $filename);
 
                 $updateData['foto_path'] = $filename;
             }
 
-            // Kalau tidak ada file, foto lama tetap dipakai
+            // Update data
             $galery->update($updateData);
         }
+
 
         return redirect()->route('admin.galery')->with('success', 'Data galeri berhasil diupdate.');
     }
@@ -122,15 +135,21 @@ class GaleryController extends Controller
     public function deletegalery($id)
     {
         $galery = GaleryModel::findOrFail($id);
+
+        // Tentukan folder upload di public_html
+        $uploadPath = base_path('../public_html/Galery');
+
         // Hapus foto dari folder jika ada
-        if ($galery->foto_path && file_exists(public_path('Galery/' . $galery->foto_path))) {
-            unlink(public_path('Galery/' . $galery->foto_path));
+        if ($galery->foto_path && file_exists($uploadPath . '/' . $galery->foto_path)) {
+            @unlink($uploadPath . '/' . $galery->foto_path);
         }
 
         // Hapus data dari database
         $galery->delete();
 
         // Redirect dengan pesan sukses
+        return redirect()->back()->with('success', 'Data galeri berhasil dihapus.');
+
         return redirect()->route('admin.galery')->with('success', 'Galeri berhasil dihapus.');
     }
 }

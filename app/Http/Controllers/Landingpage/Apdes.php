@@ -27,7 +27,7 @@ class Apdes extends Controller
             ->orderBy('tahun')
             ->get();
 
-        return view('Adminpage.apdes.index', compact(
+        return view('AdminPage.Apdes.index', compact(
             'pendapatan',
             'belanja',
             'pembiayaan',

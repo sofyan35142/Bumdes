@@ -28,14 +28,30 @@ class MediaPartnerController extends Controller
 
         if ($group && is_array($group)) {
             foreach ($group as $key => $item) {
-                $namaMedia = $item['Nama_Media'];
+                $namaMedia = $item['Nama_Media'] ?? null;
                 $logoFile = $request->file("group-a.$key.Logo_Media");
 
+                $filename = null;
+
                 if ($logoFile) {
-                    $filename = time() . '_' . $logoFile->getClientOriginalName();
-                    $logoFile->move(public_path('Media Partner'), $filename);
-                } else {
-                    $filename = null;
+                    // Validasi file
+                    $request->validate([
+                        "group-a.$key.Logo_Media" => 'image|mimes:jpeg,png,jpg|max:2048'
+                    ], [
+                        "group-a.$key.Logo_Media.image" => 'File logo harus berupa gambar.',
+                        "group-a.$key.Logo_Media.mimes" => 'Logo harus berformat jpeg, png, atau jpg.',
+                        "group-a.$key.Logo_Media.max"   => 'Ukuran logo tidak boleh lebih dari 2MB.',
+                    ]);
+
+                    // Pastikan folder ada
+                    $folderPath = public_path('Media Partner');
+                    if (!file_exists($folderPath)) {
+                        mkdir($folderPath, 0777, true);
+                    }
+
+                    // Nama file unik
+                    $filename = time() . '_' . uniqid() . '.' . $logoFile->getClientOriginalExtension();
+                    $logoFile->move($folderPath, $filename);
                 }
 
                 MediaPartner::create([
@@ -64,17 +80,23 @@ class MediaPartnerController extends Controller
         $mediapartner = MediaPartner::findOrFail($id);
         $mediapartner->Nama_Media = $request->Nama_Media;
 
-        // Jika ada file logo baru
+        $folderPath = public_path('uploads/mediapartner');
+
+        // Pastikan folder ada
+        if (!file_exists($folderPath)) {
+            mkdir($folderPath, 0777, true);
+        }
+
         if ($request->hasFile('Logo_Media')) {
             // Hapus logo lama jika ada
-            if ($mediapartner->Logo_Media && file_exists(public_path('uploads/mediapartner/' . $mediapartner->Logo_Media))) {
-                unlink(public_path('uploads/mediapartner/' . $mediapartner->Logo_Media));
+            if ($mediapartner->Logo_Media && file_exists($folderPath . '/' . $mediapartner->Logo_Media)) {
+                unlink($folderPath . '/' . $mediapartner->Logo_Media);
             }
 
             // Upload logo baru
             $file = $request->file('Logo_Media');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('Media Partner'), $filename);
+            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->move($folderPath, $filename);
 
             $mediapartner->Logo_Media = $filename;
         }
@@ -87,16 +109,16 @@ class MediaPartnerController extends Controller
     public function hapusmediapartner($id)
     {
         $mediapartner = MediaPartner::findOrFail($id);
-
         // Hapus file gambar dari folder jika ada
-        $logoPath = public_path('Media Partner/' . $mediapartner->Logo_Media);
-        if (File::exists($logoPath)) {
-            File::delete($logoPath);
+        if (!empty($mediapartner->Logo_Media)) {
+            $logoPath = public_path('uploads/mediapartner/' . $mediapartner->Logo_Media);
+            if (File::exists($logoPath)) {
+                File::delete($logoPath);
+            }
         }
 
         // Hapus data dari database
         $mediapartner->delete();
-
         return redirect()->route('admin.mediapartner')->with('success', 'Media Partner berhasil dihapus.');
     }
 }

@@ -56,9 +56,15 @@ class LowonganPekerjaan extends Controller
         $data = $request->except('poster_lowongan');
 
         if ($request->hasFile('poster_lowongan')) {
+            // Path penyimpanan di public_html
+            $uploadPath = base_path('../public_html/poster_lowongan');
+            if (!file_exists($uploadPath)) {
+                mkdir($uploadPath, 0755, true);
+            }
+
             $file = $request->file('poster_lowongan');
             $filename = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('poster_lowongan'), $filename);
+            $file->move($uploadPath, $filename);
 
             $data['poster_lowongan'] = $filename;
         }
@@ -78,7 +84,6 @@ class LowonganPekerjaan extends Controller
     public function updatelowongan(Request $request, $id)
     {
         $lowongan = ModelsLowonganPekerjaan::findOrFail($id);
-
         $request->validate([
             'judul_lowongan' => 'required|string|max:255',
             'deskripsi' => 'required',
@@ -107,7 +112,6 @@ class LowonganPekerjaan extends Controller
             'lokasi.required' => 'Lokasi wajib diisi.',
             'lokasi.string' => 'Lokasi harus berupa teks.',
 
-            // 'poster_lowongan.required' => 'Poster Lowongan wajib diisi.',
             'poster_lowongan.image' => 'File poster harus berupa gambar.',
             'poster_lowongan.mimes' => 'Poster harus berformat jpeg, png, atau jpg.',
             'poster_lowongan.max' => 'Ukuran poster tidak boleh lebih dari 2MB.',
@@ -116,11 +120,12 @@ class LowonganPekerjaan extends Controller
         $data = $request->except('poster_lowongan');
 
         if ($request->hasFile('poster_lowongan')) {
-            // Hapus file lama jika ada
+            // Hapus file lama
             if ($lowongan->poster_lowongan && file_exists(public_path('poster_lowongan/' . $lowongan->poster_lowongan))) {
                 unlink(public_path('poster_lowongan/' . $lowongan->poster_lowongan));
             }
 
+            // Upload file baru
             $file = $request->file('poster_lowongan');
             $filename = time() . '_' . md5($file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('poster_lowongan'), $filename);
@@ -128,6 +133,7 @@ class LowonganPekerjaan extends Controller
             $data['poster_lowongan'] = $filename;
         }
 
+        // Update data di database
         $lowongan->update($data);
 
         return redirect()->route('admin.lowongan')->with('success', 'Lowongan berhasil diperbarui.');

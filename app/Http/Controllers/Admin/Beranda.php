@@ -254,7 +254,7 @@ class Beranda extends Controller
             'kategori_id.required'  => 'Kategori layanan wajib dipilih.',
             'kategori_id.exists'    => 'Kategori yang dipilih tidak valid.',
 
-            'foto_layanan.required'  => 'Foto atau poster layanan wajib diisi.',
+            'foto_layanan.required' => 'Foto atau poster layanan wajib diisi.',
             'foto_layanan.image'    => 'Foto layanan harus berupa gambar.',
             'foto_layanan.mimes'    => 'Foto layanan hanya boleh berformat JPG, JPEG, atau PNG.',
             'foto_layanan.max'      => 'Ukuran foto layanan maksimal 2MB.',
@@ -266,15 +266,23 @@ class Beranda extends Controller
         $unggulan->deskripsi    = $request->deskripsi;
         $unggulan->kategori_id  = $request->kategori_id;
 
+        // Tentukan folder upload di public_html
+        $uploadPath = base_path('../public_html/foto_layanan_unggulan');
+        if (!file_exists($uploadPath)) {
+            mkdir($uploadPath, 0755, true);
+        }
+
         // Upload gambar jika ada
         if ($request->hasFile('foto_layanan')) {
             $file = $request->file('foto_layanan');
             $filename = md5(time() . '_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('foto layanan unggulan'), $filename);
+            $file->move($uploadPath, $filename);
             $unggulan->foto_layanan = $filename;
         }
 
+        // Simpan ke database
         $unggulan->save();
+
         return redirect()->route('admin.unggulan')->with('success', 'Data unggulan berhasil ditambahkan!');
     }
 
@@ -308,17 +316,23 @@ class Beranda extends Controller
         $unggulan = LayananUnggulan::findOrFail($id);
         $foto_layanan = $unggulan->foto_layanan;
 
+        // Tentukan folder upload di public_html
+        $uploadPath = base_path('../public_html/Foto_Layanan_Unggulan');
+        if (!file_exists($uploadPath)) {
+            mkdir($uploadPath, 0755, true);
+        }
+
         // Upload foto baru jika ada
         if ($request->hasFile('foto_layanan')) {
             // Hapus foto lama kalau ada
-            if ($unggulan->foto_layanan && file_exists(public_path('Foto Layanan Unggulan/' . $unggulan->foto_layanan))) {
-                unlink(public_path('Foto Layanan Unggulan/' . $unggulan->foto_layanan));
+            if ($unggulan->foto_layanan && file_exists($uploadPath . '/' . $unggulan->foto_layanan)) {
+                @unlink($uploadPath . '/' . $unggulan->foto_layanan);
             }
 
             // Simpan foto baru
             $file = $request->file('foto_layanan');
-            $foto_layanan = $file->hashName();
-            $file->move(public_path('Foto Layanan Unggulan'), $foto_layanan);
+            $foto_layanan = md5(uniqid() . '_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $foto_layanan);
         }
 
         // Update data
@@ -328,6 +342,7 @@ class Beranda extends Controller
             'kategori_id'   => $request->input('kategori'),
             'foto_layanan'  => $foto_layanan,
         ]);
+
 
         return redirect()->route('admin.unggulan')->with('success', 'Layanan Unggulan berhasil diperbarui');
     }

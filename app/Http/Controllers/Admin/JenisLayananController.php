@@ -40,7 +40,7 @@ class JenisLayananController extends Controller
     public function edit($id)
     {
         $layanan = JenisLayanan::findOrFail($id);
-        return view('Adminpage.jenisLayanan.edit', compact('layanan'));
+        return view('AdminPage.jenisLayanan.edit', compact('layanan'));
     }
 
     // Update data jenis layanan
