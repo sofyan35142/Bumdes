@@ -95,23 +95,51 @@
                                 </div>
                                 <div class="row clearfix">
                                     <div class="col-12 form-group">
-                                        <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required>
+                                        <input type="text" name="nama_lengkap" placeholder="Nama Lengkap"
+                                            value="{{ old('nama_lengkap') }}" required>
+                                        @error('nama_lengkap')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-12 form-group">
-                                        <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" required>
+                                        <input type="text" name="tempat_lahir" placeholder="Tempat Lahir"
+                                            value="{{ old('tempat_lahir') }}" required>
+                                        @error('tempat_lahir')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-12 form-group">
-                                        <input type="date" name="tanggal_lahir" required>
+                                        <input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}"
+                                            required>
+                                        @error('tanggal_lahir')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-12 form-group">
                                         <input type="text" name="nik" placeholder="NIK" maxlength="16"
-                                            pattern="\d{16}" required>
+                                            pattern="\d{16}" inputmode="numeric" required
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,16)"
+                                            value="{{ old('nik') }}">
+                                        @error('nik')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-12 form-group">
-                                        <input type="text" name="alamat" placeholder="Alamat" required>
+                                        <input type="text" name="alamat" placeholder="Alamat"
+                                            value="{{ old('alamat') }}" required>
+                                        @error('alamat')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-12 form-group">
-                                        <input type="number" name="no_wa" placeholder="Nomor WhatsApp" maxlength="13" pattern="\d{10,13}" required>
+                                        <!-- Nomor WhatsApp -->
+                                        <input type="text" name="no_wa" placeholder="Nomor WhatsApp"
+                                            pattern="\d{10,13}" inputmode="numeric" required
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,13)"
+                                            value="{{ old('no_wa') }}">
+                                        @error('no_wa')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-12 form-group">
                                         <label>Upload KTP (PDF/JPG/PNG)</label>
@@ -124,9 +152,11 @@
                                                 accept=".jpg,.jpeg,.png,.pdf">
                                             <button type="button">Upload Photo</button>
                                         </div>
+                                        @error('file_ktp')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                         <div id="preview-container" style="margin-top: 10px;"></div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -144,69 +174,104 @@
                                     <div class="col-12 form-group">
                                         <div class="select-box">
                                             <select name="jenis_pengajuan" id="jenis_pengajuan" required>
-                                                <option value="" disabled selected>Pilih Jenis Layanan</option>
+                                                <option value="" disabled
+                                                    {{ old('jenis_pengajuan') ? '' : 'selected' }}>Pilih Jenis Layanan
+                                                </option>
                                                 @foreach ($jenisLayanan as $layanan)
                                                     <option value="{{ $layanan->nama }}"
                                                         data-harga="{{ $layanan->harga_sewa }}"
-                                                        data-pajak="{{ $layanan->beban_perbulan }}">
+                                                        data-pajak="{{ $layanan->beban_perbulan }}"
+                                                        {{ old('jenis_pengajuan') == $layanan->nama ? 'selected' : '' }}>
                                                         {{ $layanan->nama }}
                                                     </option>
                                                 @endforeach
                                             </select>
                                         </div>
+                                        @error('jenis_pengajuan')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
 
                                     <!-- Keperluan -->
                                     <div class="col-12 form-group">
-                                        <textarea name="keperluan" id="keperluan" placeholder="Keperluan / Deskripsi Pengajuan" rows="5" required></textarea>
+                                        <textarea name="keperluan" id="keperluan" placeholder="Keperluan / Deskripsi Pengajuan" rows="5" required>{{ old('keperluan') }}</textarea>
+                                        @error('keperluan')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
 
-                                    <!-- Form opsional untuk sewa kios/lahan -->
+                                    <!-- Form opsional -->
                                     <div class="col-12 form-group form-layanan-opsional" style="display:none;">
                                         <input type="text" name="legalitas_usaha"
-                                            placeholder="Nomor Legalitas Usaha (jika ada)">
+                                            placeholder="Nomor Legalitas Usaha (jika ada)"
+                                            value="{{ old('legalitas_usaha') }}">
+                                        @error('legalitas_usaha')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-12 form-group form-layanan-opsional" style="display:none;">
-                                        <input type="text" name="jenis_usaha" placeholder="Jenis Usaha">
+                                        <input type="text" name="jenis_usaha" placeholder="Jenis Usaha"
+                                            value="{{ old('jenis_usaha') }}">
+                                        @error('jenis_usaha')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                     <div class="col-12 form-group form-layanan-opsional" style="display:none;">
-                                        <input type="text" name="produk" placeholder="Produk yang Dijual">
+                                        <input type="text" name="produk" placeholder="Produk yang Dijual"
+                                            value="{{ old('produk') }}">
+                                        @error('produk')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
 
                                     <!-- Pilih satuan sewa -->
                                     <div class="col-12 form-group">
                                         <label for="satuan_sewa">Satuan Sewa</label>
                                         <select name="satuan_sewa" id="satuan_sewa" required>
-                                            <option value="bulan" selected>Bulan</option>
-                                            <option value="hari">Hari</option>
+                                            <option value="bulan"
+                                                {{ old('satuan_sewa', 'bulan') == 'bulan' ? 'selected' : '' }}>Bulan
+                                            </option>
+                                            <option value="hari"
+                                                {{ old('satuan_sewa') == 'hari' ? 'selected' : '' }}>Hari</option>
                                         </select>
+                                        @error('satuan_sewa')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
 
                                     <!-- Durasi sewa -->
                                     <div class="col-12 form-group">
                                         <input type="number" name="durasi_sewa" id="durasi_sewa"
-                                            placeholder="Lama Sewa (bulan)" min="1" required>
+                                            placeholder="Lama Sewa (bulan)" min="1"
+                                            value="{{ old('durasi_sewa') }}" required>
+                                        @error('durasi_sewa')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
 
                                     <!-- Harga per satuan -->
                                     <div class="col-12 form-group">
                                         <label>Harga per Satuan</label>
-                                        <input type="text" id="harga_per_satuan" value="Rp -" readonly>
-                                        <input type="hidden" name="total_harga_raw" id="total_harga_raw">
+                                        <input type="text" id="harga_per_satuan"
+                                            value="{{ old('harga_per_satuan', 'Rp -') }}" readonly>
+                                        <input type="hidden" name="total_harga_raw" id="total_harga_raw"
+                                            value="{{ old('total_harga_raw') }}">
                                         <small>Harga layanan per bulan atau per hari sesuai pilihan satuan.</small>
                                     </div>
 
                                     <!-- Pajak per satuan -->
                                     <div class="col-12 form-group">
                                         <label>Pajak / Beban per Satuan</label>
-                                        <input type="text" id="pajak_per_bulan" value="Rp -" readonly>
+                                        <input type="text" id="pajak_per_bulan"
+                                            value="{{ old('pajak_per_bulan', 'Rp -') }}" readonly>
                                         <small>Pajak atau beban lain per bulan atau hari sesuai pilihan satuan.</small>
                                     </div>
 
                                     <!-- Total pajak -->
                                     <div class="col-12 form-group">
                                         <label>Total Pajak</label>
-                                        <input type="text" id="total_pajak" value="Rp -" readonly>
+                                        <input type="text" id="total_pajak"
+                                            value="{{ old('total_pajak', 'Rp -') }}" readonly>
                                         <small>Total pajak selama masa sewa (pajak per satuan × lama sewa).</small>
                                     </div>
 
@@ -214,7 +279,11 @@
                                     <div class="col-12 form-group">
                                         <label>Total Harga</label>
                                         <input type="text" name="total_harga" id="total_harga"
-                                            placeholder="Total Harga" readonly required>
+                                            placeholder="Total Harga" value="{{ old('total_harga') }}" readonly
+                                            required>
+                                        @error('total_harga')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -362,6 +431,19 @@
 
                 fileReader.readAsDataURL(file);
             }
+        });
+    </script>
+
+    <script>
+        document.getElementById('no_wa').addEventListener('input', function(e) {
+            let value = e.target.value;
+            // Hapus semua karakter selain angka
+            value = value.replace(/\D/g, '');
+            // Batasi panjang maksimal 13 digit
+            if (value.length > 13) {
+                value = value.slice(0, 13);
+            }
+            e.target.value = value;
         });
     </script>
 
