@@ -398,7 +398,7 @@
             let form = this;
             let formData = new FormData(form);
 
-            // Tampilkan overlay
+            // Tampilkan loading overlay
             document.getElementById('loadingOverlay').style.display = 'flex';
 
             try {
@@ -411,20 +411,33 @@
                     body: formData
                 });
 
-                if (!response.ok) {
-                    throw await response.json();
-                }
+                let data = await response.json(); // baca body hanya sekali
 
-                let data = await response.json();
-
-                if (data.message) {
+                if (response.ok) {
+                    // sukses → redirect
                     window.location.href = "{{ route('home.testimoni') }}";
+                } else {
+                    // validasi gagal → tampilkan pesan
+                    if (data.errors) {
+                        let errorContainer = document.getElementById('errorMessages') || document.createElement(
+                            'div');
+                        errorContainer.innerHTML = '';
+                        for (let field in data.errors) {
+                            let msg = document.createElement('p');
+                            msg.classList.add('text-danger');
+                            msg.innerText = data.errors[field][0];
+                            errorContainer.appendChild(msg);
+                        }
+                        form.prepend(errorContainer);
+                    } else {
+                        alert('Terjadi kesalahan. Silakan coba lagi.');
+                    }
                 }
-
             } catch (error) {
                 console.error(error);
-                alert('Terjadi kesalahan. Silakan coba lagi.');
+                alert('Terjadi kesalahan jaringan.');
             } finally {
+                // Sembunyikan loading
                 document.getElementById('loadingOverlay').style.display = 'none';
             }
         });
