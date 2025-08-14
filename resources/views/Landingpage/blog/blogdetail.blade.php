@@ -89,7 +89,7 @@
                                                 alt=""></figure>
                                     </div>
                                     <div class="lower-content">
-                                        <span class="category">Business</span>
+                                        <span class="category">{{ $detailblog->kategori->nama_kategori ?? '-' }}</span>
                                         <h3>{{ $detailblog->Judul_Kegiatan }}</h3>
                                         <ul class="post-info">
                                             <li>By <a href="#">Sekertaris</a></li>
