@@ -36,7 +36,9 @@ class Beranda extends Controller
         $uploadPath = base_path('../public_html/Foto_Slider');
         if (!file_exists($uploadPath)) {
             mkdir($uploadPath, 0755, true);
+            // dd('p');
         }
+        // dd($uploadPath);
 
         $request->validate([
             'title_slider1' => 'nullable|string|max:255',

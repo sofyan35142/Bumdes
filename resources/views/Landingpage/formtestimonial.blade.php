@@ -142,6 +142,46 @@
                                 </div>
 
                                 {{-- Tombol Submit --}}
+                                <!-- Loading Overlay dengan inline style -->
+                                <div id="loadingOverlay"
+                                    style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+">
+                                    <div
+                                        style="
+        width: 50px;
+        height: 50px;
+        border: 5px solid #ccc;
+        border-top: 5px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: auto;
+    ">
+                                    </div>
+                                    <p style="margin-top: 10px; font-size: 18px; color: #333;">
+                                        Mengirim testimonial...
+                                    </p>
+
+                                    <style>
+                                        @keyframes spin {
+                                            to {
+                                                transform: rotate(360deg);
+                                            }
+                                        }
+                                    </style>
+                                </div>
+
                                 <div class="form-group message-btn">
                                     <button type="submit" class="theme-btn btn-one">Kirim Testimonial Anda</button>
                                 </div>
@@ -353,10 +393,13 @@
     </script>
     <script>
         document.getElementById('testimonialForm').addEventListener('submit', async function(event) {
-            event.preventDefault(); // biar tidak reload halaman
+            event.preventDefault();
 
             let form = this;
             let formData = new FormData(form);
+
+            // Tampilkan overlay
+            document.getElementById('loadingOverlay').style.display = 'flex';
 
             try {
                 let response = await fetch(form.action, {
@@ -375,26 +418,14 @@
                 let data = await response.json();
 
                 if (data.message) {
-                    // kalau sukses, langsung redirect
                     window.location.href = "{{ route('home.testimoni') }}";
                 }
 
             } catch (error) {
                 console.error(error);
-
-                // kalau error validasi Laravel
-                if (error.errors) {
-                    let errorContainer = document.getElementById('errorMessages');
-                    errorContainer.innerHTML = ''; // hapus error lama
-                    for (let field in error.errors) {
-                        let msg = document.createElement('p');
-                        msg.classList.add('text-danger');
-                        msg.innerText = error.errors[field][0];
-                        errorContainer.appendChild(msg);
-                    }
-                } else {
-                    alert('Terjadi kesalahan. Silakan coba lagi.');
-                }
+                alert('Terjadi kesalahan. Silakan coba lagi.');
+            } finally {
+                document.getElementById('loadingOverlay').style.display = 'none';
             }
         });
     </script>
