@@ -34,8 +34,10 @@ class KegiatanController extends Controller
 
         if (app()->environment('local')) {
             $uploadPath = public_path('foto kegiatan BumDes');
+            dd('Upload path lokal: ' . $uploadPath);
         } else {
             $uploadPath = base_path('../public_html/foto kegiatan BumDes');
+            dd('Upload path hosting: ' . $uploadPath);
         }
 
         // Simpan data kegiatan
@@ -78,10 +80,14 @@ class KegiatanController extends Controller
         ]);
 
         // Tentukan path upload berdasarkan environment
-        $uploadPath = app()->environment('local')
-            ? public_path('foto kegiatan BumDes')
-            : base_path('../public_html/foto kegiatan BumDes');
-
+        if (app()->environment('local')) {
+            $uploadPath = public_path('foto kegiatan BumDes');
+            dd('Upload path lokal: ' . $uploadPath);
+        } else {
+            $uploadPath = base_path('../public_html/foto kegiatan BumDes');
+            dd('Upload path hosting: ' . $uploadPath);
+        }
+        dd('p');
         // Update data
         $kegiatan->Judul_Kegiatan = $validatedData['Judul_Kegiatan'];
         $kegiatan->tanggal_kegiatan = $validatedData['tanggal_kegiatan'];
