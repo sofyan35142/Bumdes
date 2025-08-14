@@ -155,10 +155,9 @@
                             <div class="shape"
                                 style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-24.png') }});">
                             </div>
-                              <div class="inner-box">
-                                <figure class="image-box"><img
-                                        src="{{ asset($book->gambar) }}"
-                                        alt=""></figure>
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="{{ asset($book->gambar) }}" alt="">
+                                </figure>
                                 @php
                                     $judul = explode(' ', $book->judul, 2);
                                 @endphp
@@ -167,7 +166,7 @@
                                         <span>{{ $judul[1] }}</span>
                                     @endif
                                 </h4>
-                                <a href="{{ $book->file_ebook }}" class="theme-btn btn-one" download>
+                                <a href="{{ asset($book->file_ebook) }}" class="theme-btn btn-one" download>
                                     Download E-book
                                 </a>
                             </div>

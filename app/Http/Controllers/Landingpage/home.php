@@ -42,8 +42,8 @@ class home extends Controller
         // dd($detailunggulan->kategori);
         $kategoriList = kategorimodel::get();
         // dd($kategoriList->kategori);
-
-        return view('Landingpage.detailunggulan', compact('detailunggulan', 'kategoriList'));
+        $book = PanduanBumdes::first();
+        return view('Landingpage.detailunggulan', compact('detailunggulan', 'kategoriList','book'));
     }
     public function FormTestimonial()
     {

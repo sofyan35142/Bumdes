@@ -26,17 +26,15 @@ class PanduanBumdesController extends Controller
     // Update data
     public function update(Request $request)
     {
-        $data = PanduanBumdes::firstOrFail(); // asumsinya data cuma 1
+        $data = PanduanBumdes::firstOrFail();
 
         // Validasi
         $request->validate([
             'judul' => 'required|string|max:255',
             'points' => 'required|string',
-            'file_ebook' => 'nullable|file|mimes:pdf|max:2048',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'file_ebook' => 'nullable|file|mimes:pdf',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png',
         ]);
-
-
 
         $fileEbook = $data->file_ebook;
         $gambar = $data->gambar;
@@ -47,21 +45,35 @@ class PanduanBumdesController extends Controller
             $uploadPath = base_path('../public_html/panduan_bumdes');
         }
 
-        // Handle upload e-book baru
+        if (!file_exists($uploadPath)) {
+            mkdir($uploadPath, 0755, true);
+        }
+
+        // Upload file ebook baru
         if ($request->hasFile('file_ebook')) {
+            // Hapus file lama jika ada
+            if ($fileEbook && file_exists(public_path($fileEbook))) {
+                unlink(public_path($fileEbook));
+            }
+
             $file = $request->file('file_ebook');
-            $fileEbook = time() . '_' . $file->getClientOriginalName();
-            $file->move($uploadPath, $fileEbook);
+            $fileEbook = 'panduan_bumdes/' . $file->getClientOriginalName();
+            $file->move($uploadPath, $file->getClientOriginalName());
         }
 
-        // Handle upload gambar baru
+        // Upload gambar baru
         if ($request->hasFile('gambar')) {
+            // Hapus gambar lama jika ada
+            if ($gambar && file_exists(public_path($gambar))) {
+                unlink(public_path($gambar));
+            }
+
             $img = $request->file('gambar');
-            $gambar = time() . '_' . $img->getClientOriginalName();
-            $img->move($uploadPath, $gambar);
+            $gambar = 'panduan_bumdes/' . $img->getClientOriginalName();
+            $img->move($uploadPath, $img->getClientOriginalName());
         }
 
-        // Update ke database
+        // Update data di DB
         $data->update([
             'judul' => $request->input('judul'),
             'points' => $request->input('points'),
