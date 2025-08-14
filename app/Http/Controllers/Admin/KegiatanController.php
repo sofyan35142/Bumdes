@@ -29,26 +29,14 @@ class KegiatanController extends Controller
             'tanggal_kegiatan'  => 'required|date',
             'kategori_id'       => 'required|string|max:255',
             'deskripsi_kegiatan' => 'required|string',
-            'foto_kegiatan'     => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ], [
-            'Judul_Kegiatan.required'     => 'Judul kegiatan wajib diisi.',
-            'Judul_Kegiatan.string'       => 'Judul kegiatan harus berupa teks.',
-            'Judul_Kegiatan.max'          => 'Judul kegiatan tidak boleh lebih dari 255 karakter.',
-
-            'tanggal_kegiatan.required'   => 'Tanggal kegiatan wajib diisi.',
-            'tanggal_kegiatan.date'       => 'Format tanggal kegiatan tidak valid.',
-
-            'kategori_id.required'        => 'Kategori kegiatan wajib dipilih.',
-            'kategori_id.string'          => 'Kategori kegiatan tidak valid.',
-
-            'deskripsi_kegiatan.required' => 'Deskripsi kegiatan wajib diisi.',
-            'deskripsi_kegiatan.string'   => 'Deskripsi kegiatan harus berupa teks.',
-
-            'foto_kegiatan.required' => 'Foto Kegiatan kegiatan wajib diisi.',
-            'foto_kegiatan.image'         => 'File yang diunggah harus berupa gambar.',
-            'foto_kegiatan.mimes'         => 'Gambar harus berformat jpeg, png, jpg, atau gif.',
-            'foto_kegiatan.max'           => 'Ukuran gambar tidak boleh lebih dari 2MB.',
+            'foto_kegiatan'     => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
+
+        if (app()->environment('local')) {
+            $uploadPath = public_path('foto kegiatan BumDes');
+        } else {
+            $uploadPath = base_path('../public_html/foto kegiatan BumDes');
+        }
 
         // Simpan data kegiatan
         $kegiatan = new kegiatan();
@@ -59,17 +47,16 @@ class KegiatanController extends Controller
 
         if ($request->hasFile('foto_kegiatan')) {
             $file = $request->file('foto_kegiatan');
-            $extension = $file->getClientOriginalExtension();
-            $filename = md5($file->getClientOriginalName() . microtime(true)) . '.' . $extension;
-            $file->move(public_path('foto kegiatan BumDes'), $filename);
+            $filename = md5($file->getClientOriginalName() . microtime(true)) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $filename);
             $kegiatan->foto_kegiatan = $filename;
         }
-
 
         $kegiatan->save();
 
         return redirect()->route('admin.kegiatan')->with('success', 'Kegiatan berhasil ditambahkan!');
     }
+
 
     public function editkegiatan($id)
     {
@@ -87,26 +74,13 @@ class KegiatanController extends Controller
             'tanggal_kegiatan'  => 'required|date',
             'kategori_id'       => 'required|integer|exists:kategorimodels,id',
             'deskripsi_kegiatan' => 'required|string',
-            'foto_kegiatan'     => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ], [
-            'Judul_Kegiatan.required'     => 'Judul kegiatan wajib diisi.',
-            'Judul_Kegiatan.string'       => 'Judul kegiatan harus berupa teks.',
-            'Judul_Kegiatan.max'          => 'Judul kegiatan tidak boleh lebih dari 255 karakter.',
-
-            'tanggal_kegiatan.required'   => 'Tanggal kegiatan wajib diisi.',
-            'tanggal_kegiatan.date'       => 'Format tanggal kegiatan tidak valid.',
-
-            'kategori_id.required'        => 'Kategori kegiatan wajib dipilih.',
-            'kategori_id.integer'         => 'Kategori kegiatan tidak valid.',
-            'kategori_id.exists'          => 'Kategori kegiatan tidak ditemukan.',
-
-            'deskripsi_kegiatan.required' => 'Deskripsi kegiatan wajib diisi.',
-            'deskripsi_kegiatan.string'   => 'Deskripsi kegiatan harus berupa teks.',
-
-            'foto_kegiatan.image'         => 'File yang diunggah harus berupa gambar.',
-            'foto_kegiatan.mimes'         => 'Gambar harus berformat jpeg, png, jpg, atau gif.',
-            'foto_kegiatan.max'           => 'Ukuran gambar tidak boleh lebih dari 2MB.',
+            'foto_kegiatan'     => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
+
+        // Tentukan path upload berdasarkan environment
+        $uploadPath = app()->environment('local')
+            ? public_path('foto kegiatan BumDes')
+            : base_path('../public_html/foto kegiatan BumDes');
 
         // Update data
         $kegiatan->Judul_Kegiatan = $validatedData['Judul_Kegiatan'];
@@ -117,40 +91,38 @@ class KegiatanController extends Controller
         // Jika ada foto baru
         if ($request->hasFile('foto_kegiatan')) {
             // Hapus foto lama jika ada
-            if ($kegiatan->foto_kegiatan && file_exists(public_path('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan))) {
-                unlink(public_path('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan));
+            if ($kegiatan->foto_kegiatan && file_exists($uploadPath . '/' . $kegiatan->foto_kegiatan)) {
+                unlink($uploadPath . '/' . $kegiatan->foto_kegiatan);
             }
 
-            // Simpan dengan nama hash MD5
+            // Simpan file baru dengan nama hash MD5
             $file = $request->file('foto_kegiatan');
-            $extension = $file->getClientOriginalExtension();
-            $filename = md5($file->getClientOriginalName() . microtime(true)) . '.' . $extension;
-
-            // Pindahkan file
-            $file->move(public_path('foto kegiatan BumDes'), $filename);
+            $filename = md5($file->getClientOriginalName() . microtime(true)) . '.' . $file->getClientOriginalExtension();
+            $file->move($uploadPath, $filename);
 
             $kegiatan->foto_kegiatan = $filename;
         }
 
-
         $kegiatan->save();
-
 
         return redirect()->route('admin.kegiatan')->with('success', 'Kegiatan berhasil diperbarui!');
     }
 
-
     public function hapuskegiatan($id)
     {
         $kegiatan = kegiatan::findOrFail($id);
-        if ($kegiatan->foto_kegiatan) {
-            $filePath = public_path('foto kegiatan BumDes/' . $kegiatan->foto_kegiatan);
-            if (file_exists($filePath)) {
-                unlink($filePath);
-            }
+
+        // Tentukan path upload berdasarkan environment
+        $uploadPath = app()->environment('local')
+            ? public_path('foto kegiatan BumDes')
+            : base_path('../public_html/foto kegiatan BumDes');
+
+        if ($kegiatan->foto_kegiatan && file_exists($uploadPath . '/' . $kegiatan->foto_kegiatan)) {
+            unlink($uploadPath . '/' . $kegiatan->foto_kegiatan);
         }
 
         $kegiatan->delete();
+
         return redirect()->route('admin.kegiatan')->with('success', 'Kegiatan berhasil dihapus!');
     }
 }
