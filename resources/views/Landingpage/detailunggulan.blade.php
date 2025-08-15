@@ -26,8 +26,8 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box">
-                    <figure class="logo-box"><a href="/"><img
-                                src="{{ asset('LandingPage/assets/images/logo.png') }}" alt=""></a>
+                    <figure class="logo-box"><a href="/"><img src="{{ asset('LandingPage/assets/images/logo.png') }}"
+                                alt=""></a>
                     </figure>
                     <div class="close-search"><span class="icon-27"></span></div>
                 </div>
@@ -82,7 +82,8 @@
                     <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                         <div class="service-details-content">
                             <div class="sec-title mb_70">
-                                <span class="sub-title mb_10">{{ $detailunggulan->kategori->nama_kategori ?? '-' }}</span>
+                                <span
+                                    class="sub-title mb_10">{{ $detailunggulan->kategori->nama_kategori ?? '-' }}</span>
                                 <h2>{{ $detailunggulan->nama_layanan }}</h2>
                                 {{-- <p class="mt_20">The executive search process is meticulously designed to identify and
                                     attract top-tier leadership talent that aligns with an organization’s strategic
@@ -115,11 +116,19 @@
                                     style="background-image: url({{ asset('LandingPage/assets/images/shape/shape-24.png') }});">
                                 </div>
                                 <div class="inner-box">
-                                    <figure class="image-box"><img
-                                            src="{{ asset('LandingPage/assets/images/resource/book-3.png') }}"
-                                            alt=""></figure>
-                                    <h4>The 2024 guide for Optimal Content <span>Management</span></h4>
-                                    <button type="button" class="theme-btn btn-one">Download E-book</button>
+                                    <figure class="image-box"><img src="{{ asset($book->gambar) }}" alt="">
+                                    </figure>
+                                    @php
+                                        $judul = explode(' ', $book->judul, 2);
+                                    @endphp
+                                    <h4>{{ $judul[0] }}
+                                        @if (isset($judul[1]))
+                                            <span>{{ $judul[1] }}</span>
+                                        @endif
+                                    </h4>
+                                    <a href="{{ asset($book->file_ebook) }}" class="theme-btn btn-one" download>
+                                        Download E-book
+                                    </a>
                                 </div>
                             </div>
                         </div>

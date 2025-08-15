@@ -52,7 +52,8 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="{{ route('admin.updatekategori', $kategori->id) }}" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('admin.updatekategori', $kategori->id) }}"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3 row">
                                             <label for="blog-title-input" class="col-md-2 col-form-label">Nama
@@ -82,7 +83,7 @@
             <!-- End Page-content -->
 
 
-@include('AdminPage.layouts.footer')
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 

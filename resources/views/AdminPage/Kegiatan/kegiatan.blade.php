@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Data Layanan Kegiatan</h4>
+                                <h4 class="mb-0">Data Kegiatan</h4>
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript:void(0);">Kegiatan</a></li>
@@ -49,13 +49,13 @@
                                     <h4 class="card-title mb-3">Data Layanan Kegiatan BUMDes Pakukerto</h4>
 
                                     <!-- Tombol Tambah Data -->
-                                    <div class="mb-3">
+                                    <div class="mb-3 text-end">
                                         <a href="{{ route('admin.tambahkegiatan') }}" class="btn btn-primary">
                                             <i class="fa-solid fa-plus me-1"></i> Tambah Kegiatan
                                         </a>
                                     </div>
 
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                    <table id="tableku" class="table table-bordered dt-responsive nowrap"
                                         style="width: 100%;">
                                         <thead>
                                             <tr>
@@ -108,7 +108,7 @@
             <!-- End Page-content -->
 
 
-@include('AdminPage.layouts.footer')
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 

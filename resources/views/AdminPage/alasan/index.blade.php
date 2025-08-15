@@ -60,7 +60,7 @@
                                                                 class="btn btn-sm btn-warning" title="Edit">
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
-                                                        </td>  
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </div>
-            {{-- @include('Admin.LayoutAdmin.footer') --}}
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
     </div>

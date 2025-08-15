@@ -82,21 +82,25 @@
                     <h2 class="title-animation">Lowongan Pekerjaan BumDes</h2>
                 </div>
                 <div class="row clearfix">
-                    @foreach ($Lowongan as $lowongan)
+                    @foreach ($Lowongan as $item)
                         <div class="col-lg-4 col-md-6 col-sm-12 service-block">
                             <div class="service-block-one wow fadeInUp animated" data-wow-delay="00ms"
                                 data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="{{ route('pages.lowongandetail', $lowongan->id) }}"><img
-                                                    src="{{ asset('poster_lowongan/' . $lowongan->poster_lowongan) }}"
-                                                    alt="" ></a></figure>
-                                        <figure class="overlay-image"><a href="{{ route('pages.lowongandetail', $lowongan->id) }}"><img
-                                                    src="{{ asset('poster_lowongan/' . $lowongan->poster_lowongan) }}"
-                                                    alt="" ></a></figure>
+                                        <figure class="image"><a
+                                                href="{{ route('pages.lowongandetail', $item->id) }}"><img
+                                                    src="{{ asset('poster_lowongan/' . $item->poster_lowongan) }}"
+                                                    alt=""></a></figure>
+                                        <figure class="overlay-image"><a
+                                                href="{{ route('pages.lowongandetail', $item->id) }}"><img
+                                                    src="{{ asset('poster_lowongan/' . $item->poster_lowongan) }}"
+                                                    alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
-                                        <h3><a href="{{ route('pages.lowongandetail', $lowongan->id) }}">{{ $lowongan->judul_lowongan }}</a></h3>
+                                        <h3><a
+                                                href="{{ route('pages.lowongandetail', $item->id) }}">{{ $item->judul_lowongan }}</a>
+                                        </h3>
                                         <div
                                             style="
         display: -webkit-box;
@@ -105,18 +109,21 @@
         overflow: hidden;
         text-overflow: ellipsis;
     ">
-                                            {{ \Illuminate\Support\Str::limit(strip_tags($lowongan->deskripsi), 500, '...') }}
+                                            {{ \Illuminate\Support\Str::limit(strip_tags($item->deskripsi), 500, '...') }}
                                         </div>
-                                        <div class="btn-box"><a href="{{ route('pages.lowongandetail', $lowongan->id) }}"
+                                        <div class="btn-box"><a
+                                                href="{{ route('pages.lowongandetail', $item->id) }}"
                                                 class="theme-btn btn-one">View
                                                 Details</a></div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
-            </div>
+                {{ $Lowongan->links('vendor.pagination.custom') }}
         </section>
         <!-- service-section end -->
 

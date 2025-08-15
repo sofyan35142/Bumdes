@@ -19,7 +19,7 @@
 
 
         <!-- page-direction -->
-        
+
         <!-- page-direction end -->
 
 
@@ -28,7 +28,7 @@
             <div class="popup-inner">
                 <div class="upper-box">
                     <figure class="logo-box"><a href="index.html"><img
-                                src="http://127.0.0.1:8000/LandingPage/assets/images/logo.png" alt=""></a>
+                                src="{{asset('LandingPage/assets/images/logo.png')}}" alt=""></a>
                     </figure>
                     <div class="close-search"><span class="icon-27"></span></div>
                 </div>
@@ -88,7 +88,7 @@
                                     <div class="col-md-4 mb-4">
                                         <div class="single-item">
                                             <div class="icon-box mb-2">
-                                                <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-27.png"
+                                                <img src="{{asset('LandingPage/assets/images/icons/icon-27.png')}}"
                                                     alt="">
                                             </div>
                                             <h4>Kantor BUMDes</h4>
@@ -99,7 +99,7 @@
                                     <div class="col-md-4 mb-4">
                                         <div class="single-item">
                                             <div class="icon-box mb-2">
-                                                <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-28.png"
+                                                <img src="{{asset('LandingPage/assets/images/icons/icon-28.png')}}"
                                                     alt="">
                                             </div>
                                             <h4>Email</h4>
@@ -111,7 +111,7 @@
                                     <div class="col-md-4 mb-4">
                                         <div class="single-item">
                                             <div class="icon-box mb-2">
-                                                <img src="http://127.0.0.1:8000/LandingPage/assets/images/icons/icon-29.png"
+                                                <img src="{{asset('LandingPage/assets/images/icons/icon-29.png')}}"
                                                     alt="">
                                             </div>
                                             <h4>Nomor Telepon</h4>

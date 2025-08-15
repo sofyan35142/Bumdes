@@ -102,6 +102,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-12 form-group">
+
                                         <input type="text" name="tempat_lahir" placeholder="Tempat Lahir"
                                             value="{{ old('tempat_lahir') }}" required>
                                         @error('tempat_lahir')
@@ -109,6 +110,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-12 form-group">
+                                        <label>tanggal lahir</label>
                                         <input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}"
                                             required>
                                         @error('tanggal_lahir')

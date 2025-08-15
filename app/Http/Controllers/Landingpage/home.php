@@ -31,7 +31,6 @@ class home extends Controller
         $testi = Testimonial::where('status', 1)->latest()->get();
         $slider = Slider::first();
 
-        // dd($industries->map->getOriginal());
         return view('Landingpage.index', compact('slider', 'data', 'book', 'unggulan', 'kegiatan', 'mediaPartner', 'alasan', 'team', 'industries', 'testi'));
     }
 
@@ -39,11 +38,9 @@ class home extends Controller
     {
 
         $detailunggulan = LayananUnggulan::with('kategori')->findOrFail($id);
-        // dd($detailunggulan->kategori);
         $kategoriList = kategorimodel::get();
-        // dd($kategoriList->kategori);
-
-        return view('Landingpage.detailunggulan', compact('detailunggulan', 'kategoriList'));
+        $book = PanduanBumdes::first();
+        return view('Landingpage.detailunggulan', compact('detailunggulan', 'kategoriList','book'));
     }
     public function FormTestimonial()
     {
@@ -61,8 +58,6 @@ class home extends Controller
     }
     public function listunggulan()
     {
-        // $Lowongan = LayananUnggulan::with('kategori')->latest()->paginate(6);
-        // $kategoriList = kategorimodel::get();
         $unggulanlist = LayananUnggulan::with('kategori')->latest()->paginate(6);
         return view('Landingpage.pages.listunggulan', compact('unggulanlist'));
     }

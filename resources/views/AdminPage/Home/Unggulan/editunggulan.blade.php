@@ -52,73 +52,81 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                             <form method="POST" action="{{ route('admin.updateunggulan', $unggulan->id) }}" enctype="multipart/form-data">
-    @csrf
-    @method('PUT')
+                                    <form method="POST" action="{{ route('admin.updateunggulan', $unggulan->id) }}"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        @method('PUT')
 
-    <div class="mb-3 row">
-        <label for="blog-title-input" class="col-md-2 col-form-label">Nama Layanan</label>
-        <div class="col-md-10">
-            <input class="form-control" type="text" id="blog-title-input"
-                placeholder="Masukkan judul layanan" name="nama_layanan"
-                value="{{ old('nama_layanan', $unggulan->nama_layanan) }}">
-            @error('nama_layanan')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
+                                        <div class="mb-3 row">
+                                            <label for="blog-title-input" class="col-md-2 col-form-label">Nama
+                                                Layanan</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="text" id="blog-title-input"
+                                                    placeholder="Masukkan judul layanan" name="nama_layanan"
+                                                    value="{{ old('nama_layanan', $unggulan->nama_layanan) }}">
+                                                @error('nama_layanan')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
 
-    <h4 class="card-title">Deskripsi</h4>
-    <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">{{ old('deskripsi', $unggulan->deskripsi) }}</textarea>
-    @error('deskripsi')
-        <small class="text-danger">{{ $message }}</small>
-    @enderror
+                                        <h4 class="card-title">Deskripsi</h4>
+                                        <textarea id="classic-editor" name="deskripsi" class="form-control" rows="10">{{ old('deskripsi', $unggulan->deskripsi) }}</textarea>
+                                        @error('deskripsi')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
 
-    <div class="mb-3 row">
-        <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
-        <div class="col-md-10">
-            <select class="form-select" name="kategori_id" id="kategori_id" required>
-                <option value="" disabled>Pilih Kategori</option>
-                @foreach ($kategoris as $kat)
-                    <option value="{{ $kat->id }}" {{ old('kategori_id', $unggulan->kategori_id) == $kat->id ? 'selected' : '' }}>
-                        {{ $kat->nama_kategori }}
-                    </option>
-                @endforeach
-            </select>
-            @error('kategori_id')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
+                                        <div class="mb-3 row">
+                                            <label for="kategori_id" class="col-md-2 col-form-label">Kategori</label>
+                                            <div class="col-md-10">
+                                                <select class="form-select" name="kategori_id" id="kategori_id"
+                                                    required>
+                                                    <option value="" disabled>Pilih Kategori</option>
+                                                    @foreach ($kategoris as $kat)
+                                                        <option value="{{ $kat->id }}"
+                                                            {{ old('kategori_id', $unggulan->kategori_id) == $kat->id ? 'selected' : '' }}>
+                                                            {{ $kat->nama_kategori }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                                @error('kategori_id')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
 
-    <div class="mb-3 row">
-        <label for="foto_layanan" class="col-md-2 col-form-label">Poster Layanan</label>
-        <div class="col-md-10">
-            <input class="form-control" type="file" id="foto_layanan"
-                accept="image/*" name="foto_layanan" onchange="previewImage(event)">
-            <div class="form-text">Unggah gambar baru jika ingin mengganti</div>
+                                        <div class="mb-3 row">
+                                            <label for="foto_layanan" class="col-md-2 col-form-label">Poster
+                                                Layanan</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="file" id="foto_layanan"
+                                                    accept="image/*" name="foto_layanan" onchange="previewImage(event)">
+                                                <div class="form-text">Unggah gambar baru jika ingin mengganti</div>
 
-            @if ($unggulan->foto_layanan)
-                <div class="mt-2">
-                    <img id="image-preview"
-                        src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
-                        alt="Gambar Layanan" width="200">
-                </div>
-            @else
-                <img id="image-preview" class="mt-2" style="max-height: 200px; display: none;">
-            @endif
+                                                @if ($unggulan->foto_layanan)
+                                                    <div class="mt-2">
+                                                        <img id="image-preview"
+                                                            src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
+                                                            alt="Gambar Layanan" width="200">
+                                                    </div>
+                                                @else
+                                                    <img id="image-preview" class="mt-2"
+                                                        style="max-height: 200px; display: none;">
+                                                @endif
 
-            @error('foto_layanan')
-                <small class="text-danger">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
+                                                @error('foto_layanan')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
+                                            </div>
+                                        </div>
 
-    <div class="d-flex flex-wrap gap-3 mt-3">
-        <button type="submit" class="btn btn-primary waves-effect waves-light w-md">Simpan</button>
-        <button type="reset" class="btn btn-outline-secondary waves-effect waves-light w-md">Reset</button>
-    </div>
-</form>
+                                        <div class="d-flex flex-wrap gap-3 mt-3">
+                                            <button type="submit"
+                                                class="btn btn-primary waves-effect waves-light w-md">Simpan</button>
+                                            <button type="reset"
+                                                class="btn btn-outline-secondary waves-effect waves-light w-md">Reset</button>
+                                        </div>
+                                    </form>
 
                                 </div>
                             </div>
@@ -129,7 +137,7 @@
             <!-- End Page-content -->
 
 
-@include('AdminPage.layouts.footer')
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 
@@ -139,124 +147,7 @@
 
 
     <!-- Right Sidebar -->
-    <div class="right-bar">
-        <div data-simplebar class="h-100">
-            <div class="rightbar-title d-flex align-items-center p-3">
 
-                <h5 class="m-0 me-2">Settings</h5>
-
-                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
-                    <i class="mdi mdi-close noti-icon"></i>
-                </a>
-            </div>
-
-            <!-- Settings -->
-            <hr class="m-0" />
-
-            <div class="p-4">
-                <h6 class="mb-3">Layout</h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical" value="vertical">
-                    <label class="form-check-label" for="layout-vertical">Vertical</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-horizontal"
-                        value="horizontal">
-                    <label class="form-check-label" for="layout-horizontal">Horizontal</label>
-                </div>
-
-                <h6 class="mt-4 mb-3 pt-2">Layout Mode</h6>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-mode" id="layout-mode-light"
-                        value="light">
-                    <label class="form-check-label" for="layout-mode-light">Light</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-mode" id="layout-mode-dark"
-                        value="dark">
-                    <label class="form-check-label" for="layout-mode-dark">Dark</label>
-                </div>
-
-                <h6 class="mt-4 mb-3 pt-2">Layout Width</h6>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-width" id="layout-width-fuild"
-                        value="fuild" onchange="document.body.setAttribute('data-layout-size', 'fluid')">
-                    <label class="form-check-label" for="layout-width-fuild">Fluid</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-width" id="layout-width-boxed"
-                        value="boxed" onchange="document.body.setAttribute('data-layout-size', 'boxed')">
-                    <label class="form-check-label" for="layout-width-boxed">Boxed</label>
-                </div>
-
-                <h6 class="mt-4 mb-3 pt-2">Topbar Color</h6>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-light"
-                        value="light" onchange="document.body.setAttribute('data-topbar', 'light')">
-                    <label class="form-check-label" for="topbar-color-light">Light</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-dark"
-                        value="dark" onchange="document.body.setAttribute('data-topbar', 'dark')">
-                    <label class="form-check-label" for="topbar-color-dark">Dark</label>
-                </div>
-
-                <h6 class="mt-4 mb-3 pt-2 sidebar-setting">Sidebar Size</h6>
-
-                <div class="form-check sidebar-setting">
-                    <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-default"
-                        value="default" onchange="document.body.setAttribute('data-sidebar-size', 'lg')">
-                    <label class="form-check-label" for="sidebar-size-default">Default</label>
-                </div>
-                <div class="form-check sidebar-setting">
-                    <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-compact"
-                        value="compact" onchange="document.body.setAttribute('data-sidebar-size', 'small')">
-                    <label class="form-check-label" for="sidebar-size-compact">Compact</label>
-                </div>
-                <div class="form-check sidebar-setting">
-                    <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-small"
-                        value="small" onchange="document.body.setAttribute('data-sidebar-size', 'sm')">
-                    <label class="form-check-label" for="sidebar-size-small">Small (Icon View)</label>
-                </div>
-
-                <h6 class="mt-4 mb-3 pt-2 sidebar-setting">Sidebar Color</h6>
-
-                <div class="form-check sidebar-setting">
-                    <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-light"
-                        value="light" onchange="document.body.setAttribute('data-sidebar', 'light')">
-                    <label class="form-check-label" for="sidebar-color-light">Light</label>
-                </div>
-                <div class="form-check sidebar-setting">
-                    <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-dark"
-                        value="dark" onchange="document.body.setAttribute('data-sidebar', 'dark')">
-                    <label class="form-check-label" for="sidebar-color-dark">Dark</label>
-                </div>
-                <div class="form-check sidebar-setting">
-                    <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-colored"
-                        value="colored" onchange="document.body.setAttribute('data-sidebar', 'colored')">
-                    <label class="form-check-label" for="sidebar-color-colored">Colored</label>
-                </div>
-
-                <h6 class="mt-4 mb-3 pt-2">Direction</h6>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-ltr"
-                        value="ltr">
-                    <label class="form-check-label" for="layout-direction-ltr">LTR</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-rtl"
-                        value="rtl">
-                    <label class="form-check-label" for="layout-direction-rtl">RTL</label>
-                </div>
-
-            </div>
-
-        </div> <!-- end slimscroll-menu-->
-    </div>
     <!-- /Right-bar -->
 
     <!-- Right bar overlay-->

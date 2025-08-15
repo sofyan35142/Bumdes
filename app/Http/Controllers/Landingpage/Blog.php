@@ -18,7 +18,7 @@ class Blog extends Controller
         }
 
         // Gunakan paginate() bukan get()
-        $kegiatan = $query->orderBy('tanggal_kegiatan', 'desc')->paginate(5);
+        $kegiatan = $query->orderBy('tanggal_kegiatan', 'desc')->paginate(4);
 
         $latestKegiatan = Kegiatan::orderBy('tanggal_kegiatan', 'desc')
             ->take(3)

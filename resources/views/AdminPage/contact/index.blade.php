@@ -40,9 +40,11 @@
                                     <h4 class="card-title">Data Informasi Kontak</h4>
                                     @if ($kontak)
                                         {{-- Tombol Edit --}}
-                                        <a href="{{ route('admin.contact.edit') }}">
-                                            <button class="btn btn-primary mb-3">Edit Informasi Kontak</button>
-                                        </a>
+                                        <div class="mb-3 text-end">
+                                            <a href="{{ route('admin.contact.edit') }}">
+                                                <button class="btn btn-primary mb-3"><i class="fas fa-pencil"></i>Edit Informasi Kontak</button>
+                                            </a>
+                                        </div>
 
                                         <table class="table table-bordered">
                                             <tbody>
@@ -77,9 +79,7 @@
                     </div>
                 </div>
             </div>
-
-            {{-- @include('Admin.LayoutAdmin.footer') --}}
-
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
     </div>

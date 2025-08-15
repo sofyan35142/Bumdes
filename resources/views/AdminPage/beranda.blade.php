@@ -46,15 +46,15 @@
                     <!-- end page title -->
 
                     <div class="row">
+
                         <div class="col-md-6 col-xl-3">
                             <div class="card">
                                 <div class="card-body">
                                     <div>
-                                        <h4 class="mb-1 mt-1">$<span data-plugin="counterup">34,152</span></h4>
-                                        <p class="text-muted mb-0">Total Revenue</p>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{ $totalArsip }}</span>
+                                        </h4>
+                                        <p class="text-muted mb-0">Total Arsip</p>
                                     </div>
-                                    <p class="text-muted mt-3 mb-0"><span class="text-success me-1">
-                                    </p>
                                 </div>
                             </div>
                         </div> <!-- end col-->
@@ -62,15 +62,11 @@
                         <div class="col-md-6 col-xl-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="float-end mt-2">
-                                        <div id="orders-chart" data-colors='["--bs-success"]'> </div>
-                                    </div>
                                     <div>
-                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">5,643</span></h4>
-                                        <p class="text-muted mb-0">Orders</p>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{ $totalLayanan }}</span>
+                                        </h4>
+                                        <p class="text-muted mb-0">Total Layanan</p>
                                     </div>
-                                    <p class="text-muted mt-3 mb-0"><span class="text-danger me-1">
-                                    </p>
                                 </div>
                             </div>
                         </div> <!-- end col-->
@@ -78,36 +74,66 @@
                         <div class="col-md-6 col-xl-3">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="float-end mt-2">
-                                        <div id="customers-chart" data-colors='["--bs-primary"]'> </div>
-                                    </div>
                                     <div>
-                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">45,254</span></h4>
-                                        <p class="text-muted mb-0">Customers</p>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{ $totalKegiatan }}</span>
+                                        </h4>
+                                        <p class="text-muted mb-0">Total Kegiatan</p>
                                     </div>
-                                    <p class="text-muted mt-3 mb-0"><span class="text-danger me-1">
-                                    </p>
                                 </div>
                             </div>
                         </div> <!-- end col-->
 
                         <div class="col-md-6 col-xl-3">
-
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="float-end mt-2">
-                                        <div id="growth-chart" data-colors='["--bs-warning"]'></div>
-                                    </div>
                                     <div>
-                                        <h4 class="mb-1 mt-1">+ <span data-plugin="counterup">12.58</span>%</h4>
-                                        <p class="text-muted mb-0">Growth</p>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{ $totalLowongan }}</span>
+                                        </h4>
+                                        <p class="text-muted mb-0">Total Lowongan</p>
                                     </div>
-                                    <p class="text-muted mt-3 mb-0"><span class="text-success me-1">
-                                    </p>
                                 </div>
                             </div>
                         </div> <!-- end col-->
-                    </div> <!-- end row-->
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{ $totalPengajuan }}</span>
+                                        </h4>
+                                        <p class="text-muted mb-0">Total Pengajuan</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end col-->
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div>
+                                        <h4 class="mb-1 mt-1"><span data-plugin="counterup">{{ $totalAnggota }}</span>
+                                        </h4>
+                                        <p class="text-muted mb-0">Total Anggota</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end col-->
+
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div>
+                                        <h4 class="mb-1 mt-1"><span
+                                                data-plugin="counterup">{{ $totaltestimonials }}</span></h4>
+                                        <p class="text-muted mb-0">Total Testimonials</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end col-->
+
+                    </div>
+
+                    <!-- end row-->
                 </div> <!-- container-fluid -->
             </div>
             <!-- End Page-content -->

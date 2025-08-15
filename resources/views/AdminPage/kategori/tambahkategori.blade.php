@@ -52,10 +52,12 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="{{ route('admin.insertkategori') }}" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('admin.insertkategori') }}"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3 row">
-                                            <label for="blog-title-input" class="col-md-2 col-form-label">Nama Kategori</label>
+                                            <label for="blog-title-input" class="col-md-2 col-form-label">Nama
+                                                Kategori</label>
                                             <div class="col-md-10">
                                                 <input class="form-control" type="text" id="blog-title-input"
                                                     placeholder="Masukkan nama Kategori" name="nama_kategori">
@@ -80,7 +82,7 @@
             <!-- End Page-content -->
 
 
-@include('AdminPage.layouts.footer')
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 

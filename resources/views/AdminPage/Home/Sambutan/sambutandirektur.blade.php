@@ -52,11 +52,15 @@
 
                                     @if ($data)
                                         {{-- Tombol Edit --}}
-                                        <a href="{{ route('admin.editsambutan', $data->id) }}">
-                                            <button class="btn btn-primary mb-3">
-                                                <i class="fa-solid fa-pen-to-square"></i> Edit Sambutan
-                                            </button>
-                                        </a>
+                                        <div class="text-end">
+                                            <a href="{{ route('admin.editsambutan', $data->id) }}">
+                                                <button class="btn btn-primary mb-3">
+                                                    <i class="fa-solid fa-pen-to-square"></i> Edit Sambutan
+                                                </button>
+                                            </a>
+                                        </div>
+
+
 
                                         {{-- Nama Direktur --}}
                                         <h5 class="mt-3">Nama Direktur</h5>
@@ -90,7 +94,7 @@
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
-@include('AdminPage.layouts.footer')
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
     </div>

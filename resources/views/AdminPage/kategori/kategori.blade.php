@@ -49,13 +49,13 @@
                                     <h4 class="card-title mb-3">Data Kategori BUMDes Pakukerto</h4>
 
                                     <!-- Tombol Tambah Data -->
-                                    <div class="mb-3">
+                                    <div class="mb-3 text-end">
                                         <a href="{{ route('admin.tambahkategori') }}" class="btn btn-primary">
                                             <i class="fa-solid fa-plus me-1"></i> Tambah Kategori
                                         </a>
                                     </div>
 
-                                    <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                    <table id="tableku" class="table table-bordered dt-responsive nowrap"
                                         style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>
                                             <tr>

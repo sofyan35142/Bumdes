@@ -173,22 +173,15 @@
 
                 <!-- Industries -->
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow">
+                    <a href="{{ route('admin.industries.index') }}">
                         <i class="fas fa-industry"></i>
                         <span>Industries</span>
-                        <i class="fas fa-angle-down" style="float:right;"></i>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('admin.industries.index') }}"><i class="fas fa-list"></i> Daftar
-                                Industries</a></li>
-                        <li><a href="{{ route('admin.industries.create') }}"><i class="fas fa-plus"></i> Tambah
-                                Industry</a></li>
-                    </ul>
                 </li>
                 <!-- developer kontak -->
                 <li>
                     <a href="{{ route('developer.kontak') }}">
-                        <i class="fas fa-user-phone"></i>
+                        <i class="fa-solid fa-code"></i>
                         <span>Developer Kontak</span>
                     </a>
                 </li>

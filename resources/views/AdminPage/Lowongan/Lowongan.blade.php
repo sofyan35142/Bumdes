@@ -52,64 +52,67 @@
                                     <h4 class="card-title">Daftar Lowongan Kerja BUMDes Pakukerto</h4>
 
                                     <!-- Tombol Tambah -->
-                                    <a href="{{ route('admin.tambahlowongan') }}" class="btn btn-primary mb-3">
-                                        <i class="fa fa-plus"></i> Tambah Lowongan Baru
-                                    </a>
-
-                                    <table id="tableku" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Judul Lowongan</th>
-                                                <th>Deskripsi</th>
-                                                <th>Tugas</th>
-                                                <th>Kualifikasi</th>
-                                                <th>Tanggal Dibuka</th>
-                                                <th>Tanggal Ditutup</th>
-                                                <th>Lokasi</th>
-                                                <th>Poster</th>
-                                                <th>Status</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php $no = 1; @endphp
-                                            @foreach ($lowongan as $item)
+                                    <div class="mb-3 text-end">
+                                        <a href="{{ route('admin.tambahlowongan') }}" class="btn btn-primary mb-3">
+                                            <i class="fa fa-plus"></i> Tambah Lowongan Baru
+                                        </a>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table id="tableku" class="table table-bordered table-striped">
+                                            <thead>
                                                 <tr>
-                                                    <td>{{ $no++ }}</td>
-                                                    <td>{{ $item->judul_lowongan }}</td>
-                                                    <td style="word-break: break-word;">{!! $item->deskripsi !!}</td>
-                                                    <td style="word-break: break-word;">{!! $item->tugas !!}</td>
-                                                    <td style="word-break: break-word;">{!! $item->kualifikasi !!}</td>
-                                                    <td>{{ $item->tanggal_dibuka }}</td>
-                                                    <td>{{ $item->tanggal_ditutup }}</td>
-                                                    <td>{{ $item->lokasi }}</td>
-                                                    <td>
-                                                        <img src="{{ asset('poster_lowongan/' . $item->poster_lowongan) }}"
-                                                            alt="Poster Lowongan"
-                                                            style="width: 80px; height: 80px; object-fit: cover;">
-                                                    </td>
-                                                    <td>
-                                                        @if ($item->status == 'dibuka')
-                                                            <span class="badge bg-success">Dibuka</span>
-                                                        @else
-                                                            <span class="badge bg-danger">Ditutup</span>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        <a href="{{ route('admin.editlowongan', $item->id) }}"
-                                                            class="btn btn-warning" title="Edit Lowongan">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-danger btn-delete"
-                                                            data-id="{{ $item->id }}" title="Hapus Lowongan">
-                                                            <i class="fa fa-trash"></i>
-                                                        </a>
-                                                    </td>
+                                                    <th>No</th>
+                                                    <th>Judul Lowongan</th>
+                                                    <th>Deskripsi</th>
+                                                    <th>Tugas</th>
+                                                    <th>Kualifikasi</th>
+                                                    <th>Tanggal Dibuka</th>
+                                                    <th>Tanggal Ditutup</th>
+                                                    <th>Lokasi</th>
+                                                    <th>Poster</th>
+                                                    <th>Status</th>
+                                                    <th>Aksi</th>
                                                 </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                                @php $no = 1; @endphp
+                                                @foreach ($lowongan as $item)
+                                                    <tr>
+                                                        <td>{{ $no++ }}</td>
+                                                        <td>{{ $item->judul_lowongan }}</td>
+                                                        <td style="word-break: break-word;">{!! $item->deskripsi !!}</td>
+                                                        <td style="word-break: break-word;">{!! $item->tugas !!}</td>
+                                                        <td style="word-break: break-word;">{!! $item->kualifikasi !!}</td>
+                                                        <td>{{ $item->tanggal_dibuka }}</td>
+                                                        <td>{{ $item->tanggal_ditutup }}</td>
+                                                        <td>{{ $item->lokasi }}</td>
+                                                        <td>
+                                                            <img src="{{ asset('poster_lowongan/' . $item->poster_lowongan) }}"
+                                                                alt="Poster Lowongan"
+                                                                style="width: 80px; height: 80px; object-fit: cover;">
+                                                        </td>
+                                                        <td>
+                                                            @if ($item->status == 'dibuka')
+                                                                <span class="badge bg-success">Dibuka</span>
+                                                            @else
+                                                                <span class="badge bg-danger">Ditutup</span>
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('admin.editlowongan', $item->id) }}"
+                                                                class="btn btn-warning" title="Edit Lowongan">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </a>
+                                                            <a href="#" class="btn btn-danger btn-delete"
+                                                                data-id="{{ $item->id }}" title="Hapus Lowongan">
+                                                                <i class="fa fa-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div> <!-- end col -->
