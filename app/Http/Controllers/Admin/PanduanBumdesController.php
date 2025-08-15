@@ -80,7 +80,7 @@ class PanduanBumdesController extends Controller
             'file_ebook' => $fileEbook,
             'gambar' => $gambar,
         ]);
-
+        
         return redirect()->route('admin.bookPanduan.index')->with('success', 'Data Panduan berhasil diperbarui.');
     }
 }

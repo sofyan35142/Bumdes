@@ -54,49 +54,50 @@
                                             <i class="fa-solid fa-plus me-1"></i> Tambah Kegiatan
                                         </a>
                                     </div>
-
-                                    <table id="tableku" class="table table-bordered dt-responsive nowrap"
-                                        style="width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Judul Kegiatan</th>
-                                                <th>Tanggal Kegiatan</th>
-                                                <th>Kategori</th>
-                                                <th>Deskripsi</th>
-                                                <th>Foto</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <?php $no = 1; ?>
-                                        @foreach ($kegiatan as $item)
-                                            <tr>
-                                                <td>{{ $no }}</td>
-                                                <td>{{ $item->Judul_Kegiatan }}</td>
-                                                <td>{{ $item->tanggal_kegiatan }}</td>
-                                                <td>{{ $item->kategori->nama_kategori ?? '-' }}</td>
-                                                <td style="word-break: break-all;">{!! $item->deskripsi_kegiatan !!}</td>
-                                                <td>
-                                                    <img src="{{ asset('foto kegiatan BumDes/' . $item->foto_kegiatan) }}"
-                                                        alt="Foto Kegiatan"
-                                                        style="width: 80px; height: 80px; object-fit: cover;">
-                                                </td>
-                                                <td>
-                                                    <!-- Tombol Edit -->
-                                                    <a href="{{ route('admin.editkegiatan', $item->id) }}"
-                                                        class="btn btn-warning">
-                                                        <i class="fa-solid fa-pen-to-square"></i>
-                                                    </a>
-                                                    <!-- Tombol Hapus -->
-                                                    <a href="#" class="btn btn-danger btn-delete"
-                                                        data-id="{{ $item->id }}">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <?php $no++; ?>
-                                        @endforeach
-                                    </table>
+                                    <div class="table-responsive">
+                                        <table id="tableku" class="table table-bordered dt-responsive nowrap"
+                                            style="width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Judul Kegiatan</th>
+                                                    <th>Tanggal Kegiatan</th>
+                                                    <th>Kategori</th>
+                                                    <th>Deskripsi</th>
+                                                    <th>Foto</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <?php $no = 1; ?>
+                                            @foreach ($kegiatan as $item)
+                                                <tr>
+                                                    <td>{{ $no }}</td>
+                                                    <td>{{ $item->Judul_Kegiatan }}</td>
+                                                    <td>{{ $item->tanggal_kegiatan }}</td>
+                                                    <td>{{ $item->kategori->nama_kategori ?? '-' }}</td>
+                                                    <td style="word-break: break-all;">{!! $item->deskripsi_kegiatan !!}</td>
+                                                    <td>
+                                                        <img src="{{ asset('foto kegiatan BumDes/' . $item->foto_kegiatan) }}"
+                                                            alt="Foto Kegiatan"
+                                                            style="width: 80px; height: 80px; object-fit: cover;">
+                                                    </td>
+                                                    <td>
+                                                        <!-- Tombol Edit -->
+                                                        <a href="{{ route('admin.editkegiatan', $item->id) }}"
+                                                            class="btn btn-warning">
+                                                            <i class="fa-solid fa-pen-to-square"></i>
+                                                        </a>
+                                                        <!-- Tombol Hapus -->
+                                                        <a href="#" class="btn btn-danger btn-delete"
+                                                            data-id="{{ $item->id }}">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <?php $no++; ?>
+                                            @endforeach
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
