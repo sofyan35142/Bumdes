@@ -80,7 +80,7 @@
                                                         <td>{{ $item->kategori->nama_kategori ?? '-' }}</td>
                                                         <td>
                                                             @if ($item->foto_layanan)
-                                                                <img src="{{ asset('foto layanan unggulan/' . $item->foto_layanan) }}"
+                                                                <img src="{{ asset('foto_layanan_unggulan/' . $item->foto_layanan) }}"
                                                                     alt="Foto Layanan"
                                                                     style="max-width: 80px; max-height:80px;">
                                                             @else

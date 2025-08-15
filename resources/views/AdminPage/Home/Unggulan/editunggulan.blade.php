@@ -106,7 +106,7 @@
                                                 @if ($unggulan->foto_layanan)
                                                     <div class="mt-2">
                                                         <img id="image-preview"
-                                                            src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
+                                                            src="{{ asset('foto_layanan_unggulan/' . $unggulan->foto_layanan) }}"
                                                             alt="Gambar Layanan" width="200">
                                                     </div>
                                                 @else

@@ -64,10 +64,10 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image"><a href="{{ route('home.detailunggulan', $unggulan->id) }}"><img
-                                                    src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
+                                                    src="{{ asset('foto_layanan_unggulan/' . $unggulan->foto_layanan) }}"
                                                     alt=""></a></figure>
                                         <figure class="overlay-image"><a href="{{ route('home.detailunggulan', $unggulan->id) }}"><img
-                                                    src="{{ asset('foto layanan unggulan/' . $unggulan->foto_layanan) }}"
+                                                    src="{{ asset('foto_layanan_unggulan/' . $unggulan->foto_layanan) }}"
                                                     alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">

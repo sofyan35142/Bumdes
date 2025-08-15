@@ -476,13 +476,13 @@
                                     <div class="image-box" style="height: 13pc; width: 21pc; overflow: hidden;">
                                         <figure class="image">
                                             <a href="{{ route('home.detailunggulan', ['id' => $item->id]) }}">
-                                                <img src="{{ asset('foto layanan unggulan/' . $item->foto_layanan) }}"
+                                                <img src="{{ asset('foto_layanan_unggulan/' . $item->foto_layanan) }}"
                                                     alt="">
                                             </a>
                                         </figure>
                                         <figure class="overlay-image">
                                             <a href="#">
-                                                <img src="{{ asset('foto layanan unggulan/' . $item->foto_layanan) }}"
+                                                <img src="{{ asset('foto_layanan_unggulan/' . $item->foto_layanan) }}"
                                                     alt="">
                                             </a>
                                         </figure>
