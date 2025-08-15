@@ -72,7 +72,7 @@
                                                 <td>
                                                     <!-- Tombol Edit -->
                                                     <a href="{{ route('admin.editkategori', $item->id) }}"
-                                                        class="btn btn-warning">
+                                                        class="btn btn-warning btn-sm">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </a>
                                                     <!-- Tombol Hapus -->
