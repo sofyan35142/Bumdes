@@ -40,11 +40,11 @@
         <section class="page-title centred pt_110">
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>Kegiatan Detail</h1>
+                    <h1>Detail Kegiatan </h1>
                     <ul class="bread-crumb clearfix">
                         <li><a href="/">Home</a></li>
                         <li>-</li>
-                        <li>Kegiatan Detail</li>
+                        <li>Detail Kegiatan </li>
                     </ul>
                 </div>
             </div>
