@@ -105,7 +105,8 @@
                             <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
                             <p>{{ $slider->deskripsi_slider1 }}</p>
                             <div class="btn-box">
-                                <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat Program Kami</a>
+                                <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat
+                                    Program Kami</a>
                                 {{-- <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
                                         Warga</span></a> --}}
                             </div>
@@ -132,7 +133,8 @@
                             <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
                             <p>{{ $slider->deskripsi_slider2 }}</p>
                             <div class="btn-box">
-                                <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat Program
+                                <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat
+                                    Program
                                     Kami</a>
                                 {{-- <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
                                         Warga</span></a> --}}
@@ -160,7 +162,8 @@
                             <h2>{{ $firstThree }} <span>{{ $restWords }}</span></h2>
                             <p>{{ $slider->deskripsi_slider3 }}</p>
                             <div class="btn-box">
-                                <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat Program
+                                <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat
+                                    Program
                                     Kami</a>
                                 {{-- <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
                                         Warga</span></a> --}}
@@ -493,15 +496,15 @@
                                         </h3>
                                         <p
                                             style="
-                                    overflow: hidden;
-                                    display: -webkit-box;
-                                    -webkit-line-clamp: 3;
-                                    -webkit-box-orient: vertical;
-                                    line-height: 1.5em;
-                                    max-height: 4.5em;
-                                    text-overflow: ellipsis;">
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Jumlah baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5em;
+">
                                             {!! $item->deskripsi !!}
                                         </p>
+
                                         <div class="btn-box">
                                             {{-- <a href="#" class="theme-btn btn-one">View Details</a> --}}
                                             <a href="{{ route('home.detailunggulan', ['id' => $item->id]) }}"
@@ -869,7 +872,7 @@
                                         </h3>
                                         <ul class="post-info">
                                             <li>By <a href="{{ route('blogdetail', $kegiatan->id) }}">Sekertaris
-                                                    </a></li>
+                                                </a></li>
                                             <li><span>{{ \Carbon\Carbon::parse($kegiatan->tanggal_kegiatan)->format('d M Y') }}</span>
                                             </li>
                                         </ul>
