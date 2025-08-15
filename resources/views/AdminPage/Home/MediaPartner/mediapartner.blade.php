@@ -46,7 +46,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-3">Data Layanan Unggulan BUMDes Pakukerto</h4>
+                                    <h4 class="card-title mb-3">Data Support By BUMDes Pakukerto</h4>
 
                                     <!-- Tombol Tambah Data -->
                                     <div class="mb-3 text-end">
