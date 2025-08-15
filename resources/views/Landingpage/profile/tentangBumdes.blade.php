@@ -291,11 +291,13 @@
                                     <div class="image-box">
                                         <figure class="image"
                                             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
-                                            <img src="{{ asset($member->foto) }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                            <img src="{{ asset($member->foto) }}" alt=""
+                                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                         </figure>
                                         <figure class="overlay-image"
                                             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
-                                            <img src="{{ asset($member->foto) }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                            <img src="{{ asset($member->foto) }}" alt=""
+                                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                         </figure>
                                     </div>
                                     <div class="lower-content">
@@ -316,105 +318,28 @@
             <div class="auto-container">
                 <div class="sec-title centred pb_60 sec-title-animation animation-style2">
                     <span class="sub-title mb_10 title-animation">Testimoni</span>
-                    <h2 class="title-animation">Cinta Dari Masyarakat</h2>
+                    <h2 class="title-animation">Testimoni Dari Masyarakat</h2>
                 </div>
                 <div class="two-item-carousel owl-carousel owl-theme owl-nav-none">
-                    <div class="testimonial-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
-                                    alt=""></div>
-                            <div class="author-box">
-                                <figure class="thumb-box"><img
-                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-1.png"
-                                        alt=""></figure>
-                                <h4>Ibu Siti</h4>
-                                <span class="designation">Anggota, Desa Makmur</span>
+                    @foreach ($testi as $item)
+                        <div class="testimonial-block-two">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <img src="{{ asset('Landingpage/assets/images/icons/icon-11.png') }}"
+                                        alt="">
+                                </div>
+                                <div class="author-box">
+                                    <figure class="thumb-box">
+                                        <img src="{{ asset('Testimonial/' . $item->foto_testimonial) }}"
+                                            alt="">
+                                    </figure>
+                                    <h4>{{ $item->nama }}</h4>
+                                    <span class="designation">{{ $item->keterangan }}</span>
+                                </div>
+                                <p>{{ $item->deskripsi_testimonial }}</p>
                             </div>
-                            <p>Bumdes ini sangat membantu usaha kecil saya. Pelayanannya cepat dan timnya sangat
-                                suportif. Saya merasa bangga menjadi bagian dari Bumdes ini.</p>
                         </div>
-                    </div>
-                    <div class="testimonial-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
-                                    alt=""></div>
-                            <div class="author-box">
-                                <figure class="thumb-box"><img
-                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-3.png"
-                                        alt=""></figure>
-                                <h4>Bapak Widodo</h4>
-                                <span class="designation">Pelaku Usaha, Desa Sejahtera</span>
-                            </div>
-                            <p>Saya baru-baru ini bekerja sama dengan Bumdes ini, dan saya sangat terkesan dengan proses
-                                yang lancar dan efisien. Mereka benar-benar mengutamakan kemajuan desa.</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
-                                    alt=""></div>
-                            <div class="author-box">
-                                <figure class="thumb-box"><img
-                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-1.png"
-                                        alt=""></figure>
-                                <h4>Ibu Siti</h4>
-                                <span class="designation">Anggota, Desa Makmur</span>
-                            </div>
-                            <p>Bumdes ini sangat membantu usaha kecil saya. Pelayanannya cepat dan timnya sangat
-                                suportif. Saya merasa bangga menjadi bagian dari Bumdes ini.</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
-                                    alt=""></div>
-                            <div class="author-box">
-                                <figure class="thumb-box"><img
-                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-3.png"
-                                        alt=""></figure>
-                                <h4>Bapak Widodo</h4>
-                                <span class="designation">Pelaku Usaha, Desa Sejahtera</span>
-                            </div>
-                            <p>Saya baru-baru ini bekerja sama dengan Bumdes ini, dan saya sangat terkesan dengan proses
-                                yang lancar dan efisien. Mereka benar-benar mengutamakan kemajuan desa.</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
-                                    alt=""></div>
-                            <div class="author-box">
-                                <figure class="thumb-box"><img
-                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-1.png"
-                                        alt=""></figure>
-                                <h4>Ibu Siti</h4>
-                                <span class="designation">Anggota, Desa Makmur</span>
-                            </div>
-                            <p>Bumdes ini sangat membantu usaha kecil saya. Pelayanannya cepat dan timnya sangat
-                                suportif. Saya merasa bangga menjadi bagian dari Bumdes ini.</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-block-two">
-                        <div class="inner-box">
-                            <div class="icon-box"><img
-                                    src="http://127.0.0.1:8000/Landingpage/assets/images/icons/icon-11.png"
-                                    alt=""></div>
-                            <div class="author-box">
-                                <figure class="thumb-box"><img
-                                        src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-3.png"
-                                        alt=""></figure>
-                                <h4>Bapak Widodo</h4>
-                                <span class="designation">Pelaku Usaha, Desa Sejahtera</span>
-                            </div>
-                            <p>Saya baru-baru ini bekerja sama dengan Bumdes ini, dan saya sangat terkesan dengan proses
-                                yang lancar dan efisien. Mereka benar-benar mengutamakan kemajuan desa.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Landingpage;
 use App\Models\Industry;
 use App\Models\VisiMisi;
 use App\Models\DasarHukum;
+use App\Models\Testimonial;
 use App\Models\MediaPartner;
 use Illuminate\Http\Request;
 use App\Models\PanduanBumdes;
@@ -24,7 +25,8 @@ class Profile extends Controller
         $team = StrukturOrganisasi::orderBy('urutan', 'asc')->take(4)->get();
         $industries = Industry::all();
         $tentangbumdes = tentangBumdesmodel::first();
-        return view('Landingpage.profile.tentangBumdes', compact('mediaPartner', 'alasan','team','industries','tentangbumdes'));
+        $testi = Testimonial::where('status', 1)->latest()->get();
+        return view('Landingpage.profile.tentangBumdes', compact('mediaPartner', 'alasan','team','industries','tentangbumdes','testi'));
     }
 
     public function visiMisi()
