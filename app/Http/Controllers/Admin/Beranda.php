@@ -2,29 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\slider;
-use App\Models\statistik;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\LayananUnggulan;
 use App\Models\SambutanDirektur;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use App\Models\kegiatan;
+use App\Models\slider;
+use App\Models\statistik;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class Beranda extends Controller
 {
     public function beranda()
     {
-        $totalArsip = DB::table('arsip_dokumen')->count();
-        $totalLayanan = DB::table('jenis_layanan')->count();
-        $totalKegiatan = DB::table('kegiatans')->count();
-        $totalLowongan = DB::table('lowongan_pekerjaan')->count();
-        $totalPengajuan = DB::table('pengajuan_layanan')->count();
-        $totalAnggota = DB::table('struktur_organisasi')->count();
-        $totaltestimonials = DB::table('struktur_organisasi')->count();
-
-        return view('AdminPage.beranda', compact('totalArsip', 'totalLayanan', 'totalKegiatan', 'totalLowongan', 'totalPengajuan', 'totalAnggota', 'totaltestimonials'));
+        return view('AdminPage.beranda');
     }
 
 
