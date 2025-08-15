@@ -90,7 +90,7 @@
                                     goals.</p> --}}
                             </div>
                             <figure class="image-box mb_30"><img
-                                    src="{{ asset('foto layanan unggulan/' . $detailunggulan->foto_layanan) }}"
+                                    src="{{ asset('foto_layanan_unggulan/' . $detailunggulan->foto_layanan) }}"
                                     alt=""></figure>
                             <div class="text-box mb_110">
                                 {{-- <p class="mb_25">{!! nl2br(e($detailunggulan->deskripsi)) !!}</p> --}}

@@ -313,12 +313,12 @@ class Beranda extends Controller
     public function updateunggulan(Request $request, $id)
     { // Validasi data
     $request->validate([
-        'nama_layanan'   => 'required|string|max:255',
+        'Nama_Layanan'   => 'required|string|max:255',
         'deskripsi'      => 'required|string',
         'kategori_id'    => 'required|exists:kategorimodels,id',
         'foto_layanan'   => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
     ], [
-        'nama_layanan.required' => 'Nama layanan wajib diisi.',
+        'Nama_Layanan.required' => 'Nama layanan wajib diisi.',
         'deskripsi.required'    => 'Deskripsi wajib diisi.',
         'kategori_id.required'  => 'Kategori wajib dipilih.',
         'kategori_id.exists'    => 'Kategori yang dipilih tidak valid.',
@@ -360,7 +360,7 @@ class Beranda extends Controller
 
     // Update data
     $unggulan->update([
-        'nama_layanan'  => $request->nama_layanan,
+        'Nama_Layanan'  => $request->Nama_Layanan,
         'deskripsi'     => $request->deskripsi,
         'kategori_id'   => $request->kategori_id,
         'foto_layanan'  => $fotoLama,

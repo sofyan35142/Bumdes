@@ -62,7 +62,7 @@
                                                 Layanan</label>
                                             <div class="col-md-10">
                                                 <input class="form-control" type="text" id="blog-title-input"
-                                                    placeholder="Masukkan judul layanan" name="nama_layanan"
+                                                    placeholder="Masukkan judul layanan" name="Nama_Layanan"
                                                     value="{{ old('nama_layanan', $unggulan->nama_layanan) }}">
                                                 @error('nama_layanan')
                                                     <small class="text-danger">{{ $message }}</small>

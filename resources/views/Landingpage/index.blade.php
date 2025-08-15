@@ -500,9 +500,11 @@
     -webkit-line-clamp: 3; /* Jumlah baris */
     -webkit-box-orient: vertical;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* jangan pakai nowrap untuk multi-line */
     line-height: 1.5em;
 ">
-                                            {!! $item->deskripsi !!}
+                                            {!! strip_tags($item->deskripsi) !!}
                                         </p>
 
                                         <div class="btn-box">
