@@ -85,14 +85,14 @@ class MediaPartnerController extends Controller
         $mediapartner->Nama_Media = $request->Nama_Media;
 
         if (app()->environment('local')) {
-            $uploadPath = public_path('Media Partner');
+            $folderPath = public_path('Media Partner');
         } else {
-            $uploadPath = base_path('../public_html/Media Partner');
+            $folderPath = base_path('../public_html/Media Partner');
         }
 
         // Buat folder jika belum ada
-        if (!file_exists($uploadPath)) {
-            mkdir($uploadPath, 0755, true); // 0755 = permission, true = recursive
+        if (!file_exists($folderPath)) {
+            mkdir($folderPath, 0755, true); // 0755 = permission, true = recursive
         }
 
         if ($request->hasFile('Logo_Media')) {
