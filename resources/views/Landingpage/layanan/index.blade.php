@@ -111,6 +111,7 @@
                                     <div class="col-12 form-group">
                                         <input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}"
                                             required>
+                                            <input type="text" placeholder="pepep">
                                         @error('tanggal_lahir')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
