@@ -97,10 +97,16 @@
                                 data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image" style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;"><img src="{{ asset($item->foto) }}" alt="">
+                                        <figure class="image"
+                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
+                                            <img src="{{ asset($item->foto) }}" alt=""
+                                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                         </figure>
-                                        <figure class="overlay-image" style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;"><img src="{{ asset($item->foto) }}"
-                                                alt=""></figure>
+                                        <figure class="overlay-image"
+                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
+                                            <img src="{{ asset($item->foto) }}" alt=""
+                                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                        </figure>
                                     </div>
                                     <div class="lower-content">
                                         <h3><a href="#">{{ $item->nama }}</a></h3>
