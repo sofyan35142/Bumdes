@@ -133,10 +133,15 @@
 
                 <!-- Layanan -->
                 <li>
-                    <a href="{{ route('admin.layanan.index') }}">
+                    <a href="javascript: void(0);" class="has-arrow">
                         <i class="fas fa-cogs"></i>
                         <span>Layanan</span>
+                        <i class="fas fa-angle-down" style="float:right;"></i>
                     </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('admin.layanan.index') }}"><i class="fas fa-list"></i>Daftar Pengajuan</a></li>
+                        <li><a href="{{ route('admin.kategori') }}"><i class="fas fa-list"></i>Jenis Layanan</a></li>
+                    </ul>
                 </li>
 
                 <!-- Contact -->

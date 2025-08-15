@@ -52,10 +52,11 @@
                                     <h4 class="card-title">Daftar Jenis Layanan BUMDes Pakukerto</h4>
 
                                     <!-- Tombol Tambah -->
-                                    <a href="{{ route('admin.jenisLayanan.create') }}" class="btn btn-primary mb-3">
-                                        <i class="fa fa-plus"></i> Tambah Jenis Layanan Baru
-                                    </a>
-
+                                    <div class="mb-3 text-end">
+                                        <a href="{{ route('admin.jenisLayanan.create') }}" class="btn btn-primary mb-3">
+                                            <i class="fa fa-plus"></i> Tambah Jenis Layanan Baru
+                                        </a>
+                                    </div>
                                     <table id="tableku" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
