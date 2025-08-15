@@ -276,14 +276,8 @@ class Beranda extends Controller
         $unggulan->deskripsi    = $request->deskripsi;
         $unggulan->kategori_id  = $request->kategori_id;
 
-        // Tentukan path upload sesuai environment
-        if (app()->environment('local')) {
-            $uploadPath = public_path('foto_layanan_unggulan');
-        } else {
-            $uploadPath = base_path('../public_html/foto_layanan_unggulan');
-        }
-
-        // Pastikan folder ada
+        // Tentukan folder upload di public_html
+        $uploadPath = base_path('../public_html/foto_layanan_unggulan');
         if (!file_exists($uploadPath)) {
             mkdir($uploadPath, 0755, true);
         }
@@ -291,13 +285,14 @@ class Beranda extends Controller
         // Upload gambar jika ada
         if ($request->hasFile('foto_layanan')) {
             $file = $request->file('foto_layanan');
-            $filename = md5($file->getClientOriginalName() . microtime(true)) . '.' . $file->getClientOriginalExtension();
+            $filename = md5(uniqid() . '_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
             $file->move($uploadPath, $filename);
             $unggulan->foto_layanan = $filename;
         }
 
         // Simpan ke database
         $unggulan->save();
+
 
 
         return redirect()->route('admin.unggulan')->with('success', 'Data unggulan berhasil ditambahkan!');
