@@ -12,13 +12,13 @@ class JenisLayananController extends Controller
     public function index()
     {
         $layanan = JenisLayanan::all();
-        return view('Adminpage.jenisLayanan.index', compact('layanan'));
+        return view('AdminPage.jenisLayanan.index', compact('layanan'));
     }
 
     // Form tambah jenis layanan baru
     public function create()
     {
-        return view('Adminpage.jenisLayanan.create');
+        return view('AdminPage.jenisLayanan.create');
     }
 
     // Simpan data jenis layanan baru
