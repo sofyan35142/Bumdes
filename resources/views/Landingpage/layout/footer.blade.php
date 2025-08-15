@@ -24,11 +24,12 @@
                         </div>
                         <div class="widget-content">
                             <ul class="links-list clearfix">
-                                <li><a href="#">Sewa Kios</a></li>
-                                <li><a href="#">Sewa Lahan</a></li>
-                                <li><a href="#">Pemungutan Sampah</a></li>
-                                <li><a href="#">Produk UMKM</a></li>
-                                <li><a href="#">Layanan Keuangan Mikro</a></li>
+                                @php
+                                    $jenisLayanan = \App\Models\JenisLayanan::all();
+                                @endphp
+                                @foreach ($jenisLayanan as $item)
+                                    <li><a href="#">{{$item->nama}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -40,10 +41,13 @@
                         <div class="widget-title">
                             <h4>Kontak Kami</h4>
                         </div>
+                        @php
+                            $kontak = \App\Models\InformasiKontak::first();
+                        @endphp
                         <ul class="contact-info">
-                            <li><i class="icon-22"></i> +62 812-3456-7890</li>
-                            <li><i class="icon-23"></i> bumdespakukerto@gmail.com</li>
-                            <li><i class="icon-24"></i> Dusun Janti, Desa Pakukerto, Sidoarjo</li>
+                            <li><i class="icon-22"></i>{{ $kontak->telepon }}</li>
+                            <li><i class="icon-23"></i>{{ $kontak->email }}</li>
+                            <li><i class="icon-24"></i> {{ $kontak->alamat }}</li>
                         </ul>
                         <ul class="social-links mt_15">
                             <li><a href="#"><i class="icon-22"></i></a></li>
