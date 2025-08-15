@@ -311,60 +311,60 @@ class Beranda extends Controller
     }
 
     public function updateunggulan(Request $request, $id)
-    {
-        // Validasi data
-        $request->validate([
-            'nama_layanan'   => 'required|string|max:255',
-            'deskripsi'      => 'required|string',
-            // 'kategori'    => 'required|exists:kategorimodels,id',
-            'foto_layanan'   => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-        ], [
-            'nama_layanan.required' => 'Nama layanan wajib diisi.',
-            'deskripsi.required'    => 'Deskripsi wajib diisi.',
-            // 'kategori.required'  => 'Kategori wajib dipilih.',
-            // 'kategori.exists'    => 'Kategori yang dipilih tidak valid.',
-            'foto_layanan.image'    => 'File harus berupa gambar.',
-            'foto_layanan.mimes'    => 'Format gambar harus jpeg, png, atau jpg.',
-            'foto_layanan.max'      => 'Ukuran gambar maksimal 2MB.',
-        ]);
+    { // Validasi data
+    $request->validate([
+        'Nama_Layanan'   => 'required|string|max:255',
+        'deskripsi'      => 'required|string',
+        'kategori_id'    => 'required|exists:kategorimodels,id',
+        'foto_layanan'   => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+    ], [
+        'Nama_Layanan.required' => 'Nama layanan wajib diisi.',
+        'deskripsi.required'    => 'Deskripsi wajib diisi.',
+        'kategori_id.required'  => 'Kategori wajib dipilih.',
+        'kategori_id.exists'    => 'Kategori yang dipilih tidak valid.',
+        'foto_layanan.image'    => 'File harus berupa gambar.',
+        'foto_layanan.mimes'    => 'Format gambar harus jpeg, png, atau jpg.',
+        'foto_layanan.max'      => 'Ukuran gambar maksimal 2MB.',
+    ]);
 
-        // Ambil data lama
-        $unggulan = LayananUnggulan::findOrFail($id);
-        $foto_layanan = $unggulan->foto_layanan;
+    // Ambil data lama
+    $unggulan = LayananUnggulan::findOrFail($id);
+    $fotoLama = $unggulan->foto_layanan;
 
-        // Tentukan folder upload sesuai environment
-        if (app()->environment('local')) {
-            $uploadPath = public_path('Foto_Layanan_Unggulan');
-        } else {
-            $uploadPath = base_path('../public_html/Foto_Layanan_Unggulan');
+    // Tentukan folder upload sesuai environment
+    if (app()->environment('local')) {
+        $uploadPath = public_path('foto_layanan_unggulan');
+    } else {
+        $uploadPath = base_path('../public_html/foto_layanan_unggulan');
+    }
+
+    // Pastikan folder ada
+    if (!file_exists($uploadPath)) {
+        mkdir($uploadPath, 0755, true);
+    }
+
+    // Upload foto baru jika ada
+    if ($request->hasFile('foto_layanan')) {
+        // Hapus foto lama jika ada
+        if ($fotoLama && file_exists($uploadPath . '/' . $fotoLama)) {
+            @unlink($uploadPath . '/' . $fotoLama);
         }
 
-        // Pastikan folder ada
-        if (!file_exists($uploadPath)) {
-            mkdir($uploadPath, 0755, true);
-        }
+        // Simpan foto baru
+        $file = $request->file('foto_layanan');
+        $fotoBaru = md5($file->getClientOriginalName() . microtime(true)) . '.' . $file->getClientOriginalExtension();
+        $file->move($uploadPath, $fotoBaru);
 
-        // Upload foto baru jika ada
-        if ($request->hasFile('foto_layanan')) {
-            // Hapus foto lama kalau ada
-            if ($unggulan->foto_layanan && file_exists($uploadPath . '/' . $unggulan->foto_layanan)) {
-                @unlink($uploadPath . '/' . $unggulan->foto_layanan);
-            }
+        $fotoLama = $fotoBaru; // Ganti foto lama dengan yang baru
+    }
 
-            // Simpan foto baru dengan nama unik
-            $file = $request->file('foto_layanan');
-            $foto_layanan = md5($file->getClientOriginalName() . microtime(true)) . '.' . $file->getClientOriginalExtension();
-            $file->move($uploadPath, $foto_layanan);
-        }
-
-        // Update data
-        $unggulan->update([
-            'nama_layanan'  => $request->input('nama_layanan'),
-            'deskripsi'     => $request->input('deskripsi'),
-            'kategori_id'   => $request->input('kategori'),
-            'foto_layanan'  => $foto_layanan,
-        ]);
-
+    // Update data
+    $unggulan->update([
+        'Nama_Layanan'  => $request->Nama_Layanan,
+        'deskripsi'     => $request->deskripsi,
+        'kategori_id'   => $request->kategori_id,
+        'foto_layanan'  => $fotoLama,
+    ]);
 
         return redirect()->route('admin.unggulan')->with('success', 'Layanan Unggulan berhasil diperbarui');
     }
