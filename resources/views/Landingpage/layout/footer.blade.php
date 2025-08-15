@@ -45,10 +45,9 @@
                             $kontak = \App\Models\InformasiKontak::first();
                         @endphp
                         <ul class="contact-info">
-                            <li><i class="fa-solid fa-phone"></i> {{ $kontak->telepon }}</li>
-                            <li><i class="fa-solid fa-envelope"></i> {{ $kontak->email }}</li>
-                            <li><i class="fa-solid fa-location-dot"></i> {{ $kontak->alamat }}</li>
-
+                            <li><i class="fa-solid fa-phone"></i>{{ $kontak->telepon }}</li>
+                            <li><i class="fa-solid fa-envelope"></i>{{ $kontak->email }}</li>
+                            <li><i class="fa-solid fa-location-dot"></i>{{ $kontak->alamat }}</li>
                         </ul>
                         {{-- <ul class="social-links mt_15">
                             <li><a href="#"><i class="icon-22"></i></a></li>
