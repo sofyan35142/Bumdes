@@ -246,8 +246,6 @@ class Beranda extends Controller
 
     public function insertunggulan(Request $request)
     {
-        // dd($request->all());
-        // Validasi input
         // Validasi input
         $request->validate([
             'Nama_Layanan'   => 'required|string|max:255',
@@ -270,28 +268,34 @@ class Beranda extends Controller
             'foto_layanan.max'      => 'Ukuran foto layanan maksimal 2MB.',
         ]);
 
+        // Tentukan folder upload berdasarkan environment
+        if (app()->environment('local')) {
+            $uploadPath = public_path('foto_layanan_unggulan');
+        } else {
+            $uploadPath = base_path('../public_html/foto_layanan_unggulan');
+        }
+
+        if (!file_exists($uploadPath)) {
+            mkdir($uploadPath, 0755, true);
+        }
+
         // Simpan data
         $unggulan = new LayananUnggulan();
         $unggulan->Nama_Layanan = $request->Nama_Layanan;
         $unggulan->deskripsi    = $request->deskripsi;
         $unggulan->kategori_id  = $request->kategori_id;
 
-        // Tentukan folder upload di public_html
-        $uploadPath = base_path('../public_html/foto_layanan_unggulan');
-        if (!file_exists($uploadPath)) {
-            mkdir($uploadPath, 0755, true);
-        }
-
         // Upload gambar jika ada
         if ($request->hasFile('foto_layanan')) {
             $file = $request->file('foto_layanan');
-            $filename = md5(uniqid() . '_' . $file->getClientOriginalName()) . '.' . $file->getClientOriginalExtension();
+            $filename = md5($file->getClientOriginalName() . microtime(true)) . '.' . $file->getClientOriginalExtension();
             $file->move($uploadPath, $filename);
             $unggulan->foto_layanan = $filename;
         }
 
         // Simpan ke database
         $unggulan->save();
+
 
 
 
