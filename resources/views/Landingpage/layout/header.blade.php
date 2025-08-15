@@ -34,6 +34,7 @@
                                         <li><a href="{{ route('pages.galeri') }}">Galeri Foto & Video</a></li>
                                         <li><a href="{{ route('pages.lowongan') }}">Lowongan Pekerjaan</a></li>
                                         <li><a href="{{ route('apdes') }}">Laporan Keuangan</a></li>
+                                        <li><a href="{{ route('home.listunggulan') }}">List Unggulan Kami</a></li>
                                         <li><a href="{{ route('FormTestimonial') }}">Form Testimoni</a></li>
                                     </ul>
                                 </li>

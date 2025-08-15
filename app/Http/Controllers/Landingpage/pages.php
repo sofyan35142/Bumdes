@@ -35,4 +35,8 @@ class pages extends Controller
     {
         return view('Landingpage.pages.umkm');
     }
+    public function listlayanan()
+    {
+        return view('Landingpage.listlayanan');
+    }
 }
