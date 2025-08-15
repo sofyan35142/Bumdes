@@ -28,7 +28,7 @@
                                     $jenisLayanan = \App\Models\JenisLayanan::all();
                                 @endphp
                                 @foreach ($jenisLayanan as $item)
-                                    <li><a href="#">{{$item->nama}}</a></li>
+                                    <li><a href="#">{{ $item->nama }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
@@ -45,16 +45,17 @@
                             $kontak = \App\Models\InformasiKontak::first();
                         @endphp
                         <ul class="contact-info">
-                            <li><i class="icon-22"></i>{{ $kontak->telepon }}</li>
-                            <li><i class="icon-23"></i>{{ $kontak->email }}</li>
-                            <li><i class="icon-24"></i> {{ $kontak->alamat }}</li>
+                            <li><i class="fa-solid fa-phone"></i> {{ $kontak->telepon }}</li>
+                            <li><i class="fa-solid fa-envelope"></i> {{ $kontak->email }}</li>
+                            <li><i class="fa-solid fa-location-dot"></i> {{ $kontak->alamat }}</li>
+
                         </ul>
-                        <ul class="social-links mt_15">
+                        {{-- <ul class="social-links mt_15">
                             <li><a href="#"><i class="icon-22"></i></a></li>
                             <li><a href="#"><i class="icon-23"></i></a></li>
                             <li><a href="#"><i class="icon-24"></i></a></li>
                             <li><a href="#"><i class="icon-25"></i></a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
 
