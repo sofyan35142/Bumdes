@@ -269,9 +269,11 @@ class Beranda extends Controller
         ]);
 
         // Tentukan path upload sesuai environment
-        $uploadPath = app()->environment('local')
-            ? public_path('foto_layanan_unggulan')
-            : base_path('../public_html/foto_layanan_unggulan');
+        if (app()->environment('local')) {
+            $uploadPath = public_path('foto_layanan_unggulan');
+        } else {
+            $uploadPath = base_path('../public_html/foto_layanan_unggulan');
+        }
 
         // Pastikan folder ada
         if (!file_exists($uploadPath)) {
@@ -293,6 +295,7 @@ class Beranda extends Controller
             'kategori_id'   => $request->kategori_id,
             'foto_layanan'  => $filename,
         ]);
+
 
         return redirect()->route('admin.unggulan')->with('success', 'Data unggulan berhasil ditambahkan!');
     }
