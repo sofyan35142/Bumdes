@@ -44,7 +44,7 @@ use App\Http\Controllers\Admin\IndustryAdmin as IndustryController;
 // ==========================================================
 // =============== 1. LANDING PAGE / PUBLIK =================
 // ==========================================================
-Route::get('/p', function () {
+Route::get('/ikon', function () {
     return view('p');
 });
 
@@ -252,4 +252,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/developerpage', function () {
         return view('AdminPage.developer.index');
     })->name('developer.kontak');
+    //ikon
+    Route::get('/ikon', function () {
+        return view('p');
+    });
 });
