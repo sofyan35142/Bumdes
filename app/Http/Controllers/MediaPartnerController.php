@@ -42,12 +42,17 @@ class MediaPartnerController extends Controller
                         "group-a.$key.Logo_Media.max"   => 'Ukuran logo tidak boleh lebih dari 2MB.',
                     ]);
 
-                    // Pastikan folder ada
-                    $folderPath = public_path('Media Partner');
-                    if (!file_exists($folderPath)) {
-                        mkdir($folderPath, 0777, true);
+                    
+                    if (app()->environment('local')) {
+                        $folderPath = public_path('Media Partner');
+                    } else {
+                        $folderPath = base_path('../public_html/Media Partner');
                     }
 
+                    // Buat folder jika belum ada
+                    if (!file_exists($folderPath)) {
+                        mkdir($folderPath, 0755, true); // 0755 = permission, true = recursive
+                    }
                     // Nama file unik
                     $filename = time() . '_' . uniqid() . '.' . $logoFile->getClientOriginalExtension();
                     $logoFile->move($folderPath, $filename);
