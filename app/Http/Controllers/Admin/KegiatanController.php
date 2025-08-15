@@ -34,10 +34,10 @@ class KegiatanController extends Controller
 
         if (app()->environment('local')) {
             $uploadPath = public_path('foto kegiatan BumDes');
-            dd('Upload path lokal: ' . $uploadPath);
+
         } else {
             $uploadPath = base_path('../public_html/foto kegiatan BumDes');
-            dd('Upload path hosting: ' . $uploadPath);
+            
         }
 
         // Simpan data kegiatan
