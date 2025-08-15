@@ -140,7 +140,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('admin.layanan.index') }}"><i class="fas fa-list"></i>Daftar Pengajuan</a></li>
-                        <li><a href="{{ route('admin.kategori') }}"><i class="fas fa-list"></i>Jenis Layanan</a></li>
+                        <li><a href="{{ route('admin.jenisLayanan.index') }}"><i class="fas fa-list"></i>Jenis Layanan</a></li>
                     </ul>
                 </li>
 
