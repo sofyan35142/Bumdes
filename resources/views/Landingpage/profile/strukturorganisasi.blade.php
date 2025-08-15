@@ -20,7 +20,7 @@
 
 
         <!-- page-direction -->
-        
+
         <!-- page-direction end -->
 
 
@@ -97,9 +97,9 @@
                                 data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><img src="{{ asset($item->foto) }}" alt="">
+                                        <figure class="image" style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;"><img src="{{ asset($item->foto) }}" alt="">
                                         </figure>
-                                        <figure class="overlay-image"><img src="{{ asset($item->foto) }}"
+                                        <figure class="overlay-image" style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;"><img src="{{ asset($item->foto) }}"
                                                 alt=""></figure>
                                     </div>
                                     <div class="lower-content">
