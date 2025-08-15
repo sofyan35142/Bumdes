@@ -291,11 +291,11 @@
                                     <div class="image-box">
                                         <figure class="image"
                                             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
-                                            <img src="{{ asset($member->foto) }}" alt="">
+                                            <img src="{{ asset($member->foto) }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                         </figure>
                                         <figure class="overlay-image"
                                             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
-                                            <img src="{{ asset($member->foto) }}" alt="">
+                                            <img src="{{ asset($member->foto) }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                         </figure>
                                     </div>
                                     <div class="lower-content">
