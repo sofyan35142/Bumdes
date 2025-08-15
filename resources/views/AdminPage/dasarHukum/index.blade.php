@@ -84,7 +84,7 @@
 
                                             @if ($data->sertifikat_file)
                                                 <div class="mt-2">
-                                                    <a href="{{ asset('storage/' . $data->sertifikat_file) }}"
+                                                    <a href="{{ asset($data->sertifikat_file) }}"
                                                         target="_blank">
                                                         Lihat Sertifikat (PDF)
                                                     </a>
