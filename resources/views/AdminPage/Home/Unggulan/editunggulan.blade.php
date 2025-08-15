@@ -31,12 +31,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Form Tambah Data Kegiatan</h4>
+                                <h4 class="mb-0">Form Edit Unggulan</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Blog</a></li>
-                                        <li class="breadcrumb-item active">Tambah Data</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Unggulan</a></li>
+                                        <li class="breadcrumb-item active">Edit Unggulan</li>
                                     </ol>
                                 </div>
 
@@ -62,7 +62,7 @@
                                                 Layanan</label>
                                             <div class="col-md-10">
                                                 <input class="form-control" type="text" id="blog-title-input"
-                                                    placeholder="Masukkan judul layanan" name="nama_layanan"
+                                                    placeholder="Masukkan judul layanan" name="Nama_Layanan"
                                                     value="{{ old('nama_layanan', $unggulan->nama_layanan) }}">
                                                 @error('nama_layanan')
                                                     <small class="text-danger">{{ $message }}</small>
