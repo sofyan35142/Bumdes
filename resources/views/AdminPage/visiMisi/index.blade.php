@@ -40,9 +40,12 @@
 
                                     @if ($data)
                                         {{-- Tombol Edit --}}
-                                        <a href="{{ route('admin.visi_misi.edit') }}">
-                                            <button class="btn btn-primary mb-3">Edit Visi Misi</button>
-                                        </a>
+
+                                        <div class="mb-3 text-end">
+                                            <a href="{{ route('admin.visi_misi.edit') }}" class="btn btn-primary">
+                                                <i class="fas fa-pencil"></i> Edit Visi Misi
+                                            </a>
+                                        </div>
 
                                         {{-- Visi --}}
                                         <div class="mt-3">
@@ -92,7 +95,7 @@
                 </div>
             </div>
 
-            {{-- @include('Admin.LayoutAdmin.footer') --}}
+            @include('AdminPage.layouts.footer')
 
         </div>
         <!-- end main content-->

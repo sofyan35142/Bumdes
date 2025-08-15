@@ -49,8 +49,8 @@
                                 <div class="card-body">
 
                                     <!-- Tombol Edit -->
-                                    <div class="mb-3">
-                                        <a href="{{ route('admin.bookPanduan.edit') }}" class="btn btn-warning">
+                                    <div class="mb-3 text-end">
+                                        <a href="{{ route('admin.bookPanduan.edit') }}" class="btn btn-primary">
                                             <i class="fa fa-pencil"></i> Edit Panduan
                                         </a>
                                     </div>

@@ -174,10 +174,7 @@
                     <!-- end row -->
                 </div> <!-- container-fluid -->
             </div>
-
             <!-- End Page-content -->
-
-
             @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->

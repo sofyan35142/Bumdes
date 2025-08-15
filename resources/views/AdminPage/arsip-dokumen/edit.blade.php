@@ -104,10 +104,8 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
-
             @include('AdminPage.layouts.footer')
         </div>
     </div>

@@ -52,7 +52,8 @@
                                     {{-- <p class="card-title-desc">Isi semua kolom di bawah untuk menambahkan entri blog
                                         baru.</p> --}}
 
-                                    <form method="post" action="{{ route('admin.insertunggulan') }}" enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('admin.insertunggulan') }}"
+                                        enctype="multipart/form-data">
                                         @csrf
 
                                         {{-- Alert Error --}}
@@ -156,7 +157,7 @@
             <!-- End Page-content -->
 
 
-@include('AdminPage.layouts.footer')
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 
@@ -183,8 +184,7 @@
             <div class="p-4">
                 <h6 class="mb-3">Layout</h6>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical"
-                        value="vertical">
+                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical" value="vertical">
                     <label class="form-check-label" for="layout-vertical">Vertical</label>
                 </div>
                 <div class="form-check form-check-inline">

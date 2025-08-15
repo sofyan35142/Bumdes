@@ -163,7 +163,7 @@
             <!-- End Page-content -->
 
 
-@include('AdminPage.layouts.footer')
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 

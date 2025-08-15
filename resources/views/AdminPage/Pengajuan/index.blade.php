@@ -30,11 +30,11 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table id="datatable-buttons"
+                                        <table id="tableku"
                                             class="table table-striped table-bordered dt-responsive nowrap"
                                             style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead class="thead-dark text-center">
-                                                <tr>    
+                                                <tr>
                                                     <th>No</th>
                                                     <th>Nama</th>
                                                     <th>NIK</th>
@@ -105,23 +105,7 @@
                 </div>
             </div>
             <!-- End Page-content -->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script> © Minible.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Crafted with <i class="mdi mdi-heart text-danger"></i> by <a
-                                    href="https://themesbrand.com/" target="_blank" class="text-reset">Themesbrand</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
 

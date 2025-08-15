@@ -111,7 +111,7 @@
 
                 </div>
             </div>
-
+            @include('AdminPage.layouts.footer')
         </div>
 
         <!-- end main content-->

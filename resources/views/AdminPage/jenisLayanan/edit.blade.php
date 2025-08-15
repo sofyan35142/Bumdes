@@ -129,7 +129,7 @@
                 </div>
 
             </div>
-            {{-- @include('Admin.LayoutAdmin.footer') --}}
+            @include('AdminPage.layouts.footer')
         </div>
         <!-- end main content-->
     </div>
