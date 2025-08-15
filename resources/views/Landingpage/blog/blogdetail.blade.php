@@ -56,29 +56,6 @@
         <section class="sidebar-page-container p_relative pt_110 pb_120">
             <div class="auto-container">
                 <div class="row clearfix">
-                    {{-- <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
-                        <div class="download-widget mr_40">
-                            <div class="shape"
-                                style="background-image: url({{ asset('/Landingpage/assets/images/shape/shape-24.png') }});">
-                            </div>
-                            <div class="inner-box">
-                                <figure class="image-box"><img
-                                        src="{{ asset($book->gambar) }}"
-                                        alt=""></figure>
-                                @php
-                                    $judul = explode(' ', $book->judul, 2);
-                                @endphp
-                                <h4>{{ $judul[0] }}
-                                    @if (isset($judul[1]))
-                                        <span>{{ $judul[1] }}</span>
-                                    @endif
-                                </h4>
-                                <a href="{{ $book->file_ebook }}" class="theme-btn btn-one" download>
-                                    Download E-book
-                                </a>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                         <div class="blog-details-content">
                             <div class="news-block-two">
@@ -132,24 +109,6 @@
                                     @endforeach
                                 </div>
                             </div>
-
-                            {{-- <div class="sidebar-widget archives-widget">
-                                <div class="widget-title mb_11">
-                                    <h3>Archives</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="archives-list clearfix">
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 20,
-                                                2022<span>(09)</span></a></li>
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26,
-                                                2022<span>(20)</span></a></li>
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26,
-                                                2022<span>(25)</span></a></li>
-                                        <li><a href="blog-details.html"><i class="fal fa-angle-right"></i>December 26,
-                                                2022<span>(06)</span></a></li>
-                                    </ul>
-                                </div>
-                            </div> --}}
                         </div>
                         <div class="download-widget mr_40">
                             <div class="shape"

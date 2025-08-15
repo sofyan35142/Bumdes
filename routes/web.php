@@ -74,6 +74,7 @@ Route::get('/pages/galeri', [pages::class, 'galeri'])->name('pages.galeri');
 Route::get('/pages/lowongan', [pages::class, 'lowongan'])->name('pages.lowongan');
 Route::get('/pages/lowongan/detail/{id}', [pages::class, 'lowongandetail'])->name('pages.lowongandetail');
 Route::get('/pages/keuangan', [pages::class, 'keuangan'])->name('pages.keuangan');
+// Route::get('/pages/listlayanan', [pages::class, 'listlayanan'])->name('pages.listlayanan');
 Route::get('/pages/umkm', [pages::class, 'umkm'])->name('pages.umkm');
 
 // --- Kontak

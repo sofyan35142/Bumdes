@@ -62,11 +62,11 @@
         <section class="page-title centred pt_110">
             <div class="auto-container">
                 <div class="content-box">
-                    <h1>Blog</h1>
+                    <h1>Kegiatan</h1>
                     <ul class="bread-crumb clearfix">
                         <li><a href="/">Home</a></li>
                         <li>-</li>
-                        <li>Blog</li>
+                        <li>Kegiatan</li>
                     </ul>
                 </div>
             </div>

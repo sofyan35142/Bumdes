@@ -7,7 +7,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
                     <div class="footer-widget logo-widget mr_30">
                         <figure class="footer-logo mb_20">
-                            <a href="/"><img src="assets/images/logo-2.png" alt="Logo BUMDes"></a>
+                            <a href="/"><img src="{{ asset('LandingPage/assets/images/bumdes.png') }}" alt="Logo BUMDes"></a>
                         </figure>
                         <p>
                             BUMDes Pakukerto berperan aktif mengelola potensi desa secara profesional,
