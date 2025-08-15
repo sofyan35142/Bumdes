@@ -75,7 +75,9 @@
                                                     <td>{{ $item->Judul_Kegiatan }}</td>
                                                     <td>{{ $item->tanggal_kegiatan }}</td>
                                                     <td>{{ $item->kategori->nama_kategori ?? '-' }}</td>
-                                                    <td style="word-break: break-all;">{!! $item->deskripsi_kegiatan !!}</td>
+                                                    <td style="word-break: break-word; white-space: normal;">
+                                                        {!! $item->deskripsi_kegiatan !!}
+                                                    </td>
                                                     <td>
                                                         <img src="{{ asset('foto kegiatan BumDes/' . $item->foto_kegiatan) }}"
                                                             alt="Foto Kegiatan"
