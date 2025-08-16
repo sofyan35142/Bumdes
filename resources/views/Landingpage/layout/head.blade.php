@@ -45,7 +45,6 @@
 <link href="{{ asset('LandingPage/assets/css/module-css/news.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/team.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/download.css') }}" rel="stylesheet">
-<link href="{{ asset('LandingPage/assets/css/module-css/subscribe.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/footer.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/page-title.css') }}" rel="stylesheet">
 <link href="{{ asset('LandingPage/assets/css/module-css/contact.css') }}" rel="stylesheet">

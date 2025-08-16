@@ -35,21 +35,21 @@
                                 <div class="image-box mr_15">
                                     <figure class="image image-1 mb_15">
                                         <img src="{{ asset($tentangbumdes->gambar_1 ?? 'Landingpage/assets/images/resource/about-3.jpg') }}"
-                                            alt="">
+                                            alt="" width="300" height="300" style="object-fit:cover;">
                                     </figure>
                                     <figure class="image image-2">
                                         <img src="{{ asset($tentangbumdes->gambar_2 ?? 'Landingpage/assets/images/resource/about-4.jpg') }}"
-                                            alt="">
+                                            alt="" width="300" height="300" style="object-fit:cover;">
                                     </figure>
                                 </div>
                                 <div class="image-box">
                                     <figure class="image image-3 mb_15">
                                         <img src="{{ asset($tentangbumdes->gambar_3 ?? 'Landingpage/assets/images/resource/about-5.jpg') }}"
-                                            alt="">
+                                            alt="" width="300" height="300" style="object-fit:cover;">
                                     </figure>
                                     <figure class="image image-4">
                                         <img src="{{ asset($tentangbumdes->gambar_4 ?? 'Landingpage/assets/images/resource/about-6.jpg') }}"
-                                            alt="">
+                                            alt="" width="300" height="300" style="object-fit:cover;">
                                     </figure>
                                 </div>
                             </div>

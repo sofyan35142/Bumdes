@@ -6,7 +6,6 @@
 </head>
 
 
-<!-- page wrapper -->
 
 <body>
 
@@ -20,10 +19,6 @@
 
         <!-- page-direction -->
 
-        {{-- <div class="page_direction">
-            <div class="demo-rtl direction_switch"><button class="rtl">RTL</button></div>
-            <div class="demo-ltr direction_switch"><button class="ltr">LTR</button></div>
-        </div> --}}
         <!-- page-direction end -->
 
 
@@ -165,8 +160,6 @@
                                 <a href="{{ route('landingpage.layanan') }}" class="theme-btn banner-btn mr_20">Lihat
                                     Program
                                     Kami</a>
-                                {{-- <a href="{{ url('index-4') }}" class="theme-btn banner-btn-two"><span>Dukung Usaha
-                                        Warga</span></a> --}}
                             </div>
                         </div>
                     </div>
@@ -308,16 +301,14 @@
                                 <div class="image-box">
                                     <!-- Gambar utama -->
                                     <figure class="image"
-                                        style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto;">
+                                        style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
                                         <img src="{{ asset('direktur/' . $data->foto_direktur) }}" alt=""
                                             style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                     </figure>
-
-                                    <!-- Gambar overlay -->
                                     <figure class="overlay-image"
                                         style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
                                         <img src="{{ asset('direktur/' . $data->foto_direktur) }}" alt=""
-                                            style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.5;">
+                                            style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                     </figure>
                                 </div>
 
@@ -676,10 +667,6 @@
                                             <div class="inner-box">
                                                 <div class="icon-box"><i class="icon-36"></i></div>
                                                 <h2>{{ $testi->deskripsi_testimonial }}</h2>
-                                                {{-- <figure class="signature mb_30">
-                                                    <img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/signature-1.png"
-                                                        alt="">
-                                                </figure> --}}
                                                 <div class="author-box">
                                                     <figure class="author-thumb">
                                                         <img src="{{ asset('Testimonial/' . $testi->foto_testimonial) }}"
@@ -691,45 +678,6 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                    {{-- <div class="testimonial-block-three">
-                                        <div class="inner-box">
-                                            <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h2>“Layanan logistik dari BUMDes sangat membantu pengiriman produk lokal ke
-                                                luar desa. Saya tidak perlu bingung cari ekspedisi lagi.”</h2>
-                                            <figure class="signature mb_30">
-                                                <img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/signature-1.png"
-                                                    alt="">
-                                            </figure>
-                                            <div class="author-box">
-                                                <figure class="author-thumb">
-                                                    <img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-4.png"
-                                                        alt="">
-                                                </figure>
-                                                <h3>Ravlindo</h3>
-                                                <span class="designation">Pelaku UMKM</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-block-three">
-                                        <div class="inner-box">
-                                            <div class="icon-box"><i class="icon-36"></i></div>
-                                            <h2>“Sejak bergabung sebagai mitra BUMDes, usaha kecil saya jadi lebih
-                                                dikenal dan berkembang. Saya juga terbantu dengan pinjaman modal tanpa
-                                                bunga tinggi.”</h2>
-                                            <figure class="signature mb_30">
-                                                <img src="http://127.0.0.1:8000/Landingpage/assets/images/icons/signature-1.png"
-                                                    alt="">
-                                            </figure>
-                                            <div class="author-box">
-                                                <figure class="author-thumb">
-                                                    <img src="http://127.0.0.1:8000/Landingpage/assets/images/resource/testimonial-4.png"
-                                                        alt="">
-                                                </figure>
-                                                <h3>Ibu Sari</h3>
-                                                <span class="designation">Pemilik Usaha Keripik Singkong</span>
-                                            </div>
-                                        </div>
-                                    </div> --}}
                                 </div>
                                 <div class="owl-nav">
                                     <button type="button" role="presentation" class="owl-prev"><span

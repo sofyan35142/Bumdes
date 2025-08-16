@@ -13,60 +13,8 @@
 
         @include('Landingpage.layout.preloader')
 
-        <div id="search-popup" class="search-popup">
-            <div class="popup-inner">
-                <div class="upper-box">
-                    <figure class="logo-box"><a href="index.html"><img
-                                src="http://127.0.0.1:8000/Landingpage/assets/images/logo.png" alt=""></a>
-                    </figure>
-                    <div class="close-search"><span class="icon-27"></span></div>
-                </div>
-                <div class="overlay-layer"></div>
-                <div class="auto-container">
-                    <div class="search-form">
-                        <form method="post" action="https://jobaway.pixcelsthemes.com/index.html">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value=""
-                                        placeholder="Type your keyword and hit" required>
-                                    <button type="submit"><i class="icon-1"></i></button>
-                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         @include('Landingpage.layout.header')
-        <div class="mobile-menu">
-            <div class="menu-backdrop"></div>
-            <div class="close-btn"><i class="fas fa-times"></i></div>
-            <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img
-                            src="http://127.0.0.1:8000/Landingpage/assets/images/logo-2.png" alt=""
-                            title=""></a></div>
-                <div class="menu-outer"></div>
-                <div class="contact-info">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>Chicago 12, Melborne City, USA</li>
-                        <li><a href="tel:+8801682648101">+88 01682648101</a></li>
-                        <li><a href="mailto:info@example.com">info@example.com</a></li>
-                    </ul>
-                </div>
-                <div class="social-links">
-                    <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        @include('Landingpage.layout.mobilemenu')
         <section class="page-title centred pt_110">
             <div class="auto-container">
                 <div class="content-box">
@@ -141,7 +89,8 @@
                     <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                         <div class="image-box ml_70">
                             <figure class="image image-hov-one">
-                                <img src="{{ asset($data->gambar_visi_misi) }}" alt="">
+                                <img src="{{ asset($data->gambar_visi_misi) }}" alt="" width="540"
+                                    height="519" style="object-fit:cover;">
                             </figure>
                         </div>
                     </div>
