@@ -714,24 +714,15 @@
                                 <div class="inner-box">
                                     <div class="image-box">
                                         <figure class="image"
-                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto;">
-                                            <img src="{{ asset($member->foto) }}" alt=""
+                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
+                                            <img src="{{asset($member->foto)}}" alt=""
                                                 style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                         </figure>
-
-                                        <!-- Gambar overlay -->
                                         <figure class="overlay-image"
                                             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
-                                            <img src="{{ asset($member->foto) }}" alt=""
-                                                style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.5;">
+                                            <img src="{{asset($member->foto)}}" alt=""
+                                                style="width: 100%; height: 100%; object-fit: cover; display: block;">
                                         </figure>
-                                        {{-- <figure class="image">
-                                            <img src="{{ asset($member->foto) }}" alt="">
-                                        </figure>
-                                        <figure class="overlay-image"
-                                            style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; margin: auto; position: absolute; top: 0; left: 0;">
-                                            <img src="{{ asset($member->foto) }}" alt="">
-                                        </figure> --}}
                                     </div>
                                     <div class="lower-content">
                                         <h3><a href="#">{{ $member->nama }}</a></h3>
