@@ -65,14 +65,20 @@
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label for="icon" class="col-md-2 col-form-label">Ikon
-                                                (Flaticon)</label>
+                                            <label for="icon" class="col-md-2 col-form-label">Ikon</label>
                                             <div class="col-md-10">
-                                                <input type="text" name="icon" id="icon" class="form-control"
-                                                    value="{{ old('icon', $industry->icon) }}" required>
+                                                <div class="input-group">
+                                                    <input type="text" name="icon" id="icon"
+                                                        class="form-control" value="{{ old('icon', $industry->icon) }}"
+                                                        required>
+                                                    <a href="{{ route('ikonlist') }}" class="btn btn-outline-primary">
+                                                        Pilih Ikon
+                                                    </a>
+                                                </div>
                                                 <small class="form-text text-muted">
-                                                    Masukkan class ikon dari <a href="https://www.flaticon.com/"
-                                                        target="_blank">Flaticon</a>, contoh: <code>icon-9</code>
+                                                    Masukkan class ikon, atau klik tombol <strong>Pilih Ikon</strong> di
+                                                    samping.
+                                                    Contoh: <code>icon-9</code>
                                                 </small>
                                                 @error('icon')
                                                     <small class="text-danger">{{ $message }}</small>
@@ -247,6 +253,16 @@
 
     <!-- JAVASCRIPT -->
     @include('AdminPage.layouts.scripts')
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let selectedIcon = localStorage.getItem('selectedIcon');
+        if (selectedIcon) {
+            document.getElementById('icon').value = selectedIcon;
+            localStorage.removeItem('selectedIcon'); // hapus setelah dipakai
+        }
+    });
+</script>
 </body>
 
 </html>

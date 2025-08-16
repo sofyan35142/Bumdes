@@ -55,15 +55,18 @@
                                         </div>
 
                                         <div class="mb-3 row">
-                                            <label for="ikon" class="col-md-2 col-form-label">Ikon
-                                                (Flaticon)</label>
+                                            <label for="ikon" class="col-md-2 col-form-label">Ikon</label>
                                             <div class="col-md-10">
-                                                <input type="text" name="ikon" id="ikon" class="form-control"
-                                                    value="{{ old('ikon', $alasan->ikon) }}" required>
+                                                <div class="input-group">
+                                                    <input type="text" name="ikon" id="ikon"
+                                                        class="form-control" value="{{ old('ikon', $alasan->ikon) }}"
+                                                        required>
+                                                    <a href="{{ route('ikonlist') }}" class="btn btn-outline-primary">
+                                                        Pilih Ikon
+                                                    </a>
+                                                </div>
                                                 <small class="form-text text-muted">
-                                                    Masukkan class ikon dari <a href="https://www.flaticon.com/"
-                                                        target="_blank">Flaticon</a>, contoh: <code>fi
-                                                        fi-rr-check</code>
+                                                    Masukkan class ikon, contoh: <code>icon-5</code>
                                                 </small>
                                             </div>
                                         </div>
@@ -101,7 +104,16 @@
 
     <!-- JAVASCRIPT -->
     @include('AdminPage.layouts.scripts')
-
+    {{-- Script auto isi dari localStorage --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let selectedIcon = localStorage.getItem('selectedIcon');
+            if (selectedIcon) {
+                document.getElementById('ikon').value = selectedIcon;
+                localStorage.removeItem('selectedIcon'); // hapus setelah dipakai
+            }
+        });
+    </script>
 </body>
 
 </html>
