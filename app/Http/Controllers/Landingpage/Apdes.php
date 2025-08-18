@@ -76,6 +76,6 @@ class Apdes extends Controller
             'jumlah' => $request->jumlah,
         ]);
 
-        return redirect()->route('apdes')->with('success', 'Data APBDES berhasil ditambahkan.');
+        return redirect()->route('admin.apdes')->with('success', 'Data APBDES berhasil ditambahkan.');
     }
 }

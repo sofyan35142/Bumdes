@@ -5492,3 +5492,28 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 
+/* Samakan wrapper Select2 agar ikut ukuran form-select Bootstrap */
+.select2-container .select2-selection--single {
+    height: auto !important;
+    min-height: calc(2.25rem + 2px) !important; /* tinggi default Bootstrap */
+    padding: .375rem 2.25rem .375rem .75rem !important; /* sama persis form-select */
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    border: 1px solid #ced4da !important;
+    border-radius: .375rem !important;
+}
+
+/* Samakan teks */
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    line-height: 1.5 !important;
+    color: #212529 !important;
+}
+
+/* Samakan icon dropdown */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    right: .75rem !important;
+}

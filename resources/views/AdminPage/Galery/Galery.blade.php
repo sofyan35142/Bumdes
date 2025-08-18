@@ -59,66 +59,67 @@
                                             <i class="fas fa-plus"></i> Tambah Data Galeri
                                         </a>
                                     </div>
-                                    <table id="tableku" class="table table-bordered dt-responsive nowrap"
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>NO</th>
-                                                <th>Tipe</th>
-                                                <th>Nama Kegiatan</th>
-                                                <th>Foto</th>
-                                                <th>Link Video</th>
-                                                <th>Tanggal Dibuat</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($galerys as $item)
+                                    <div class="table-responsive">
+                                        <table id="tableku" class="table table-bordered dt-responsive nowrap"
+                                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                            <thead>
                                                 <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ ucfirst($item->tipe) }}</td>
-                                                    <td>
-                                                        @if (!empty($item->nama_kegiatan_foto))
-                                                            {{ $item->nama_kegiatan_foto }}
-                                                        @elseif(!empty($item->nama_kegiatan_video))
-                                                            {{ $item->nama_kegiatan_video }}
-                                                        @else
-                                                            <em>Tidak ada nama kegiatan</em>
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        @if ($item->tipe === 'foto' && $item->foto_path)
-                                                            <img src="{{ asset('Galery/' . $item->foto_path) }}"
-                                                                alt="Foto Kegiatan" style="width: 80px; height: 80px;">
-                                                        @else
-                                                            -
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        @if ($item->tipe === 'video' && $item->link_video)
-                                                            <a href="{{ $item->link_video }}" target="_blank">Tonton
-                                                                Video</a>
-                                                        @else
-                                                            -
-                                                        @endif
-                                                    </td>
-                                                    <td>{{ $item->created_at->format('d-m-Y') }}</td>
-                                                    <td>
-                                                        <a href="{{ route('admin.editgalery', $item->id) }}"
-                                                            class="btn btn-warning">
-                                                            <i class="fa-solid fa-pen-to-square"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-danger btn-delete"
-                                                            data-id="{{ $item->id }}">
-                                                            <i class="fa-solid fa-trash"></i>
-                                                        </a>
-                                                    </td>
+                                                    <th>NO</th>
+                                                    <th>Tipe</th>
+                                                    <th>Nama Kegiatan</th>
+                                                    <th>Foto</th>
+                                                    <th>Link Video</th>
+                                                    <th>Tanggal Dibuat</th>
+                                                    <th>Aksi</th>
                                                 </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-
-
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($galerys as $item)
+                                                    <tr>
+                                                        <td>{{ $loop->iteration }}</td>
+                                                        <td>{{ ucfirst($item->tipe) }}</td>
+                                                        <td>
+                                                            @if (!empty($item->nama_kegiatan_foto))
+                                                                {{ $item->nama_kegiatan_foto }}
+                                                            @elseif(!empty($item->nama_kegiatan_video))
+                                                                {{ $item->nama_kegiatan_video }}
+                                                            @else
+                                                                <em>Tidak ada nama kegiatan</em>
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            @if ($item->tipe === 'foto' && $item->foto_path)
+                                                                <img src="{{ asset('Galery/' . $item->foto_path) }}"
+                                                                    alt="Foto Kegiatan"
+                                                                    style="width: 80px; height: 80px;">
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            @if ($item->tipe === 'video' && $item->link_video)
+                                                                <a href="{{ $item->link_video }}" target="_blank">Tonton
+                                                                    Video</a>
+                                                            @else
+                                                                -
+                                                            @endif
+                                                        </td>
+                                                        <td>{{ $item->created_at->format('d-m-Y') }}</td>
+                                                        <td>
+                                                            <a href="{{ route('admin.editgalery', $item->id) }}"
+                                                                class="btn btn-warning">
+                                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                            </a>
+                                                            <a href="#" class="btn btn-danger btn-delete"
+                                                                data-id="{{ $item->id }}">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div> <!-- end col -->
@@ -139,7 +140,7 @@
 
 
     <!-- Right Sidebar -->
-    
+
     <!-- /Right-bar -->
 
     <!-- Right bar overlay-->

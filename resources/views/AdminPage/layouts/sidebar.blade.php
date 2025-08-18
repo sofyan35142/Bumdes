@@ -180,7 +180,7 @@
                 <li>
                     <a href="{{ route('admin.industries.index') }}">
                         <i class="fas fa-industry"></i>
-                        <span>Industries</span>
+                        <span>Bidang Usaha</span>
                     </a>
                 </li>
                 <!-- developer kontak -->

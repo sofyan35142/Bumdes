@@ -44,8 +44,12 @@
                                         <div class="mb-3 row">
                                             <label for="tahun" class="col-md-2 col-form-label">Tahun</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="text" name="tahun" id="tahun"
-                                                    placeholder="Contoh: 2023" required>
+                                                <select class="form-select" name="tahun" id="tahun" required>
+                                                    <option value="">Pilih Tahun</option>
+                                                    @for ($year = date('Y'); $year >= date('Y') - 5; $year--)
+                                                        <option value="{{ $year }}">{{ $year }}</option>
+                                                    @endfor
+                                                </select>
                                             </div>
                                         </div>
 
@@ -66,10 +70,17 @@
                                         <div class="mb-3 row">
                                             <label for="kategori" class="col-md-2 col-form-label">Kategori</label>
                                             <div class="col-md-10">
-                                                <input class="form-control" type="text" name="kategori" id="kategori"
-                                                    placeholder="Masukkan kategori" required>
+                                                <select class="form-select kategori-select" name="kategori"
+                                                    id="kategori" required>
+                                                    <option value="">Pilih atau ketik kategori</option>
+                                                    <option value="Pajak">Pajak</option>
+                                                    <option value="Belanja Barang">Belanja Barang</option>
+                                                    <option value="Subsidi">Subsidi</option>
+                                                    <option value="Lainnya">Lainnya</option>
+                                                </select>
                                             </div>
                                         </div>
+
 
                                         {{-- Jumlah --}}
                                         <div class="mb-3 row">
@@ -104,22 +115,18 @@
 
     <div class="rightbar-overlay"></div>
     @include('AdminPage.layouts.scripts')
-
-    {{-- Script Preview Gambar --}}
     <script>
-        function previewImage(event) {
-            const input = event.target;
-            const preview = document.getElementById('preview-img');
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
+        $(document).ready(function() {
+            $('.kategori-select').select2({
+                // theme: "bootstrap-5",
+                width: '100%',
+                tags: true, // bisa tambah kategori baru
+                placeholder: "Pilih atau ketik kategori",
+                allowClear: true
+            });
+        });
     </script>
+
 </body>
 
 </html>
