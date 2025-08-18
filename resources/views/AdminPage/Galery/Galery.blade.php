@@ -78,7 +78,7 @@
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
                                                         <td>{{ ucfirst($item->tipe) }}</td>
-                                                        <td class="text-break">
+                                                        <td class="text-break" style="max-width: 300px;">
                                                             @if (!empty($item->nama_kegiatan_foto))
                                                                 {{ $item->nama_kegiatan_foto }}
                                                             @elseif(!empty($item->nama_kegiatan_video))
