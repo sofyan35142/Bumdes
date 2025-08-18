@@ -78,7 +78,8 @@
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
                                                         <td>{{ ucfirst($item->tipe) }}</td>
-                                                        <td class="text-break" style="max-width: 300px;">
+                                                        <td
+                                                            style="max-width:300px; white-space:normal; word-break:break-word;">
                                                             @if (!empty($item->nama_kegiatan_foto))
                                                                 {{ $item->nama_kegiatan_foto }}
                                                             @elseif(!empty($item->nama_kegiatan_video))
@@ -87,6 +88,7 @@
                                                                 <em>Tidak ada nama kegiatan</em>
                                                             @endif
                                                         </td>
+
                                                         <td>
                                                             @if ($item->tipe === 'foto' && $item->foto_path)
                                                                 <img src="{{ asset('Galery/' . $item->foto_path) }}"
