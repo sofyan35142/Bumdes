@@ -22,7 +22,7 @@ class Beranda extends Controller
         $totalLowongan = DB::table('lowongan_pekerjaan')->count();
         $totalPengajuan = DB::table('pengajuan_layanan')->count();
         $totalAnggota = DB::table('struktur_organisasi')->count();
-        $totaltestimonials = DB::table('struktur_organisasi')->count();
+        $totaltestimonials = DB::table('testimonials')->count();
 
         return view('AdminPage.beranda', compact('totalArsip', 'totalLayanan', 'totalKegiatan', 'totalLowongan', 'totalPengajuan', 'totalAnggota', 'totaltestimonials'));
     }

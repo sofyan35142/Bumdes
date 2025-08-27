@@ -1,5 +1,5 @@
 <meta charset="utf-8" />
-<title>Dashboard | Minible - Adminori & Dashboard Template</title>
+<title>Dashboard Admin Bumdes Pakukerto</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta content="Premium Multipurpose Adminori & Dashboard Template" name="description" />
 <meta content="Themesbrand" name="author" />
